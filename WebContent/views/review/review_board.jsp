@@ -71,7 +71,7 @@
 							<a href="../shop/shop_default.jsp"><img src="" class="img">
 						</div></td>
 					<td><div class="td_left">
-							<a href="../board/review.jsp">[두부볼中,小]&nbsp;만족합니다!</a>
+							<a href="../board/review.jsp">[두부볼中,小]&nbsp;만족합니다!!</a>
 						</div></td>
 					<td><div class="td_center">ijk230</td>
 					<td><div class="td_center">2021/02/08</div></td>
