@@ -9,8 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${path}/resource/css/common/common.css">
-<link rel="stylesheet" href="${path}/resource/css/common/header.css">
+<link rel="stylesheet" href="${path}/resource/css/common/footer.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
@@ -21,8 +20,8 @@
 </script>
 </head>
 <body>
-	<div id="header-wrap">
-		<h1>헤더</h1>
+	<div id="footer-wrap">
+		<h1>푸터</h1>
 	</div>
 </body>
 </html>
