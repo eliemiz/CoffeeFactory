@@ -22,7 +22,30 @@
 </head>
 <body>
 	<div id="header-wrap">
-		<h1>헤더</h1>
+		<div id="header-top">
+			<ul>
+				<li>로그인</li>
+				<li>회원가입</li>
+				<li>장바구니</li>
+				<li>위시리스트</li>
+				<li>주문배송조회</li>
+			</ul>
+		</div>
+		<div id="header-mid">
+			<img src="logo.jpg"> 
+			<img src="logo.jpg"> 
+		</div>
+		<div id="header-bottom">
+			<ul>
+				<li>블랜드 원두</li>
+				<li>싱글 오리진 원두</li>
+				<li>스페셜티 원두 외</li>
+				<li>선물 세트</li>
+			</ul>
+			<input type="search">
+			상세검색
+			<img src="search.jpg">
+		</div>
 	</div>
 </body>
 </html>

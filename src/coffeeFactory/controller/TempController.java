@@ -40,7 +40,7 @@ public class TempController extends HttpServlet {
 		request.setAttribute("result", "결과값 : " + temp);
 		
 		// 뷰
-		String page = "views\\temp.jsp";
+		String page = "views\\common\\temp.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);
 		rd.forward(request, response);
 		

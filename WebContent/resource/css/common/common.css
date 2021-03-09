@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-html, body, div {
+html, body, div, span, label, input, button, img, a, br, hr, table,
+	thead, tbody, tfoot, tr, td, ul, ol, li, dl, dt, dd {
 	padding: 0px;
 	margin: 0px;
-} 
+}

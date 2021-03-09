@@ -7,3 +7,8 @@
 	background-color: rgb(16, 16, 16, 0.88);
 	position:absolute;
 }
+
+ul, li {
+	list-style: none;
+	display: inline;
+}

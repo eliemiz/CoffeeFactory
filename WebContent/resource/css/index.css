@@ -3,3 +3,15 @@
 #main_slide_wrap {
 	transition: 0.5s;
 }
+
+#main_slide_wrap,
+#main_recommend_wrap,
+#main_introduction_wrap,
+#main_by_category_wrap,
+#main_best_product_wrap,
+#main_best_review_table,
+#main_sns_wrap {
+	margin: auto;
+	width: 1050px;
+	box-sizing: border-box;	
+}
