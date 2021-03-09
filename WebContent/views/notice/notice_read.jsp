@@ -20,17 +20,19 @@
 </script>
 </head>
 <body>
-<!-- 헤더 삽입 -->
+<!-- 
+<jsp:include page="../common/header.jsp" />
+<jsp:include page="../common/sidebar.jsp"/> -->
 <img src="${path}/resource/img/notice/not_title.png" class="title"/><br>
 	<form class="form1">
 	<table align="center">
 		<col width="670"><col width="380">
-		<tr><td class="td_left5">감사 인사</td>
+		<tr><td class="td_left5" name="title">감사 인사</td>
 			<td class="td_right2">
 			<input type="button" value="수정하기" class="btn_btn1" onclick="location.href='notice_revise.jsp'"/>
 			<input type="button" value="목록보기" class="btn_btn1" onclick="location.href='notice_list.jsp'"/>
 			</td></tr>
-		<tr><td colspan="2" class="td_right3">
+		<tr><td colspan="2" class="td_right3" name="content">
 			<img src="${path}/resource/img/notice/admin.png" class="admin">&nbsp;
 			등록일:2021.03.09&nbsp;<15:09>&nbsp;&nbsp;&nbsp;조회:1004
 			</td></tr>
@@ -41,7 +43,6 @@
 			</td></tr>
 	</table>
 	</form>
-
-<!-- 푸터 삽입 -->
+<!-- <jsp:include page="../common/header.jsp" /> -->
 </body>
 </html>

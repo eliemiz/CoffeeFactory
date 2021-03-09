@@ -14,13 +14,54 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-		
+		$("#ins_btn").on("click",function(){
+			if(confirm("등록하시겠습니까?")){
+				$("form1").attr("action","${path}/notice_list.jsp");
+				$("form1").submit();
+			}
+		});
 	});
 		
 </script>
 </head>
 <body>
-<h3>notice</h3>
-
+<!-- 
+<jsp:include page="../common/header.jsp" />
+<jsp:include page="../common/sidebar.jsp"/> -->
+<img src="${path}/resource/img/notice/not_title.png" class="title"/><br>
+	<form class="form1" method="post">
+	<table align="center">
+		<col width="200"><col width="850">
+			<!-- backend작업필요부분
+			<input id="notice_id" type="hidden" name="notice_id" value="10000">
+       		<input id="regist_date" type="hidden" name="posting_date_s" value="2021-02-26">
+       		<input id="views" type="hidden" name="views" value="0">
+       		 -->
+		<tr><td colspan="2" class="td_right4">
+			<input type="button" value="등록" class="btn_btn1" id="ins_btn" onclick="location.href='notice_list.jsp'"/>
+			<input type="button" value="목록보기" class="btn_btn1" onclick="location.href='notice_list.jsp'"/>
+			</td></tr>
+		<tr><th class="th_center2" name="title">TITLE</th>
+			<td class="td_left7">
+				<input type="text" id="title" name="title" size="60" placeholder="제목을 입력하세요"/>
+				</td>
+			  <tr>
+		<tr><th class="th_center2" name="image">첨부파일</th>
+			<td class="td_left7">
+				<div class="file_input">
+					<label>
+						<input type="file" onchange="javascript:document.getElementById('file_route').value=this.value">
+					</label>
+				</div>
+			</td>
+		<tr>	  
+		<tr><th class="th_center2">CONTENT</th>
+			<td class="td_left7">
+				<textarea id="content" name="content" class="content2" placeholder="내용을 입력하세요"></textarea>
+			</td>
+		<tr>           
+	</table>
+	</form>
+<!-- <jsp:include page="../common/header.jsp" /> -->
 </body>
 </html>
