@@ -128,6 +128,17 @@ td.td_right3{
 	border-bottom: solid 1px #d4d4d4; 
 }
 /* revise, write */
+th.th_center2{
+	text-align: center;
+	font-family: Malgun Gothic;
+	font-size: 12px;
+	color: #000000;
+	font-weight: bold;
+	padding-left: 10px;
+	background: #eeeeee;
+	line-height: 35px;
+	border-bottom: solid 1px #d4d4d4; 
+}
 td.td_right4{
 	text-align: right;
 	padding-right: 10px;
@@ -141,7 +152,6 @@ td.td_left7{
 	color: #000000;
 	font-weight: bold;
 	padding-left: 10px;
-	background: #e9e9e9;
 	line-height: 35px;
 	border-bottom: solid 1px #d4d4d4; 
 }
@@ -164,9 +174,17 @@ td.td_left7{
 	width:40px;
 	height:20px;
 }
-.content{
+.content1{
 	width:300px;
 	height:400px;
+}
+.file{
+	width:70px;
+	height:20px;
+}
+.content2{
+	width:700px;
+	height:300px;
 }
 /* 버튼 */
 .btn_btn1 {
@@ -180,85 +198,3 @@ td.td_left7{
 	color: #666666;
 	font-weight: bold;
 }
-/*
-th {
-	
-	text-align:center;
-	line-height: 20px;
-	padding: 10px 0px;
-	color: #a5a2a2; 
-	font-weight: bold; 
-	font-size: 12px; 
-	border-top: 1px solid #e5e5e5; 
-	border-bottom: 1px solid #e5e5e5; 
-	background:#f9f9f9;
-}
-
-td {
-	font-weight: 600;
-    font-size: 12px;
-    color: #777;
-    margin-bottom: 10px;
-	text-align:center;
-	line-height: 25px;
-	padding: 10px 0px;
-	border-top: 1px solid #e7e7e7;
-	border-bottom: 1px solid #e7e7e7;
-	word-break: keep-all;
-}
-p {
-   font-size: 30px;
-   text-align: center;
-   color: #464646;
-}
-span{
-	font-size:11px; 
-	color:#555; 
-	line-height:14px;
-}
-.mic {
-	width: 14px;
-	height: 14px;
-}
-.arrow{
-	width: 12px;
-	height: 12px;
-}
-.note {
-	width: 25px;
-	height: 25px;
-}
-.reply {
-	width: 14px;
-	height: 14px;
-}
-.img {
-	width: 80px;
-	height: 50px;
-}
-.th_left {
-	text-align: left;
-	color: #a5a2a2;
-}
-.th_center {
-	text-align: center;
-	color: #a5a2a2;
-}
-.th_right {
-	text-align: right;
-	color: #a5a2a2;
-}
-.td_left {
-	text-align: left;
-}
-.td_center {
-	text-align: center;
-}
-.td_right {
-	text-align: right;
-}
-p.title {
-
-    color: #777;
-}
-*/
