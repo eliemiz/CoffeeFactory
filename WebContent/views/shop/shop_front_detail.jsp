@@ -9,6 +9,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+.product-tit {margin:20px 0 0;}
+
+.mall-tab {margin:50px 0 0;}
+.mall-tab ul {margin:0; padding:0; list-style:none; *zoom:1;}
+.mall-tab ul:after {content:""; display:block; visibility:hidden; clear:both;}
+.mall-tab ul li {float:left; width:25%; border-bottom:1px solid #ddd;}
+.mall-tab ul button {position:relative; display:block; width:100%; margin:0; padding:15px 0px; color:#666; font-family:"notokr"; font-size:16px; font-weight:500; letter-spacing:-0.06em; cursor:pointer; outline:0 none; border:0; background:#fff;}
+.mall-tab ul .on button {color:#674f3e;}
+.mall-tab ul .on button:after {content:""; display:block; position:absolute; left:0; bottom:-1px; width:100%; height:3px; background:#674f3e;}
+.mall-tab#tab1 {margin-bottom:3px;}
+.mall-tab#tab2 {margin:30px 0 5px;}
+</style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
@@ -34,7 +47,7 @@
 										<tr>
 											<td height="23">
 												&nbsp;<img src="${path}/resource/img/shop/dot_01.gif"/>
-												현재 위치: <a href="">Home</a><!-- 메인으로 href --> > <a href="shop_front_main.jsp">싱글오리진 원두커피</a> <!-- href 싱글오리진페이지 --> > <a href="shop_front_category.jsp">아시아&태평양</a>
+												현재 위치: <a href="">Home</a><!-- 메인으로 href --> > <a href="shop_front_main.jsp">싱글오리진 원두커피</a> > <a href="shop_front_category.jsp">아시아&태평양</a>
 											</td>
 										</tr>
 									</tbody>
@@ -54,14 +67,14 @@
 																	<tbody>
 																		<tr>
 																			<td bgcolor="white" align="center" height="250">
-																				<img src="${path}/resource/img/shop/coffee_beans.jpg">
+																				<img src="${path}/resource/img/shop/coffee_beans.jpg" width="250" height="250">
 																			</td>
 																		</tr>
 																	</tbody>
 																</table>
 																<!-- table로 이미지 확대 넣을건지? -->
 															</td>
-															<td><!-- blank img --></td>
+															<td><img src="${path}/resource/img/shop/blank.gif"/></td>
 															<td valign="top">
 																<form method="post">
 																	<!-- 폼 오픈, Back때 input hidden으로 처리 -->
@@ -196,6 +209,174 @@
 				</table>
 			</td>
 		</tr>
+	</tbody>
+</table>
+<!-- 상품상세 -->
+<div class="mall-tab" id="tab1">
+	<ul>
+		<li class="on"><button type="button" data-to-tab="tab1">상품정보</button></li>
+		<li><button type="button" data-to-tab="tab2">배송안내</button></li>
+		<li><button type="button" data-to-tab="tab3">고객 상품평</button></li>
+		<li><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
+	</ul>
+</div>
+<table align="center" width="100%" cellspacing="0">
+	<tbody>
+		<tr><td>상품상세정보</td></tr><!-- 원래는 이미지임! -->
+	</tbody>
+</table>
+<table width="98%" align="center" cellspacing="0" cellpadding="0">
+	<tbody>
+		<tr><td align="center"></td></tr>
+		<tr>
+			<td style="line-height:150%; padding-left:20px">
+				<p align="center" style="text-align:center;">
+					<!-- 빈이미지(이벤트및공지) -->
+					<img src="${path}/resource/img/shop/detail_papua.png">
+					<!-- 상품상세설명 이미지 -->
+					<img src="${path}/resource/img/shop/detail_common1.jpg">
+					<img src="${path}/resource/img/shop/detail_common2.jpg">
+					<img src="">
+					<img src="">
+				</p>
+				<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div class="mall-tab" id="tab2">
+	<ul>
+		<li><button type="button" data-to-tab="tab1">상품정보</button></li>
+		<li class="on"><button type="button" data-to-tab="tab2">배송안내</button></li>
+		<li><button type="button" data-to-tab="tab3">고객 상품평</button></li>
+		<li><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
+	</ul>	
+</div>
+<!-- 배송안내 -->
+<table align="center" cellspacing="0" cellpadding="0">
+	<tbody>
+		<tr>
+			<td>
+				<table border="0" cellsapcing="0" cellpadding="0">
+					<tbody>
+						<tr>
+							<td>
+								<table border="0" cellspacing="0" cellpadding="0" bgcolor="#f9f9f9">
+									<tbody>
+										<tr>
+											<td><img src=""><!-- ordercap1 img --></td>
+										</tr>
+										<tr>
+											<td>											
+												<table width="800" border="0" cellspacing="0" cellpadding="0">
+													<tbody>
+														<tr>
+															<td width="1" bgcolor="dfdfdf"></td>
+															<td width="798">
+																<table width="798" border="0" cellspacing="0" cellpadding="0" height="5">
+																	<tbody>
+																		<tr>
+																			<td width="137"><!-- background img 따올건지? --></td>
+																			<td width="661"></td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+															<td width="1" bgcolor="dfdfdf"></td>
+														</tr>
+														<tr>
+															<td width="1" bgcolor="dfdfdf"></td>
+															<td width="798">
+																<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
+																	<tbody>
+																		<tr>
+																			<td style="padding-top:10px;" valign="top" width="137" background="">
+																				<img src=""><!-- ordericon1.gif -->  배송 안내
+																			</td>
+																			<td style="padding-top:10 0 15 10px; line-height:130%;">
+																				배송은 상품에 따라 차이가 있으나 1~4일 이내에 제품을 받으실 수 있습니다.<br>
+																				평일 오전 10시까지 주문 입금 확인된 원두 및 부자재에 한해 당일 발송됩니다.<br>
+																				<!-- 3만원 미만: 배송비 유료 (2,500원), 무료배송 표기상품은 금액에 상관없이 무료로 배송됩니다.<br>
+																				3만원 이상: 배송비 무료<br> -->
+																				* 주문 시 입력한 입금자명과 실제 입금자의 성명이 반드시 일치하여야 하며, <br>
+																					주문 후 3일 이내로 입금을 하셔야 합니다.<br>
+																				* 주문 후 3일 이내에 입금되지 않는 주문에 대해서는 자동 취소됩니다.<br>
+																				* 도서 산간 지역: 제주특별자치도 3,000원 추가, 울릉도 3,000원 추가 (기타지역 전화문의)<br>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+															<td width="1" bgcolor="dfdfdf"></td>
+														</tr>
+														<tr>
+															<td width="1" bgcolor="dfdfdf"></td>
+															<td width="798">
+																<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
+																	<tbody>
+																		<tr>
+																			<td style="padding-top:10px;" valign="top" width="137" background="">
+																				<img src=""><!-- ordericon1.gif -->  교환 및 반품
+																			</td>
+																			<td style="padding-top:10 0 15 10px; line-height:130%;">
+																				고객의 변심에 의한 교환 및 반품인 경우, 배송비는 소비자 부담입니다.<br>
+																				상품의 이상에 의한 교환 및 반품의 경우, 배송비는 판매자 부담입니다.<br>
+																				문의: 031-123-4567;
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+															<td width="1" bgcolor="dfdfdf"></td>
+														</tr>
+														<tr>
+															<td width="1" bgcolor="dfdfdf"></td>
+															<td width="798">
+																<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
+																	<tbody>
+																		<tr>
+																			<td style="padding-top:10px;" valign="top" width="137" background="">
+																				<img src=""><!-- ordericon1.gif -->  교환/반품 불가
+																			</td>
+																			<td style="padding-top:10 0 15 10px; line-height:130%;">
+																				1. 고객님의 책임의 사유로 상품 등이 멸실 또는 훼손된 경우<br>
+																				2. 사용 또는 일부 소비에 의해 상품의 가치가 현저히 감소한 경우<br>
+																				3. 시간 경과에 의해(제품수령 후 7일 이상 경과) 재판매가 어렵게 상품가치가 현저히 감소한 경우
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+															<td width="1" bgcolor="dfdfdf"></td>
+														</tr>
+														<tr>
+															<td width="1" bgcolor="dfdfdf"></td>
+															<td width="798">
+																<table width="798" border="0" cellspacing="0" cellpadding="0" height="3">
+																	<tbody>
+																		<tr>
+																			<td width="137"><!-- background img 따올건지? --></td>
+																			<td width="661"></td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+															<td width="1" bgcolor="dfdfdf"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+										<tr><td><img src=""></td></tr><!-- img ordercap2.gif 따올건지? -->
+									</tbody>
+								</table>
+							</td>
+						</tr>						
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr><td height="10"></td></tr>
 	</tbody>
 </table>
 </body>
