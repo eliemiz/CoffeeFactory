@@ -9,6 +9,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${path}/resource/css/fonts.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+	});
+		
+</script>
 <style type="text/css">
 .product-tit {margin:20px 0 0;}
 
@@ -21,18 +30,26 @@
 .mall-tab ul .on button:after {content:""; display:block; position:absolute; left:0; bottom:-1px; width:100%; height:3px; background:#674f3e;}
 .mall-tab#tab1 {margin-bottom:3px;}
 .mall-tab#tab2 {margin:30px 0 5px;}
+
+.tab {
+	margin-inline-start: auto;
+	margin-inline-end: auto;
+	-webkit-border-horizontal-spacing: 0px;
+	-webkit-border-vertical-spacing: 0px;
+}
+
+.tabstart {
+	width: 100%;
+	margin-inline-start: auto;
+	margin-inline-end: auto;
+	-webkit-border-horizontal-spacing: 0px;
+	-webkit-border-vertical-spacing: 0px;
+}
 </style>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script type="text/javascript">
-	
-	$(document).ready(function(){
-		
-	});
-		
-</script>
 </head>
 <body>
-<table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
+<jsp:include page="../common/header.jsp"/>
+<table class="tabstart" width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
 	<tbody>
 		<tr>
 			<td><!-- blank img --></td>
@@ -253,7 +270,7 @@
 	</ul>	
 </div>
 <!-- 배송안내 -->
-<table align="center" cellspacing="0" cellpadding="0">
+<table class="tab" align="center" cellspacing="0" cellpadding="0">
 	<tbody>
 		<tr>
 			<td>
@@ -379,6 +396,7 @@
 		<tr><td height="10"></td></tr>
 	</tbody>
 </table>
+<jsp:include page="../common/footer.jsp"/>
 </body>
 </html>
 
