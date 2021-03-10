@@ -11,6 +11,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${path}/resource/css/common/common.css">
 <link rel="stylesheet" href="${path}/resource/css/index.css">
+<link rel="stylesheet" href="${path}/resource/css/fonts.css">
 <style type="text/css">
 </style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>

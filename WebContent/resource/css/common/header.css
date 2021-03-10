@@ -2,13 +2,99 @@
 
 #header-wrap {
 	width: 100%;
-	height: 228px;
 	color: white;
-	background-color: rgb(16, 16, 16, 0.88);
-	position:absolute;
+	background-color: rgba(16, 16, 16, 0.88);
+	position: absolute;
 }
 
-ul, li {
+ul {
 	list-style: none;
-	display: inline;
+}
+
+li {
+	display: list-item;
+}
+
+#header-top, #header-mid, #header-bottom {
+	width: 1050px;
+	margin: auto;
+}
+
+#header-top {
+	padding-top: 10px;
+	height: 36px;
+}
+
+#header-top-menu {
+	font-size: 12px;
+	float: right;
+}
+
+#header-top-menu li {
+	float: left;
+}
+
+#header-top-menu li:after {
+	content: "|";
+	padding: 0px 8px;
+}
+
+#header-top-menu li:last-child:after {
+	content: none;
+}
+
+#header-mid {
+	height: 135px;
+	text-align:center;
+	position:relative;
+}
+
+#header-mid-ani-banner {
+	position:absolute;
+	left: 0px;
+	top: 0px;
+}
+
+#header-mid-main-logo {
+	text-align:center;
+}
+
+#header-mid-hr {
+	border: 1px solid rgba(218, 218, 218, 0.1);
+}
+
+#header-bottom {
+}
+
+#header-bottom-menu {
+	
+}
+
+#header-bottom-menu li {
+	padding: 16px 0px 12px;
+	margin-right: 32px;
+	float: left;
+	font-size: 15px;
+}
+
+#header-bottom-right {
+	float: right;
+	margin-top: 9px;
+	font-size: 14px;
+}
+
+#header-bottom-right input[type=text] {
+	padding: 2px 40px 0px 12px;
+	width: 150px;
+	height: 28px;
+}
+
+#header-bottom-right span {
+	margin-left: 24px;
+	border-bottom: 1px solid white;
+}
+
+#header-bottom-right img {
+	margin-left: 24px;
+	vertical-align: middle;
 }

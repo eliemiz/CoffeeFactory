@@ -4,4 +4,15 @@ html, body, div, span, label, input, button, img, a, br, hr, table,
 	thead, tbody, tfoot, tr, td, ul, ol, li, dl, dt, dd {
 	padding: 0px;
 	margin: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'NotoR', 'sans-serif';
+}
+
+.clear-fix:after {
+	content: "";
+	display: block;
+	clear: both;
 }
