@@ -19,13 +19,15 @@
 		
 </script>
 <style>
-
+  
 </style>
 </head>
 <body>
 <!-- 
 <jsp:include page="../common/header.jsp" />
+
 <jsp:include page="../common/sidebar.jsp"/> -->
+
 <img src="${path}/resource/img/notice/not_title.png" class="title"/>
 	<form class="form1">
 	<table align="center">
@@ -53,6 +55,8 @@
 			<select name="search"><option>전체</option><option>제목</option><option>내용</option></select>&nbsp;<input type="text" size="30"/>&nbsp;<input type="submit" value="찾기" class="btn_btn1"/></td></tr>
 	</table>
 	</form>
-<!-- <jsp:include page="../common/header.jsp" /> -->
+
+<!--  
+<jsp:include page="../common/header.jsp" /> -->
 </body>
 </html>
