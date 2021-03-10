@@ -20,8 +20,10 @@
 </script>
 </head>
 <body>
-	<div>
-		<p  style="font-size:20px;">상품후기</p>
+	<div style="text-align: center;">
+		<br>
+		<br>
+		<p class="title" style="font-size:20px;">상품후기</p>
 	</div>
 	<br>
 	<br>
