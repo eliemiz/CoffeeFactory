@@ -19,12 +19,25 @@
 </script>
 </head>
 <body>
-	<h3>temp view</h3>
-	<form method="post">
-		<input type="text" name="temp" value="${param.temp}">
-		<input type="submit" value="submit">
-	</form>
-	<div>${result}</div>
+	<jsp:include page="/views/common/header.jsp"/>
+	<div style="height:222px;"></div>
+	<table class="content-wrap">
+		<tr>
+			<td class="content-wrap-left">
+			</td>
+			<td class="content-wrap-center">
+				<div style="height:1500px; background-color:gray;">
+				</div>
+			</td>
+			<td class="content-wrap-center-right">
+			</td>
+			<td class="content-wrap-right">
+				<jsp:include page="/views/common/sidebar.jsp"/>
+			</td>
+		</tr>
+	</table>
+	
+	<jsp:include page="/views/common/footer.jsp"/>
 	
 </body>
 </html>

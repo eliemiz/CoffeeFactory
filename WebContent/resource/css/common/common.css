@@ -16,3 +16,24 @@ body {
 	display: block;
 	clear: both;
 }
+
+.content-wrap {
+	width: 1290px;
+	margin: auto;
+}
+
+.content-wrap-left {
+	width: 120px;
+}
+
+.content-wrap-center {
+}
+
+.content-wrap-center-right {
+	width: 30px;
+}
+
+.content-wrap-right {
+	width: 90px;
+	vertical-align: top;
+}
