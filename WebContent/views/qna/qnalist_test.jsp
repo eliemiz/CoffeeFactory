@@ -85,7 +85,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><span id="qna-q=toggle">+</span></td>
+					<td><span id="qna-q=toggle">1</span></td>
 					<div class="qna-content">
 					<td class="title" id="qna-1">
 						<span>
@@ -93,9 +93,10 @@
 						</td></div>
 					<td><div class="td_center">ijk230</td>
 					<td><div class="td_center">2021/03/12</div></td>
-				<tr><td colspan="4"><div class="full" id="full-1">
+				<!-- 숨김 상태일 때 td가 남는 것을 방지.. td 자체의 display 조절 -->
+				<tr><td colspan="4" class="full" id="full-1">
 								3~5일 내에 입고예정입니다.
-							</div></td></tr>
+							</td></tr>
 				<tr>
 					<td><div class="td_center">2</div></td>
 					<td><div class="td_left">
@@ -129,13 +130,14 @@
 
   function openCloseAnswer() {
     const answerId = this.id.replace('qna', 'full');
-
-    if(document.getElementById(answerId).style.display === 'block') {
+	
+    if(document.getElementById(answerId).style.display == 'table-cell') {
+    // table-cell >> col-span 작동
       document.getElementById(answerId).style.display = 'none';
-      document.getElementById(this.id + '-toggle').textContent = '+';
+      //document.getElementById(this.id + '-toggle').textContent = '+';
     } else {
-      document.getElementById(answerId).style.display = 'block';
-      document.getElementById(this.id + '-toggle').textContent = '-';
+      document.getElementById(answerId).style.display = 'table-cell';
+      //document.getElementById(this.id + '-toggle').textContent = '-';
     }
   }
 
