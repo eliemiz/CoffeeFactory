@@ -20,81 +20,71 @@
 </script>
 </head>
 <body>
-	<div style="text-align: center;">
-		<br>
-		<br>
-		<p class="title" style="font-size:20px;">상품후기</p>
-	</div>
-	<br>
-	<br>
-	<br>
-	<div class="content_wrap">
-		<table>
-			<colgroup>
-				<col width="60">
-				<col width="160">
-				<col width="*">
-				<col width="150">
-				<col width="150">
-				<col width="150">
-			</colgroup>
-			<thead>
-				<tr>
-					<th scope="col"><div class="th_center">번호</div></th>
-					<th scope="col"><div class="th_center">Product</div></th>
-					<th scope="col"><div class="th_center">제목</div></th>
-					<th scope="col"><div class="th_center">작성자</div></th>
-					<th scope="col"><div class="th_center">작성일</div></th>
-					<th scope="col"><div class="th_center">평점</div></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><div class="td_center">1</div></td>
-					<td><div class="td_center">
-							<a href=""><img src="" class="img">
-						</div></td>
-					<td><div class="td_left">
-							<a href="">첫구매 원두 아주 만족합니다!</a>
-						</div></td>
-					<td><div class="td_center">ijk230</td>
-					<td><div class="td_center">2021/03/12</div></td>
-					<td><div class="td_center">5</div></td>
-				</tr>
-				<tr>
-					<td><div class="td_center">2</div></td>
-					<td><div class="td_center">
-							<a href=""><img src="" class="img">
-						</div></td>
-					<td><div class="td_left">
-							<a href="">여기 원두 좋네요</a>
-						</div></td>
-					<td><div class="td_center">sldfk55</td>
-					<td><div class="td_center">2021/03/11</div></td>
-					<td><div class="td_center">5</div></td>
-				</tr>
-				<tr>
-					<td><div class="td_center">3</div></td>
-					<td><div class="td_center">
-							<a href=""><img src="" class="img">
-						</div></td>
-					<td><div class="td_left">
-							<a href="">나쁘지 않네요</a>
-						</div></td>
-					<td><div class="td_center">lee1324</td>
-					<td><div class="td_center">2021/03/11</div></td>
-					<td><div class="td_center">4</div></td>
-				</tr>
-			</tbody>
-		</table>
-		<br>
-		<div style="text-align: center;">
-			<input type="button" value="<<" class="btn_normal">
-			<input type="button" value="&nbsp;<&nbsp;" class="btn_normal">
-			<input type="button" value="&nbsp;1&nbsp;" class="btn_normal">
-			<input type="button" value="&nbsp;>&nbsp;" class="btn_normal">
-			<input type="button" value=">>" class="btn_normal">
+	
+	<br><br><br>
+      <div class="content_wrap">
+       <form>
+       <tr>
+       <td height=20 align= center bgcolor=#ccc><font color=white> 글쓰기</font></td>
+       </tr>
+       <tr>
+       <td bgcolor=white>
+           <table summary>
+               <colgroup>
+                   <col width="95">
+                   <col width="190">
+                   <col width="90">
+               </colgroup>
+               <tbody>
+                   <tr>
+                       <th>
+                       	 <div>NAME</div>
+                       </th>
+                       <td>
+                         <div class="td_left">
+                         	<input id="bw_input_writer" type="text" name="hname" class="MS_input_txt input_style" readonly="readonly" value="홍길동">
+                         </div>
+                       </td>
+                       <th>
+                       	 <div>PASSWORD</div>
+                       </th>
+                       <td>
+                       	 <div class="td_left">
+                       	 	<input id="bw_input_passwd" type="password" name="passwd" class="MS_input_txt input_style"></div>
+                       </td>
+                   </tr>
+                   <tr>
+                       <th>
+                       	 <div>TITLE</div>
+                       </th>
+                       <td colspan="3">
+                           <div class="td_left">
+                           	<input id="bw_input_subject" class="MS_input_txt input_style2" type="text" name="subject" value="">
+                           <input type="checkbox" name="tag" value="ok"> HTML태그 허용<br></div>
+                       </td>
+                   </tr>
+                   <tr>
+                       <th><div>CONTENT</div></th>
+                       <td colspan="3"><div class="td_left"><textarea id="MS_text_content" name="content" style="font-family: 굴림체; width: 100%; height: 380px;" 
+                        placeholder="후기 내용을 적어주세요"></textarea>
+                       <input type="hidden" name="mobile_content_type" value=""></div>
+                       </td>
+                   </tr>
+                   <tr>
+                       <th><div>FILE</div></th>
+                       <td colspan="3">
+                           <div class="td_left"><input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"></div>
+                          
+                       </td>
+                   </tr>
+              </tbody>
+           </table>
+        <br>
+      	<div style="text-align:right;">
+		<input type="button" value="완료" class="btn btn_thatch" onclick="" >
+		<input type="button" value="목록" class="btn btn_normal" onclick="location.href='review_board.jsp'" >
 		</div>
-	</div>
+ </form>
+ </div>
 </body>
 </html>

@@ -38,10 +38,7 @@ a {
 	color: #bba59b;
 }
 
-.b_thatch {
-	background-color: #bba59b;
-	color: white;
-}
+
 
 .c_red {
 	color: red;
@@ -73,7 +70,7 @@ input[type=button], input[type=submit] {
 }
 
 .btn:hover {
-	background-color: #464646;
+	background-color: #222222;
 	color: white;
 }
 
@@ -83,7 +80,7 @@ input[type=button], input[type=submit] {
 }
 
 .btn_thatch {
-	background-color: #bba59b;
+	background-color: #674f3e;
 	color: white;
 }
 

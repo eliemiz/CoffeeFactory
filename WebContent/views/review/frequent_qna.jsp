@@ -9,59 +9,94 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${path}/resource/css/review.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<link rel="stylesheet" href="${path}/resource/css/notice.css">
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
-	
-	$(document).ready(function(){
-		
+	$(document).ready(function() {
+
 	});
-		
 </script>
 </head>
 <body>
-
-<div style="text-align: center;">
-		<br>
-		<br>
-		<p class="title" style="font-size:20px;">상품후기</p>
+<jsp:include page="../common/header.jsp"/>
+	 <div style="height:222px;"></div>
+	<div style="text-align: left; margin-left:235px;">
+		<img src="${path}/resource/img/review/frequent.png" />
 	</div>
-	<br>
-	<br>
-	<br>
-	<div class="content_wrap">
-		<div style="text-align: right;">
-			<span><input type="text" name="searchText"
-				value="" /> <input style="background-color: #464646; color: white;"
-				type="submit" value="검색" /></span>
-		</div>
-		<br>
-		<table>
-			<colgroup>
-				<col width="*">
-			</colgroup>
-			<thead>
-				<tr>
-					<th scope="col"><div class="th_center"></div></th>
-					
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><div class="td_left">원두 보관은 어떻게 하나요?</div></td>
+<div>
+	<form class="form1">
+		<table align="center" style="border-collapse: collapse; margin:auto;">
+
+
+		
+			<col width="96">
+			<col width="640">
+			<col width="98">
+			<col width="70">
+			<col width="150">
+		
+
+			<tr>
+				<th class="th_center">번호</th>
+				<th class="th_center">질문</th>
+				<th class="th_center"></th>
+				<th class="th_center"></th>
+				<th class="th_center"></th>
 				
-				</tr>
+			</tr>
+
+			<tr onclick="location.href='frequent_qna_answer.jsp'">
+				<td class="td_center2">1</td>
+				<td class="td_left1">질문</td>
+				<td class="td_left1"></td>
+				<td class="td_left1"></td>
+				<td class="td_left1"></td>
 			
-			</tbody>
-		</table>
-		<br>
-		<div style="text-align: center;">
-			<input type="button" value="<<" class="btn_normal">
-			<input type="button" value="&nbsp;<&nbsp;" class="btn_normal">
-			<input type="button" value="&nbsp;1&nbsp;" class="btn_normal">
-			<input type="button" value="&nbsp;>&nbsp;" class="btn_normal">
-			<input type="button" value=">>" class="btn_normal">
-		</div>
+			</tr>
+			<tr onclick="location.href='frequent_qna_answer.jsp'">
+				<td class="td_center2">2</td>
+				<td class="td_left1">질문</td>
+				<td class="td_left1"></td>
+				<td class="td_left1"></td>
+				<td class="td_left1"></td>
+		
+			</tr>
+			<tr onclick="location.href='frequent_qna_answer.jsp'">
+				<td class="td_center2">3</td>
+				<td class="td_left1">질문</td>
+				<td class="td_left1"></td>
+				<td class="td_left1"></td>
+				<td class="td_left1"></td>
+				
+			</tr>
+		
+			<tr>
+<tr><td colspan="4" class="td_left4"><img src="${path}/resource/img/notice/leftarrow.png" class="arrow">
+&nbsp;&nbsp;1&nbsp;&nbsp;
+			<img src="${path}/resource/img/notice/rightarrow.png" class="arrow">
+			</td>
+			<td class="td_right">
+			
+			<input type="button" value="메인화면" class="btn_btn1" onclick="location.href='frequent_qna_answer.jsp'"/></td></tr>
+		<tr><td colspan="5" class="td_search1">
+			<select name="search"><option>전체</option><option>제목</option><option>내용</option></select>&nbsp;<input type="text" size="30"/>&nbsp;<input type="button" value="찾기" class="btn_btn1"/></td></tr>
+	</table>
+	</form>
 	</div>
 </body>
+<script type="text/javascript">
+/* var is_Show1=false;
+function is_show1(is_True){
+	if(is_Show1){
+		document.getElementById("hide1").style.display="none";
+		is_Show1=false;
+		
+	}else{
+		document.getElementById("hide1").style.display="block";
+		is_Show1=true;	
+		
+	}
+} */
+</script>
 </html>

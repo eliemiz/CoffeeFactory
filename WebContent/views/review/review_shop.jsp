@@ -20,12 +20,9 @@
 </script>
 </head>
 <body>
-	<div>
-		<p  style="font-size:20px;">상품후기</p>
-	</div>
-	<br>
-	<br>
-	<br>
+	<jsp:include page="../common/header.jsp"/>
+	 <div style="height:222px;"></div>
+	
 	<div class="content_wrap">
 		<table>
 			<colgroup>

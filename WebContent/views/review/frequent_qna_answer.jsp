@@ -22,61 +22,25 @@
 </head>
 
 <body>
-<jsp:include page="../common/header.jsp"/>
-	<div style="height:222px;"></div>
-	 <!-- <div style="text-align:center; ">
-	<br><br><br>
-	<p class="title">상품후기</p>
-	</div> -->
-	<br>
-	<br>
-	<br>
-	<div style="text-align: left; margin-left:200px;">
-		<img src="${path}/resource/img/review/review.png" />
+	<jsp:include page="../common/header.jsp"/>
+	 <div style="height:222px;"></div>
+	<div style="text-align: left; margin-left:220px;">
+		<img src="${path}/resource/img/review/frequent.png" />
 	</div>
 	<div id="content" class="content_wrap">
-		<table class="prd-tinfo">
-			<colgroup>
-				<col width="120">
-				<col width="*">
-			</colgroup>
-			<tr>
-				<td><a href=""><img src="" class="img"></a></td>
-				<td><div class="td_left">
-						상 품 명:<a href="">원두</a><br> 상품가격:<strong>20000원</strong>
-					</div></td>
-			</tr>
-		</table>
+	
 		<div class="bbs-table-view">
 			<table>
 				<thead>
 					<tr>
-						<th><div class="td_left">후기 제목</div></th>
+						<th><div class="td_left">질문</div></th>
 					</tr>
 				</thead>
 				<tbody>
+						
 					<tr>
 						<td class="td_left">
-							<div class="cont-sub-des">
-								<div>
-									<span><em>작성자</em>ijk230</span>
-								</div>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="td_left">
-							<div class="cont-sub-des">
-								<div>
-									<span><em>작성일</em>2021-02-09</span> 
-									<span><em>평점</em>5</span>
-								</div>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td class="td_left">
-							<div class="data-bd-cont">&nbsp;커피향이 아주 굿이네요</div>
+							<div class="data-bd-cont">&nbsp;답변</div>
 						</td>
 					</tr>
 				</tbody>
@@ -89,7 +53,7 @@
 		<br>
 		<div style="text-align: right;">
 			<input type="button" value="목록보기" class="btn btn_normal"
-				onclick="location.href='review_board.jsp'">
+				onclick="location.href='frequent_qna.jsp'">
 		</div>
 		<!-- .page-body -->
 	</div>
