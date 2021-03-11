@@ -1,14 +1,5 @@
 @charset "UTF-8";
 
-.content_wrap{
-	width: 1200px;
-	margin: auto;
-	padding: 0px 40px 0px 20px;
-}
-
-body {
-   margin-top: 50px;
-}
 form1 { 
 	margin: 0 auto; 
 	width:1045px;
@@ -166,7 +157,7 @@ td.td_left7{
 .title{
 	width: 800px;
 	height: 45px;
-	margin-left: 235px;
+	margin-left: 170px;
 }
 .admin{
 	width: 40px;
