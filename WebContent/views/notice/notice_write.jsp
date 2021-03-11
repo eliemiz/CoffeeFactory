@@ -25,12 +25,13 @@
 </script>
 </head>
 <body>
-<!-- 
 <jsp:include page="../common/header.jsp" />
-<jsp:include page="../common/sidebar.jsp"/> -->
+<div style="height:222px;"></div>
+<br><br>
 <img src="${path}/resource/img/notice/not_title.png" class="title"/><br>
+<div>
 	<form class="form1" method="post">
-	<table align="center">
+	<table align="center" style="margin:auto;" >
 		<col width="200"><col width="850">
 			<!-- backend작업필요부분
 			<input id="notice_id" type="hidden" name="notice_id" value="10000">
@@ -62,6 +63,8 @@
 		<tr>           
 	</table>
 	</form>
-<!-- <jsp:include page="../common/header.jsp" /> -->
+</div>
+<br><br>
+<jsp:include page="../common/footer.jsp" />
 </body>
 </html>

@@ -30,12 +30,14 @@
 </script>
 </head>
 <body>
-<!-- 
 <jsp:include page="../common/header.jsp" />
-<jsp:include page="../common/sidebar.jsp"/> -->
+<div style="height:222px;"></div>
+<br><br>
 <img src="${path}/resource/img/notice/not_title.png" class="title"/><br>
+
+<div>
 	<form class="form1">
-	<table align="center">
+	<table align="center" style="margin:auto;" >
 		<col width="200"><col width="850">
 		<tr><td colspan="2" class="td_right4">
 			<input type="button" value="삭제하기" class="btn_btn1" id="del_btn" onclick="location.href='notice_list.jsp'"/>
@@ -64,6 +66,8 @@
 		<tr>           
 	</table>
 	</form>
-<!-- <jsp:include page="../common/header.jsp" /> -->
+</div>
+<br><br>
+<jsp:include page="../common/footer.jsp" />
 </body>
 </html>
