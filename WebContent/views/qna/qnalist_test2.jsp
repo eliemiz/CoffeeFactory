@@ -9,12 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
 <link rel="stylesheet" href="${path}/resource/css/review/board.css">
 <link rel="stylesheet" href="${path}/resource/css/review/common.css">
-<!-- 
-<link rel="stylesheet" href="${path}/resource/css/qna.css">
- -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
@@ -35,6 +31,7 @@
 .mall-tab ul .on button:after {content:""; display:block; position:absolute; left:0; bottom:-1px; width:100%; height:3px; background:#674f3e;}
 .mall-tab#tab1 {margin-bottom:3px;}
 .mall-tab#tab2 {margin:30px 0 5px;}
+
 .full {
 	display:none;
 	padding-bottom: 30px;
@@ -58,9 +55,6 @@
   [id$="-toggle"] {
     margin-right: 15px;
   }
-.regbtn{
- 	padding-right: 50px;
- }
 </style>
 </head>
 <body>
@@ -77,10 +71,10 @@
 </div><br>
 	<table>
 			<colgroup>
-				<col width="60">
-				<col width="*">
+				<col width="50">
 				<col width="150">
-				<col width="150">
+				<col width="100">
+				<col width="100">
 			</colgroup>
 			<thead>
 				<tr>
@@ -91,50 +85,30 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td><span id="qna-q=toggle">1</span></td>
-					<div class="qna-content">
-					<td class="title" id="qna-1">
-						<span>
-							해당 상품 원두 언제 입고되나요?</span>
-						</td></div>
-					<td><div class="td_center">ijk230</td>
-					<td><div class="td_center">2021/03/12</div></td>
-				<!-- 숨김 상태일 때 td가 남는 것을 방지.. td 자체의 display 조절 -->
-				<tr><td colspan="4" class="full" id="full-1">
-								<input type="button" id="regbtn" value="답변하기">
-								<input type="button" value="삭제하기"><br>
-								해당 상품 원두 언제 입고되는지 궁금합니다.
-					</td></tr>
-					<td><span id="qna-q=toggle">2</span></td>
-					<div class="qna-content">
-					<td class="title" id="qna-2">
-						<span>
-							주문 후 배송까지 얼마나 시간이 걸릴까요?</span>
-						</td></div>
-					<td><div class="td_center">sldfk55</td>
-					<td><div class="td_center">2021/03/11</div></td>
-				</tr>
-				<tr><td colspan="4" class="full" id="full-2">
-								<input type="button" value="답변하기">
-								<input type="button" value="삭제하기"><br>
-								3~5일 내에 배송예정입니다.
-							</td></tr>
-				<tr>
-					<td><span id="qna-q=toggle">3</span></td>
-					<div class="qna-content">
-					<td class="title" id="qna-3">
-						<span>대량으로 구입 가능한가요?</span>
-						</td></div>
+				<tr onclick="location.href='qna_read.jsp'">
+					<td><div class="td_center">1</div></td>
+					<td><div class="td_left">
+							<a href="">로스팅 정도 선택 가능한가요?</a>
+						</div></td>
 					<td><div class="td_center">lee1324</td>
 					<td><div class="td_center">2021/03/11</div></td>
 				</tr>
-				<tr><td colspan="4" class="full" id="full-3">
-								<input type="button" name="repbtn" value="답변하기" align="right">
-								<input type="button" name="delbtn" value="삭제하기"><br>
-								대량 구매 가능합니다.
-							</td>
-					</tr>
+				<tr onclick="location.href='qna_read.jsp'">
+					<td><div class="td_center">2</div></td>
+					<td><div class="td_left">
+							<a href="">주문 후 배송까지 얼마나 시간이 걸릴까요?</a>
+						</div></td>
+					<td><div class="td_center">sldfk55</td>
+					<td><div class="td_center">2021/03/11</div></td>
+				</tr>
+				<tr onclick="location.href='qna_read.jsp'">
+					<td><div class="td_center">3</div></td>
+					<td><div class="td_left">
+							<a href="">대량으로 구입 가능한가요?</a>
+						</div></td>
+					<td><div class="td_center">lee1324</td>
+					<td><div class="td_center">2021/03/11</div></td>
+				</tr>
 			</tbody>
 		</table>
 		<br>
@@ -147,22 +121,4 @@
 		</div>
 	</div>
 </body>
-<script>
-  const items = document.querySelectorAll('.title');
-
-  function openCloseAnswer() {
-    const answerId = this.id.replace('qna', 'full');
-	
-    if(document.getElementById(answerId).style.display == 'table-cell') {
-    // table-cell >> col-span 작동
-      document.getElementById(answerId).style.display = 'none';
-      //document.getElementById(this.id + '-toggle').textContent = '+';
-    } else {
-      document.getElementById(answerId).style.display = 'table-cell';
-      //document.getElementById(this.id + '-toggle').textContent = '-';
-    }
-  }
-
-  items.forEach(item => item.addEventListener('click', openCloseAnswer));
-</script>
 </html>

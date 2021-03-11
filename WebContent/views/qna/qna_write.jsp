@@ -9,7 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${path}/resource/css/common.css">
+<link rel="stylesheet" href="${path}/resource/css/review/board.css">
+<link rel="stylesheet" href="${path}/resource/css/review/common.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
@@ -43,25 +44,23 @@
 		<li class="on"><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
 	</ul>	
 </div>
+<body>
+
 <br><br><br>
-      <div class="content_wrap">
+
+        <div class="content_wrap">
        <form>
-       <table align="center">
+       <tr>
+       <td height=20 align= center bgcolor=#ccc><font color=white> 글쓰기</font></td>
+       </tr>
        <tr>
        <td bgcolor=white>
-           <table summary >
+           <table summary>
                <colgroup>
                    <col width="100">
                    <col width="600">
                </colgroup>
-               <tbody>
-                   <tr>
-                       <th colspan="2">                         
-                       </th>
-                       <td text-align="right">
-                       		<input type="button" name="qnabtn" value="질문하기" onclick="location.href='qna_write.jsp'"/>
-                       </td>
-                   </tr>
+               <tbody>                 
                    <tr>
                        <th>
                            <div>TITLE</div>
@@ -81,11 +80,12 @@
               </tbody>
            </table>
         <br>
-         <div style="text-align:center;">
-      		<img src="${path}/resource/img/qna/btn_regis.gif" id="regbtn" class="regbtn" onclick="location.href='qnalist.jsp'">
-			<img src="${path}/resource/img/qna/btn_cancel.gif" id="canbtn" class="canbtn" onclick="location.href='qnalist.jsp'">
-      </div>
+        <div style="text-align:right;">
+		<input type="button" value="완료" class="btn btn_thatch" onclick="location.href='qnalist.jsp'" >
+		<input type="button" value="목록" class="btn btn_normal" onclick="location.href='qnalist.jsp'" >
+		</div>
  </form>
  </div>
+ 
 </body>
 </html>

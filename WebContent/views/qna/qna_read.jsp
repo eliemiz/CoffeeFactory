@@ -71,6 +71,14 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td class="td_left">
+                                            <div class="data-bd-cont">&nbsp;안녕하세요 커피공장입니다<br>
+																	&nbsp;대량주문에 한하여 로스팅 정도 선택 가능합니다<br>
+																	&nbsp;감사합니다. :)
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
 								<div id="comment_list_0">
