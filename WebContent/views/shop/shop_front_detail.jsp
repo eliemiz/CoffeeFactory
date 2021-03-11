@@ -45,14 +45,27 @@
 	-webkit-border-horizontal-spacing: 0px;
 	-webkit-border-vertical-spacing: 0px;
 }
+.font-size1 {
+	font-family: 맑은 고딕, Malgun Gothic, 돋움, Dotum, 굴림;
+	font-size: 8pt;
+	font-style: normal;
+	color: #666666;
+}
+.font-size2 {
+	font-family: 맑은 고딕, Malgun Gothic, 돋움, Dotum, 굴림;
+	font-size: 9pt;
+	font-style: normal;
+	color: #666666;
+}
 </style>
 </head>
 <body>
 <jsp:include page="../common/header.jsp"/>
+<div style="height:230px;"></div>
 <table class="tabstart" width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
 	<tbody>
 		<tr>
-			<td><!-- blank img --></td>
+			<td><img src="${path}/resource/img/shop/blank.gif" width="120" height="1"></td>
 			<td valign="top" width="100%">
 				<table width="100%" align="center" cellspacing="0" cellpadding="0" class="back_table">
 					<tbody>
@@ -63,8 +76,11 @@
 									<tbody>
 										<tr>
 											<td height="23">
-												&nbsp;<img src="${path}/resource/img/shop/dot_01.gif"/>
+												&nbsp;
+												<span class="font-size1">
+												<img src="${path}/resource/img/shop/dot_01.gif"/>
 												현재 위치: <a href="">Home</a><!-- 메인으로 href --> > <a href="shop_front_main.jsp">싱글오리진 원두커피</a> > <a href="shop_front_category.jsp">아시아&태평양</a>
+												</span>
 											</td>
 										</tr>
 									</tbody>
@@ -84,14 +100,14 @@
 																	<tbody>
 																		<tr>
 																			<td bgcolor="white" align="center" height="250">
-																				<img src="${path}/resource/img/shop/coffee_beans.jpg" width="250" height="250">
+																				<img src="${path}/resource/img/shop/single/shop_papua.jpg" width="250" height="250">
 																			</td>
 																		</tr>
 																	</tbody>
 																</table>
 																<!-- table로 이미지 확대 넣을건지? -->
 															</td>
-															<td><img src="${path}/resource/img/shop/blank.gif"/></td>
+															<td><img src="${path}/resource/img/shop/blank.gif" height="1"/></td>
 															<td valign="top">
 																<form method="post">
 																	<!-- 폼 오픈, Back때 input hidden으로 처리 -->
@@ -123,10 +139,11 @@
 																				<td> </td>
 																				<td><span class="opt_title1">제품 선택</span></td>
 																				<td>
-																					<input type="radio">200g (12,000원)<!-- Back: name, value, onclick --><br>
-																					<input type="radio">500g (21,000원)<!-- Back: name, value, onclick --><br>
-																					<input type="radio">1kg-여분봉투X (34,000원)<!-- Back: name, value, onclick --><br>
-																					<input type="radio">1kg-여분봉투O (34,000원)<!-- Back: name, value, onclick --><br>
+																					<!-- 왜 radio 인데 다중 선택이 되는가??? -->	
+																					<input type="radio"> 200g (12,000원)<!-- Back: name, value, onclick --><br>
+																					<input type="radio"> 500g (21,000원)<!-- Back: name, value, onclick --><br>
+																					<input type="radio"> 1kg-여분봉투X (34,000원)<!-- Back: name, value, onclick --><br>
+																					<input type="radio"> 1kg-여분봉투O (34,000원)<!-- Back: name, value, onclick --><br>
 																				</td>
 																			</tr>
 																			<tr height="25">
@@ -237,9 +254,9 @@
 		<li><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
 	</ul>
 </div>
-<table align="center" width="100%" cellspacing="0">
+<table align="center" width="100%" cellspacing="0" background="${path}/resource/img/shop/tt_detail_bg.gif">
 	<tbody>
-		<tr><td>상품상세정보</td></tr><!-- 원래는 이미지임! -->
+		<tr><td><img src="${path}/resource/img/shop/tt_detail.gif" border="0"/></td></tr><!-- 원래는 이미지임! -->
 	</tbody>
 </table>
 <table width="98%" align="center" cellspacing="0" cellpadding="0">
@@ -281,7 +298,7 @@
 								<table border="0" cellspacing="0" cellpadding="0" bgcolor="#f9f9f9">
 									<tbody>
 										<tr>
-											<td><img src=""><!-- ordercap1 img --></td>
+											<td><img src="${path}/resource/img/shop/s_ordercap1.gif"></td>
 										</tr>
 										<tr>
 											<td>											
@@ -293,7 +310,7 @@
 																<table width="798" border="0" cellspacing="0" cellpadding="0" height="5">
 																	<tbody>
 																		<tr>
-																			<td width="137"><!-- background img 따올건지? --></td>
+																			<td width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif"></td>
 																			<td width="661"></td>
 																		</tr>
 																	</tbody>
@@ -307,8 +324,8 @@
 																<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
 																	<tbody>
 																		<tr>
-																			<td style="padding-top:10px;" valign="top" width="137" background="">
-																				<img src=""><!-- ordericon1.gif -->  배송 안내
+																			<td style="padding-top:10px;" valign="top" width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif">
+																				<img src="${path}/resource/img/shop/s_ordericon1.gif">
 																			</td>
 																			<td style="padding-top:10 0 15 10px; line-height:130%;">
 																				배송은 상품에 따라 차이가 있으나 1~4일 이내에 제품을 받으실 수 있습니다.<br>
@@ -332,8 +349,8 @@
 																<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
 																	<tbody>
 																		<tr>
-																			<td style="padding-top:10px;" valign="top" width="137" background="">
-																				<img src=""><!-- ordericon1.gif -->  교환 및 반품
+																			<td style="padding-top:10px;" valign="top" width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif">
+																				<img src="${path}/resource/img/shop/s_ordericon2.gif">
 																			</td>
 																			<td style="padding-top:10 0 15 10px; line-height:130%;">
 																				고객의 변심에 의한 교환 및 반품인 경우, 배송비는 소비자 부담입니다.<br>
@@ -352,8 +369,8 @@
 																<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
 																	<tbody>
 																		<tr>
-																			<td style="padding-top:10px;" valign="top" width="137" background="">
-																				<img src=""><!-- ordericon1.gif -->  교환/반품 불가
+																			<td style="padding-top:10px;" valign="top" width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif">
+																				<img src="${path}/resource/img/shop/s_ordericon3.gif">
 																			</td>
 																			<td style="padding-top:10 0 15 10px; line-height:130%;">
 																				1. 고객님의 책임의 사유로 상품 등이 멸실 또는 훼손된 경우<br>
@@ -372,7 +389,7 @@
 																<table width="798" border="0" cellspacing="0" cellpadding="0" height="3">
 																	<tbody>
 																		<tr>
-																			<td width="137"><!-- background img 따올건지? --></td>
+																			<td width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif"></td>
 																			<td width="661"></td>
 																		</tr>
 																	</tbody>
@@ -384,7 +401,7 @@
 												</table>
 											</td>
 										</tr>
-										<tr><td><img src=""></td></tr><!-- img ordercap2.gif 따올건지? -->
+										<tr><td><img src="${path}/resource/img/shop/s_ordercap2.gif"></td></tr>
 									</tbody>
 								</table>
 							</td>
@@ -396,6 +413,7 @@
 		<tr><td height="10"></td></tr>
 	</tbody>
 </table>
+<div style="height:100px;"></div>
 <jsp:include page="../common/footer.jsp"/>
 </body>
 </html>

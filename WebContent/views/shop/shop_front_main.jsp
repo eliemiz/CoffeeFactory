@@ -9,7 +9,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${path}/resource/css/common/common.css">
 <link rel="stylesheet" href="${path}/resource/css/fonts.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
@@ -21,24 +20,62 @@
 </script>
 <style>
 table.tab{
-	margin-top:222px;
+	margin-inline-start: auto;
+	margin-inline-end: auto;
+	-webkit-border-horizontal-spacing: 0px;
+	-webkit-border-vertical-spacing: 0px;
+}
+td.att{
+	background-image: url(${path}/resource/img/shop/rou01_bot.gif);
+}
+td{
+	display: table-cell;
+	vertical-align: inherit;
+}
+table{
+	border-collapse: separate;
+	text-indent: initial;
+	white-space: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-size: medium;
+	font-style: normal;
+	color: -internal-quirk-inherit;
+	text-align: start;
+	border-spacing: 2px;
+	font-variant: normal;
+}
+.font-size1 {
+	font-family: 맑은 고딕, Malgun Gothic, 돋움, Dotum, 굴림;
+	font-size: 8pt;
+	font-style: normal;
+	color: #666666;
+}
+.font-size2 {
+	font-family: 맑은 고딕, Malgun Gothic, 돋움, Dotum, 굴림;
+	font-size: 9pt;
+	font-style: normal;
+	color: #666666;
 }
 </style>
 </head>
 <body>
 <jsp:include page="../common/header.jsp"/>
+<div style="height:230px;"></div>
 <table class="tab" width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
 	<tbody>
 		<tr>
-			<td><!-- blank img --></td>
+			<td><img src="${path}/resource/img/shop/blank.gif" width="120" height="1"/></td>
 			<td valign="top" width="100%">
 				<table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
 					<tbody>
 						<tr>
 							<!-- 상단 배너 -->
 							<td height="23">
-								&nbsp;<img src="${path}/resource/img/shop/dot_01.gif"/>
+								<span class="font-size1">
+								&nbsp;<img src="${path}/resource/img/shop/dot_01.gif" align="absmiddle"/>
 								현재 위치: <a href="">Home</a><!-- 메인으로 href --> > <a href="">싱글오리진 원두커피</a> <!-- href 싱글오리진페이지 -->
+								</span>
 							</td>
 						</tr>
 					</tbody>
@@ -51,9 +88,13 @@ table.tab{
 								<table width="100%" align="center" cellspacing="0" cellpadding="0" border="0">
 									<tbody>
 										<tr height="10"><td></td></tr>
-										<tr><td></td><td></td><td></td></tr><!-- 이미지 -->
 										<tr>
-											<td></td><!-- td에 이미지(left) -->
+											<td width="11" height="11"><img src="${path}/resource/img/shop/rou01_lefttop.gif"/></td>
+											<td class="att" background="${path}/resource/img/shop/rou01_top.gif"></td>
+											<td><img src="${path}/resource/img/shop/rou01_rightop.gif"></td>
+										</tr>
+										<tr>
+											<td width="11" background="${path}/resource/img/shop/rou01_left.gif"></td>
 											<td>
 												<table width="100%" cellspacing="0" cellpadding="0">
 													<tbody>
@@ -62,15 +103,18 @@ table.tab{
 																<tbody>
 																	<tr>
 																		<td nowrap>
-																			&nbsp;<!-- img -->
+																			&nbsp;
+																			<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle" vspace="2"/>
 																			<a href=""><font color="#000000" style="font-size:9pt">아프리카</font></a>
 																		</td>
 																		<td nowrap>
-																			&nbsp;<!-- img -->
+																			&nbsp;
+																			<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle" vspace="2"/>
 																			<a href=""><font color="#000000" style="font-size:9pt">중남미</font></a>
 																		</td>
 																		<td nowrap>
-																			&nbsp;<!-- img -->
+																			&nbsp;
+																			<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle" vspace="2"/>
 																			<a href="shop_front_category.jsp"><font color="#000000" style="font-size:9pt">아시아&태평양</font></a>
 																		</td>
 																	</tr>
@@ -80,12 +124,12 @@ table.tab{
 													</tbody>
 												</table>
 											</td>
-											<td width="11" background="">&nbsp;</td><!-- background img -->
+											<td width="11" background="${path}/resource/img/shop/rou01_righ.gif">&nbsp;</td><!-- background img -->
 										</tr>
 										<tr>
-											<td width="11" height="11"><!-- img --></td>
-											<td></td><!-- td 내에 img -->
-											<td width="11"><!-- img --></td>
+											<td width="11" height="11"><img src="${path}/resource/img/shop/rou01_leftbot.gif"/></td>
+											<td class="att" background="${path}/resource/img/shop/rou01_bot.gif"></td>
+											<td width="11"><img src="${path}/resource/img/shop/rou01_righbot.gif"/></td>
 										</tr>
 									</tbody>
 								</table>
@@ -95,23 +139,34 @@ table.tab{
 					</tbody>
 				</table>
 				<!-- 등록상품 개수 -->
-				<table>
+				<table bgcolor="#f2f2f2" width="100%" cellspacing="0" cellpadding="0" border="0">
 					<!-- Back: form/input(hidden)으로 설정 -->
 					<tbody>
-						<tr><td width="1"><!-- img --></td><td></td><td></td><td width="1"><!-- img --></td></tr>
-						<tr height="20" style="color:666666;">
-							<td> </td>
-							<td>&nbsp; •&nbsp;등록상품 : <font color="#333333"><b>12</b>개</font></td><!-- DB후 수정 -->
-							<td> </td>
+						<tr>
+							<td width="1"><img src="${path}/resource/img/shop/box1_left_top.gif"></td>
+							<td></td>
+							<td></td>
+							<td width="1"><img src="${path}/resource/img/shop/box1_right_top.gif"></td>
 						</tr>
-						<tr><td width="1"><!-- img --></td><td></td><td></td><td width="1"><!-- img --></td></tr>
+						<tr style="color:666666; height:20">
+							<td> </td>
+							<td>&nbsp;
+								<span class="font-size2">•&nbsp;등록상품 : <font color="#333333"><b>12</b>개</font></span></td><!-- DB후 수정 -->
+							<td align="right"><!-- 생략 --></td>
+						</tr>
+						<tr>
+							<td width="1"></td>
+							<td></td>
+							<td></td>
+							<td width="1"><!-- img --></td>
+							</tr>
 					</tbody>
 				</table>
 				<br style="line-height:10px;">
 				<!-- 가격순 설정 -->
 				<table></table>
 				<!-- 여백 -->
-				<table>
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
 					<tbody>
 						<tr><td height="10"></td></tr>
 						<tr><td height="1" width="100%" bgcolor="dee2e4"></td></tr>
@@ -128,7 +183,7 @@ table.tab{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/coffee_beans.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_ethiopia_yirgacheffe.jpg" width="100" height="100"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -157,7 +212,7 @@ table.tab{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/coffee_beans.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_kenya.jpg" width="100" height="100"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -186,7 +241,7 @@ table.tab{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/coffee_beans.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_colombia.jpg" width="100" height="100"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -215,7 +270,7 @@ table.tab{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/coffee_beans.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_guatemala.jpg" width="100" height="100"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -246,7 +301,7 @@ table.tab{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/coffee_beans.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_costa.jpg" width="100" height="100"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -275,7 +330,7 @@ table.tab{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/coffee_beans.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_papua.jpg" width="100" height="100"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -304,7 +359,7 @@ table.tab{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/coffee_beans.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_indonesia.jpg" width="100" height="100"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -333,7 +388,7 @@ table.tab{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/coffee_beans.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_onduras.jpg" width="100" height="100"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -364,7 +419,7 @@ table.tab{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/coffee_beans.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_tanzania.jpg" width="100" height="100"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -393,7 +448,7 @@ table.tab{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/coffee_beans.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_ethiopia_sidamo.jpg" width="100" height="100"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -422,7 +477,7 @@ table.tab{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/coffee_beans.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_yemen.jpg" width="100" height="100"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -451,7 +506,7 @@ table.tab{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/coffee_beans.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_brazil.jpg" width="100" height="100"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -478,10 +533,11 @@ table.tab{
 					</tbody>
 				</table>
 			</td>
-			<td><!-- blank img --></td>
+			<td><img src="${path}/resource/img/shop/blank.gif"/></td>
 		</tr>
 	</tbody>
 </table>
+<div style="height:100px;"></div>
 <jsp:include page="../common/footer.jsp"/>
 </body>
 </html>
