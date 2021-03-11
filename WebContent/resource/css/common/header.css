@@ -7,11 +7,11 @@
 	position: absolute;
 }
 
-ul {
+#header-wrap ul {
 	list-style: none;
 }
 
-li {
+#header-wrap li {
 	display: list-item;
 }
 
