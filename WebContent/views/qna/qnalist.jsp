@@ -68,15 +68,7 @@
 </style>
 </head>
 <body>
-<jsp:include page="../common/header.jsp"/>
-	 <div style="height:222px;"></div>
 
-	
-	 <table class="content-wrap">
-		<tr>
-			<td class="content-wrap-left">
-			</td>
-			<td class="content-wrap-center">
 			<div class="mall-tab" id="tab2">
 	<ul>
 		<li><button type="button" data-to-tab="tab1">상품정보</button></li>
@@ -168,15 +160,8 @@
 	       class="btn btn_thatch" onclick="location.href='qna_write.jsp'">
 	</div>
 	</td>
-			<td class="content-wrap-center-right">
-			</td>
-			<td class="content-wrap-right">
-				<jsp:include page="/views/common/sidebar.jsp"/>
-	</td>
-		</tr>
 	</table>
-	<br>
-	<jsp:include page="/views/common/footer.jsp"/>
+	
 </body>
 <script>
   const items = document.querySelectorAll('.title');
