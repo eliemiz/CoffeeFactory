@@ -112,8 +112,7 @@
 				<div align="right">
 					<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='review_write.jsp'">
 					<input type="button" value="삭제하기" class="small1">
-				</div><br>
-								커피 향이 너무좋네요
+				</div><br>커피 향이 너무좋네요
 								<div align="left">(답변없을때는 공백처리)</div>
 			</td></tr>
 			
@@ -133,8 +132,7 @@
 				<div align="right">
 					<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='review_write.jsp'">
 					<input type="button" value="삭제하기" class="small1">
-				</div><br>
-								좋아요
+				</div><br>좋아요
 								<div align="left">답변있으면 답변 출력</div>
 			</td></tr>
 				

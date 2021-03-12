@@ -15,8 +15,16 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-		
+		$("#finish").on("click",function(){
+		if ($("[name=rating]").val()!=1 && $("[name=rating]").val()!=2 && $("[name=rating]").val()!=3
+				&& $("[name=rating]").val()!=4 && $("[name=rating]").val()!=5){
+			alert("평점은 1~5까지만 줄 수 있습니다.");
+		}
+		 else if(confirm('후기를 저장합니다.')){
+			$("#review_write").submit();	
+		} 
 		});
+	});
 		
 </script>
 <style type="text/css">
@@ -39,7 +47,7 @@
 
 <br><br><br>
 
-       <form>
+       <form id="review_write">
        
       
            <table summary>
@@ -47,6 +55,7 @@
                    <col width="100">
                    <col width="100">
                    <col width="500">
+                   <col width="100">
                </colgroup>
                <tbody>                 
                    <tr>
@@ -65,7 +74,7 @@
                        </th>
                        <td>
                            <div class="td_left">
-                              <input id="bw_input_subject" class="MS_input_txt input_style2" type="text" name="subject" value="">
+                              <input id="bw_input_subject" class="MS_input_txt input_style2" type="text" name="rating" >
                            </div>
                        </td>
                    </tr>
@@ -75,12 +84,19 @@
                         placeholder="후기를 작성해주세요."></textarea>
                        <input type="hidden" name="mobile_content_type" value=""></div>
                        </td>
+                   </tr>
+                   <tr>
+                       <th><div>FILE</div></th>
+                       <td colspan="3">
+                           <div class="td_left"><input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"></div>
+                          
+                       </td>
                    </tr>                
               </tbody>
            </table>
         <br>
         <div style="text-align:right;">
-		<input type="button" value="완료" class="btn btn_thatch" onclick="location.href='review_shop.jsp'" >
+		<input type="button"  id="finish" value="완료" class="btn btn_thatch">
 		<input type="button" value="목록" class="btn btn_normal" onclick="location.href='review_shop.jsp'" >
 		</div>
  </form>

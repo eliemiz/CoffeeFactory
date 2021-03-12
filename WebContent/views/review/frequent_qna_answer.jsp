@@ -23,7 +23,7 @@
 
 <body>
 	<jsp:include page="../common/header.jsp"/>
-	 <div style="height:222px;"></div>
+	 <div style="height:220px;"></div>
 	 <table class="content-wrap">
 		<tr>
 			<td class="content-wrap-left">

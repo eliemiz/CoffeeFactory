@@ -39,7 +39,7 @@
 				<col width="*">
 			</colgroup>
 			<tr>
-				<td><a href=""><img src="" class="img"></a></td>
+				<td><a href=""><img src="${path}/resource/img/shop/shop_kenya.jpg" class="img"></a></td>
 				<td><div class="td_left">
 						상 품 명:<a href="">원두</a><br> 상품가격:<strong>20000원</strong>
 					</div></td>
