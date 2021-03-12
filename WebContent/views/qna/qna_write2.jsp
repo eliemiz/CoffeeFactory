@@ -16,8 +16,8 @@
 	
 	$(document).ready(function(){
 		$("#ins_btn").on("click",function(){
-			if(confirm("답변 등록하시겠습니까?")){
-				$("form1").attr("action","${path}/qna_list.jsp");
+			if(confirm("등록하시겠습니까?")){
+				$("form1").attr("action","${path}/notice_list.jsp");
 				$("form1").submit();
 			}
 		});
@@ -38,20 +38,11 @@
 .mall-tab#tab2 {margin:30px 0 5px;}
 .regbtn {width:70px; height:30px;}
 .canbtn {width:70px; height:30px;}
-
-
 </style>
 </head>
-
 <body>
-<jsp:include page="/views/common/header.jsp"/>
-	<div style="height:222px;"></div>
-	<table class="content-wrap">
-		<tr>
-			<td class="content-wrap-left">
-			</td>
-			<td class="content-wrap-center">
-		<div class="mall-tab" id="tab2">
+
+<div class="mall-tab" id="tab2">
 	<ul>
 		<li><button type="button" data-to-tab="tab1">상품정보</button></li>
 		<li><button type="button" data-to-tab="tab2">배송안내</button></li>
@@ -59,31 +50,33 @@
 		<li class="on"><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
 	</ul>	
 </div>
-<br>
-       <form class="form1" method="post">
-       
-      
+
+        <div class="content_wrap">
+       <form>
+       <tr>
+       <td height=20 align= center bgcolor=#ccc><font color=white> 글쓰기</font></td>
+       </tr>
+       <tr>
+       <td bgcolor=white>
            <table summary>
                <colgroup>
                    <col width="100">
-                   <col width="100">
-                   <col width="500">
+                   <col width="600">
                </colgroup>
                <tbody>                 
                    <tr>
                        <th>
-                           <div>제목</div>
+                           <div>TITLE</div>
                        </th>
-                       <td>
+                       <td colspan="3">
                            <div class="td_left">
                               <input id="bw_input_subject" class="MS_input_txt input_style2" type="text" name="subject" value="">
                            </div>
                        </td>
                    </tr>
                    <tr>
-                       <th><div>내용</div></th>
-                       <td colspan="3"><div class="td_left"><textarea id="MS_text_content" name="content" style="font-family: 굴림체; width: 100%; height: 380px;" 
-                        placeholder="상품에 대한 궁금한 내용을 적어주시면 담당자가 상담해 드립니다."></textarea>
+                       <th><div>CONTENT</div></th>
+                       <td colspan="3"><div class="td_left"><textarea id="MS_text_content" name="content" style="font-family: 굴림체; width: 100%; height: 380px;"  placeholder="상품에 대한 궁금한 내용을 적어주시면 담당자가 상담해 드립니다."></textarea>
                        <input type="hidden" name="mobile_content_type" value=""></div>
                        </td>
                    </tr>                
@@ -95,15 +88,7 @@
 		<input type="button" value="목록" class="btn btn_normal" onclick="location.href='qnalist.jsp'" >
 		</div>
  </form>
-</td>
-			<td class="content-wrap-center-right">
-			</td>
-			<td class="content-wrap-right">
-				<jsp:include page="/views/common/sidebar.jsp"/>
-			</td>
-		</tr>
-	</table>
-	<br><br>
-	<jsp:include page="/views/common/footer.jsp"/> 
+ </div>
+ 
 </body>
 </html>

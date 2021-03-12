@@ -43,7 +43,7 @@
    font-size: 19px;
    padding: 10px 0;
     cursor: pointer;
-    border: none;
+    border-bottom: 1px solid #e0e0e0;
     outline: none;
     background: none;
    
@@ -68,7 +68,16 @@
 </style>
 </head>
 <body>
-<div class="mall-tab" id="tab2">
+<jsp:include page="../common/header.jsp"/>
+	 <div style="height:222px;"></div>
+
+	
+	 <table class="content-wrap">
+		<tr>
+			<td class="content-wrap-left">
+			</td>
+			<td class="content-wrap-center">
+			<div class="mall-tab" id="tab2">
 	<ul>
 		<li><button type="button" data-to-tab="tab1">상품정보</button></li>
 		<li><button type="button" data-to-tab="tab2">배송안내</button></li>
@@ -76,7 +85,6 @@
 		<li class="on"><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
 	</ul>	
 </div>
-<div class="content_wrap">
 <br>
 	<table>
 			<colgroup>
@@ -109,6 +117,7 @@
 								<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='qna_reply.jsp'">
 								<input type="button" value="삭제하기" class="small1"></div><br>
 								해당 상품 원두 언제 입고되는지 궁금합니다.
+								<div align="left">(답변없을때는 공백처리)</div>
 					</td></tr>
 					<td><span id="qna-q=toggle">2</span></td>
 					<div class="qna-content">
@@ -123,7 +132,8 @@
 						<div align="right">
 								<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='qna_reply.jsp'">
 								<input type="button" value="삭제하기" class="small1"></div><br>
-								3~5일 내에 배송예정입니다.
+								급하게 원두가 필요해서 가능한 3일 내에 배송받고 싶습니다.
+								<div align="left">주문일 기준으로 2~3일 내에 전달 예정입니다.</div>
 							</td></tr>
 				<tr>
 					<td><span id="qna-q=toggle">3</span></td>
@@ -139,6 +149,7 @@
 								<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='qna_reply.jsp'">
 								<input type="button" value="삭제하기" class="small1"></div><br>
 								안녕하세요 재구매 의향 있는데 로스팅 정도 선택 가능한가요?
+								<div align="left">대량 구매 했을 경우 로스팅 정도 선택 가능합니다.</div>
 							</td>
 					</tr>
 			</tbody>
@@ -154,9 +165,18 @@
 		<div style="text-align:right;">
 	
 	<input align="center" type="button" value="질문하기" 
-	       class="btn btn_thatch" onclick="location.href='qna_write.jsp'"><br>
+	       class="btn btn_thatch" onclick="location.href='qna_write.jsp'">
 	</div>
-	</div>
+	</td>
+			<td class="content-wrap-center-right">
+			</td>
+			<td class="content-wrap-right">
+				<jsp:include page="/views/common/sidebar.jsp"/>
+	</td>
+		</tr>
+	</table>
+	<br>
+	<jsp:include page="/views/common/footer.jsp"/>
 </body>
 <script>
   const items = document.querySelectorAll('.title');

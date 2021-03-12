@@ -15,37 +15,74 @@
 	src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-
+		$("#rep_btn").on("click",function(){
+			if(confirm("답변 등록하시겠습니까?")){
+				$("form1").attr("action","${path}/qnalist.jsp");
+				$("form1").submit();
+			}
+		});
 	});
 </script>
+<style type="text/css">
+.product-tit {margin:20px 0 0;}
+
+.mall-tab {margin:50px 0 0;}
+.mall-tab ul {margin:0; padding:0; list-style:none; *zoom:1;}
+.mall-tab ul:after {content:""; display:block; visibility:hidden; clear:both;}
+.mall-tab ul li {float:left; width:25%; border-bottom:1px solid #ddd;}
+.mall-tab ul button {position:relative; display:block; width:100%; margin:0; padding:15px 0px; color:#666; font-family:"notokr"; font-size:16px; font-weight:500; letter-spacing:-0.06em; cursor:pointer; outline:0 none; border:0; background:#fff;}
+.mall-tab ul .on button {color:#674f3e;}
+.mall-tab ul .on button:after {content:""; display:block; position:absolute; left:0; bottom:-1px; width:100%; height:3px; background:#674f3e;}
+.mall-tab#tab1 {margin-bottom:3px;}
+.mall-tab#tab2 {margin:30px 0 5px;}
+
+
+</style>
 </head>
 
 <body>
-	<div style="text-align:center;">
-	<br><br><br>
-	<p class="title">Q&A</p>
-	</div>
-	<br><br><br>
-	<div id="content" class="content_wrap">
+<jsp:include page="../common/header.jsp"/>
+	 <div style="height:222px;"></div>
+
+	
+	 <table class="content-wrap">
+		<tr>
+			<td class="content-wrap-left">
+			</td>
+			<td class="content-wrap-center">
+			<div class="mall-tab" id="tab2">
+	<ul>
+		<li><button type="button" data-to-tab="tab1">상품정보</button></li>
+		<li><button type="button" data-to-tab="tab2">배송안내</button></li>
+		<li><button type="button" data-to-tab="tab3">고객 상품평</button></li>
+		<li class="on"><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
+	</ul>	
+</div>
+	<form class="form1" method="post">
                         <table class="prd-tinfo">
                          <colgroup>
 					         <col width="120">
 					         <col width="*">
 					     </colgroup>
                             <tr>
-                            <td><a href=""><img src="" class="img"></a></td>
+                            <td><img src="" class="img"></a></td>
                             <td><div class="td_left">상 품 명:<a href="">수저받침대</a><br>
                             상품가격:<strong>14,000원</strong></div></td>
                             </tr>
                         </table>
                         <div class="bbs-table-view">
                             <table>
-                                <thead>
-                                    <tr>
-                                        <th><div class="td_left">로스팅 정도 선택 가능한가요?</div></th>
-                                    </tr>
-                                </thead>
+                             
                                 <tbody>
+                                <tr>
+                                        <td class="td_left">
+                                            <div class="cont-sub-des">
+                                                <div>
+                                                    <span><em>제목</em>로스팅 정도 선택 가능한가요?</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td class="td_left">
                                             <div class="cont-sub-des">
@@ -66,30 +103,43 @@
                                     </tr>
                                     <tr>
                                         <td class="td_left">
-                                            <div class="data-bd-cont">&nbsp;안녕하세요 재구매 의향있는데<br>
-																	&nbsp;로스팅 정도 선택 가능한가요?
+                                            <div class="cont-sub-des">
+                                                <div>
+                                                     <span><em>내용</em>안녕하세요 재구매 의향 있는데 로스팅 정도 선택 가능한가요?</span>                                                                                                          
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
                                      <tr>
                                         <td class="td_left">
-                                            <textarea></textarea>
+                                        	<div class="data-bd-cont">답변 작성<br>
+                                            <textarea></textarea></div>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
+                            </form>
 								<div id="comment_list_0">
 								</div>
 							<br>
-							   
-                          
+  
                         </div>
                           <br>
 				     	<div style="text-align:right;">
-				     	<input type="button" value="답변하기" class="btn btn_normal" onclick="location.href='qnalist.jsp'">
+				     	<input type="button" value="답변하기" id="rep_btn" class="btn btn_normal" onclick="location.href='qnalist.jsp'">
 						<input type="button" value="목록보기" class="btn btn_normal" onclick="location.href='qnalist.jsp'">
                     </div><!-- .page-body -->
                 </div><!-- #bbsData -->
 	
+	</td>
+			<td class="content-wrap-center-right">
+			</td>
+			<td class="content-wrap-right">
+				<jsp:include page="/views/common/sidebar.jsp"/>
+	</td>
+		</tr>
+	</table>
+	<br><br>
+	<jsp:include page="/views/common/footer.jsp"/>
 </body>
 </html>
