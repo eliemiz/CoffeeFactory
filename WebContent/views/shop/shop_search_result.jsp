@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${path}/resource/css/shop/search.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
@@ -17,45 +18,19 @@
 	});
 		
 </script>
-<style>
-td, p {
-    font-family: 맑은 고딕,Malgun Gothic,돋움,Dotum,굴림;
-    font-size: 9pt;
-    font-style: normal;
-    line-height: 15pt;
-}	
-
-table[Attributes Style] {
-    width: 100%;
-    -webkit-border-horizontal-spacing: 0px;
-    -webkit-border-vertical-spacing: 0px;
-    border-top-width: 0px;
-    border-right-width: 0px;
-    border-bottom-width: 0px;
-    border-left-width: 0px;
-}
-table {
-    display: table;
-    border-collapse: separate;
-    box-sizing: border-box;
-    white-space: normal;
-    line-height: normal;
-    font-weight: normal;
-    font-size: medium;
-    font-style: normal;
-    color: -internal-quirk-inherit;
-    text-align: start;
-    border-color: grey;
-    font-variant: normal;
-}
-
-</style>
 </head>
 <body>
+<jsp:include page="/views/common/header.jsp"/>
+	 <div style="height:222px;"></div>
+	 <table class="content-wrap">
+		<tr>
+			<td class="content-wrap-left">
+			</td>
+			<td class="content-wrap-center">
 	<table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
 		<tbody>
 			<tr>
-				<td height="23">
+				<td height="30">
 					&nbsp;<img src="${path}/resource/img/shop/dot_01.gif"/>
 					현재위치 : <a href="">Home</a>> <a href="">검색결과</a>
 				</td>
@@ -63,8 +38,9 @@ table {
 		</tbody>
 	</table>
 	<table width="100%" cellspacing="0" cellpadding="0">
-		<tbody><tr height="1" bgcolor="#DEE2E4"><td></td></tr>
-			<tr height="5"><td></td></tr>
+		<tbody>
+			<tr height="1" bgcolor="#DEE2E4"><td></td></tr>
+		    <tr height="5"><td></td></tr>
 		</tbody>
 	</table>
 	<table width="100%" cellspacing="1" cellpadding="3">
@@ -80,25 +56,12 @@ table {
 	<table width="100%" cellspacing="0" cellpadding="0">
 		<tbody>
 			<tr height="5"><td></td></tr>
-					<tr height="1" bgcolor="#DEE2E4"><td></td></tr>
+			<tr height="1" bgcolor="#DEE2E4"><td></td></tr>
 		</tbody>
 	</table>							
 			<br style="line-height:10px;">							
 	<table bgcolor="#f2f2f2" width="100%" cellspacing="0" cellpadding="0">
-		<form action="search.php" name="result_form"></form>
-				<!-- 
-				<input type="hidden" name="query" value="result">
-				<input type="hidden" name="where" value="all">
-				<input type="hidden" name="keyword" value="케냐">
-				<input type="hidden" name="p" value="1">
-				<input type="hidden" name="viewType" value="1">
-				<input type="hidden" name="price1" value="">
-				<input type="hidden" name="price2" value="">
-				<input type="hidden" name="cat_num1" value="">
-				<input type="hidden" name="cat_num2" value="">
-				<input type="hidden" name="cat_num3" value="">
-				<input type="hidden" name="xsort" value="">
-				-->
+		<form action="" name=""></form>
 				<tr height="20" style="color:666666;">
 				<td> </td>
 				<td>
@@ -122,35 +85,6 @@ table {
 			</tr>
 	</table>
 			<br style="line-height:10px;">
-	<!--
-	<table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
-		  
-		<tbody><tr>
-			<td>
-		
-	<table cellpadding="0" cellspacing="0" border="0" align="left">
-		<tbody>
-			<tr>
-				<td style="padding-left:9px;"></td>
-				<td><img src="" border="0"></td>
-				<td style="padding-left:5px;"></td>
-				<td><a href="#." onclick="" onfocus="blur()"><img src="" border="0"></a></td>
-				<td style="padding-left:5px;"></td>
-				<td style="padding-left:5px;"></td>
-				<td><a href="#." onclick="" onfocus="blur()"><img src="" border="0"></a></td>
-				<td style="padding-left:15px;"></td>
-				<td><a href="#." onclick=""><img src="" align="absmiddle" border="0"></a></td>
-			</tr>
-		</tbody>
-	</table>
-	
-		</tbody>
-	</table>
-	-->	
-				</td>
-			</tr>
-		</tbody>
-	</table>
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tbody>
 			<tr><td height="10"></td></tr>
@@ -162,7 +96,7 @@ table {
 		<tbody>
 			<tr>					
 				<td valign="top">
-	<table style="table-layout:fixed" align="center" width="187" cellspacing="0" cellpadding="0" border="0" id="" >
+	<table style="table-layout:fixed" width="187" cellspacing="0" cellpadding="0" border="0" id="" >
 		<tbody><tr><td height="12"></td></tr>					
 			<tr align="center">
 				<td height="187">
@@ -176,7 +110,6 @@ table {
 			</tr>
 			<tr align="center">
 				<td>
-					<img src="" border="0" align="absmiddle" onclick="" style="cursor:pointer;">
 					<span class="money_color2"><b><b>12,000</b>원</b></span>
 				</td>
 			</tr>
@@ -203,12 +136,15 @@ table {
 			</tr>
 		</tbody>
 	</table>
-			<p>
-			<br>
-			</p></td>
-			</tr>
-		</tbody>
+			</td>
+			<td class="content-wrap-center-right">
+			</td>
+			<td class="content-wrap-right">
+				<jsp:include page="/views/common/sidebar.jsp"/>
+			</td>			
+		</tr>
 	</table>
-		</td>
+<div style="height:100px;"></div>
+<jsp:include page="/views/common/footer.jsp"/>
 </body>
 </html>

@@ -38,9 +38,13 @@
 				</td>
 			</tr>
 		</tbody>
-	</table>
-		<br style="line-height:10px;">
-	
+	<table width="100%" cellspacing="0" cellpadding="0">
+		<tbody>
+			<tr height="1" bgcolor="#DEE2E4"><td></td></tr>
+		    <tr height="5"><td></td></tr>
+		</tbody>
+	</table>	
+		<br style="line-height:10px;">	
 	<table bgcolor="#f2f2f2" width="100%" cellspacing="0" cellpadding="0">
 		<tr height="20" style="color:666666;">
 	    	<td> </td>
@@ -73,7 +77,7 @@
 			</tr>
 			<tr>
 				<td colspan="2" valign="top" bgcolor="CEDDEA" style="padding:3">
-	<table width="100%" bgcolor="FFFFFF">
+	<table border="0" cellspacing="5" cellpadding="0" width="100%" bgcolor="FFFFFF">
 		<tbody>
 				<tr>
 				<td valign="bottom"><img src="${path}/resource/img/shop/str_01.gif" border="0"></td>
@@ -106,14 +110,35 @@
 				</tr>
 		</tbody>
 	</table>
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tbody>
+				<tr><td height="10"></td></tr>
+				<tr><td height="1" width="100%" bgcolor="dee2e4"></td></tr>
+				<tr><td height="10"></td></tr>
+		</tbody>
+	</table>
+	<table width="100%">
+		<tbody>
+			<tr>
+				<td></td>
+				<td align="center"><b><script language="javascript">getPageLink1(10,1,1,'');</script>
+				<img src="${path}/resource/img/shop/prev1.gif" border="0" align="ABSMIDDLE">
+				<img src="${path}/resource/img/shop/cutln.gif" border="0" align="ABSMIDDLE">
+				<font color="RED">1</font><img src="${path}/resource/img/shop/cutln.gif" border="0" align="ABSMIDDLE">
+				<img src="${path}/resource/img/shop/next1.gif" border="0" align="ABSMIDDLE"></b></td>
+				<td align="right"></td>
+			</tr>
+		</tbody>
+	</table>
+			</td>
 			<td class="content-wrap-center-right">
 			</td>
 			<td class="content-wrap-right">
 				<jsp:include page="/views/common/sidebar.jsp"/>
 			</td>
-</tr>
-</table>
-<div style="height:100px;"></div>
-<jsp:include page="/views/common/footer.jsp"/>
+		</tr>
+	</table>
+	<div style="height:100px;"></div>
+	<jsp:include page="/views/common/footer.jsp"/>
 </body>
 </html>
