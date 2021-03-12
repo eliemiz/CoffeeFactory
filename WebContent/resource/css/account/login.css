@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+#login-form-wrap {
+	background-image: url(${img_path}/login1_bg.gif);
+	width: 564px;
+	height: 253px;
+	vertical-align: top;
+	text-align: center;
+	margin: auto;
+}
+
+#login-form-wrap #login-form-inner {
+	padding: 42px 0px 0px 34px;
+}
+
+#login-form-wrap #login-form-inner input {
+	outline: none;
+	padding: 1px 2px;
+}
+
+#login-form-wrap #login-form-inner table {
+	border: 0px;
+	border-spacing: 0px;
+}
+
+#login-form-wrap #login-form-inner table td {
+	padding: 0px;
+}
+
+#login-form-wrap #login-form-inner .login-input {
+	width: 160px;
+	height: 23px;
+	border: 1px solid #e0e0e0;
+}
