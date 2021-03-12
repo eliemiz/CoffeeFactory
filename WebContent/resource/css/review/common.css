@@ -6,13 +6,7 @@ html, body, h1, h2, h3, h4, h5, h6, input, textarea, select, button, div,
 	padding: 0px;
 }
 
-.content_wrap {
-	width: 1200px;
-	margin: auto;
-	padding: 0px 40px 0px 20px;
-	color: #464646;
-	box-sizing: border-box;
-}
+
 
 a {
 	text-decoration: none;
@@ -145,8 +139,3 @@ td.td_right {
 	text-align: right;
 }
 
-@media screen and (max-width: 1217px) {
-	.content_wrap {
-		width: 100%;
-	}
-}

@@ -24,10 +24,14 @@
 <body>
 	<jsp:include page="../common/header.jsp"/>
 	 <div style="height:222px;"></div>
-	<div style="text-align: left; margin-left:220px;">
+	 <table class="content-wrap">
+		<tr>
+			<td class="content-wrap-left">
+			</td>
+			<td class="content-wrap-center">
+	<div style="text-align: left;">
 		<img src="${path}/resource/img/review/frequent.png" />
 	</div>
-	<div id="content" class="content_wrap">
 	
 		<div class="bbs-table-view">
 			<table>
@@ -56,8 +60,16 @@
 				onclick="location.href='frequent_qna.jsp'">
 		</div>
 		<!-- .page-body -->
-	</div>
 	<!-- #bbsData -->
-
+</td>
+			<td class="content-wrap-center-right">
+			</td>
+			<td class="content-wrap-right">
+				<jsp:include page="/views/common/sidebar.jsp"/>
+			</td>
+		</tr>
+	</table>
+	
+	<jsp:include page="/views/common/footer.jsp"/>
 </body>
 </html>

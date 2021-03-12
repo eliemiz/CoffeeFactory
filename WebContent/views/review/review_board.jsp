@@ -21,7 +21,14 @@
 <body>
 <jsp:include page="../common/header.jsp"/>
 	 <div style="height:222px;"></div>
-	<div style="text-align: left; margin-left:235px;">
+	 <table class="content-wrap">
+		<tr>
+			<td class="content-wrap-left">
+			</td>
+			<td class="content-wrap-center">
+	 
+	 
+	<div style="text-align: left; ">
 		<img src="${path}/resource/img/review/review.png" />
 	</div>
 <div>
@@ -75,5 +82,15 @@
 	</table>
 	</form>
 	</div>
+	</td>
+			<td class="content-wrap-center-right">
+			</td>
+			<td class="content-wrap-right">
+				<jsp:include page="/views/common/sidebar.jsp"/>
+			</td>
+		</tr>
+	</table>
+	
+	<jsp:include page="/views/common/footer.jsp"/>
 </body>
 </html>
