@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+element.style {
+    padding: 3;
+}
+td, p {
+    font-family: 맑은 고딕,Malgun Gothic,돋움,Dotum,굴림;
+    font-size: 9pt;
+    font-style: normal;
+    line-height: 15pt;
+}	
+
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    white-space: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-size: medium;
+    font-style: normal;
+    color: -internal-quirk-inherit;
+    text-align: start;
+    border-spacing: 2px;
+    border-color: grey;
+    font-variant: normal;
+}
+.font-size1 { font-family:맑은 고딕,Malgun Gothic,돋움,Dotum,굴림; font-size: 8pt; font-style: normal; color:#666666; }
+.font-size2 { font-family:맑은 고딕,Malgun Gothic,돋움,Dotum,굴림; font-size: 9pt; font-style: normal; color:#666666; }
+.product_name_color { color:#666666; font-weight:normal; }
+.money_color { color:#666666; font-weight:bold; font-family:맑은 고딕,Malgun Gothic,돋움,Dotum,굴림; font-size:11pt; }
+.money_color2 { color:#666666; font-weight:normal; font-family:맑은 고딕,Malgun Gothic,돋움,Dotum,굴림; font-size:9pt; }
+.product_img_border {border:1 solid #cccccc;}
+.category { color:#333333; font-weight:normal; }
+.sub_category { color:#333333; font-weight:normal; }
