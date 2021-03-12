@@ -9,9 +9,9 @@ form1 {
 /* list */
 th.th_center {
 	text-align:center;
-	line-height: 25px;
+	line-height: 30px;
 	font-family: Malgun Gothic;
-	font-size: 12px;
+	font-size: 14px;
 	color: #666666;
 	font-weight: bold;
 	background: #d9e7eb;
@@ -23,7 +23,7 @@ td.td_center1 {
 	text-align:center;
 	line-height: 25px;
 	font-family: Malgun Gothic;
-	font-size: 12px;
+	font-size: 14px;
 	color: #45545D;
 	border-bottom: 1px dashed #45545D;
 }
@@ -31,7 +31,7 @@ td.td_center2 {
 	text-align:center;
 	line-height: 25px;
 	font-family: Malgun Gothic;
-	font-size: 12px;
+	font-size: 14px;
 	color: #000000;
 	border-bottom: 1px dashed #45545D;
 }
@@ -39,7 +39,7 @@ td.td_center3 {
 	text-align:center;
 	line-height: 25px;
 	font-family: Malgun Gothic;
-	font-size: 12px;
+	font-size: 14px;
 	color: #000000;
 	border-bottom: 1px solid #45545D;
 }
@@ -47,7 +47,7 @@ td.td_left1 {
 	text-align:left;
 	line-height: 25px;
 	font-family: Malgun Gothic;
-	font-size: 9px;
+	font-size: 12px;
 	color: #666666;
 	font-weight: bold;
 	border-bottom: 1px dashed #45545D;
@@ -57,7 +57,7 @@ td.td_left2 {
 	text-align:left;
 	line-height: 25px;
 	font-family: Gulim;
-	font-size: 12px;
+	font-size: 14px;
 	color: #A03F00;
 	font-weight: bold;
 	border-bottom: 1px dashed #45545D;
@@ -67,7 +67,7 @@ td.td_left3 {
 	text-align:left;
 	line-height: 25px;
 	font-family: Malgun Gothic;
-	font-size: 9px;
+	font-size: 12px;
 	color: #666666;
 	font-weight: bold;
 	border-bottom: 1px solid #45545D;
@@ -76,7 +76,7 @@ td.td_left3 {
 td.td_left4{
 	text-align:left;
 	font-family: Malgun Gothic;
-	font-size: 12px;
+	font-size: 14px;
 	color: #666666;
 	font-weight: bold;
 }
@@ -93,7 +93,7 @@ td.td_right{
 td.td_left5{
 	text-align: left;
 	font-family: Malgun Gothic;
-	font-size: 12px;
+	font-size: 14px;
 	color: #003F88;
 	font-weight: bold;
 	padding-left: 10px;
@@ -104,7 +104,7 @@ td.td_left5{
 td.td_left6{
 	text-align: left;
 	font-family: Malgun Gothic;
-	font-size: 13px;
+	font-size: 15px;
 	color: #000000;
 	padding-left: 10px;
 }
@@ -120,7 +120,7 @@ td.td_right3{
 	padding-right: 10px;
 	line-height:30px;
 	font-family: Malgun Gothic;
-	font-size: 12px;
+	font-size: 14px;
 	color: #000000;
 	border-bottom: solid 1px #d4d4d4; 
 }
@@ -128,7 +128,7 @@ td.td_right3{
 th.th_center2{
 	text-align: center;
 	font-family: Malgun Gothic;
-	font-size: 12px;
+	font-size: 14px;
 	color: #000000;
 	font-weight: bold;
 	padding-left: 10px;
@@ -145,7 +145,7 @@ td.td_right4{
 td.td_left7{
 	text-align: left;
 	font-family: Malgun Gothic;
-	font-size: 12px;
+	font-size: 14px;
 	color: #000000;
 	font-weight: bold;
 	padding-left: 10px;
@@ -156,7 +156,7 @@ td.td_left7{
 /* 이미지 */
 .title{
 	width: 800px;
-	height: 45px;
+	height: 50px;
 	
 }
 .admin{
@@ -191,7 +191,7 @@ td.td_left7{
 	text-align:center;
 	border: solid 1px;
 	font-family: Malgun Gothic;
-	font-size: 12px;
+	font-size: 13px;
 	color: #666666;
 	font-weight: bold;
 }
