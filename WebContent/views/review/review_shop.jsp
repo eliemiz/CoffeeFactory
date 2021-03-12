@@ -66,14 +66,7 @@
 </style>
 </head>
 <body>
-	<jsp:include page="../common/header.jsp"/>
-	 <div style="height:222px;"></div>
-	 <table class="content-wrap">
-		<tr>
-			<td class="content-wrap-left">
-			</td>
-			<td class="content-wrap-center">
-				
+	
 			
 	
 	
@@ -133,7 +126,7 @@
 					<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='review_reply.jsp'">
 					<input type="button" value="삭제하기" class="small1">
 				</div><br>좋아요
-								<div align="left">답변있으면 답변 출력</div>
+								<div align="left">답변: 답변있으면 답변 출력</div>
 			</td></tr>
 				
 				
@@ -152,16 +145,7 @@
 	<input align="center" type="button" value="후기작성" 
 	       class="btn btn_thatch" onclick="location.href='review_write.jsp'"><br>
 	</div>
-	</td>
-			<td class="content-wrap-center-right">
-			</td>
-			<td class="content-wrap-right">
-				<jsp:include page="/views/common/sidebar.jsp"/>
-	</td>
-		</tr>
-	</table>
-	
-	<jsp:include page="/views/common/footer.jsp"/>
+
 	
 </body>
 <script>
