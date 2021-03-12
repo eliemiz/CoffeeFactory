@@ -27,6 +27,13 @@
 <jsp:include page="../common/header.jsp" />
 <div style="height:222px;"></div>
 <br><br>
+ <table class="content-wrap">
+		<tr>
+			<td class="content-wrap-left">
+			</td>
+			<td class="content-wrap-center">
+	<div style="text-align: left;">
+	
 <img src="${path}/resource/img/notice/not_title.png" class="title"/>
 
 <div>
@@ -57,9 +64,17 @@
 	</table>
 	</form>
 </div>
-<br><br>
+
+</td>
+			<td class="content-wrap-center-right">
+			</td>
+			<td class="content-wrap-right">
+				<jsp:include page="/views/common/sidebar.jsp"/>
+			</td>
+		</tr>
+	</table>
+	<br><br>
 <jsp:include page="../common/footer.jsp" />
-<!--  
-<jsp:include page="../common/footer.jsp" /> -->
+
 </body>
 </html>
