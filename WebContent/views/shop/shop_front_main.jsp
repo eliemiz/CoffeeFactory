@@ -10,6 +10,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="${path}/resource/css/fonts.css">
+<link rel="stylesheet" href="${path}/resource/css/shop/search.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
@@ -28,45 +29,16 @@ table.tab{
 td.att{
 	background-image: url(${path}/resource/img/shop/rou01_bot.gif);
 }
-td{
-	display: table-cell;
-	vertical-align: inherit;
-}
-table{
-	border-collapse: separate;
-	text-indent: initial;
-	white-space: normal;
-	line-height: normal;
-	font-weight: normal;
-	font-size: medium;
-	font-style: normal;
-	color: -internal-quirk-inherit;
-	text-align: start;
-	border-spacing: 2px;
-	font-variant: normal;
-}
-.font-size1 {
-	font-family: 맑은 고딕, Malgun Gothic, 돋움, Dotum, 굴림;
-	font-size: 8pt;
-	font-style: normal;
-	color: #666666;
-}
-.font-size2 {
-	font-family: 맑은 고딕, Malgun Gothic, 돋움, Dotum, 굴림;
-	font-size: 9pt;
-	font-style: normal;
-	color: #666666;
-}
 </style>
 </head>
 <body>
-<jsp:include page="../common/header.jsp"/>
+<jsp:include page="/views/common/header.jsp"/>
 <div style="height:230px;"></div>
-<table class="tab" width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
+<table class="content-wrap" width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
 	<tbody>
 		<tr>
-			<td><img src="${path}/resource/img/shop/blank.gif" width="120" height="1"/></td>
-			<td valign="top" width="100%">
+			<td class="content-wrap-left"><img src="${path}/resource/img/shop/blank.gif" width="120" height="1"/></td>
+			<td class="content-wrap-center" valign="top" width="100%">
 				<table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
 					<tbody>
 						<tr>
@@ -533,7 +505,10 @@ table{
 					</tbody>
 				</table>
 			</td>
-			<td><img src="${path}/resource/img/shop/blank.gif"/></td>
+			<td class="content-wrap-center-right"><img src="${path}/resource/img/shop/blank.gif" width="30" height="1"/></td>
+			<td class="content-wrap-right" valign="top">
+				<jsp:include page="../common/sidebar.jsp"/>
+			</td>
 		</tr>
 	</tbody>
 </table>

@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${path}/resource/css/shop/search.css">
 <link rel="stylesheet" href="${path}/resource/css/fonts.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
@@ -45,28 +46,22 @@
 	-webkit-border-horizontal-spacing: 0px;
 	-webkit-border-vertical-spacing: 0px;
 }
-.font-size1 {
-	font-family: 맑은 고딕, Malgun Gothic, 돋움, Dotum, 굴림;
-	font-size: 8pt;
-	font-style: normal;
-	color: #666666;
-}
-.font-size2 {
-	font-family: 맑은 고딕, Malgun Gothic, 돋움, Dotum, 굴림;
-	font-size: 9pt;
-	font-style: normal;
-	color: #666666;
+iframe {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 </style>
 </head>
 <body>
 <jsp:include page="../common/header.jsp"/>
 <div style="height:230px;"></div>
-<table class="tabstart" width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
+<table class="content-wrap">
 	<tbody>
 		<tr>
-			<td><img src="${path}/resource/img/shop/blank.gif" width="120" height="1"></td>
-			<td valign="top" width="100%">
+			<td class="content-wrap-left"><img src="${path}/resource/img/shop/blank.gif" width="120" height="1"></td>
+			<td class="content-wrap-center">
 				<table width="100%" align="center" cellspacing="0" cellpadding="0" class="back_table">
 					<tbody>
 						<tr>
@@ -241,176 +236,239 @@
 						</tr>
 					</tbody>				
 				</table>
-			</td>
-		</tr>
-	</tbody>
-</table>
-<!-- 상품상세 -->
-<div class="mall-tab" id="tab1">
-	<ul>
-		<li class="on"><button type="button" data-to-tab="tab1">상품정보</button></li>
-		<li><button type="button" data-to-tab="tab2">배송안내</button></li>
-		<li><button type="button" data-to-tab="tab3">고객 상품평</button></li>
-		<li><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
-	</ul>
-</div>
-<table align="center" width="100%" cellspacing="0" background="${path}/resource/img/shop/tt_detail_bg.gif">
-	<tbody>
-		<tr><td><img src="${path}/resource/img/shop/tt_detail.gif" border="0"/></td></tr><!-- 원래는 이미지임! -->
-	</tbody>
-</table>
-<table width="98%" align="center" cellspacing="0" cellpadding="0">
-	<tbody>
-		<tr><td align="center"></td></tr>
-		<tr>
-			<td style="line-height:150%; padding-left:20px">
-				<p align="center" style="text-align:center;">
-					<!-- 빈이미지(이벤트및공지) -->
-					<img src="${path}/resource/img/shop/detail_papua.png">
-					<!-- 상품상세설명 이미지 -->
-					<img src="${path}/resource/img/shop/detail_common1.jpg">
-					<img src="${path}/resource/img/shop/detail_common2.jpg">
-					<img src="">
-					<img src="">
-				</p>
-				<p></p>
-			</td>
-		</tr>
-	</tbody>
-</table>
-<div class="mall-tab" id="tab2">
-	<ul>
-		<li><button type="button" data-to-tab="tab1">상품정보</button></li>
-		<li class="on"><button type="button" data-to-tab="tab2">배송안내</button></li>
-		<li><button type="button" data-to-tab="tab3">고객 상품평</button></li>
-		<li><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
-	</ul>	
-</div>
-<!-- 배송안내 -->
-<table class="tab" align="center" cellspacing="0" cellpadding="0">
-	<tbody>
-		<tr>
-			<td>
-				<table border="0" cellsapcing="0" cellpadding="0">
+				<!-- 상품상세 -->
+				<div class="mall-tab" id="tab1">
+					<ul>
+						<li class="on"><button type="button" data-to-tab="tab1">상품정보</button></li>
+						<li><button type="button" data-to-tab="tab2">배송안내</button></li>
+						<li><button type="button" data-to-tab="tab3">고객 상품평</button></li>
+						<li><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
+					</ul>
+				</div>
+				<table align="center" width="100%" cellspacing="0" background="${path}/resource/img/shop/tt_detail_bg.gif">
+					<tbody>
+						<tr><td><img src="${path}/resource/img/shop/tt_detail.gif" border="0"/></td></tr><!-- 원래는 이미지임! -->
+					</tbody>
+				</table>
+				<table width="98%" align="center" cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr><td align="center"></td></tr>
+						<tr>
+							<td style="line-height:150%; padding-left:20px">
+								<p align="center" style="text-align:center;">
+									<!-- 빈이미지(이벤트및공지) -->
+									<img src="${path}/resource/img/shop/detail_papua.png"><br>
+									<!-- 상품상세설명 이미지 -->
+									<img src="${path}/resource/img/shop/detail_common1.jpg"><br>
+									<img src="${path}/resource/img/shop/detail_common2.jpg"><br>
+									<img src="">
+									<img src="">
+								</p>
+								<p></p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="mall-tab" id="tab2">
+					<ul>
+						<li><button type="button" data-to-tab="tab1">상품정보</button></li>
+						<li class="on"><button type="button" data-to-tab="tab2">배송안내</button></li>
+						<li><button type="button" data-to-tab="tab3">고객 상품평</button></li>
+						<li><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
+					</ul>	
+				</div>
+				<!-- 배송안내 -->
+				<table class="tab" align="center" cellspacing="0" cellpadding="0">
 					<tbody>
 						<tr>
 							<td>
-								<table border="0" cellspacing="0" cellpadding="0" bgcolor="#f9f9f9">
+								<table border="0" cellsapcing="0" cellpadding="0">
 									<tbody>
 										<tr>
-											<td><img src="${path}/resource/img/shop/s_ordercap1.gif"></td>
-										</tr>
-										<tr>
-											<td>											
-												<table width="800" border="0" cellspacing="0" cellpadding="0">
+											<td>
+												<table border="0" cellspacing="0" cellpadding="0" bgcolor="#f9f9f9">
 													<tbody>
 														<tr>
-															<td width="1" bgcolor="dfdfdf"></td>
-															<td width="798">
-																<table width="798" border="0" cellspacing="0" cellpadding="0" height="5">
-																	<tbody>
-																		<tr>
-																			<td width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif"></td>
-																			<td width="661"></td>
-																		</tr>
-																	</tbody>
-																</table>
-															</td>
-															<td width="1" bgcolor="dfdfdf"></td>
+															<td><img src="${path}/resource/img/shop/s_ordercap1.gif"></td>
 														</tr>
 														<tr>
-															<td width="1" bgcolor="dfdfdf"></td>
-															<td width="798">
-																<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
+															<td>											
+																<table width="800" border="0" cellspacing="0" cellpadding="0">
 																	<tbody>
 																		<tr>
-																			<td style="padding-top:10px;" valign="top" width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif">
-																				<img src="${path}/resource/img/shop/s_ordericon1.gif">
+																			<td width="1" bgcolor="dfdfdf"></td>
+																			<td width="798">
+																				<table width="798" border="0" cellspacing="0" cellpadding="0" height="5">
+																					<tbody>
+																						<tr>
+																							<td width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif"></td>
+																							<td width="661"></td>
+																						</tr>
+																					</tbody>
+																				</table>
 																			</td>
-																			<td style="padding-top:10 0 15 10px; line-height:130%;">
-																				배송은 상품에 따라 차이가 있으나 1~4일 이내에 제품을 받으실 수 있습니다.<br>
-																				평일 오전 10시까지 주문 입금 확인된 원두 및 부자재에 한해 당일 발송됩니다.<br>
-																				<!-- 3만원 미만: 배송비 유료 (2,500원), 무료배송 표기상품은 금액에 상관없이 무료로 배송됩니다.<br>
-																				3만원 이상: 배송비 무료<br> -->
-																				* 주문 시 입력한 입금자명과 실제 입금자의 성명이 반드시 일치하여야 하며, <br>
-																					주문 후 3일 이내로 입금을 하셔야 합니다.<br>
-																				* 주문 후 3일 이내에 입금되지 않는 주문에 대해서는 자동 취소됩니다.<br>
-																				* 도서 산간 지역: 제주특별자치도 3,000원 추가, 울릉도 3,000원 추가 (기타지역 전화문의)<br>
+																			<td width="1" bgcolor="dfdfdf"></td>
+																		</tr>
+																		<tr>
+																			<td width="1" bgcolor="dfdfdf"></td>
+																			<td width="798">
+																				<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
+																					<tbody>
+																						<tr>
+																							<td style="padding-top:10px;" valign="top" width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif">
+																								<img src="${path}/resource/img/shop/s_ordericon1.gif">
+																							</td>
+																							<td style="padding-top:10 0 15 10px; line-height:130%;">
+																								배송은 상품에 따라 차이가 있으나 1~4일 이내에 제품을 받으실 수 있습니다.<br>
+																								평일 오전 10시까지 주문 입금 확인된 원두 및 부자재에 한해 당일 발송됩니다.<br>
+																								<!-- 3만원 미만: 배송비 유료 (2,500원), 무료배송 표기상품은 금액에 상관없이 무료로 배송됩니다.<br>
+																								3만원 이상: 배송비 무료<br> -->
+																								* 주문 시 입력한 입금자명과 실제 입금자의 성명이 반드시 일치하여야 하며, <br>
+																									주문 후 3일 이내로 입금을 하셔야 합니다.<br>
+																								* 주문 후 3일 이내에 입금되지 않는 주문에 대해서는 자동 취소됩니다.<br>
+																								* 도서 산간 지역: 제주특별자치도 3,000원 추가, 울릉도 3,000원 추가 (기타지역 전화문의)<br>
+																							</td>
+																						</tr>
+																					</tbody>
+																				</table>
 																			</td>
+																			<td width="1" bgcolor="dfdfdf"></td>
+																		</tr>
+																		<tr>
+																			<td width="1" bgcolor="dfdfdf"></td>
+																			<td width="798">
+																				<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
+																					<tbody>
+																						<tr>
+																							<td style="padding-top:10px;" valign="top" width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif">
+																								<img src="${path}/resource/img/shop/s_ordericon2.gif">
+																							</td>
+																							<td style="padding-top:10 0 15 10px; line-height:130%;">
+																								고객의 변심에 의한 교환 및 반품인 경우, 배송비는 소비자 부담입니다.<br>
+																								상품의 이상에 의한 교환 및 반품의 경우, 배송비는 판매자 부담입니다.<br>
+																								문의: 031-123-4567;
+																							</td>
+																						</tr>
+																					</tbody>
+																				</table>
+																			</td>
+																			<td width="1" bgcolor="dfdfdf"></td>
+																		</tr>
+																		<tr>
+																			<td width="1" bgcolor="dfdfdf"></td>
+																			<td width="798">
+																				<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
+																					<tbody>
+																						<tr>
+																							<td style="padding-top:10px;" valign="top" width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif">
+																								<img src="${path}/resource/img/shop/s_ordericon3.gif">
+																							</td>
+																							<td style="padding-top:10 0 15 10px; line-height:130%;">
+																								1. 고객님의 책임의 사유로 상품 등이 멸실 또는 훼손된 경우<br>
+																								2. 사용 또는 일부 소비에 의해 상품의 가치가 현저히 감소한 경우<br>
+																								3. 시간 경과에 의해(제품수령 후 7일 이상 경과) 재판매가 어렵게 상품가치가 현저히 감소한 경우
+																							</td>
+																						</tr>
+																					</tbody>
+																				</table>
+																			</td>
+																			<td width="1" bgcolor="dfdfdf"></td>
+																		</tr>
+																		<tr>
+																			<td width="1" bgcolor="dfdfdf"></td>
+																			<td width="798">
+																				<table width="798" border="0" cellspacing="0" cellpadding="0" height="3">
+																					<tbody>
+																						<tr>
+																							<td width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif"></td>
+																							<td width="661"></td>
+																						</tr>
+																					</tbody>
+																				</table>
+																			</td>
+																			<td width="1" bgcolor="dfdfdf"></td>
 																		</tr>
 																	</tbody>
 																</table>
 															</td>
-															<td width="1" bgcolor="dfdfdf"></td>
 														</tr>
 														<tr>
-															<td width="1" bgcolor="dfdfdf"></td>
-															<td width="798">
-																<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
-																	<tbody>
-																		<tr>
-																			<td style="padding-top:10px;" valign="top" width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif">
-																				<img src="${path}/resource/img/shop/s_ordericon2.gif">
-																			</td>
-																			<td style="padding-top:10 0 15 10px; line-height:130%;">
-																				고객의 변심에 의한 교환 및 반품인 경우, 배송비는 소비자 부담입니다.<br>
-																				상품의 이상에 의한 교환 및 반품의 경우, 배송비는 판매자 부담입니다.<br>
-																				문의: 031-123-4567;
-																			</td>
-																		</tr>
-																	</tbody>
-																</table>
-															</td>
-															<td width="1" bgcolor="dfdfdf"></td>
-														</tr>
-														<tr>
-															<td width="1" bgcolor="dfdfdf"></td>
-															<td width="798">
-																<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
-																	<tbody>
-																		<tr>
-																			<td style="padding-top:10px;" valign="top" width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif">
-																				<img src="${path}/resource/img/shop/s_ordericon3.gif">
-																			</td>
-																			<td style="padding-top:10 0 15 10px; line-height:130%;">
-																				1. 고객님의 책임의 사유로 상품 등이 멸실 또는 훼손된 경우<br>
-																				2. 사용 또는 일부 소비에 의해 상품의 가치가 현저히 감소한 경우<br>
-																				3. 시간 경과에 의해(제품수령 후 7일 이상 경과) 재판매가 어렵게 상품가치가 현저히 감소한 경우
-																			</td>
-																		</tr>
-																	</tbody>
-																</table>
-															</td>
-															<td width="1" bgcolor="dfdfdf"></td>
-														</tr>
-														<tr>
-															<td width="1" bgcolor="dfdfdf"></td>
-															<td width="798">
-																<table width="798" border="0" cellspacing="0" cellpadding="0" height="3">
-																	<tbody>
-																		<tr>
-																			<td width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif"></td>
-																			<td width="661"></td>
-																		</tr>
-																	</tbody>
-																</table>
-															</td>
-															<td width="1" bgcolor="dfdfdf"></td>
-														</tr>
+															<td><img src="${path}/resource/img/shop/s_ordercap2.gif"></td>
+														</tr>										
 													</tbody>
 												</table>
 											</td>
-										</tr>
-										<tr><td><img src="${path}/resource/img/shop/s_ordercap2.gif"></td></tr>
+										</tr>						
 									</tbody>
 								</table>
 							</td>
-						</tr>						
+						</tr>
+						<tr><td height="10"></td>							
+						</tr>
 					</tbody>
 				</table>
+				<p>
+					<table width="100%" align="center" cellspacing="0" cellpadding="0">
+						<tbody>
+							<tr>
+								<td>
+									<div class="mall-tab" id="tab3">
+										<ul>
+											<li><button type="button" data-to-tab="tab1">상품정보</button></li>
+											<li><button type="button" data-to-tab="tab2">배송안내</button></li>
+											<li class="on"><button type="button" data-to-tab="tab3">고객 상품평</button></li>
+											<li><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
+										</ul>	
+									</div>
+									<table width="100%" cellspacing="0" cellpadding="0">
+										<tbody>
+											<tr>
+												<td background="${path}/resource/img/shop/tt_comment_bg.gif">
+													<img src="${path}/resource/img/shop/tt_comment.gif"/>
+												</td>
+												<td background="${path}/resource/img/shop/tt_comment_bg.gif" align="right">
+													<!-- 상품평쓰기 버튼 -->
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<iframe style="width: 100%; height:313px;" scrolling="no" scroll="no"><!-- 후기 목록 --></iframe>
+									<p>
+								
+									</p>
+									<div class="mall-tab" id="tab4">
+										<ul>
+											<li><button type="button" data-to-tab="tab1">상품정보</button></li>
+											<li><button type="button" data-to-tab="tab2">배송안내</button></li>
+											<li><button type="button" data-to-tab="tab3">고객 상품평</button></li>
+											<li class="on"><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
+										</ul>	
+									</div>
+									<table width="100%" cellspacing="0" cellpadding="0">
+										<tbody>
+											<tr>
+												<td background="${path}/resource/img/shop/tt_comment_bg.gif">
+													<img src="${path}/resource/img/shop/tt_qna.gif"/>
+												</td>
+												<td background="${path}/resource/img/shop/tt_comment_bg.gif" align="right">
+													<!-- 질문하기 버튼 -->
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<iframe style="width: 100%; height:313px;" scrolling="no" scroll="no"><!-- Q&A 목록 --></iframe>
+									<p></p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</p>			
+			</td>
+			<td class="content-wrap-center-right"><img src="${path}/resource/img/shop/blank.gif"/></td>
+			<td class="content-wrap-right" valign="top">
+				<jsp:include page="../common/sidebar.jsp"/>
 			</td>
 		</tr>
-		<tr><td height="10"></td></tr>
 	</tbody>
 </table>
 <div style="height:100px;"></div>
