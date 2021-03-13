@@ -101,7 +101,7 @@
 						<span>
 							해당 상품 원두 언제 입고되나요?</span>
 						</td></div>
-					<td><div class="td_center">ijk230</td>
+					<td><div class="td_center">ijk230</div></td>
 					<td><div class="td_center">2021/03/12</div></td>
 				<!-- 숨김 상태일 때 td가 남는 것을 방지.. td 자체의 display 조절 -->
 				<tr><td colspan="4" class="full" id="full-1">
@@ -117,7 +117,7 @@
 						<span>
 							주문 후 배송까지 얼마나 시간이 걸릴까요?</span>
 						</td></div>
-					<td><div class="td_center">sldfk55</td>
+					<td><div class="td_center">sldfk55</div></td>
 					<td><div class="td_center">2021/03/11</div></td>
 				</tr>
 				<tr><td colspan="4" class="full" id="full-2">
@@ -133,7 +133,7 @@
 					<td class="title" id="qna-3">
 						<span>로스팅 정도 선택 가능한가요?</span>
 						</td></div>
-					<td><div class="td_center">lee1324</td>
+					<td><div class="td_center">lee1324</div></td>
 					<td><div class="td_center">2021/03/11</div></td>
 				</tr>
 				<tr><td colspan="4" class="full" id="full-3">
@@ -159,8 +159,7 @@
 	<input align="center" type="button" value="질문하기" 
 	       class="btn btn_thatch" onclick="location.href='qna_write.jsp'">
 	</div>
-	</td>
-	</table>
+	
 	
 </body>
 <script>
