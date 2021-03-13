@@ -46,12 +46,6 @@
 	-webkit-border-horizontal-spacing: 0px;
 	-webkit-border-vertical-spacing: 0px;
 }
-iframe {
-    display: block;
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
 </style>
 </head>
 <body>
@@ -289,7 +283,7 @@ iframe {
 												<table border="0" cellspacing="0" cellpadding="0" bgcolor="#f9f9f9">
 													<tbody>
 														<tr>
-															<td><img src="${path}/resource/img/shop/s_ordercap1.gif"></td>
+															<td><%-- <img src="${path}/resource/img/shop/s_ordercap1.gif"> --%></td>
 														</tr>
 														<tr>
 															<td>											
@@ -301,7 +295,7 @@ iframe {
 																				<table width="798" border="0" cellspacing="0" cellpadding="0" height="5">
 																					<tbody>
 																						<tr>
-																							<td width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif"></td>
+																							<td width="137"></td><%--  background="${path}/resource/img/shop/s_ordercap_bg.gif" --%>
 																							<td width="661"></td>
 																						</tr>
 																					</tbody>
@@ -315,9 +309,10 @@ iframe {
 																				<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
 																					<tbody>
 																						<tr>
-																							<td style="padding-top:10px;" valign="top" width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif">
+																							<td style="padding-top:10px;" valign="top" width="137" > <%-- background="${path}/resource/img/shop/s_ordercap_bg.gif" --%>
 																								<img src="${path}/resource/img/shop/s_ordericon1.gif">
 																							</td>
+																							<td width="10"></td>
 																							<td style="padding-top:10 0 15 10px; line-height:130%;">
 																								배송은 상품에 따라 차이가 있으나 1~4일 이내에 제품을 받으실 수 있습니다.<br>
 																								평일 오전 10시까지 주문 입금 확인된 원두 및 부자재에 한해 당일 발송됩니다.<br>
@@ -340,9 +335,10 @@ iframe {
 																				<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
 																					<tbody>
 																						<tr>
-																							<td style="padding-top:10px;" valign="top" width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif">
+																							<td style="padding-top:10px;" valign="top" width="137" ><%-- background="${path}/resource/img/shop/s_ordercap_bg.gif" --%>
 																								<img src="${path}/resource/img/shop/s_ordericon2.gif">
 																							</td>
+																							<td width="10"></td>
 																							<td style="padding-top:10 0 15 10px; line-height:130%;">
 																								고객의 변심에 의한 교환 및 반품인 경우, 배송비는 소비자 부담입니다.<br>
 																								상품의 이상에 의한 교환 및 반품의 경우, 배송비는 판매자 부담입니다.<br>
@@ -360,9 +356,10 @@ iframe {
 																				<table width="798" border="0" cellspacing="0" cellpadding="0" style="color:666666;">
 																					<tbody>
 																						<tr>
-																							<td style="padding-top:10px;" valign="top" width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif">
+																							<td style="padding-top:10px;" valign="top" width="137" > <%-- background="${path}/resource/img/shop/s_ordercap_bg.gif" --%>
 																								<img src="${path}/resource/img/shop/s_ordericon3.gif">
 																							</td>
+																							<td width="10"></td>
 																							<td style="padding-top:10 0 15 10px; line-height:130%;">
 																								1. 고객님의 책임의 사유로 상품 등이 멸실 또는 훼손된 경우<br>
 																								2. 사용 또는 일부 소비에 의해 상품의 가치가 현저히 감소한 경우<br>
@@ -380,7 +377,7 @@ iframe {
 																				<table width="798" border="0" cellspacing="0" cellpadding="0" height="3">
 																					<tbody>
 																						<tr>
-																							<td width="137" background="${path}/resource/img/shop/s_ordercap_bg.gif"></td>
+																							<td width="137" ></td><%-- background="${path}/resource/img/shop/s_ordercap_bg.gif" --%>
 																							<td width="661"></td>
 																						</tr>
 																					</tbody>
@@ -393,7 +390,7 @@ iframe {
 															</td>
 														</tr>
 														<tr>
-															<td><img src="${path}/resource/img/shop/s_ordercap2.gif"></td>
+															<td><%-- <img src="${path}/resource/img/shop/s_ordercap2.gif"> --%></td>
 														</tr>										
 													</tbody>
 												</table>
@@ -407,6 +404,7 @@ iframe {
 						</tr>
 					</tbody>
 				</table>
+				<%-- 상품평 --%>
 				<p>
 					<table width="100%" align="center" cellspacing="0" cellpadding="0">
 						<tbody>
@@ -420,44 +418,9 @@ iframe {
 											<li><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
 										</ul>	
 									</div>
-									<table width="100%" cellspacing="0" cellpadding="0">
-										<tbody>
-											<tr>
-												<td background="${path}/resource/img/shop/tt_comment_bg.gif">
-													<img src="${path}/resource/img/shop/tt_comment.gif"/>
-												</td>
-												<td background="${path}/resource/img/shop/tt_comment_bg.gif" align="right">
-													<!-- 상품평쓰기 버튼 -->
-												</td>
-											</tr>
-										</tbody>
-									</table>
-									<iframe style="width: 100%; height:313px;" scrolling="no" scroll="no"><!-- 후기 목록 --></iframe>
-									<p>
-								
-									</p>
-									<div class="mall-tab" id="tab4">
-										<ul>
-											<li><button type="button" data-to-tab="tab1">상품정보</button></li>
-											<li><button type="button" data-to-tab="tab2">배송안내</button></li>
-											<li><button type="button" data-to-tab="tab3">고객 상품평</button></li>
-											<li class="on"><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
-										</ul>	
-									</div>
-									<table width="100%" cellspacing="0" cellpadding="0">
-										<tbody>
-											<tr>
-												<td background="${path}/resource/img/shop/tt_comment_bg.gif">
-													<img src="${path}/resource/img/shop/tt_qna.gif"/>
-												</td>
-												<td background="${path}/resource/img/shop/tt_comment_bg.gif" align="right">
-													<!-- 질문하기 버튼 -->
-												</td>
-											</tr>
-										</tbody>
-									</table>
-									<iframe style="width: 100%; height:313px;" scrolling="no" scroll="no"><!-- Q&A 목록 --></iframe>
-									<p></p>
+									<jsp:include page="../review/review_shop.jsp"/>
+									<%-- Q&A (mall-tab 포함) --%>
+									<jsp:include page="../qna/qnalist.jsp"/>
 								</td>
 							</tr>
 						</tbody>

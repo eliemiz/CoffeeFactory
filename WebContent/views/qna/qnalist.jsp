@@ -8,9 +8,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Insert title here</title><%-- 
 <link rel="stylesheet" href="${path}/resource/css/review/board.css">
-<link rel="stylesheet" href="${path}/resource/css/review/common.css">
+<link rel="stylesheet" href="${path}/resource/css/review/common.css"> --%>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
@@ -20,7 +20,7 @@
 		
 </script>
 <style type="text/css">
-.product-tit {margin:20px 0 0;}
+/* .product-tit {margin:20px 0 0;}
 
 .mall-tab {margin:50px 0 0;}
 .mall-tab ul {margin:0; padding:0; list-style:none; *zoom:1;}
@@ -30,7 +30,7 @@
 .mall-tab ul .on button {color:#674f3e;}
 .mall-tab ul .on button:after {content:""; display:block; position:absolute; left:0; bottom:-1px; width:100%; height:3px; background:#674f3e;}
 .mall-tab#tab1 {margin-bottom:3px;}
-.mall-tab#tab2 {margin:30px 0 5px;}
+.mall-tab#tab2 {margin:30px 0 5px;} */
 
 .full {
 	display:none;
