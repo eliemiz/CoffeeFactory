@@ -11,63 +11,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${path}/resource/css/common/common.css">
 <link rel="stylesheet" href="${path}/resource/css/fonts.css">
-<style type="text/css">
-#login-search-table {
-	margin: auto;
-	width: 500px;
-	border-spacing: 0px;
-	border-radius: 10px;
-	border: 1px solid gray;
-}
-
-#login-search-title {
-	background-color: #222222;
-	color: white;
-}
-
-#login-search-title td {
-	padding: 5px;
-	border-radius: 10px 10px 0px 0px;
-	border: 1px solid #222222;
-}
-
-#login-search-info td {
-	font-size: 14px;
-	padding: 10px;
-}
-
-#login-search-form {
-	background-color: #eeeeee;
-}
-
-#login-search-form>td {
-	border-top: 1px solid gray;
-	border-bottom: 1px solid gray;
-	
-}
-
-#login-search-form td {
-	padding: 5px;
-}
-
-#login-search-form input {
-	padding: 1px 2px;
-	outline: none;
-	font-size: 15px;
-}
-
-#login-search-submit td{
-	text-align: center;
-}
-
-#login-search-submit input[type=button] {
-	margin: 10px;
-	padding: 3px;
-	font-size: 15px;
-	outline: none;
-}
-
-</style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	

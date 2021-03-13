@@ -2,6 +2,7 @@
 
 #header-wrap {
 	width: 100%;
+	min-width: 1290px;
 	color: white;
 	background-color: rgba(16, 16, 16, 0.88);
 	position: absolute;
