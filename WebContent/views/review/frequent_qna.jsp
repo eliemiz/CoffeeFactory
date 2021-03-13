@@ -68,24 +68,23 @@
 		
 			</tr>
 			<tr onclick="location.href='frequent_qna_answer.jsp'">
-				<td class="td_center2">3</td>
-				<td class="td_left1">질문</td>
-				<td class="td_left1"></td>
-				<td class="td_left1"></td>
-				<td class="td_left1"></td>
+				<td class="td_center3">3</td>
+				<td class="td_left3">질문</td>
+				<td class="td_left3"></td>
+				<td class="td_left3"></td>
+				<td class="td_left3"></td>
 				
 			</tr>
 		
-			<tr>
-<tr><td colspan="4" class="td_left4"><img src="${path}/resource/img/notice/leftarrow.png" class="arrow">
-&nbsp;&nbsp;1&nbsp;&nbsp;
-			<img src="${path}/resource/img/notice/rightarrow.png" class="arrow">
+			<tr><td colspan="4" class="td_left4"><img src="${path}/resource/img/notice/leftarrow.png" class="arrow" style="vertical-align:middle; margin-bottom:4px;">&nbsp;&nbsp;&nbsp;
+			이전&nbsp;&nbsp;|&nbsp;&nbsp;1&nbsp;&nbsp;|&nbsp;&nbsp;2&nbsp;&nbsp;|&nbsp;&nbsp;3&nbsp;&nbsp;|&nbsp;&nbsp;4&nbsp;&nbsp;|&nbsp;&nbsp;5&nbsp;&nbsp;|&nbsp;&nbsp;다음
+			&nbsp;&nbsp;&nbsp;<img src="${path}/resource/img/notice/rightarrow.png" class="arrow" style="vertical-align:middle; margin-bottom:3px;">
 			</td>
 			<td class="td_right">
 			
-			<input type="button" value="메인화면" class="btn_btn1" onclick="location.href='frequent_qna_answer.jsp'"/></td></tr>
+			<input type="button" value="메인화면" class="btn_btn1" onclick=""/></td></tr>
 		<tr><td colspan="5" class="td_search1">
-			<select name="search"><option>전체</option><option>제목</option><option>내용</option></select>&nbsp;<input type="text" size="30"/>&nbsp;<input type="button" value="찾기" class="btn_btn1"/></td></tr>
+			<select name="search"><option>전체</option><option>제목</option><option>내용</option></select>&nbsp;<input type="text" size="30"/>&nbsp;<input type="submit" value="찾기" class="btn_btn1"/></td></tr>
 	</table>
 	</form>
 	</div>
