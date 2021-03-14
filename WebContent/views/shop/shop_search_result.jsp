@@ -32,7 +32,7 @@
 			<tr>
 				<td height="30">
 					&nbsp;<img src="${path}/resource/img/shop/dot_01.gif"/>
-					현재위치 : <a href="">Home</a>> <a href="">검색결과</a>
+					현재위치 : <a href="${path}/">Home</a>> <a href="">검색결과</a>
 				</td>
 			</tr>
 		</tbody>
@@ -48,7 +48,7 @@
 			<tr>
 				<td>
 				<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle">
-				<a href="shop_front_main.jsp">싱글오리진 원두커피 <span class="font-size2">(1)</span></a>
+				<a href="${path}/shop_main.do">싱글오리진 원두커피 <span class="font-size2">(1)</span></a>
 				</td>
 			</tr>
 		</tbody>
@@ -104,7 +104,7 @@
 			</tr>
 			<tr align="center">
 				<td valign="top" style="word-break:break-all;line-height:120%;padding-top:3px;">				 
-					<a href="shop_front_detail.jsp"><span class="product_name_color">파푸아뉴기니 블루마운틴 AA</span></a>
+					<a href="${path}/shop_detail.do"><span class="product_name_color">파푸아뉴기니 블루마운틴 AA</span></a>
 					<br>&nbsp;<img src="" align="absmiddle">
 				</td>
 			</tr>
