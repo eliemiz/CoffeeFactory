@@ -10,7 +10,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<style>
+    a { text-decoration: none; color: black; }
+    a:visited { text-decoration: none; }
+    a:hover { text-decoration: none; }
+    a:focus { text-decoration: none; }
+    a:hover, a:active { text-decoration: none; }
+</style>
 
 <script type="text/javascript">
 <%--
@@ -29,7 +35,7 @@
 	<table class="content-wrap">
 	<tr>
 		<td valign=top>	
-			<table class="content-wrap" style="width:1100px;">
+			<table class="content-wrap" style="width:900px;">
 				<tr>
 					<td class="content-wrap-left">
 						<img src='${path}/resource/img/cart/tt_step.gif'>
@@ -37,13 +43,14 @@
 					<td align="right"><img src='${path}/resource/img/cart/tt_step1.gif'></td>
 				
 				</tr>
-			</table>		
-	<table class="content-wrap" style="width:1100px;">
+			</table>	
+				
+	<table align="center" style="margin:auto; width:900px;" >
 		<tr height='1' bgcolor='#CCCCCC'><td colspan=8></td></tr>
 			<tr height=25 align=center bgcolor='#FAFAFA'>
 				<td></td>
-				<td class="content-wrap-left">주문상품</td>
-				<td class="content-wrap-center">옵션</td>
+				<td class="content-wrap-left" colspan=2>주문상품</td>
+				<td class="content-wrap-right">옵션</td>
 				<td align=right>가격</td>
 				<td>수량</td>
 				<td class="content-wrap-right">소계</td>
@@ -55,7 +62,7 @@
 			
 			<tr align=center style='color:#5B5B5B;'>
 				<td width=50><img src='${path}/resource/img/cart/shop1.jpg' border=0 width='50' height='50' hspace=5 vspace=5></td>
-				<td align=left>
+				<td align=left colspan=2>
 				<a href=''>
 				[스페셜티 커피] 파나마 에스메랄다 게이샤<br>일산커피공장 일산커피공장 파나마</a>
 				<br><font color='#037CC1'>(선택상품 : <b>100g</b>)</font></td>
@@ -70,9 +77,8 @@
 			
 			<table cellspacing=0 cellpadding=0>
 			<tr>
-			<td><input type=text size=4 value='1' maxlength=5 style='border:1 solid #B0B0B0; text-align:center;' readonly ></td>
+			<td><input type=text size=4 value='1' maxlength=5 style='border:1 solid #B0B0B0; text-align:center;' readonly></td>
 				<td>
-				
 				<table cellspacing=0 cellpadding=1>
 					<tr><td><img src='${path}/resource/img/cart/num_plus.gif' style='cursor:pointer;'></td></tr>
 					<tr><td><img src='${path}/resource/img/cart/num_minus.gif' style='cursor:pointer;'></td></tr>
@@ -88,15 +94,13 @@
 			
 			<tr height='1' bgcolor='#e7e7e7'><td colspan=8></td></tr>
 			
-			
-			
-			
-			
+
 			<tr align=center style='color:#5B5B5B;'>
-				<td width=50><img src='${path}/resource/img/cart/shop2.jpg' border=0 width='50' height='50' hspace=5 vspace=5></td>
-				<td align=left>
+				<td width=100><img src='${path}/resource/img/cart/shop2.jpg' border=0 width='50' height='50' hspace=5 vspace=5></td>
+				<td align=left colspan=2>
 				<a href=''>
-				[소량입고 스페셜티] 브라질 비날 웰치스 그레이프<br>일산커피공장 일산커피공장 브라질</a>
+				[소량입고 스페셜티] 브라질 비날 웰치스 그레이프<br>일산커피공장 일산커피공장 브라질
+				</font></a>
 				<br><font color='#037CC1'>(선택상품 : <b>100g</b>)</font></td>
 				<td><img src='${path}/resource/img/cart/btn_option.gif' style='cursor:pointer;'/></td>
 			<td align=right style='color:#682E14;'>
@@ -106,12 +110,10 @@
 			
 			
 			<td>
-			
 			<table cellspacing=0 cellpadding=0>
 			<tr>
 			<td><input type=text size=4 value='1' maxlength=5 style='border:1 solid #B0B0B0; text-align:center;' readonly ></td>
 				<td>
-				
 				<table cellspacing=0 cellpadding=1>
 					<tr><td><img src='${path}/resource/img/cart/num_plus.gif' style='cursor:pointer;'></td></tr>
 					<tr><td><img src='${path}/resource/img/cart/num_minus.gif' style='cursor:pointer;'></td></tr>
@@ -128,10 +130,8 @@
 			<tr height='1' bgcolor='#e7e7e7'><td colspan=8></td></tr>
 			
 			
-			
-			
 			<tr align=right height=30 bgcolor='#FAFAFA'>
-				<td colspan=4 align=right></td>
+				<td colspan=3 align=right></td>
 				<td><font color='#CA6A40'></font></td>
 				<td align=center>합계</td>
 				<td align=center><font color='#FE4520'><b>51,000원</b></font></td>
@@ -152,16 +152,18 @@
 				}
 			</style>
 			<br>
-			<table class="content-wrap" style="width:1100px;">
+			<table style="width:700px;">
 				<tr>
-				<td>&nbsp;<img src='${path}/resource/img/cart/dot_02.gif'> <b>고객님께서 결제하실 내역입니다.</b></td>
-				
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='${path}/resource/img/cart/dot_02.gif'><b>고객님께서 결제하실 내역입니다.</b></td>
 				</tr>
 			</table>
 			
 			<table height=5><tr><td></td></tr></table>
 
-			<table class="content-wrap" style="width:1100px;" cellspacing=1 cellpadding=2 bgcolor=dfdfdf>
+			<table align="center" style="margin:auto; width:900px;"  cellspacing=1 cellpadding=2 bgcolor=dfdfdf>
 			<tr height=35 bgcolor='#FAFAFA' align=center>
 			<td>상품가격</td>
 			<td bgcolor='#ffffff'>
@@ -195,7 +197,7 @@
 			
 			
 			
-			<table class="content-wrap" style="width:1100px;">
+			<table align="center" style="margin:auto; width:900px;">
 			<tr>
 			<td><img src='${path}/resource/img/cart/tt_order_01.gif'></td>
 			<td align=right>
@@ -204,12 +206,12 @@
 			</tr>
 			</table>
 			
-			<table table class="content-wrap" style="width:1100px;" width=100% cellspacing=0 cellpadding=0>
+			<table align="center" style="margin:auto; width:900px;" width=100% cellspacing=0 cellpadding=0>
 			<tr height='1' bgcolor='#CCCCCC'><td></td></tr>
 			<tr height='4' bgcolor='#E9E9E9'><td></td></tr>
 			</table>
 			
-			<table class="content-wrap" style="width:1100px;">
+			<table align="center" style="margin:auto; width:900px;">
 			<tr height=25>
 			<td width=5></td>
 			<td width=100 nowrap style='padding-top:5px;'><img src='${path}/resource/img/cart/dot_012.gif'> 결제수단 선택</td>
