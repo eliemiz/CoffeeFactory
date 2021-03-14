@@ -34,7 +34,7 @@
 	display:none;
 	padding-bottom: 30px;
 }
-.qna-content {
+.rev-content {
 	border-bottom: 1px solid #e0e0e0;
 }
 .title{
@@ -126,9 +126,9 @@ td {
 			</thead>
 			<tbody>
 				<tr>
-						<td><span id="qna-q=toggle">1</span></td>
-						<div class="qna-content">
-					<td class="title" id="qna-1" style="text-align:left;"><!-- <div class="td_left"> -->
+						<td><span id="rev-r=toggle">1</span></td>
+						<div class="rev-content">
+					<td class="title" id="rev-1" style="text-align:left;"><!-- <div class="td_left"> -->
 							<span>첫구매 원두 아주 만족합니다!</span>
 						</td></div>
 					<td><div class="td_center">ijk230</div></td>
@@ -140,16 +140,16 @@ td {
 			<tr><td colspan="5" class="full" id="full-1">
 				<div align="right">
 					<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='../review/review_reply.jsp'">
-					<input type="button" value="수정하기" class="small1" onclick="location.href='../review/review_update.jsp'">
+					<input type="button" value="수정하기" class="small1" onclick="location.href='../review/review_modify.jsp'">
 					<input type="button" value="삭제하기" class="small1">
 				</div><br>커피 향이 너무좋네요
 								<div align="left">(답변없을때는 공백처리)</div>
 			</td></tr>
 			
 				<tr>
-						<td><span id="qna-q=toggle">2</span></td>
-						<div class="qna-content">
-					<td class="title" id="qna-2" style="text-align:left;"><!-- <div class="td_left"> -->
+						<td><span id="rev-r=toggle">2</span></td>
+						<div class="rev-content">
+					<td class="title" id="rev-2" style="text-align:left;"><!-- <div class="td_left"> -->
 							<span>첫구매 </span>
 						</td></div>
 					<td><div class="td_center">ijk230</div></td>
@@ -161,7 +161,7 @@ td {
 			<tr><td colspan="5" class="full" id="full-2">
 				<div align="right">
 					<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='../review/review_reply.jsp'">
-					<input type="button" value="수정하기" class="small1" onclick="location.href='../review/review_update.jsp'">
+					<input type="button" value="수정하기" class="small1" onclick="location.href='../review/review_modify.jsp'">
 					<input type="button" value="삭제하기" class="small1">
 				</div><br>좋아요
 								<div align="left">답변: 답변있으면 답변 출력</div>
@@ -190,7 +190,7 @@ td {
   const items = document.querySelectorAll('.title');
 
   function openCloseAnswer() {
-    const answerId = this.id.replace('qna', 'full');
+    const answerId = this.id.replace('rev', 'full');
 	
     if(document.getElementById(answerId).style.display == 'table-cell') {
     // table-cell >> col-span 작동
