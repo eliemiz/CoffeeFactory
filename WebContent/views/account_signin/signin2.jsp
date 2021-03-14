@@ -12,75 +12,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${path}/resource/css/common/common.css">
 <link rel="stylesheet" href="${path}/resource/css/fonts.css">
-<link rel="stylesheet" href="${path}/resource/css/account/login.css">
-<style type="text/css">
-#signin2-wrap {
-	width: 700px;
-	margin: auto;
-}
-
-#signin2-wrap table {
-	border: 0px;
-	border-spacing: 0px;
-}
-
-#signin2-wrap table td {
-	padding: 0px;
-}
-
-#signin2-wrap #signin2-title {
-	width: 100%;
-}
-
-#signin2-wrap #signin2-title #signin2-title-info {
-	padding: 30px 0px 10px 0px; 
-	color: #737573;
-	font-size: 12px;
-}
-
-#signin2-wrap #signin2-form {
-	width: 100%;
-}
-
-#signin2-wrap #signin2-form th, 
-#signin2-wrap #signin2-form td {
-	padding: 10px;
-	font-weight: normal;
-	font-size: 14px;
-	border-top: 1px solid gray;
-}
-
-#signin2-wrap #signin2-form th {
-	background-color: #efefef;
-	text-align: left;
-	
-}
-
-#signin2-wrap #signin2-form input, 
-#signin2-wrap #signin2-form select {
-	padding: 2px;
-	outline: none;
-}
-
-.w110 {
-	width: 110px;
-}
-
-#signin2-wrap #signin2-form .signin_btn_small {
-	width: 100px;
-	height: 23px;
-	padding: 1px;
-	font-size: 12px;
-}
-
-#signin2-wrap #signin2-form .signin_btn_middle {
-	width: 100px;
-	height: 29px;
-	padding: 1px;
-	font-size: 12px;
-}
-
-</style>
+<link rel="stylesheet" href="${path}/resource/css/account/signin.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
@@ -92,7 +24,7 @@
 </head>
 <body>
 	<jsp:include page="/views/common/header.jsp"/>
-	<div style="height:222px;"></div>
+	<div style="height:268px;"></div>
 	<table class="content-wrap">
 		<tr>
 			<td class="content-wrap-left">
@@ -116,10 +48,10 @@
 						</tr>
 					</table>
 					<table id="signin2-form">
-						<colspan>
+						<colgroup>
 							<col width="30%">
 							<col width="70%">
-						</colspan>
+						</colgroup>
 						<tbody>
 							<tr>
 								<th>이름(실명)</th>
@@ -231,8 +163,8 @@
 						<tfoot>
 							<tr>
 								<td colspan="2" style="text-align: center;">
-									<img src="${img_path}/regis_submit_bt.gif">
-									<img src="${img_path}/regis_cancel_bt.gif">
+									<input type="image" id="signin_submit_btn" src="${img_path}/regis_submit_bt.gif">
+									<input type="image" id="signin_cancel_btn" src="${img_path}/regis_cancel_bt.gif">
 								</td>
 							</tr>
 						</tfoot>
@@ -250,4 +182,14 @@
 	<jsp:include page="/views/common/footer.jsp"/>
 	
 </body>
+<script type="text/javascript">
+	$("#signin_submit_btn").on("click", function(){
+		alert("회원가입 되었습니다.");
+		location.href="${path}";
+	});
+	
+	$("#signin_cancel_btn").on("click", function(){
+		location.href="${path}/signin1.do";
+	});
+</script>
 </html>

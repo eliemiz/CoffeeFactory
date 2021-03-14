@@ -58,7 +58,7 @@
 															<input type="text" size="20" maxlength="12" tabindex="1" class="login-input">
 														</td>
 														<td rowspan="3">
-															<input type="image" src="${img_path}/login1_go.gif" style="margin:0px 0px 0px 13px">
+															<input type="image" id="login_btn" src="${img_path}/login1_go.gif" style="margin:0px 0px 0px 13px">
 														</td>
 													</tr>
 													<tr>
@@ -83,12 +83,14 @@
 												<table>
 													<tr>
 														<td>
-															<a href="signin.do">
+															<a href="${path}/signin1.do">
 																<img src="${img_path}/login1_join.gif">
 															</a>
 														</td>
 														<td>
-															<img src="${img_path}/login1_pwf.gif">
+															<a href="${path}/login_search.do">
+																<img src="${img_path}/login1_pwf.gif">
+															</a>
 														</td>
 													</tr>
 												</table>
@@ -100,17 +102,6 @@
 						</table>
 					</div>
 				</div>
-				
-				<%-- <div>
-					<img src="${img_path}/login1_bg.gif">
-					<img src="${img_path}/login1_go.gif">
-					<img src="${img_path}/login1_id.gif">
-					<img src="${img_path}/login1_img.gif">
-					<img src="${img_path}/login1_join.gif">
-					<img src="${img_path}/login1_pw.gif">
-					<img src="${img_path}/login1_pwf.gif">
-					<img src="${img_path}/login1_t.gif">
-				</div> --%>
 			</td>
 			<td class="content-wrap-center-right">
 			</td>
@@ -123,4 +114,10 @@
 	<jsp:include page="/views/common/footer.jsp"/>
 	
 </body>
+<script type="text/javascript">
+ 	$("#login_btn").on("click", function(){
+ 		alert("로그인되었습니다.");
+ 		location.href="${path}";
+ 	});
+</script>
 </html>

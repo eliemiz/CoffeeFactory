@@ -12,59 +12,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${path}/resource/css/common/common.css">
 <link rel="stylesheet" href="${path}/resource/css/fonts.css">
-<link rel="stylesheet" href="${path}/resource/css/account/login.css">
-<style type="text/css">
-#signin1-wrap {
-	width: 700px;
-	margin: auto;
-}
-
-#signin1-wrap table {
-	border: 0px;
-	border-spacing: 0px;
-}
-
-#signin1-wrap table td {
-	padding: 0px;
-}
-
-#signin1-wrap #signin1-title {
-	width: 100%;
-}
-
-#signin1-wrap #signin1-title #signin1-title-info {
-	padding: 10px; 
-	text-align: center;
-	color: navy;
-	font-weight: bold;
-	font-size: 14px;
-}
-
-#signin1-wrap #signin1-form {
-	width: 90%;
-	margin: auto;
-}
-
-#signin1-wrap #signin1-form span,
-#signin1-wrap #signin1-form textarea {
-	display: block;
-}
-
-#signin1-wrap #signin1-form span {
-	padding: 5px;
-}
-
-#signin1-wrap #signin1-form textarea {
-	width: 100%;
-	font-family: '돋움';
-	line-height: 150%;
-	color: #202020;
-	padding: 5px;
-	outline: none;
-}
-
-
-</style>
+<link rel="stylesheet" href="${path}/resource/css/account/signin.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
@@ -76,7 +24,7 @@
 </head>
 <body>
 	<jsp:include page="/views/common/header.jsp"/>
-	<div style="height:222px;"></div>
+	<div style="height:268px;"></div>
 	<table class="content-wrap">
 		<tr>
 			<td class="content-wrap-left">
@@ -118,7 +66,7 @@
 						</tr>
 						<tr>
 							<td style="text-align: center; padding: 20px;">
-								<img src="${img_path}/btn_regis.gif">
+								<input type="image" id="signin_btn" src="${img_path}/btn_regis.gif">
 							</td>
 						</tr>
 					</table>
@@ -135,4 +83,9 @@
 	<jsp:include page="/views/common/footer.jsp"/>
 	
 </body>
+<script type="text/javascript">
+	$("#signin_btn").on("click", function(){
+		location.href="${path}/signin2.do";
+	});
+</script>
 </html>

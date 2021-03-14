@@ -2,7 +2,8 @@
     pageEncoding="UTF-8" import="java.util.*" import="java.net.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<c:set var="path" value="${pageContext.request.contextPath}"/> 
+<c:set var="path" value="${pageContext.request.contextPath}"/>
+<c:set var="img_path" value="${path}/resource/img/account/mypage"/> 
 <fmt:requestEncoding value="UTF-8" />
 <!DOCTYPE html>
 <html>
@@ -11,6 +12,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${path}/resource/css/common/common.css">
 <link rel="stylesheet" href="${path}/resource/css/fonts.css">
+<link rel="stylesheet" href="${path}/resource/css/account/mypage.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
@@ -28,45 +30,38 @@
 			<td class="content-wrap-left">
 			</td>
 			<td class="content-wrap-center">
-				<div id="login-search-wrap">
-					<table id="login-search-table">
-						<tr id="login-search-title">
-							<td>
-								ID, 비밀번호를 잊어버리셨나요?
-							</td>
-						</tr>
-						<tr id="login-search-info">
-							<td>
-								ID, 비밀번호는 회원님께서 회원가입 시 가입하신 E-mail로 자동 송부되어집니다.<br>
-								정보유출 방지를 위해, 비밀번호를 E-mail로 받으시고 바로 비밀번호를<br>
-								변경하는 것을 권장합니다.
-							</td>
-						</tr>
-						<tr id="login-search-form">
-							<td>
-								<table>
-									<colgroup>
-										<col width="40%">
-										<col width="60%">
-									</colgroup>
+				<table>
+					<tr>
+						<td style="vertical-align: top;">
+							<jsp:include page="mypage_menu.jsp"/>
+						</td>
+						<td style="vertical-align: top; width:100%;">
+							<div id="mypage-wrap">
+								<img src="${img_path}/tt_comment.gif">
+								<table id="mypage-table">
 									<tr>
-										<th style="text-align: left;">성명 : </th>
-										<td><input type="text"></td>
+										<td colspan="3" class="td-left">나의 Review</td>
+										<td colspan="2" class="td-right">전체 5개</td>
 									</tr>
 									<tr>
-										<th style="text-align: left;">E-mail : </th>
-										<td><input type="text"></td>
+										<th><input type="checkbox"></th>
+										<th>사진</th>
+										<th>제목</th>
+										<th>등록일</th>
 									</tr>
+									<c:forEach var="i" begin="0" end="4">
+									<tr>
+										<td class="td-center"><input type="checkbox"></td>
+										<td class="td-center"><img src="temp.jpg"></td>
+										<td class="td-center">너무 맘에 드네요.</td>
+										<td class="td-center">2020-01-01 11:59:59</td>
+									</tr>
+									</c:forEach>
 								</table>
-							</td>
-						</tr>
-						<tr id="login-search-submit">
-							<td>
-								<input type="button" value="ID, 비밀번호 E-mail로 요청하기">
-							</td>
-						</tr>					 
-					</table>
-				</div>
+							</div>
+						</td>
+					</tr>
+				</table>
 			</td>
 			<td class="content-wrap-center-right">
 			</td>

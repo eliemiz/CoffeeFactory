@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+/* signin1 */
+#signin1-wrap {
+	width: 700px;
+	margin: auto;
+}
+
+#signin1-wrap table {
+	border: 0px;
+	border-spacing: 0px;
+}
+
+#signin1-wrap table td {
+	padding: 0px;
+}
+
+#signin1-wrap #signin1-title {
+	width: 100%;
+}
+
+#signin1-wrap #signin1-title #signin1-title-info {
+	padding: 10px; 
+	text-align: center;
+	color: navy;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#signin1-wrap #signin1-form {
+	width: 90%;
+	margin: auto;
+}
+
+#signin1-wrap #signin1-form span,
+#signin1-wrap #signin1-form textarea {
+	display: block;
+}
+
+#signin1-wrap #signin1-form span {
+	padding: 5px;
+}
+
+#signin1-wrap #signin1-form textarea {
+	width: 100%;
+	font-family: '돋움';
+	line-height: 150%;
+	color: #202020;
+	padding: 5px;
+	outline: none;
+}
+
+/* signin2 */
+#signin2-wrap {
+	width: 700px;
+	margin: auto;
+}
+
+#signin2-wrap table {
+	border: 0px;
+	border-spacing: 0px;
+}
+
+#signin2-wrap table td {
+	padding: 0px;
+}
+
+#signin2-wrap #signin2-title {
+	width: 100%;
+}
+
+#signin2-wrap #signin2-title #signin2-title-info {
+	padding: 30px 0px 10px 0px; 
+	color: #737573;
+	font-size: 12px;
+}
+
+#signin2-wrap #signin2-form {
+	width: 100%;
+}
+
+#signin2-wrap #signin2-form th, 
+#signin2-wrap #signin2-form td {
+	padding: 10px;
+	font-weight: normal;
+	font-size: 14px;
+	border-top: 1px solid gray;
+}
+
+#signin2-wrap #signin2-form th {
+	background-color: #efefef;
+	text-align: left;
+}
+
+#signin2-wrap #signin2-form input, 
+#signin2-wrap #signin2-form select {
+	padding: 2px;
+	outline: none;
+}
+
+.w110 {
+	width: 110px;
+}
+
+#signin2-wrap #signin2-form .signin_btn_small {
+	width: 100px;
+	height: 23px;
+	padding: 1px;
+	font-size: 12px;
+}
+
+#signin2-wrap #signin2-form .signin_btn_middle {
+	width: 100px;
+	height: 29px;
+	padding: 1px;
+	font-size: 12px;
+}

@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+/* mypage-menu */
+#mypage-menu table {
+	width: 170px;
+	border: 1px solid #dddddd;
+	border-spacing: 0px;
+}
+
+#mypage-menu table th {
+	padding: 5px;
+	border-top: 3px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+}
+
+#mypage-menu table td {
+	padding: 10px;
+	border-bottom: 1px solid #dddddd;
+	font-size: 12px;
+}
+
+#mypage-wrap {
+	margin-left: 20px;
+	font-size: 14px;
+}
+
+#mypage-wrap table {
+	border: 0px;
+	border-spacing: 0px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.td-left {
+	text-align: left;	
+}
+
+.td-center {
+	text-align: center;
+}
+
+.td-right {
+	text-align: right;	
+}
+
+#mypage-wrap #mypage-info-table {
+	width : 400px;
+}
+
+#mypage-wrap #mypage-info-table tr:first-child th,
+#mypage-wrap #mypage-info-table tr:first-child td {
+	border-top: 1px solid #dddddd;
+}
+
+#mypage-wrap #mypage-info-table th,
+#mypage-wrap #mypage-info-table td {
+	border-bottom: 1px solid #dddddd;
+}
+
+#mypage-wrap #mypage-info-table th {
+	padding: 5px 20px;
+	background-color: #eff5fb;
+	text-align:left;
+}
+
+#mypage-wrap #mypage-info-table td {
+	padding: 5px;
+}
+
+#mypage-wrap #mypage-order-table,
+#mypage-wrap #mypage-qna-table,
+#mypage-wrap #mypage-wish-table {
+	width: 100%;
+}
+
+#mypage-wrap #mypage-order-table th,
+#mypage-wrap #mypage-qna-table th,
+#mypage-wrap #mypage-wish-table th {
+	padding: 5px;
+}
+
+#mypage-wrap #mypage-order-table td,
+#mypage-wrap #mypage-qna-table td,
+#mypage-wrap #mypage-wish-table td {
+	padding: 5px;
+	border-bottom: 1px solid #dddddd;
+}
+
+#mypage-wrap #mypage-order-table tr:first-child {
+	background-color: #f3f3f3;
+}
+
+#mypage-wrap #mypage-qna-table tr:first-child {
+	background-color: #f5f7f9;
+}
+
+#mypage-wrap #mypage-wish-table tr:first-child {
+	background-color: #f9f0e7;
+}
+
+#mypage-wrap #mypage-table {
+	width: 100%;
+}
+
+#mypage-wrap #mypage-table th {
+	padding: 5px;
+	background-color: #eeeeee;
+}
+
+#mypage-wrap #mypage-table td {
+	padding: 5px;
+	border-bottom: 1px solid #dddddd;
+}
+
+/* mypage-modify-form */
+#mypage-wrap #mypage-modify-form {
+	width: 100%;
+}
+
+#mypage-wrap #mypage-modify-form th, 
+#mypage-wrap #mypage-modify-form td {
+	padding: 10px;
+	font-weight: normal;
+	font-size: 14px;
+	border-top: 1px solid gray;
+}
+
+#mypage-wrap #mypage-modify-form th {
+	background-color: #efefef;
+	text-align: left;
+	
+}
+
+#mypage-wrap #mypage-modify-form input, 
+#mypage-wrap #mypage-modify-form select {
+	padding: 2px;
+	outline: none;
+}
+
+.w110 {
+	width: 110px;
+}
+
+#mypage-wrap #mypage-modify-form .modify_btn_small {
+	width: 100px;
+	height: 23px;
+	padding: 1px;
+	font-size: 12px;
+}
+
+#mypage-wrap #mypage-modify-form .modify_btn_middle {
+	width: 100px;
+	height: 29px;
+	padding: 1px;
+	font-size: 12px;
+}
+
+#mypage-menu a, #mypage-wrap a {
+	text-decoration: none;
+	color: black;
+}
