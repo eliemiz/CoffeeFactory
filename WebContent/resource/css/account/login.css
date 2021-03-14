@@ -3,7 +3,6 @@
 /* login */
 
 #login-form-wrap {
-	background-image: url(${img_path}/login1_bg.gif);
 	width: 564px;
 	height: 253px;
 	vertical-align: top;

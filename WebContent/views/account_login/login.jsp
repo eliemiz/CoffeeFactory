@@ -13,6 +13,11 @@
 <link rel="stylesheet" href="${path}/resource/css/common/common.css">
 <link rel="stylesheet" href="${path}/resource/css/fonts.css">
 <link rel="stylesheet" href="${path}/resource/css/account/login.css">
+<style type="text/css">
+#login-form-wrap {
+	background-image: url(${img_path}/login1_bg.gif);
+}
+</style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	

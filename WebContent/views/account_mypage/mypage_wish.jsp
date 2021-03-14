@@ -53,10 +53,14 @@
 									<c:forEach var="i" begin="0" end="3">
 									<tr>
 										<td class="td-center"><input type="checkbox"></td>
-										<td class="td-center"><img src="temp.jpg"></td>
-										<td>블랙 고급 쇼핑백</td>
+										<td class="td-center"><img src="${img_path}/shop_temp.jpg" style="width:45px;"></td>
+										<td>
+											[소량입고 스페셜티] 브라질 비날 웰치스 그레이프<br>
+											커피공장 커피공장 에티오피아외<br>
+											스페셜티 원두 외
+										</td>
 										<td class="td-center" style="color: blue;">23,000원</td>
-										<td class="td-center"><img src="temp.jpg"></td>
+										<td class="td-center"><img src="${img_path}/btn_wish.gif"></td>
 									</tr>
 									</c:forEach>
 								</table>

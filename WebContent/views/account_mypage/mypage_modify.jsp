@@ -141,10 +141,15 @@
 												<input type="text" style="margin-top: 5px; width: 300px;">
 											</td>
 										</tr>
+										<tr>
+											<td colspan="2" style="padding:0px; text-align: right;">
+												<input type="image" id="withdrawal_btn" src="${img_path}/logout.gif" style="padding: 0px;">
+											</td>
+										</tr>
 									</tbody>
 									<tfoot>
 										<tr>
-											<td colspan="2" style="text-align: center;">
+											<td colspan="2" style="text-align: center; border-top: 0px;">
 												<img src="${img_path}/info_modify.gif">
 												<img src="${img_path}/cancel_prev.gif">
 											</td>
@@ -167,4 +172,13 @@
 	<jsp:include page="/views/common/footer.jsp"/>
 	
 </body>
+<script type="text/javascript">
+	$("#withdrawal_btn").on("click", function(){
+		if(confirm("정말 탈퇴하시겠습니까?")){
+			alert("정상적으로 회원탈퇴되었습니다.");
+			location.href = "${path}";
+		}
+	});
+
+</script>
 </html>

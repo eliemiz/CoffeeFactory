@@ -90,8 +90,12 @@
 										</tr>
 										<c:forEach var="i" begin="0" end="2">
 										<tr>
-											<td class="td-center"><img src="temp.jpg"></td>
-											<td>[프리미엄 커피] 과테말라 와이칸</td>
+											<td class="td-center"><img src="${img_path}/shop_temp.jpg" style="width: 45px;"></td>
+											<td>
+												[소량입고 스페셜티] 브라질 비날 웰치스 그레이프<br>
+												커피공장 커피공장 에티오피아외<br>
+												스페셜티 원두 외
+											</td>
 											<td>보관 어떻게 해야 하나요?</td>
 											<td class="td-center">2020-04-11 12:12:20</td>
 										</tr>
@@ -109,8 +113,12 @@
 										</tr>
 										<c:forEach var="i" begin="0" end="2">
 										<tr>
-											<td class="td-center"><img src="temp.jpg"></td>
-											<td>[프리미엄 커피] 과테말라 와이칸</td>
+											<td class="td-center"><img src="${img_path}/shop_temp.jpg" style="width: 45px;"></td>
+											<td>
+												[소량입고 스페셜티] 브라질 비날 웰치스 그레이프<br>
+												커피공장 커피공장 에티오피아외<br>
+												스페셜티 원두 외
+											</td>
 											<td class="td-center">11,000원</td>
 											<td></td>
 										</tr>

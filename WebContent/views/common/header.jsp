@@ -34,6 +34,8 @@
 			<ul id="header-top-menu">
 				<li><a href="${path}/login.do">로그인</a></li>
 				<li><a href="${path}/signin1.do">회원가입</a></li>
+				<%-- todo: 로그인 여부에 따라 바꾸기 --%>
+				<li><a href="${path}/mypage.do">마이페이지</a></li>
 				<li><a href="${path}/cart.do">장바구니</a></li>
 				<li><a href="${path}/wish.do">위시리스트</a></li>
 				<li><a href="${path}/order.do">주문배송조회</a></li>
@@ -49,14 +51,16 @@
 		
 		<div id="header-bottom" class="clear-fix">
 			<ul id="header-bottom-menu">
-				<li><a href="${path}/shop.do">싱글 오리진 원두</a></li>
-				<li><a href="${path}/shop.do">스페셜티 원두 외</a></li>
-				<li><a href="${path}/shop.do">선물 세트</a></li>
+				<li><a href="${path}/shop_main.do">싱글 오리진 원두</a></li>
+				<li><a href="${path}/shop_main.do">스페셜티 원두 외</a></li>
+				<li><a href="${path}/shop_main.do">선물 세트</a></li>
 			</ul>
 			<div id="header-bottom-right">
 				<input type="text">
-				<span>상세검색</span>
-				<img src="${path}/resource/img/common/icon_cart.png">
+				<span><a href="${path}/shop_search.do">상세검색</a></span>
+				<a href="${path}/wish.do">
+					<img src="${path}/resource/img/common/icon_cart.png">
+				</a>
 			</div>
 			
 		</div>

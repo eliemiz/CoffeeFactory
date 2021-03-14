@@ -52,7 +52,7 @@
 									<c:forEach var="i" begin="0" end="4">
 									<tr>
 										<td class="td-center"><input type="checkbox"></td>
-										<td class="td-center"><img src="temp.jpg"></td>
+										<td class="td-center"><img src="${img_path}/shop_temp.jpg" style="width: 45px;"></td>
 										<td class="td-center">보관방법은 어떤가요?</td>
 										<td class="td-center">2020-01-01 11:59:59</td>
 									</tr>
