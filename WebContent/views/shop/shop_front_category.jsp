@@ -45,9 +45,9 @@ td.att{
     border-bottom-width: 0px;
     border-left-width: 0px;
 }
-a:link{text-decoration: none; color: #ffffff;} /* 클릭하지 않았을 때 링크 상태 */
-a:visited{text-decoration: none; color: #ffffff;} /* 한 번 클릭했거나 들어가보았던 링크 상태 */
-a:active{text-decoration: none; color: #ffffff;} /* 링크 부분에서 마우스를 누르고 있는 상태 */
+a:link{text-decoration: none; font-color:#000000;} /* 클릭하지 않았을 때 링크 상태 */
+a:visited{text-decoration: none; color: #000000;} /* 한 번 클릭했거나 들어가보았던 링크 상태 */
+a:active{text-decoration: none; color: #000000;} /* 링크 부분에서 마우스를 누르고 있는 상태 */
 a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마우스를 가져갔을 때 상태 */
 </style>
 </head>

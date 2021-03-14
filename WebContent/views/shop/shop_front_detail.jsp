@@ -46,9 +46,9 @@
 	-webkit-border-horizontal-spacing: 0px;
 	-webkit-border-vertical-spacing: 0px;
 }
-a:link{text-decoration: none; color: #ffffff;} /* 클릭하지 않았을 때 링크 상태 */
-a:visited{text-decoration: none; color: #ffffff;} /* 한 번 클릭했거나 들어가보았던 링크 상태 */
-a:active{text-decoration: none; color: #ffffff;} /* 링크 부분에서 마우스를 누르고 있는 상태 */
+a:link{text-decoration: none; font-color:#000000;} /* 클릭하지 않았을 때 링크 상태 */
+a:visited{text-decoration: none; color: #000000;} /* 한 번 클릭했거나 들어가보았던 링크 상태 */
+a:active{text-decoration: none; color: #000000;} /* 링크 부분에서 마우스를 누르고 있는 상태 */
 a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마우스를 가져갔을 때 상태 */
 </style>
 </head>
@@ -72,7 +72,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 												&nbsp;
 												<span class="font-size1">
 												<img src="${path}/resource/img/shop/dot_01.gif"/>
-												현재 위치: <a href="">Home</a><!-- 메인으로 href --> > <a href="${path}/shop_main.do">싱글오리진 원두커피</a> > <a href="${path}/shop_category.do">아시아&태평양</a>
+												현재 위치: <a href="${path}/index.do">Home</a><!-- 메인으로 href --> > <a href="${path}/shop_main.do">싱글오리진 원두커피</a> > <a href="${path}/shop_category.do">아시아&태평양</a>
 												</span>
 											</td>
 										</tr>
