@@ -37,7 +37,7 @@
 .rev-content {
 	border-bottom: 1px solid #e0e0e0;
 }
-.title{
+.title2{
 	font-size: 12px;
 	padding: 10px 0;
     cursor: pointer;
@@ -128,7 +128,7 @@ td {
 				<tr>
 						<td><span id="rev-r=toggle">1</span></td>
 						<div class="rev-content">
-					<td class="title" id="rev-1" style="text-align:left;"><!-- <div class="td_left"> -->
+					<td class="title2" id="rev-1" style="text-align:left;"><!-- <div class="td_left"> -->
 							<span>첫구매 원두 아주 만족합니다!</span>
 						</td></div>
 					<td><div class="td_center">ijk230</div></td>
@@ -149,7 +149,7 @@ td {
 				<tr>
 						<td><span id="rev-r=toggle">2</span></td>
 						<div class="rev-content">
-					<td class="title" id="rev-2" style="text-align:left;"><!-- <div class="td_left"> -->
+					<td class="title2" id="rev-2" style="text-align:left;"><!-- <div class="td_left"> -->
 							<span>첫구매 </span>
 						</td></div>
 					<td><div class="td_center">ijk230</div></td>
@@ -187,9 +187,9 @@ td {
 	
 </body>
 <script>
-  const items = document.querySelectorAll('.title');
+  const items2 = document.querySelectorAll('.title2');
 
-  function openCloseAnswer() {
+  function openCloseAnswer2() {
     const answerId = this.id.replace('rev', 'full');
 	
     if(document.getElementById(answerId).style.display == 'table-cell') {
@@ -202,6 +202,6 @@ td {
     }
   }
 
-  items.forEach(item => item.addEventListener('click', openCloseAnswer));
+  items2.forEach(item => item.addEventListener('click', openCloseAnswer2));
 </script>
 </html>
