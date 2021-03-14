@@ -62,7 +62,7 @@ td.att{
 							<td height="23">
 								<span class="font-size1">
 								&nbsp;<img src="${path}/resource/img/shop/dot_01.gif" align="absmiddle"/>
-								현재 위치: <a href="">Home</a><!-- 메인으로 href --> > <a href="shop_front_main.jsp">싱글오리진 원두커피</a> > <a href="">아시아&태평양</a>
+								현재 위치: <a href="">Home</a><!-- 메인으로 href --> > <a href="${path}/shop_main.do">싱글오리진 원두커피</a> > <a href="">아시아&태평양</a>
 								</span>
 							</td>
 						</tr>

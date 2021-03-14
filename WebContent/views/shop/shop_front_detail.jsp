@@ -68,7 +68,7 @@
 												&nbsp;
 												<span class="font-size1">
 												<img src="${path}/resource/img/shop/dot_01.gif"/>
-												현재 위치: <a href="">Home</a><!-- 메인으로 href --> > <a href="shop_front_main.jsp">싱글오리진 원두커피</a> > <a href="shop_front_category.jsp">아시아&태평양</a>
+												현재 위치: <a href="">Home</a><!-- 메인으로 href --> > <a href="${path}/shop_main.do">싱글오리진 원두커피</a> > <a href="${path}/shop_category.do">아시아&태평양</a>
 												</span>
 											</td>
 										</tr>
