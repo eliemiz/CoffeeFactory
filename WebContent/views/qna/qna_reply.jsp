@@ -17,7 +17,7 @@
 	$(document).ready(function() {
 		$("#rep_btn").on("click",function(){
 			if(confirm("답변 등록하시겠습니까?")){
-				$("form1").attr("action","${path}/qna.do#tab4");
+				$("form1").attr("action","${path}/shop_detail.do#tab4");
 				$("form1").submit();
 			}
 		});
@@ -126,8 +126,8 @@
                         </div>
                           <br>
 				     	<div style="text-align:right;">
-				     	<input type="button" value="답변하기" id="rep_btn" class="btn btn_normal" onclick="location.href='${path}/qna.do#tab4'">
-						<input type="button" value="목록보기" class="btn btn_normal" onclick="location.href='${path}/qna.do#tab4'">
+				     	<input type="button" value="답변하기" id="rep_btn" class="btn btn_normal" onclick="location.href='${path}/shop_detail.do#tab4'">
+						<input type="button" value="목록보기" class="btn btn_normal" onclick="location.href='${path}/shop_detail.do#tab4'">
                     </div><!-- .page-body -->
                 </div><!-- #bbsData -->
 	
