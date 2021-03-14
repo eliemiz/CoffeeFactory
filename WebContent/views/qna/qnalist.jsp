@@ -40,7 +40,7 @@
 	border-bottom: 1px solid #e0e0e0;
 }
 .title{
-   font-size: 19px;
+   font-size: 12px;
    padding: 10px 0;
     cursor: pointer;
     border-bottom: 1px solid #e0e0e0;
@@ -65,6 +65,42 @@
 	font-weight: bolder;
 	font-size:10px;	
 	}
+.th_center {
+	text-align: center;
+	color: #a5a2a2;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+thead {
+	font-weight: bold;
+	font-size: 13px;
+}
+
+thead td {
+	border: 0px;
+}
+th {
+	line-height: 20px;
+	padding: 10px 0px;
+	border-top: 1px solid #e7e7e7;
+	border-bottom: 1px solid #e7e7e7;
+	background: #f9f9f9;
+}
+td {
+	line-height: 25px;
+	padding: 10px 0px;
+	border-top: 1px solid #e7e7e7;
+	border-bottom: 1px solid #e7e7e7;
+	word-break: keep-all;
+}
+.td_center {
+	text-align: center;
+}
+	
 </style>
 </head>
 <body>
@@ -97,14 +133,14 @@
 				<tr>
 					<td><span id="qna-q=toggle">1</span></td>
 					<div class="qna-content">
-					<td class="title" id="qna-1">
+					<td class="title" id="qsub-1">
 						<span>
 							해당 상품 원두 언제 입고되나요?</span>
 						</td></div>
 					<td><div class="td_center">ijk230</div></td>
 					<td><div class="td_center">2021/03/12</div></td>
 				<!-- 숨김 상태일 때 td가 남는 것을 방지.. td 자체의 display 조절 -->
-				<tr><td colspan="4" class="full" id="full-1">
+				<tr><td colspan="4" class="full" id="qfull-1">
 					<div align="right">
 								<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='qna_reply.jsp'">
 								<input type="button" value="삭제하기" class="small1"></div><br>
@@ -113,14 +149,14 @@
 					</td></tr>
 					<td><span id="qna-q=toggle">2</span></td>
 					<div class="qna-content">
-					<td class="title" id="qna-2">
+					<td class="title" id="qsub-2">
 						<span>
 							주문 후 배송까지 얼마나 시간이 걸릴까요?</span>
 						</td></div>
 					<td><div class="td_center">sldfk55</div></td>
 					<td><div class="td_center">2021/03/11</div></td>
 				</tr>
-				<tr><td colspan="4" class="full" id="full-2">
+				<tr><td colspan="4" class="full" id="qfull-2">
 						<div align="right">
 								<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='qna_reply.jsp'">
 								<input type="button" value="삭제하기" class="small1"></div><br>
@@ -130,13 +166,13 @@
 				<tr>
 					<td><span id="qna-q=toggle">3</span></td>
 					<div class="qna-content">
-					<td class="title" id="qna-3">
+					<td class="title" id="qsub-3">
 						<span>로스팅 정도 선택 가능한가요?</span>
 						</td></div>
 					<td><div class="td_center">lee1324</div></td>
 					<td><div class="td_center">2021/03/11</div></td>
 				</tr>
-				<tr><td colspan="4" class="full" id="full-3">
+				<tr><td colspan="4" class="full" id="qfull-3">
 							<div align="right">
 								<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='qna_reply.jsp'">
 								<input type="button" value="삭제하기" class="small1"></div><br>
@@ -163,10 +199,10 @@
 	
 </body>
 <script>
-  const items = document.querySelectorAll('.title');
+  const subs = document.querySelectorAll('.title');
 
   function openCloseAnswer() {
-    const answerId = this.id.replace('qna', 'full');
+    const answerId = this.id.replace('qsub', 'qfull');
 	
     if(document.getElementById(answerId).style.display == 'table-cell') {
     // table-cell >> col-span 작동
@@ -178,6 +214,6 @@
     }
   }
 
-  items.forEach(item => item.addEventListener('click', openCloseAnswer));
+  subs.forEach(sub => sub.addEventListener('click', openCloseAnswer));
 </script>
 </html>
