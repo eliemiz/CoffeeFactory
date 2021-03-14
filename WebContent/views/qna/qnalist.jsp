@@ -100,13 +100,16 @@ td {
 .td_center {
 	text-align: center;
 }
-	
+#qnalist tbody tr:hover{
+	background-color: #f7f7f7;
+	cursor: pointer;
+}
 </style>
 </head>
 <body>
 
 <br>
-	<table>
+	<table id="qnalist">
 			<colgroup>
 				<col width="50">
 				<col width="150">
