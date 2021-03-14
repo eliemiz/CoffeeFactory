@@ -420,6 +420,14 @@
 									</div>
 									<jsp:include page="../review/review_shop.jsp"/>
 									<%-- Q&A (mall-tab 포함) --%>
+									<div class="mall-tab" id="tab4">
+										<ul>
+											<li><button type="button" data-to-tab="tab1">상품정보</button></li>
+											<li><button type="button" data-to-tab="tab2">배송안내</button></li>
+											<li><button type="button" data-to-tab="tab3">고객 상품평</button></li>
+											<li class="on"><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
+										</ul>	
+									</div>
 									<jsp:include page="../qna/qnalist.jsp"/>
 								</td>
 							</tr>
