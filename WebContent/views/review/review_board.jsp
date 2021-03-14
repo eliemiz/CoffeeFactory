@@ -48,56 +48,56 @@
 				<th class="th_center">평점</th>
 			</tr>
 
-			<tr onclick="location.href='review_board_detail.jsp'">
+			<tr onclick="location.href='${path}/review_detatil.do'">
 				<td class="td_center2">번호</td>
 				<td class="td_left1">제목</td>
 				<td class="td_center1">아이디</td>
 				<td class="td_center2">등록일</td>
 				<td class="td_center2">평점</td>
 			</tr>
-			<tr onclick="location.href='review_board_detail.jsp'">
+			<tr onclick="location.href='${path}/review_detatil.do'">
 				<td class="td_center2">번호</td>
 				<td class="td_left1">제목</td>
 				<td class="td_center1">아이디</td>
 				<td class="td_center2">등록일</td>
 				<td class="td_center2">평점</td>
 			</tr>
-			<tr onclick="location.href='review_board_detail.jsp'">
+			<tr onclick="location.href='${path}/review_detatil.do'">
 				<td class="td_center2">번호</td>
 				<td class="td_left1">제목</td>
 				<td class="td_center1">아이디</td>
 				<td class="td_center2">등록일</td>
 				<td class="td_center2">평점</td>
 			</tr>
-			<tr onclick="location.href='review_board_detail.jsp'">
+			<tr onclick="location.href='${path}/review_detatil.do'">
 				<td class="td_center2">번호</td>
 				<td class="td_left1">제목</td>
 				<td class="td_center1">아이디</td>
 				<td class="td_center2">등록일</td>
 				<td class="td_center2">평점</td>
 			</tr>
-			<tr onclick="location.href='review_board_detail.jsp'">
+			<tr onclick="location.href='${path}/review_detatil.do'">
 				<td class="td_center2">번호</td>
 				<td class="td_left1">제목</td>
 				<td class="td_center1">아이디</td>
 				<td class="td_center2">등록일</td>
 				<td class="td_center2">평점</td>
 			</tr>
-			<tr onclick="location.href='review_board_detail.jsp'">
+			<tr onclick="location.href='${path}/review_detatil.do'">
 				<td class="td_center2">번호</td>
 				<td class="td_left1">제목</td>
 				<td class="td_center1">아이디</td>
 				<td class="td_center2">등록일</td>
 				<td class="td_center2">평점</td>
 			</tr>
-			<tr onclick="location.href='review_board_detail.jsp'">
+			<tr onclick="location.href='${path}/review_detatil.do'">
 				<td class="td_center2">번호</td>
 				<td class="td_left1">제목</td>
 				<td class="td_center1">아이디</td>
 				<td class="td_center2">등록일</td>
 				<td class="td_center2">평점</td>
 			</tr>
-			<tr onclick="location.href='review_board_detail.jsp'">
+			<tr onclick="location.href='${path}/review_detatil.do'">
 				<td class="td_center2">번호</td>
 				<td class="td_left1">제목</td>
 				<td class="td_center1">아이디</td>
@@ -112,7 +112,8 @@
 			</td>
 			<td class="td_right">
 			
-			<input type="button" value="메인화면" class="btn_btn1" onclick=""/></td></tr>
+			<input type="button" value="메인화면" class="btn_btn1" 
+			onclick="location.href='${path}/index.do'" style="cursor:pointer;"/></td></tr>
 		
 	</table>
 	</form>

@@ -86,8 +86,9 @@
                         </div>
                           <br>
 				     	<div style="text-align:right;">
-				     	<input type="button" value="답변하기" class="btn btn_normal" >
-						<input type="button" value="목록보기" class="btn btn_normal" onclick="location.href='../shop/shop_front_detail.jsp'">
+				     	<input type="button" value="답변하기" class="btn btn_normal" style="cursor:pointer;">
+						<input type="button" value="돌아가기" class="btn btn_normal" 
+						onclick="location.href='${path}/shop_detail.do'" style="cursor:pointer;">
                     </div><!-- .page-body -->
                 </div><!-- #bbsData -->
 	<td class="content-wrap-center-right">

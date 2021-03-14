@@ -57,7 +57,7 @@
 		<br>
 		<div style="text-align: right;">
 			<input type="button" value="돌아가기" class="btn btn_normal"
-				onclick="location.href='frequent_qna.jsp'">
+				onclick="location.href='${path}/fre_qna.do'"  style="cursor:pointer;">
 		</div>
 		<!-- .page-body -->
 	<!-- #bbsData -->

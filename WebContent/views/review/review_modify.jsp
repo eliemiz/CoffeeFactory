@@ -96,8 +96,9 @@
            </table>
         <br>
         <div style="text-align:right;">
-		<input type="button"  id="finish" value="완료" class="btn btn_thatch">
-		<input type="button" value="돌아가기" class="btn btn_normal" onclick="location.href='../shop/shop_front_detail.jsp'" >
+		<input type="button"  id="finish" value="완료" class="btn btn_thatch"  style="cursor:pointer;">
+		<input type="button" value="돌아가기" class="btn btn_normal" 
+		onclick="location.href='${path}/shop_detail.do'" style="cursor:pointer;">
 		</div>
  </form>
 </td>

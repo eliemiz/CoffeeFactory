@@ -87,7 +87,7 @@
 		<br>
 		<div style="text-align: right;">
 			<input type="button" value="목록보기" class="btn btn_normal"
-				onclick="location.href='review_board.jsp'">
+				onclick="location.href='${path}/review_board.do'" style="cursor:pointer;">
 		</div>
 		<!-- .page-body -->
 	<!-- #bbsData -->

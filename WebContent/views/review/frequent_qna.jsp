@@ -51,7 +51,7 @@
 				
 			</tr>
 
-			<tr onclick="location.href='frequent_qna_answer.jsp'">
+			<tr onclick="location.href='${path}/fre_qna_answer.do'">
 				<td class="td_center2">1</td>
 				<td class="td_left1">질문</td>
 				<td class="td_left1"></td>
@@ -59,7 +59,7 @@
 				<td class="td_left1"></td>
 			
 			</tr>
-			<tr onclick="location.href='frequent_qna_answer.jsp'">
+			<tr onclick="location.href='${path}/fre_qna_answer.do'">
 				<td class="td_center2">2</td>
 				<td class="td_left1">질문</td>
 				<td class="td_left1"></td>
@@ -67,7 +67,7 @@
 				<td class="td_left1"></td>
 		
 			</tr>
-			<tr onclick="location.href='frequent_qna_answer.jsp'">
+			<tr onclick="location.href='${path}/fre_qna_answer.do'">
 				<td class="td_center3">3</td>
 				<td class="td_left3">질문</td>
 				<td class="td_left3"></td>
@@ -76,7 +76,7 @@
 				
 			</tr>
 		
-			<tr onclick="location.href='frequent_qna_answer.jsp'">
+			<tr onclick="location.href='${path}/fre_qna_answer.do'">
 				<td class="td_center3">4</td>
 				<td class="td_left3">질문</td>
 				<td class="td_left3"></td>
@@ -85,7 +85,7 @@
 				
 			</tr>
 		
-			<tr onclick="location.href='frequent_qna_answer.jsp'">
+			<tr onclick="location.href='${path}/fre_qna_answer.do'">
 				<td class="td_center3">5</td>
 				<td class="td_left3">질문</td>
 				<td class="td_left3"></td>
@@ -94,7 +94,7 @@
 				
 			</tr>
 		
-			<tr onclick="location.href='frequent_qna_answer.jsp'">
+			<tr onclick="location.href='${path}/fre_qna_answer.do'">
 				<td class="td_center3">6</td>
 				<td class="td_left3">질문</td>
 				<td class="td_left3"></td>
@@ -103,7 +103,7 @@
 				
 			</tr>
 		
-			<tr onclick="location.href='frequent_qna_answer.jsp'">
+			<tr onclick="location.href='${path}/fre_qna_answer.do'">
 				<td class="td_center3">7</td>
 				<td class="td_left3">질문</td>
 				<td class="td_left3"></td>
@@ -118,7 +118,7 @@
 			</td>
 			<td class="td_right">
 			
-			<input type="button" value="메인화면" class="btn_btn1" onclick=""/></td></tr>
+			<input type="button" value="메인화면" class="btn_btn1" onclick="location.href='${path}/index.do'" style="cursor:pointer;"/></td></tr>
 		<tr><td colspan="5" class="td_search1">
 			<select name="search"><option>전체</option><option>제목</option><option>내용</option></select>&nbsp;<input type="text" size="30"/>&nbsp;<input type="submit" value="찾기" class="btn_btn1"/></td></tr>
 	</table>
