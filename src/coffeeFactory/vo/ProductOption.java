@@ -1,7 +1,7 @@
 package coffeeFactory.vo;
 
 /*
-CREATE TABLE PRODUCT(
+CREATE TABLE PRODUCT_OPTION(
 PRODUCT_ID NUMBER,
 CAPACITY VARCHAR2(100),
 PRICE NUMBER
@@ -41,6 +41,6 @@ public class ProductOption {
 	}
 	@Override
 	public String toString() {
-		return "Product [product_id=" + product_id + ", capacity=" + capacity + ", price=" + price +"]";
+		return "ProductOption [product_id=" + product_id + ", capacity=" + capacity + ", price=" + price +"]";
 	}
 }
