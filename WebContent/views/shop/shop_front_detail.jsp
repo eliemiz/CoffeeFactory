@@ -129,10 +129,10 @@
 																				<td><span class="opt_title1">제품 선택</span></td>
 																				<td>
 																					<!-- 왜 radio 인데 다중 선택이 되는가??? -->	
-																					<input type="radio"> 200g (12,000원)<!-- Back: name, value, onclick --><br>
-																					<input type="radio"> 500g (21,000원)<!-- Back: name, value, onclick --><br>
-																					<input type="radio"> 1kg-여분봉투X (34,000원)<!-- Back: name, value, onclick --><br>
-																					<input type="radio"> 1kg-여분봉투O (34,000원)<!-- Back: name, value, onclick --><br>
+																					<input type="radio" name="chadung_list" value="12000"> 200g (12,000원)<!-- Back: name, value, onclick --><br>
+																					<input type="radio" name="chadung_list" value="21000"> 500g (21,000원)<!-- Back: name, value, onclick --><br>
+																					<input type="radio" name="chadung_list" value="34000"> 1kg-여분봉투X (34,000원)<!-- Back: name, value, onclick --><br>
+																					<input type="radio" name="chadung_list" value="34000"> 1kg-여분봉투O (34,000원)<!-- Back: name, value, onclick --><br>
 																				</td>
 																			</tr>
 																			<tr height="25">
@@ -210,9 +210,9 @@
 																	<table align="center">
 																		<tbody>
 																			<tr>
-																				<td><img src="${path}/resource/img/shop/buyBtn.gif" style="cursor:pointer;" onclick=""></td>
-																				<td><img src="${path}/resource/img/shop/cartBtn.gif" style="cursor:pointer;" onclick=""></td>
-																				<td><a href="" onclick=""><img src="${path}/resource/img/shop/wishBtn.gif" border="0"></a></td>
+																				<td><img src="${path}/resource/img/shop/buyBtn.gif" style="cursor:pointer;" onclick="location.href='${path}/views/cart/pay.jsp'"></td>
+																				<td><img src="${path}/resource/img/shop/cartBtn.gif" style="cursor:pointer;" onclick="location.href='${path}/views/cart/cartlist.jsp'"></td>
+																				<td><a href="${path}/views/wishlist/wishlist.jsp" onclick=""><img src="${path}/resource/img/shop/wishBtn.gif" border="0"></a></td>
 																			</tr>																			
 																		</tbody>
 																	</table>
