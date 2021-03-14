@@ -11,6 +11,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${path}/resource/css/fonts.css">
 <link rel="stylesheet" href="${path}/resource/css/shop/search.css">
+<link rel="stylesheet" href="${path}/resource/css/shop/common.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
@@ -146,7 +147,7 @@ td.att{
 					</tbody>
 				</table>
 				<!-- 상품목록 -->
-				<table>
+				<table width="100%" cellspacing="0" cellpadding="0">
 					<tbody>
 						<tr>
 							<td valign="top">
@@ -154,8 +155,8 @@ td.att{
 								cellpadding="0" border="0" id="">
 									<tbody>
 										<tr align="center">
-											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/single/shop_ethiopia_yirgacheffe.jpg" width="100" height="100"></a>
+											<td height="187">
+												<a href=""><img src="${path}/resource/img/shop/single/shop_ethiopia_yirgacheffe.jpg" width="185" class="product_img_border"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -184,7 +185,7 @@ td.att{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/single/shop_kenya.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_kenya.jpg" width="185" class="product_img_border"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -213,7 +214,7 @@ td.att{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/single/shop_colombia.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_colombia.jpg" width="185" class="product_img_border"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -242,7 +243,7 @@ td.att{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/single/shop_guatemala.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_guatemala.jpg" width="185" class="product_img_border"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -273,7 +274,7 @@ td.att{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/single/shop_costa.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_costa.jpg" width="185" class="product_img_border"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -302,7 +303,7 @@ td.att{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/single/shop_papua.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_papua.jpg" width="185" class="product_img_border"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -331,7 +332,7 @@ td.att{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/single/shop_indonesia.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_indonesia.jpg" width="185" class="product_img_border"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -360,7 +361,7 @@ td.att{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/single/shop_onduras.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_onduras.jpg" width="185" class="product_img_border"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -391,7 +392,7 @@ td.att{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/single/shop_tanzania.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_tanzania.jpg" width="185" class="product_img_border"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -420,7 +421,7 @@ td.att{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/single/shop_ethiopia_sidamo.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_ethiopia_sidamo.jpg" width="185" class="product_img_border"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -449,7 +450,7 @@ td.att{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/single/shop_yemen.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_yemen.jpg" width="185" class="product_img_border"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -478,7 +479,7 @@ td.att{
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/single/shop_brazil.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_brazil.jpg" width="185" class="product_img_border"></a>
 											</td>
 										</tr>
 										<tr align="center">
