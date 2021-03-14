@@ -10,7 +10,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<style>
+    a { text-decoration: none; color: black; }
+    a:visited { text-decoration: none; }
+    a:hover { text-decoration: none; }
+    a:focus { text-decoration: none; }
+    a:hover, a:active { text-decoration: none; }
+</style>
 
 <script type="text/javascript">
 <%--
@@ -29,36 +35,43 @@
 	<table class="content-wrap">
 	<tr>
 		<td valign=top>	
-	
-	<table class="content-wrap" style="width:1100px;">
-		<tr>
-			<td><img src='${path}/resource/img/order/tt_order.gif'></td>
-		</tr>
+		<table class="content-wrap" style="width:900px;">
+			<tr>
+			<td class="content-wrap-left">
+				<img src='${path}/resource/img/cart/tt_order.gif'>
+			</td>	
+			</tr>
 		<tr><td height=7></td></tr>
 		<tr><td height=3 bgcolor=eeeeee></td></tr>
 		<tr><td height=7></td></tr>
 	</table>
 <form method=get>
-<table class="content-wrap" style="width:1300px;" cellspacing=0 cellpadding=3>
-  
+<table align="center" style="margin:auto; width:900px;" cellspacing=0 cellpadding=3>
 	<tr>
 		<td>
 		<table class="content-wrap" style="width:1000px;"  cellspacing=0 cellpadding=0>
+
 			<td>
-				<img src='${path}/resource/img/wishlist/dot_01.gif' align=absmiddle>
-				<b>주문/배송조회</b> &nbsp; 
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;
+				<img src='${path}/resource/img/cart/dot_01.gif' align=absmiddle>
+				<b>주문/배송조회</b> 
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;
 			</td>
-			<td align=right>
-			<font color=138CE1>전체 <b>2</b>건</font>
-		</td>
-		</tr>
+			<td>
+			<font color=138CE1>전체<b>2</b>건</font>
+			</td>
+			</tr>
  		</table>
 		</td>
 		
 	  </tr>
 	
 	
-	<table class="content-wrap" style="width:1100px;" cellspacing=0 cellpadding=0>
+	<table align="center" style="margin:auto; width:900px;" cellspacing=0 cellpadding=0>
 	<tr height=28 bgcolor=#f3f3f3 align=center style='font-weight:bold;color:#6F6F6F;'>
 		<td>주문번호</td>
 		<td align=right>결제금액&nbsp;</td>
