@@ -16,7 +16,7 @@
 	
 	$(document).ready(function(){
 		$("#ins_btn").on("click",function(){
-			if(confirm("답변 등록하시겠습니까?")){
+			if(confirm("Q&A 등록하시겠습니까?")){
 				$("form1").attr("action","../shop/shop_front_detail.jsp#tab4");
 				$("form1").submit();
 			}
