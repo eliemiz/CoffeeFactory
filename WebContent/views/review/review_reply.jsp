@@ -21,9 +21,19 @@
 </head>
 
 <body>
+<jsp:include page="/views/common/header.jsp"/>
+	<div style="height:222px;"></div>
+	<table class="content-wrap">
+		<tr>
+			<td class="content-wrap-left">
+			</td>
+			<td class="content-wrap-center">
+
+
+
 	<div style="text-align:center;">
 	<br><br><br>
-	<p class="title">REVIEW</p>
+	<p class="title">후기 답변</p>
 	</div>
 	<br><br><br>
 	<div id="content" class="content_wrap">
@@ -76,10 +86,18 @@
                         </div>
                           <br>
 				     	<div style="text-align:right;">
-				     	<input type="button" value="답변하기" class="btn btn_normal" onclick="location.href='qnalist.jsp'">
-						<input type="button" value="목록보기" class="btn btn_normal" onclick="location.href='review_shop.jsp'">
+				     	<input type="button" value="답변하기" class="btn btn_normal" >
+						<input type="button" value="목록보기" class="btn btn_normal" onclick="location.href='../shop/shop_front_detail.jsp'">
                     </div><!-- .page-body -->
                 </div><!-- #bbsData -->
+	<td class="content-wrap-center-right">
+			</td>
+			<td class="content-wrap-right">
+				<jsp:include page="/views/common/sidebar.jsp"/>
+			</td>
+		</tr>
+	</table>
 	
+	<jsp:include page="/views/common/footer.jsp"/> 
 </body>
 </html>

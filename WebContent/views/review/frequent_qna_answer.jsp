@@ -56,7 +56,7 @@
 		</div>
 		<br>
 		<div style="text-align: right;">
-			<input type="button" value="목록보기" class="btn btn_normal"
+			<input type="button" value="돌아가기" class="btn btn_normal"
 				onclick="location.href='frequent_qna.jsp'">
 		</div>
 		<!-- .page-body -->

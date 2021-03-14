@@ -38,7 +38,7 @@
 	border-bottom: 1px solid #e0e0e0;
 }
 .title{
-	font-size: 19px;
+	font-size: 12px;
 	padding: 10px 0;
     cursor: pointer;
     border-bottom: 1px solid #e0e0e0;
@@ -139,8 +139,8 @@ td {
 				<!-- 숨김 상태일 때 td가 남는 것을 방지.. td 자체의 display 조절 -->
 			<tr><td colspan="5" class="full" id="full-1">
 				<div align="right">
-					<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='review_reply.jsp'">
-					<input type="button" value="수정하기" class="small1">
+					<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='../review/review_reply.jsp'">
+					<input type="button" value="수정하기" class="small1" onclick="location.href='../review/review_update.jsp'">
 					<input type="button" value="삭제하기" class="small1">
 				</div><br>커피 향이 너무좋네요
 								<div align="left">(답변없을때는 공백처리)</div>
@@ -160,8 +160,8 @@ td {
 				<!-- 숨김 상태일 때 td가 남는 것을 방지.. td 자체의 display 조절 -->
 			<tr><td colspan="5" class="full" id="full-2">
 				<div align="right">
-					<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='review_reply.jsp'">
-					<input type="button" value="수정하기" class="small1">
+					<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='../review/review_reply.jsp'">
+					<input type="button" value="수정하기" class="small1" onclick="location.href='../review/review_update.jsp'">
 					<input type="button" value="삭제하기" class="small1">
 				</div><br>좋아요
 								<div align="left">답변: 답변있으면 답변 출력</div>
@@ -181,7 +181,7 @@ td {
 		<div style="text-align:right;">
 	
 	<input align="center" type="button" value="후기작성" 
-	       class="btn btn_thatch" onclick="location.href='review_write.jsp'"><br>
+	       class="btn btn_thatch" onclick="location.href='../review/review_write.jsp'"><br>
 	</div>
 
 	

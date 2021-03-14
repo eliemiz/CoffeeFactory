@@ -69,6 +69,41 @@
 				<td class="td_center2">등록일</td>
 				<td class="td_center2">평점</td>
 			</tr>
+			<tr onclick="location.href='review_board_detail.jsp'">
+				<td class="td_center2">번호</td>
+				<td class="td_left1">제목</td>
+				<td class="td_center1">아이디</td>
+				<td class="td_center2">등록일</td>
+				<td class="td_center2">평점</td>
+			</tr>
+			<tr onclick="location.href='review_board_detail.jsp'">
+				<td class="td_center2">번호</td>
+				<td class="td_left1">제목</td>
+				<td class="td_center1">아이디</td>
+				<td class="td_center2">등록일</td>
+				<td class="td_center2">평점</td>
+			</tr>
+			<tr onclick="location.href='review_board_detail.jsp'">
+				<td class="td_center2">번호</td>
+				<td class="td_left1">제목</td>
+				<td class="td_center1">아이디</td>
+				<td class="td_center2">등록일</td>
+				<td class="td_center2">평점</td>
+			</tr>
+			<tr onclick="location.href='review_board_detail.jsp'">
+				<td class="td_center2">번호</td>
+				<td class="td_left1">제목</td>
+				<td class="td_center1">아이디</td>
+				<td class="td_center2">등록일</td>
+				<td class="td_center2">평점</td>
+			</tr>
+			<tr onclick="location.href='review_board_detail.jsp'">
+				<td class="td_center2">번호</td>
+				<td class="td_left1">제목</td>
+				<td class="td_center1">아이디</td>
+				<td class="td_center2">등록일</td>
+				<td class="td_center2">평점</td>
+			</tr>
 		
 			<tr>
 <tr><td colspan="4" class="td_left4"><img src="${path}/resource/img/notice/leftarrow.png" class="arrow">

@@ -21,7 +21,7 @@
 			alert("평점은 1~5까지만 줄 수 있습니다.");
 		}
 		 else if(confirm('후기를 저장합니다.')){
-			$("#review_write").submit();	
+			$("#review_update").submit();	
 		} 
 		});
 	});
@@ -47,7 +47,7 @@
 
 <br><br><br>
 
-       <form id="review_write">
+       <form id="review_update">
        
       
            <table summary>
@@ -81,7 +81,7 @@
                    <tr>
                        <th><div>후기</div></th>
                        <td colspan="3"><div class="td_left"><textarea id="MS_text_content" name="content" style="font-family: 굴림체; width: 100%; height: 380px;" 
-                        placeholder="후기를 작성해주세요."></textarea>
+                        ></textarea>
                        <input type="hidden" name="mobile_content_type" value=""></div>
                        </td>
                    </tr>
