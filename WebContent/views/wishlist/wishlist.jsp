@@ -110,9 +110,16 @@
 	<td class="content-wrap-right">
 				<jsp:include page="/views/common/sidebar.jsp"/>
 			</td>
+			
 	</table>
 	</form>	
 	</table>
+	<br>
+			<p align=center>
+			<a href='#.'><img src='${path}/resource/img/cart/btn_order_01.gif' align=absmiddle border=0 
+				onclick="location.href='${path}/views/cart/pay.jsp'"></a>&nbsp;&nbsp;
+			<a href='/coffeeFactory/Index.jsp'><img src='${path}/resource/img/cart/btn_order_03.gif' align=absmiddle border=0></a>&nbsp;&nbsp;
+			<a href='#.'><img src='${path}/resource/img/cart/btn_order_02.gif' align=absmiddle border=0></a>
 <jsp:include page="/views/common/footer.jsp" />		
 </body>
 </html>
