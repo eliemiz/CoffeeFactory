@@ -10,7 +10,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<style>
+    a { text-decoration: none; color: black; }
+    a:visited { text-decoration: none; }
+    a:hover { text-decoration: none; }
+    a:focus { text-decoration: none; }
+    a:hover, a:active { text-decoration: none; }
+</style>
 
 <script type="text/javascript">
 <%--
@@ -30,7 +36,7 @@
 	<tr>
 		<td valign=top>	
 	
-	<table class="content-wrap" style="width:1100px;">
+		<table class="content-wrap" style="width:900px;">
 		<tr>
 			<td><img src='${path}/resource/img/cart/tt_wish.gif'></td>
 		</tr>
@@ -39,11 +45,11 @@
 		<tr><td height=7></td></tr>
 	</table>
 <form method=get>
-<table class="content-wrap" style="width:1300px;" cellspacing=0 cellpadding=3>
+<table align="center" style="margin:auto; width:900px;" cellspacing=0 cellpadding=3>
   
 	<tr>
 		<td>
-		<table class="content-wrap" style="width:1000px;"  cellspacing=0 cellpadding=0>
+		<table align="center" style="margin:auto; width:900px;"  cellspacing=0 cellpadding=0>
 			<td>
 				<img src='${path}/resource/img/cart/dot_01.gif' align=absmiddle>
 				<b>위시리스트</b> &nbsp; 
@@ -58,7 +64,7 @@
 	  </tr>
 	
 	
-	<table class="content-wrap" style="width:1100px;" cellspacing=0 cellpadding=0>
+	<table align="center" style="margin:auto; width:900px;" cellspacing=0 cellpadding=0>
 	<tr height=28 bgcolor=#f3f3f3 align=center style='font-weight:bold;color:#6F6F6F;'>
 		<td><img src='${path}/resource/img/cart/multiview.gif'></td>
 		<td>이미지</td>		
