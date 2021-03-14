@@ -18,9 +18,28 @@
 	width: inherit;
 }
 
-#sidebar-logo {
+#sidebar-wrap #sidebar-logo {
 	width: 100%;
 	display: block;
+}
+
+#sidebar-wrap #sidebar-table {
+	width: 100%;
+	margin: 20px 0px;
+	background-color: white;
+	border-spacing: 0px;
+	border: 1px solid #dddddd;
+}
+
+#sidebar-wrap #sidebar-table td {
+	border-bottom: 1px solid #dddddd;
+	font-weight: bold;
+	padding: 5px 0px;
+}
+
+#sidebar-wrap a {
+	text-decoration: none;
+	color: #222222;
 }
 </style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -61,15 +80,39 @@
 			<img id="sidebar-logo" src="${path}/resource/img/common/add_bann_03.jpg">
 		</div>
 		<div>
-			<table style="text-align: center;">
-				<tr><td style="font-size:13.5px">자주하는 질문</td></tr>
-				<tr><td style="font-size:13.5px">고객센터</td></tr>
-				<tr><td style="font-size:13.5px">배송조회</td></tr>
-				<tr><td style="font-size:13.5px">상품 후기</td></tr>
-				<tr><td style="font-size:13.5px">사업자 샘플</td></tr>
-				<tr><td style="font-size:13.5px">이벤트</td></tr>
+			<table id="sidebar-table" style="text-align: center;">
 				<tr>
-					<td>
+					<td style="font-size: 13.5px">
+						<a href="${path}/notice.do">공지사항</a>
+					</td>
+				</tr>
+				<tr>
+					<td style="font-size: 13.5px">
+						<a href="${path}/frq_qna.do">자주하는 질문</a>
+					</td>
+				</tr>
+				<tr>
+					<td style="font-size: 13.5px">
+						<a href="${path}/cart.do">장바구니</a>
+					</td>
+				</tr>
+				<tr>
+					<td style="font-size: 13.5px">
+						<a href="${path}/wish.do">위시리스트</a>
+					</td>
+				</tr>
+				<tr>
+					<td style="font-size: 13.5px">
+						<a href="${path}/order.do">배송조회</a>
+					</td>
+				</tr>
+				<tr>
+					<td style="font-size: 13.5px">
+						<a href="${path}/review.do">상품 후기</td>
+					</td>
+				</tr>
+				<tr>
+					<td style="cursor: pointer;" onclick="location.href='#'">
 						<img src="${path}/resource/img/common/icon_go_top.png"><br>
 						<span style="color:#8b8b8b; font-size:14px;">TOP</span>
 					</td>
@@ -78,4 +121,9 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+	$("#top_btn").on("click", function(){
+		location.href="";	
+	});
+</script>
 </html>

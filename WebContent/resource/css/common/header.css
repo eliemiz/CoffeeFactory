@@ -85,9 +85,10 @@
 }
 
 #header-bottom-right input[type=text] {
-	padding: 2px 40px 0px 12px;
+	padding: 2px 1px;
 	width: 150px;
 	height: 28px;
+	outline: none;
 }
 
 #header-bottom-right span {
