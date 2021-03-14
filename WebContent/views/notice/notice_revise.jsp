@@ -16,7 +16,7 @@
 	$(document).ready(function(){
 		$("#rev_btn").on("click",function(){
 			if(confirm("수정하시겠습니까?")){
-				$("form1").attr("action","${path}/notice_list.jsp");
+				$("form1").attr("action","${path}/notice.do");
 				$("form1").submit();
 			}
 		});
@@ -47,9 +47,9 @@
 	<table align="center" style="margin:auto;" >
 		<col width="200"><col width="850">
 		<tr><td colspan="2" class="td_right4">
-			<input type="button" value="삭제하기" class="btn_btn1" id="del_btn" onclick="location.href='notice_list.jsp'"/>
-			<input type="button" value="수정하기" class="btn_btn1" id="rev_btn" onclick="location.href='notice_list.jsp'"/>
-			<input type="button" value="목록보기" class="btn_btn1" onclick="location.href='notice_list.jsp'"/>
+			<input type="button" value="삭제하기" class="btn_btn1" id="del_btn" onclick="location.href='${path}/notice.do'"/>
+			<input type="button" value="수정하기" class="btn_btn1" id="rev_btn" onclick="location.href='${path}/notice.do'"/>
+			<input type="button" value="목록보기" class="btn_btn1" onclick="location.href='${path}/notice.do'"/>
 			</td></tr>
 		<tr><th class="th_center2" name="title">TITLE</th>
 			<td class="td_left7">

@@ -40,8 +40,8 @@
 		<col width="670"><col width="380">
 		<tr><td class="td_left5" name="title">감사 인사</td>
 			<td class="td_right2">
-			<input type="button" value="수정하기" class="btn_btn1" onclick="location.href='notice_revise.jsp'"/>
-			<input type="button" value="목록보기" class="btn_btn1" onclick="location.href='notice_list.jsp'"/>
+			<input type="button" value="수정하기" class="btn_btn1" onclick="location.href='${path}/notice_revise.do'"/>
+			<input type="button" value="목록보기" class="btn_btn1" onclick="location.href='${path}/notice.do'"/>
 			</td></tr>
 		<tr><td colspan="2" class="td_right3" name="content">
 			<img src="${path}/resource/img/notice/admin.png" class="admin" style="vertical-align:middle; margin-bottom:4px;">&nbsp;

@@ -16,7 +16,7 @@
 	$(document).ready(function(){
 		$("#ins_btn").on("click",function(){
 			if(confirm("등록하시겠습니까?")){
-				$("form1").attr("action","${path}/notice_list.jsp");
+				$("form1").attr("action","${path}/notice.do");
 				$("form1").submit();
 			}
 		});
@@ -46,8 +46,8 @@
        		<input id="views" type="hidden" name="views" value="0">
        		 -->
 		<tr><td colspan="2" class="td_right4">
-			<input type="button" value="등록" class="btn_btn1" id="ins_btn" onclick="location.href='notice_list.jsp'"/>
-			<input type="button" value="목록보기" class="btn_btn1" onclick="location.href='notice_list.jsp'"/>
+			<input type="button" value="등록" class="btn_btn1" id="ins_btn" onclick="location.href='${path}/notice.do'"/>
+			<input type="button" value="목록보기" class="btn_btn1" onclick="location.href='${path}/notice.do'"/>
 			</td></tr>
 		<tr><th class="th_center2" name="title">TITLE</th>
 			<td class="td_left7">
