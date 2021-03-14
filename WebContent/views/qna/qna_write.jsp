@@ -17,7 +17,7 @@
 	$(document).ready(function(){
 		$("#ins_btn").on("click",function(){
 			if(confirm("답변 등록하시겠습니까?")){
-				$("form1").attr("action","${path}/qna_list.jsp");
+				$("form1").attr("action","../shop/shop_front_detail.jsp#tab4");
 				$("form1").submit();
 			}
 		});
@@ -91,8 +91,8 @@
            </table>
         <br>
         <div style="text-align:right;">
-		<input type="button" value="완료" id="ins_btn" class="btn btn_thatch" onclick="location.href='qnalist.jsp'" >
-		<input type="button" value="목록" class="btn btn_normal" onclick="location.href='qnalist.jsp'" >
+		<input type="button" value="완료" id="ins_btn" class="btn btn_thatch" onclick="location.href='../shop/shop_front_detail.jsp#tab4'">
+		<input type="button" value="목록" class="btn btn_normal" onclick="location.href='../shop/shop_front_detail.jsp#tab4'" >
 		</div>
  </form>
 </td>
