@@ -19,7 +19,10 @@
 		
 </script>
 <style>
-  
+#noticelist tbody tr:hover{
+	background-color: #f7f7f7;
+	cursor:pointer;
+}
 </style>
 </head>
 <body>
@@ -38,11 +41,11 @@
 
 <div>
 	<form class="form1">
-	<table align="center" style="margin:auto;" >
+	<table align="center" style="margin:auto;" id="noticelist">
 		<col width="96"><col width="640"><col width="98"><col width="70"><col width="150">
 		<tr><td colspan="5" class="td_left4">자료수 : 10개</td></tr>
 		<tr><th class="th_center">번호</th><th class="th_center">제목</th><th class="th_center">등록인</th><th class="th_center">조회</th><th class="th_center">등록일</th></tr>
-		<tr onclick="location.href='notice_read.do'"><td class="td_center1"><img src="${path}/resource/img/notice/notice.png" class="notice" style="vertical-align:middle; margin-bottom:4px;"></td><td class="td_left2">감사 인사</td><td class="td_center1"><img src="${path}/resource/img/notice/admin.png" class="admin" style="vertical-align:middle; margin-bottom:4px;"></td><td class="td_center1">1004</td><td class="td_center1">2021.03.09</td></tr>
+		<tr onclick="location.href='${path}/notice_read.do'"><td class="td_center1"><img src="${path}/resource/img/notice/notice.png" class="notice" style="vertical-align:middle; margin-bottom:4px;"></td><td class="td_left2">감사 인사</td><td class="td_center1"><img src="${path}/resource/img/notice/admin.png" class="admin" style="vertical-align:middle; margin-bottom:4px;"></td><td class="td_center1">1004</td><td class="td_center1">2021.03.09</td></tr>
 		<tr onclick="location.href='${path}/notice_read.do'"><td class="td_center2" name="notice_id">108</td><td class="td_left1" name="title">롯데카드 할부 이벤트</td><td class="td_center1"><img src="${path}/resource/img/notice/admin.png" class="admin" style="vertical-align:middle; margin-bottom:4px;"></td><td class="td_center2" name="views">1112</td><td class="td_center2" name="regist_date">2020.11.12</td></tr>
 		<tr onclick="location.href='${path}/notice_read.do'"><td class="td_center2" name="notice_id">107</td><td class="td_left1" name="title">삼일절 휴무공지</td><td class="td_center1"><img src="${path}/resource/img/notice/admin.png" class="admin" style="vertical-align:middle; margin-bottom:4px;"></td><td class="td_center2" name="views">301</td><td class="td_center2" name="regist_date">2021.03.01</td></tr>
 		<tr onclick="location.href='${path}/notice_read.do'"><td class="td_center2" name="notice_id">106</td><td class="td_left1" name="title">삼성카드 할부 이벤트</td><td class="td_center1"><img src="${path}/resource/img/notice/admin.png" class="admin" style="vertical-align:middle; margin-bottom:4px;"></td><td class="td_center2" name="views">205</td><td class="td_center2" name="regist_date">2021.02.05</td></tr>
