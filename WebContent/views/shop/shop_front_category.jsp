@@ -45,6 +45,10 @@ td.att{
     border-bottom-width: 0px;
     border-left-width: 0px;
 }
+a:link{text-decoration: none; color: #ffffff;} /* 클릭하지 않았을 때 링크 상태 */
+a:visited{text-decoration: none; color: #ffffff;} /* 한 번 클릭했거나 들어가보았던 링크 상태 */
+a:active{text-decoration: none; color: #ffffff;} /* 링크 부분에서 마우스를 누르고 있는 상태 */
+a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마우스를 가져갔을 때 상태 */
 </style>
 </head>
 <body>
@@ -60,9 +64,9 @@ td.att{
 						<tr>
 							<!-- 상단 배너 -->
 							<td height="23">
-								<span class="font-size1">
+								<span class="font-size1" style="font-color:#ffffff">
 								&nbsp;<img src="${path}/resource/img/shop/dot_01.gif" align="absmiddle"/>
-								현재 위치: <a href="">Home</a><!-- 메인으로 href --> > <a href="${path}/shop_main.do">싱글오리진 원두커피</a> > <a href="">아시아&태평양</a>
+								현재 위치: <a href="${path}/index.do">Home</a><!-- 메인으로 href --> > <a href="${path}/shop_main.do">싱글오리진 원두커피</a> > <a href="">아시아&태평양</a>
 								</span>
 							</td>
 						</tr>
@@ -162,16 +166,16 @@ td.att{
 					</tbody>
 				</table>
 				<!-- 상품목록 -->
-				<table>
+				<table width="100%" cellspacing="0" cellpadding="0">
 					<tbody>
 						<tr>							
 							<td valign="top">
-								<table class="tbl-product" style="table-layout:fixed" align="center" width="187" cellspacing="0"
+								<table class="" style="table-layout:fixed" align="center" width="187" cellspacing="0"
 								cellpadding="0" border="0" id="">
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href="shop_front_detail.jsp"><img src="${path}/resource/img/shop/single/shop_papua.jpg" width="100" height="100"></a>
+												<a href="${path}/shop_detail.do"><img src="${path}/resource/img/shop/single/shop_papua.jpg" width="185" class="product_img_border"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -197,12 +201,12 @@ td.att{
 								</table>				
 							</td>
 							<td valign="top">
-								<table class="tbl-product" style="table-layout:fixed" align="center" width="187" cellspacing="0"
+								<table class="" style="table-layout:fixed" align="center" width="187" cellspacing="0"
 								cellpadding="0" border="0" id="">
 									<tbody>
 										<tr align="center">
 											<td class="product-img" height="187">
-												<a href=""><img src="${path}/resource/img/shop/single/shop_indonesia.jpg" width="100" height="100"></a>
+												<a href=""><img src="${path}/resource/img/shop/single/shop_indonesia.jpg" width="185" class="product_img_border"></a>
 											</td>
 										</tr>
 										<tr align="center">
@@ -225,8 +229,18 @@ td.att{
 									</tbody>
 								</table>				
 							</td>				
-							<td><img src="${path}/resource/img/shop/blank.gif"/></td>
-							<td><img src="${path}/resource/img/shop/blank.gif"/></td>			
+							<td valign="top">
+								<table class="" style="table-layout:fixed" align="center" width="187" cellspacing="0"
+								cellpadding="0" border="0" id="">
+									
+								</table>				
+							</td>				
+							<td valign="top">
+								<table class="" style="table-layout:fixed" align="center" width="187" cellspacing="0"
+								cellpadding="0" border="0" id="">
+									
+								</table>				
+							</td>							
 						</tr>
 					</tbody>
 				</table>

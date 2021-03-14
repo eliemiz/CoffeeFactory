@@ -30,11 +30,15 @@ table.tab{
 td.att{
 	background-image: url(${path}/resource/img/shop/rou01_bot.gif);
 }
+a:link{text-decoration: none; color:black;} /* 클릭하지 않았을 때 링크 상태 */
+a:visited{text-decoration: none; color: #ffffff;} /* 한 번 클릭했거나 들어가보았던 링크 상태 */
+a:active{text-decoration: none; color: #ffffff;} /* 링크 부분에서 마우스를 누르고 있는 상태 */
+a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마우스를 가져갔을 때 상태 */
 </style>
 </head>
 <body>
-<jsp:include page="/views/common/header.jsp"/>
-<div style="height:230px;"></div>
+
+<div style="height:230px;"><jsp:include page="/views/common/header.jsp"/></div>
 <table class="content-wrap" width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
 	<tbody>
 		<tr>
@@ -47,7 +51,7 @@ td.att{
 							<td height="23">
 								<span class="font-size1">
 								&nbsp;<img src="${path}/resource/img/shop/dot_01.gif" align="absmiddle"/>
-								현재 위치: <a href="">Home</a><!-- 메인으로 href --> > <a href="">싱글오리진 원두커피</a> <!-- href 싱글오리진페이지 -->
+								현재 위치: <a href="${path}/index.do">Home</a><!-- 메인으로 href --> > <a href="">싱글오리진 원두커피</a> <!-- href 싱글오리진페이지 -->
 								</span>
 							</td>
 						</tr>
@@ -88,7 +92,7 @@ td.att{
 																		<td nowrap>
 																			&nbsp;
 																			<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle" vspace="2"/>
-																			<a href="shop_front_category.jsp"><font color="#000000" style="font-size:9pt">아시아&태평양</font></a>
+																			<a href="${path}/shop_category.do"><font color="#000000" style="font-size:9pt">아시아&태평양</font></a>
 																		</td>
 																	</tr>
 																</tbody>

@@ -46,6 +46,10 @@
 	-webkit-border-horizontal-spacing: 0px;
 	-webkit-border-vertical-spacing: 0px;
 }
+a:link{text-decoration: none; color: #ffffff;} /* 클릭하지 않았을 때 링크 상태 */
+a:visited{text-decoration: none; color: #ffffff;} /* 한 번 클릭했거나 들어가보았던 링크 상태 */
+a:active{text-decoration: none; color: #ffffff;} /* 링크 부분에서 마우스를 누르고 있는 상태 */
+a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마우스를 가져갔을 때 상태 */
 </style>
 </head>
 <body>
