@@ -5,19 +5,19 @@ public class Product {
 	private String name;
 	private String category;
 	private String company;
-	private String decription;
+	private String description;
 	private String thumbnail;
 	public Product() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Product(int product_id, String name, String category, String company, String decription, String thumbnail) {
+	public Product(int product_id, String name, String category, String company, String description, String thumbnail) {
 		super();
 		this.product_id = product_id;
 		this.name = name;
 		this.category = category;
 		this.company = company;
-		this.decription = decription;
+		this.description = description;
 		this.thumbnail = thumbnail;
 	}
 	public int getProduct_id() {
@@ -44,11 +44,11 @@ public class Product {
 	public void setCompany(String company) {
 		this.company = company;
 	}
-	public String getDecription() {
-		return decription;
+	public String getDescription() {
+		return description;
 	}
-	public void setDecription(String decription) {
-		this.decription = decription;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public String getThumbnail() {
 		return thumbnail;
@@ -59,6 +59,6 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [product_id=" + product_id + ", name=" + name + ", category=" + category + ", company=" + company 
-				+ ", decription=" + decription + ", thumbnail=" + thumbnail +"]";
+				+ ", description=" + description + ", thumbnail=" + thumbnail +"]";
 	}
 }
