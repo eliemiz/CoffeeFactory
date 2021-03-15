@@ -1,19 +1,9 @@
 package coffeeFactory.vo;
 
-/*
- CREATE TABLE PRODUCT(
-PRODUCT_ID NUMBER,
-NAME VARCHAR2(100),
-ORIGIN VARCHAR2(100),
-COMPANY VARCHAR2(50),
-DESCRIPTION VARCHAR2(1000),
-THUMBNAIL VARCHAR2(200)
-); 
- */
 public class Product {
 	private int product_id;
 	private String name;
-	private String origin;
+	private String category;
 	private String company;
 	private String decription;
 	private String thumbnail;
@@ -21,11 +11,11 @@ public class Product {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Product(int product_id, String name, String origin, String company, String decription, String thumbnail) {
+	public Product(int product_id, String name, String category, String company, String decription, String thumbnail) {
 		super();
 		this.product_id = product_id;
 		this.name = name;
-		this.origin = origin;
+		this.category = category;
 		this.company = company;
 		this.decription = decription;
 		this.thumbnail = thumbnail;
@@ -42,11 +32,11 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getOrigin() {
-		return origin;
+	public String getCategory() {
+		return category;
 	}
-	public void setOrigin(String origin) {
-		this.origin = origin;
+	public void getCategory(String category) {
+		this.category = category;
 	}
 	public String getCompany() {
 		return company;
@@ -68,7 +58,7 @@ public class Product {
 	}
 	@Override
 	public String toString() {
-		return "Product [product_id=" + product_id + ", name=" + name + ", origin=" + origin + ", company=" + company 
+		return "Product [product_id=" + product_id + ", name=" + name + ", category=" + category + ", company=" + company 
 				+ ", decription=" + decription + ", thumbnail=" + thumbnail +"]";
 	}
 }
