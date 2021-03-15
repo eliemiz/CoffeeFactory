@@ -12,9 +12,9 @@ public class Dao {
 	protected Statement stmt;
 	protected PreparedStatement pstmt;
 	protected ResultSet rs;
-	private String defaultUrl = "jdbc:oracle:thin:@localhost:1521:xe";
-	private String defaultUser = "scott";
-	private String defaultPassword = "tiger";
+	private String defaultUrl = "jdbc:oracle:thin:@39.117.21.102:1521:xe";
+	private String defaultUser = "coffee";
+	private String defaultPassword = "factory";
 
 	protected void connect() throws SQLException {
 		try {
