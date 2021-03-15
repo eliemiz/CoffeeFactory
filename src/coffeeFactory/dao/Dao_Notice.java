@@ -85,7 +85,7 @@ public class Dao_Notice {
 		} 
 		return notice;	
 	}
-	// 조회(title) 제목
+	// 조회(title) 제목 (확인)
 	public ArrayList<Notice> getNoticeList1(String title){
 		ArrayList<Notice> list = new ArrayList<Notice>();
 		try {
@@ -111,7 +111,7 @@ public class Dao_Notice {
 		return list;		
 	}
 	
-	// 조회(content) 내용
+	// 조회(content) 내용 (확인)
 	public ArrayList<Notice> getNoticeList2(String content){
 		ArrayList<Notice> list = new ArrayList<Notice>();
 		try {
@@ -173,7 +173,7 @@ public class Dao_Notice {
 			}
 		}
 	}
-	// 수정
+	// 수정 (확인함)
 	// UPDATE notice SET title = '고객감사 할부 이벤트', content='이벤트 진행 기간 동안 많은 참여 부탁드립니다.', image='test.img'
 	// WHERE NOTICE_ID = 100002;
 	public void updateNotice(Notice notice) {
