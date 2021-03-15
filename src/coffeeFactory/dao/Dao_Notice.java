@@ -116,7 +116,7 @@ public class Dao_Notice {
 		ArrayList<Notice> list = new ArrayList<Notice>();
 		try {
 			connect();
-			String sql = "SELECT * FROM notice where content like '%'||'?'||'%'";
+			String sql = "SELECT * FROM notice where content like '%'||?||'%'";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -236,9 +236,9 @@ public class Dao_Notice {
 		Dao_Notice dao = new Dao_Notice();
 		ArrayList<Notice> nlist = dao.getNoticeList();
 //		Notice notice = dao.getNotice(100000);
-		ArrayList<Notice> list = dao.getNoticeList1("모두");
+		ArrayList<Notice> list = dao.getNoticeList1("할부");
 //		dao.insertNotice(new Notice("테스트타이틀","테스트내용","테스트이미지",30));
-//		dao.updateNotice(new Notice("수정테스트","수정테스트","수정이미지",100000));
+		dao.updateNotice(new Notice(100002,"","수정타이틀","수정내용","수정이미지",0));
 //		dao.deleteNotice(100003); 
 		
 		System.out.println(nlist);
