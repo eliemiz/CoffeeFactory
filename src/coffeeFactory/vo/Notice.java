@@ -55,15 +55,7 @@ public class Notice {
 		this.content = content;
 		this.image = image;
 	}
-	/*
-	public Notice(String title, String content, String image, int notice_id) {
-		super();	
-		this.title = title;
-		this.content = content;
-		this.image = image;
-		this.notice_id = notice_id;
-	}
-*/
+
 	public Notice(String title, String content, String image, int views) {
 		super();
 		this.title = title;
