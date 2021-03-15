@@ -3,6 +3,7 @@ package coffeeFactory.vo;
 import java.util.Date;
 
 public class Qna {
+	private int qna_id;
 	private int product_id;
 	private int account_id;
 	private Date regist_date;
@@ -17,13 +18,14 @@ public class Qna {
 	
 	@Override
 	public String toString() {
-		return "Qna [product_id=" + product_id + ", account_id=" + account_id + ", regist_date=" + regist_date
+		return "Qna [qna_id=" + qna_id + ", product_id=" + product_id + ", account_id=" + account_id + ", regist_date=" + regist_date
 				+ ", regist_date_s=" + regist_date_s + ", title=" + title + ", content=" + content + ", reply_content="
 				+ reply_content + "]";
 	}
 
-	public Qna(int product_id, int account_id, Date regist_date, String title, String content, String reply_content) {
+	public Qna(int qna_id, int product_id, int account_id, Date regist_date, String title, String content, String reply_content) {
 		super();
+		this.qna_id = qna_id;
 		this.product_id = product_id;
 		this.account_id = account_id;
 		this.regist_date = regist_date;
@@ -31,6 +33,19 @@ public class Qna {
 		this.content = content;
 		this.reply_content = reply_content;
 	}
+	
+	public Qna(String reply_content, int qna_id) {
+		super();
+		this.reply_content = reply_content;
+		this.qna_id = qna_id;
+	}
+	
+	public Qna(int qna_id, String reply_content) {
+		super();
+		this.qna_id = qna_id;
+		this.reply_content = reply_content;
+	}
+
 	public Qna(int product_id, int account_id, String regist_date_s, String title, String content,
 			String reply_content) {
 		super();
@@ -41,6 +56,24 @@ public class Qna {
 		this.content = content;
 		this.reply_content = reply_content;
 	}
+	
+	public Qna(int product_id, int account_id, String title, String content, String reply_content) {
+		super();
+		this.product_id = product_id;
+		this.account_id = account_id;
+		this.title = title;
+		this.content = content;
+		this.reply_content = reply_content;
+	}
+	
+	public int getQna_id() {
+		return qna_id;
+	}
+
+	public void setQna_id(int qna_id) {
+		this.qna_id = qna_id;
+	}
+
 	public int getProduct_id() {
 		return product_id;
 	}
