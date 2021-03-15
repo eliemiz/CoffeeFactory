@@ -47,6 +47,31 @@ public class Notice {
 		this.image = image;
 		this.views = views;
 	}
+	
+	public Notice(int notice_id, String title, String content, String image) {
+		super();
+		this.notice_id = notice_id;
+		this.title = title;
+		this.content = content;
+		this.image = image;
+	}
+	/*
+	public Notice(String title, String content, String image, int notice_id) {
+		super();	
+		this.title = title;
+		this.content = content;
+		this.image = image;
+		this.notice_id = notice_id;
+	}
+*/
+	public Notice(String title, String content, String image, int views) {
+		super();
+		this.title = title;
+		this.content = content;
+		this.image = image;
+		this.views = views;
+	}
+
 	public int getNotice_id() {
 		return notice_id;
 	}
