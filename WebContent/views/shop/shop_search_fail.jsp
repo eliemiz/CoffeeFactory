@@ -34,7 +34,7 @@
 			<tr>
 				<td height="30">
 					&nbsp;<img src="${path}/resource/img/shop/dot_01.gif"/>
-					현재위치 : <a href="">Home</a>> <a href="">검색결과</a>
+					현재위치 : <a href="">Home</a>> 검색결과
 				</td>
 			</tr>
 		</tbody>
@@ -115,19 +115,6 @@
 				<tr><td height="10"></td></tr>
 				<tr><td height="1" width="100%" bgcolor="dee2e4"></td></tr>
 				<tr><td height="10"></td></tr>
-		</tbody>
-	</table>
-	<table width="100%">
-		<tbody>
-			<tr>
-				<td></td>
-				<td align="center"><b><script language="javascript">getPageLink1(10,1,1,'');</script>
-				<img src="${path}/resource/img/shop/prev1.gif" border="0" align="ABSMIDDLE">
-				<img src="${path}/resource/img/shop/cutln.gif" border="0" align="ABSMIDDLE">
-				<font color="RED">1</font><img src="${path}/resource/img/shop/cutln.gif" border="0" align="ABSMIDDLE">
-				<img src="${path}/resource/img/shop/next1.gif" border="0" align="ABSMIDDLE"></b></td>
-				<td align="right"></td>
-			</tr>
 		</tbody>
 	</table>
 			</td>
