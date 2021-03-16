@@ -79,7 +79,7 @@ public class DaoAccount extends Dao {
 	// 조회 - 단일 - 조건(name, email)
 	public Account search(String name, String email) {
 
-		Account account = new Account();
+		Account account = null;
 
 		try {
 			connect();

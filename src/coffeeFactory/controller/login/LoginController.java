@@ -35,6 +35,7 @@ public class LoginController extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		// request
+		request.setCharacterEncoding("utf-8");
 		String id = request.getParameter("id");
 		String pass = request.getParameter("pass");
 		if (id == null) {

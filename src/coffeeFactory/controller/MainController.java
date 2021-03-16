@@ -34,6 +34,7 @@ public class MainController extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		// request
+		request.setCharacterEncoding("utf-8");
 		String proc = request.getParameter("proc");
 		if (proc == null) {
 			proc = "";

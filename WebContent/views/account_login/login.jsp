@@ -22,11 +22,17 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-		var account_id = ${account_id};
-		if (${not empty account_id}){
-			
+
+		// id, account_id 여부
+		var hasId = ${not empty param.id};
+		var hasAccountId = ${not empty account_id};
+		if (hasId) {
+			if (hasAccountId) {
+				location.href = "${path}";	
+			} else {
+				alert("입력하신 회원아이디는 존재하지 않습니다.");	
+			}
 		}
-		alert(${account_id});
 	});
 		
 </script>
@@ -129,6 +135,13 @@
  	$("#login-btn").on("click", function(){
  		
  		// 유효성 체크
+	 	if ($("[name=id]").val() == "") {
+	 		alert("아이디를 입력해주세요.");
+	 		return false;
+	 	} else if ($("[name=pass]").val() == "") {
+	 		alert("패스워드를 입력해주세요.");
+	 		return false;
+	 	}
  		
  		$("#login-form").submit();
  	});
