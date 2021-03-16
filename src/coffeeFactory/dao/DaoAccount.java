@@ -44,7 +44,7 @@ public class DaoAccount extends Dao {
 	// 조회 - 단일 - 조건(id, pass)
 	public Account login(String id, String pass) {
 
-		Account account = new Account();
+		Account account = null;
 
 		try {
 			connect();

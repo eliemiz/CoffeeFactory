@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import coffeeFactory.dao.DaoAccount;
+import coffeeFactory.vo.Account;
 
 /**
  * Servlet implementation class LoginController
@@ -31,7 +35,25 @@ public class LoginController extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		// request
+		String id = request.getParameter("id");
+		String pass = request.getParameter("pass");
+		if (id == null) {
+			id = "";
+		}
+		if (pass == null) {
+			pass = "";
+		}
+		
 		// model
+		if (!id.equals("")) {
+			DaoAccount dao = new DaoAccount();
+			Account account = dao.login(id, pass);
+			if (account != null) {
+				HttpSession session = request.getSession();
+				session.setAttribute("account_id", account.getAccount_id());
+			}
+		}
+		
 		// view
 		String page = "views\\account_login\\login.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);

@@ -22,7 +22,11 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-
+		var account_id = ${account_id};
+		if (${not empty account_id}){
+			
+		}
+		alert(${account_id});
 	});
 		
 </script>
@@ -54,30 +58,32 @@
 									<table>
 										<tr>
 											<td>
-												<table>
-													<tr>
-														<td style="width:47px;">
-															<img src="${img_path}/login1_id.gif">
-														</td>
-														<td>
-															<input type="text" size="20" maxlength="12" tabindex="1" class="login-input">
-														</td>
-														<td rowspan="3">
-															<input type="image" id="login_btn" src="${img_path}/login1_go.gif" style="margin:0px 0px 0px 13px">
-														</td>
-													</tr>
-													<tr>
-														<td colspan="2"></td>
-													</tr>
-													<tr>
-														<td>
-															<img src="${img_path}/login1_pw.gif">
-														</td>
-														<td>
-															<input type="password" size="20" maxlength="16" tabindex="2" class="login-input">
-														</td>
-													</tr>
-												</table>
+												<form method="post" id="login-form">
+													<table>
+														<tr>
+															<td style="width:47px;">
+																<img src="${img_path}/login1_id.gif">
+															</td>
+															<td>
+																<input type="text" name="id" size="20" maxlength="12" tabindex="1" class="login-input">
+															</td>
+															<td rowspan="3">
+																<img id="login-btn" src="${img_path}/login1_go.gif" style="margin:0px 0px 0px 13px">
+															</td>
+														</tr>
+														<tr>
+															<td colspan="2"></td>
+														</tr>
+														<tr>
+															<td>
+																<img src="${img_path}/login1_pw.gif">
+															</td>
+															<td>
+																<input type="password"  name="pass" size="20" maxlength="16" tabindex="2" class="login-input">
+															</td>
+														</tr>
+													</table>
+												</form>
 											</td>
 										</tr>
 										<tr>
@@ -120,9 +126,11 @@
 	
 </body>
 <script type="text/javascript">
- 	$("#login_btn").on("click", function(){
- 		alert("로그인되었습니다.");
- 		location.href="${path}";
+ 	$("#login-btn").on("click", function(){
+ 		
+ 		// 유효성 체크
+ 		
+ 		$("#login-form").submit();
  	});
 </script>
 </html>
