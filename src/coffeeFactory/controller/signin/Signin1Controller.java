@@ -31,6 +31,8 @@ public class Signin1Controller extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		// request
+		request.setCharacterEncoding("utf-8");
+
 		// model
 		// view
 		String page = "views\\account_signin\\signin1.jsp";

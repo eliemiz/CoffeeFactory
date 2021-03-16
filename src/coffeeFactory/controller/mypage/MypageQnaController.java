@@ -31,6 +31,7 @@ public class MypageQnaController extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		// request
+		request.setCharacterEncoding("utf-8");
 		// model
 		// view
 		String page = "views\\account_mypage\\mypage_qna.jsp";

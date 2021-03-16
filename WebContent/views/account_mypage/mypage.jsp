@@ -16,6 +16,12 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
+	var hasAccountId = ${not empty account_id};
+	if (!hasAccountId) {
+		alert("로그인이 필요한 페이지입니다.");
+		location.href = "${path}/login.do";
+	}
+	
 	$(document).ready(function(){
 		
 	});
@@ -42,19 +48,19 @@
 									<table id="mypage-info-table">
 										<tr>
 											<th>별명</th>
-											<td>temp_nick</td>
+											<td>${account.nickname}</td>
 									 	</tr>
 										<tr>
 											<th>아이디</th>
-											<td>himan</td>
+											<td>${account.id}</td>
 									 	</tr>
 									 	<tr>
 											<th>이름</th>
-											<td>홍길동</td>
+											<td>${account.name}</td>
 									 	</tr>
 									 	<tr>
 											<th>회원그룹</th>
-											<td>준회원</td>
+											<td>${account.auth}</td>
 									 	</tr>
 									</table>
 								</div>

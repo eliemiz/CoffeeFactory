@@ -51,7 +51,7 @@
 							<td>
 								<span>이용약관</span>
 								<textarea rows="10" cols="85" readonly><jsp:include page="terms1.jsp"/></textarea>
-								<span><label><input type="checkbox"> 위의 이용 약관에 동의합니다.</label></span>
+								<span><label><input type="checkbox" id="check1"> 위의 이용 약관에 동의합니다.</label></span>
 							</td>
 						</tr>
 						<tr>
@@ -61,7 +61,7 @@
 							<td>
 								<span>개인정보 수집 및 이용에 대한 안내</span>
 								<textarea rows="10" cols="85" readonly><jsp:include page="terms2.jsp"/></textarea>
-								<span><label><input type="checkbox"> 위의 개인정보 수집 동의 내용에 동의합니다.</label></span>
+								<span><label><input type="checkbox" id="check2"> 위의 개인정보 수집 동의 내용에 동의합니다.</label></span>
 							</td>
 						</tr>
 						<tr>
@@ -85,6 +85,14 @@
 </body>
 <script type="text/javascript">
 	$("#signin_btn").on("click", function(){
+		if (!$("#check1").prop("checked")) {
+			alert("이용약관에 동의하셔야 가입하실 수 있습니다.");
+			return false;
+		} else if (!$("#check2").prop("checked")) {
+			alert("개인정보 수집내용에 동의하셔야 가입하실 수 있습니다.");
+			return false;
+		}
+		
 		location.href="${path}/signin2.do";
 	});
 </script>
