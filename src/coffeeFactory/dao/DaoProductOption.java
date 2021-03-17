@@ -14,7 +14,9 @@ public class DaoProductOption extends Dao{
 			try {
 				connect();
 				
-				String sql = "SELECT * FROM PRODUCT_OPTION WHERE product_id = ?";
+				String sql = "SELECT min(price)\r\n"
+						+ "FROM PRODUCT p, PRODUCT_OPTION po\r\n"
+						+ "WHERE p.PRODUCT_ID = po.PRODUCT_ID AND p.PRODUCT_ID = ?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setInt(1, product_id);
 				rs = pstmt.executeQuery();
