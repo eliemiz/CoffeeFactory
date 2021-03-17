@@ -117,6 +117,39 @@ public class DaoReview extends Dao{
 		
 	}
 	
+	public ArrayList<Review> getReviewsByAccount(int account_id) {
+		
+		ArrayList<Review> list = new ArrayList<Review>();
+		
+		try {
+			connect();
+			
+			String sql = "SELECT * FROM REVIEW WHERE ACCOUNT_ID = ? ORDER BY REVIEW_ID DESC";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, account_id);
+
+			rs = pstmt.executeQuery();	
+			
+			while (rs.next()) {
+				Review review = new Review(rs.getInt("REVIEW_ID"), rs.getInt("PRODUCT_ID"), rs.getInt("ACCOUNT_ID"),
+						rs.getDate("REGIST_DATE"), rs.getInt("RATING"), rs.getString("TITLE"), rs.getString("CONTENT"),
+						rs.getString("IMAGE"),rs.getString("REPLY_CONTENT"));
+					list.add(review);
+			}
+			rs.close();
+			pstmt.close();
+			con.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	
+	
 	// 입력
 			public void insertReview(Review review) {
 
