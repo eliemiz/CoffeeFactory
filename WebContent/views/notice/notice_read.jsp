@@ -38,19 +38,18 @@
 	<form class="form1">
 	<table align="center" style="margin:auto;" >
 		<col width="670"><col width="380">
-		<tr><td class="td_left5" name="title">감사 인사</td>
+		<tr><td class="td_left5" name="title">${notice.title}</td>
 			<td class="td_right2">
 			<input type="button" value="수정하기" class="btn_btn1" onclick="location.href='${path}/notice_revise.do'"/>
 			<input type="button" value="목록보기" class="btn_btn1" onclick="location.href='${path}/notice.do'"/>
 			</td></tr>
 		<tr><td colspan="2" class="td_right3" name="content">
 			<img src="${path}/resource/img/notice/admin.png" class="admin" style="vertical-align:middle; margin-bottom:4px;">&nbsp;
-			등록일:2021.03.09&nbsp;<15:09>&nbsp;&nbsp;&nbsp;조회:1004
+			등록일:${notice.regist_date}&nbsp;&nbsp;&nbsp;조회:${notice.views}
 			</td></tr>
 		<tr><td colspan="2" class="td_left6">
-			<img src="${path}/resource/img/notice/coffee1.png" class="content"><br>
-			"커피공장"을 찾아주신 고객 여러분 모두에게 감사 인사 드립니다.<br>
-			행복한 하루 보내세요 :)
+			${notice.image}<br>
+			${notice.content}
 			</td></tr>
 	</table>
 	</form>

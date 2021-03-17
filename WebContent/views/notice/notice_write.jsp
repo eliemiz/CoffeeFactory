@@ -12,15 +12,19 @@
 <link rel="stylesheet" href="${path}/resource/css/notice.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
+	var ckInsert = "${param.title}";
+	if(ckInsert!=""){
+		if(confirm("등록했습니다\n조회화면으로 이동하시겠습니까?")){
+			location.href='${path}/notice.do';
+		}
+	}
 	
 	$(document).ready(function(){
-		$("#ins_btn").on("click",function(){
-			if(confirm("등록하시겠습니까?")){
-				$("form1").attr("action","${path}/notice.do");
-				$("form1").submit();
-			}
-		});
-	});
+	      $("#ins_btn").on("click",function(){
+	    	  
+	    	  $("form").submit(); 
+	      });
+	   });
 		
 </script>
 </head>
@@ -46,7 +50,7 @@
        		<input id="views" type="hidden" name="views" value="0">
        		 -->
 		<tr><td colspan="2" class="td_right4">
-			<input type="button" value="등록" class="btn_btn1" id="ins_btn" onclick="location.href='${path}/notice.do'"/>
+			<input type="button" value="등록" class="btn_btn1" id="ins_btn"/>
 			<input type="button" value="목록보기" class="btn_btn1" onclick="location.href='${path}/notice.do'"/>
 			</td></tr>
 		<tr><th class="th_center2" name="title">TITLE</th>
