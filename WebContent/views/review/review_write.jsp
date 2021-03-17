@@ -14,16 +14,35 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
+	
+	var ckInsert = "${param.content}";
+	if(ckInsert != ""){
+		if(confirm("등록했습니다\n상품화면으로 이동하시겠습니까?")){
+			location.href='${path}/shop_detail.do';
+		}
+	}
+	
 	$(document).ready(function(){
 		$("#finish").on("click",function(){
 		if ($("[name=rating]").val()!=1 && $("[name=rating]").val()!=2 && $("[name=rating]").val()!=3
 				&& $("[name=rating]").val()!=4 && $("[name=rating]").val()!=5){
-			alert("평점은 1~5까지만 줄 수 있습니다.");
+			alert("평점은 1~5로 줄 수 있습니다.");
+			return false;
 		}
-		 else if(confirm('후기를 저장합니다.')){
-			$("#review_write").submit();	
-		} 
+		if($("[name=title]").val()==""){
+			alert('제목을 입력해주세요');
+			return false;
+		} else {
+		 if($("[name=content]").val()==""){
+			alert('후기를 입력해주세요');
+			return false;
+			} 
+		}
+		
+			$("#review_write").submit();
+		 
 		});
+		
 	});
 		
 </script>
@@ -47,7 +66,7 @@
 
 <br><br><br>
 
-       <form id="review_write">
+       <form id="review_write" method="post">
        
       
            <table summary>
@@ -64,7 +83,9 @@
                        </th>
                        <td>
                            <div class="td_left">
-                              <input id="bw_input_subject" class="MS_input_txt input_style2" type="text" name="subject" value="">
+                           <input type="hidden" name="product_id" value=""/>
+                           <input type="hidden" name="account_id" value=""/>
+                              <input id="bw_input_subject" class="MS_input_txt input_style2" type="text" name="title" >
                            </div>
                        </td>
                    </tr>
@@ -82,13 +103,13 @@
                        <th><div>후기</div></th>
                        <td colspan="3"><div class="td_left"><textarea id="MS_text_content" name="content" style="font-family: 굴림체; width: 100%; height: 380px;" 
                         placeholder="후기를 작성해주세요."></textarea>
-                       <input type="hidden" name="mobile_content_type" value=""></div>
+                       <input type="hidden" name="reply_content" value=""/></div>
                        </td>
                    </tr>
                    <tr>
                        <th><div>FILE</div></th>
                        <td colspan="3">
-                           <div class="td_left"><input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"></div>
+                           <div class="td_left"><input type="file" id="avatar" name="image" accept="image/png, image/jpeg"></div>
                           
                        </td>
                    </tr>                

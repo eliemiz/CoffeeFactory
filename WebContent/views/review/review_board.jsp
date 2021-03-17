@@ -33,14 +33,14 @@
 	</div>
 <div>
 	<form class="form1">
-		<table align="center" style="margin:auto;" >
+		<table align="center" style="border-collapse: collapse; margin:auto;" >
 			<col width="96">
 			<col width="640">
 			<col width="98">
 			<col width="70">
 			<col width="150">
 
-			<tr>
+			<tr >
 				<th class="th_center">번호</th>
 				<th class="th_center">제목</th>
 				<th class="th_center">아이디</th>
@@ -48,62 +48,14 @@
 				<th class="th_center">평점</th>
 			</tr>
 
-			<tr onclick="location.href='${path}/review_detatil.do'">
-				<td class="td_center2">번호</td>
-				<td class="td_left1">제목</td>
-				<td class="td_center1">아이디</td>
-				<td class="td_center2">등록일</td>
-				<td class="td_center2">평점</td>
+			<tr>
+				<td class="td_center3">번호</td>
+				<td class="td_left3" style="cursor:pointer;">제목</td>
+				<td class="td_center3">아이디</td>
+				<td class="td_center3">등록일</td>
+				<td class="td_center3">평점</td>
 			</tr>
-			<tr onclick="location.href='${path}/review_detatil.do'">
-				<td class="td_center2">번호</td>
-				<td class="td_left1">제목</td>
-				<td class="td_center1">아이디</td>
-				<td class="td_center2">등록일</td>
-				<td class="td_center2">평점</td>
-			</tr>
-			<tr onclick="location.href='${path}/review_detatil.do'">
-				<td class="td_center2">번호</td>
-				<td class="td_left1">제목</td>
-				<td class="td_center1">아이디</td>
-				<td class="td_center2">등록일</td>
-				<td class="td_center2">평점</td>
-			</tr>
-			<tr onclick="location.href='${path}/review_detatil.do'">
-				<td class="td_center2">번호</td>
-				<td class="td_left1">제목</td>
-				<td class="td_center1">아이디</td>
-				<td class="td_center2">등록일</td>
-				<td class="td_center2">평점</td>
-			</tr>
-			<tr onclick="location.href='${path}/review_detatil.do'">
-				<td class="td_center2">번호</td>
-				<td class="td_left1">제목</td>
-				<td class="td_center1">아이디</td>
-				<td class="td_center2">등록일</td>
-				<td class="td_center2">평점</td>
-			</tr>
-			<tr onclick="location.href='${path}/review_detatil.do'">
-				<td class="td_center2">번호</td>
-				<td class="td_left1">제목</td>
-				<td class="td_center1">아이디</td>
-				<td class="td_center2">등록일</td>
-				<td class="td_center2">평점</td>
-			</tr>
-			<tr onclick="location.href='${path}/review_detatil.do'">
-				<td class="td_center2">번호</td>
-				<td class="td_left1">제목</td>
-				<td class="td_center1">아이디</td>
-				<td class="td_center2">등록일</td>
-				<td class="td_center2">평점</td>
-			</tr>
-			<tr onclick="location.href='${path}/review_detatil.do'">
-				<td class="td_center2">번호</td>
-				<td class="td_left1">제목</td>
-				<td class="td_center1">아이디</td>
-				<td class="td_center2">등록일</td>
-				<td class="td_center2">평점</td>
-			</tr>
+		
 		
 			<tr>
 <tr><td colspan="4" class="td_left4"><img src="${path}/resource/img/notice/leftarrow.png" class="arrow">

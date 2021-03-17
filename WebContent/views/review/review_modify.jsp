@@ -13,18 +13,33 @@
 <link rel="stylesheet" href="${path}/resource/css/review/common.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
-	
-	$(document).ready(function(){
-		$("#finish").on("click",function(){
-		if ($("[name=rating]").val()!=1 && $("[name=rating]").val()!=2 && $("[name=rating]").val()!=3
-				&& $("[name=rating]").val()!=4 && $("[name=rating]").val()!=5){
-			alert("평점은 1~5까지만 줄 수 있습니다.");
-		}
-		 else if(confirm('후기를 저장합니다.')){
-			$("#review_update").submit();	
-		} 
-		});
-	});
+
+var proc = "${param.proc}"; // proc="";
+if(proc=="upt"){
+	if(confirm("수정되었습니다. \n상품화면으로 이동하시겠습니까?")){
+		location.href='${path}/shop_detail.do';
+	}
+}
+if(proc=="del"){
+	  alert("삭제완료");
+	   location.href='${path}/shop_detail.do';
+   }
+$(document).ready(function(){
+  $("#uptBtn").on("click",function(){
+	  if(confirm("수정하시겠습니까?")){
+		  //유효성 체크
+		  $("[name=proc]").val("upt");
+		  $("form").submit();
+	  }
+  });
+  $("#delBtn").on("click",function(){
+	  if(confirm("삭제하시겠습니까?")){
+		  //유효성 체크
+		  $("[name=proc]").val("del");
+		  $("form").submit();
+	  }
+  });
+});
 		
 </script>
 <style type="text/css">
@@ -47,8 +62,8 @@
 
 <br><br><br>
 
-       <form id="review_update">
-       
+       <form id="review_update" method="post">
+       <input type="hidden" name="proc" value="" />
       
            <table summary>
                <colgroup>
@@ -64,7 +79,7 @@
                        </th>
                        <td>
                            <div class="td_left">
-                              <input id="bw_input_subject" class="MS_input_txt input_style2" type="text" name="subject" value="">
+                              <input id="bw_input_subject" class="MS_input_txt input_style2" type="text" name="title" value="${rev.title}">
                            </div>
                        </td>
                    </tr>
@@ -74,21 +89,27 @@
                        </th>
                        <td>
                            <div class="td_left">
-                              <input id="bw_input_subject" class="MS_input_txt input_style2" type="text" name="rating" >
+                              <input id="bw_input_subject" class="MS_input_txt input_style2" type="text" name="rating" value="${rev.rating}">
                            </div>
                        </td>
                    </tr>
                    <tr>
                        <th><div>후기</div></th>
-                       <td colspan="3"><div class="td_left"><textarea id="MS_text_content" name="content" style="font-family: 굴림체; width: 100%; height: 380px;" 
+                       <td colspan="3"><div class="td_left"><textarea id="MS_text_content" value="${rev.content}" name="content" style="font-family: 굴림체; width: 100%; height: 380px;" 
                         ></textarea>
-                       <input type="hidden" name="mobile_content_type" value=""></div>
+                       <input type="hidden" name="product_id" value="${rev.product_id}">
+                       <input type="hidden" name="account_id" value="${rev.account_id}">
+                       <input type="hidden" name="regist_date_s" value="${rev.regist_date_s}">
+                       <input type="hidden" name="review_id" value="${rev.review_id}">
+                       <input type="hidden" name="reply_content" value="${rev.reply_content}">
+                       
+                       </div>
                        </td>
                    </tr>
                    <tr>
                        <th><div>FILE</div></th>
                        <td colspan="3">
-                           <div class="td_left"><input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"></div>
+                           <div class="td_left"><input type="file" id="avatar" value="${rev.image}" name="image" accept="image/png, image/jpeg"></div>
                           
                        </td>
                    </tr>                
@@ -96,7 +117,8 @@
            </table>
         <br>
         <div style="text-align:right;">
-		<input type="button"  id="finish" value="완료" class="btn btn_thatch"  style="cursor:pointer;">
+		<input type="button"  id="uptBtn" value="수정하기" class="btn btn_thatch"  style="cursor:pointer;">
+		<input type="button" id="delBtn" value="삭제하기"  class="btn btn_thatch" style="cursor:pointer;">
 		<input type="button" value="돌아가기" class="btn btn_normal" 
 		onclick="location.href='${path}/shop_detail.do'" style="cursor:pointer;">
 		</div>
