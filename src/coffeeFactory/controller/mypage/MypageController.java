@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import coffeeFactory.dao.DaoAccount;
+import coffeeFactory.dao.DaoMypage;
+import coffeeFactory.dao.DaoReview;
+import coffeeFactory.dao.Dao_Qna;
 import coffeeFactory.vo.Account;
 
 /**
@@ -50,6 +53,15 @@ public class MypageController extends HttpServlet {
 		Account account = daoAccount.getAccount(account_id);
 		if (account != null) {
 			request.setAttribute("account", account);
+			
+//			마이페이지 - order
+//			마이페이지 - Q&A
+			
+			DaoMypage daoMypage = new DaoMypage();
+			request.setAttribute("qnaList", daoMypage.getQnaList(account_id));		// qna
+			request.setAttribute("wishList", daoMypage.getWishList(account_id));	// wish
+			// review
+			
 		}
 		
 		// view

@@ -94,16 +94,16 @@
 											<th>문의제목</th>
 											<th>등록일</th>
 										</tr>
-										<c:forEach var="i" begin="0" end="2">
+										<c:forEach var="qna" items="${qnaList}">
 										<tr>
-											<td class="td-center"><img src="${img_path}/shop_temp.jpg" style="width: 45px;"></td>
+											<td class="td-center"><img src="${path}/resource/img/shop/${qna.thumbnail}" style="width: 45px;"></td>
 											<td>
-												[소량입고 스페셜티] 브라질 비날 웰치스 그레이프<br>
-												커피공장 커피공장 에티오피아외<br>
-												스페셜티 원두 외
+												${qna.name}<br>
+												${qna.origin}<br>
+												${qna.category}
 											</td>
-											<td>보관 어떻게 해야 하나요?</td>
-											<td class="td-center">2020-04-11 12:12:20</td>
+											<td>${qna.title}</td>
+											<td class="td-center"><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${qna.regist_date}"/></td>
 										</tr>
 										</c:forEach>
 									</table>
@@ -117,15 +117,18 @@
 											<th>가격</th>
 											<th></th>
 										</tr>
-										<c:forEach var="i" begin="0" end="2">
+										<c:forEach var="wish" items="${wishList}">
 										<tr>
-											<td class="td-center"><img src="${img_path}/shop_temp.jpg" style="width: 45px;"></td>
+											<td class="td-center"><img src="${path}/resource/img/shop/${wish.thumbnail}" style="width: 45px;"></td>
 											<td>
-												[소량입고 스페셜티] 브라질 비날 웰치스 그레이프<br>
-												커피공장 커피공장 에티오피아외<br>
-												스페셜티 원두 외
+												${wish.name}<br>
+												${wish.origin}<br>
+												${wish.category}
 											</td>
-											<td class="td-center">11,000원</td>
+											<td class="td-center">
+												<fmt:formatNumber pattern="#,###원" value="${wish.min_price}"/> ~ 
+												<fmt:formatNumber pattern="#,###원" value="${wish.max_price}"/>
+											</td>
 											<td></td>
 										</tr>
 										</c:forEach>
