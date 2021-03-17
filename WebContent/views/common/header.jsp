@@ -22,10 +22,10 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
+
 	$(document).ready(function(){
-		
-	});
-		
+	
+});
 </script>
 </head>
 <body>
@@ -61,13 +61,15 @@
 				<li><a href="${path}/shop_main.do">스페셜티 원두 외</a></li>
 				<li><a href="${path}/shop_main.do">선물 세트</a></li>
 			</ul>
+			<form method="post" action="${path}/shop_search.do">
 			<div id="header-bottom-right">
-				<input type="text">
-				<span><a href="${path}/shop_search.do">상세검색</a></span>
+				<input type="text" name="name"/>
+				<input type="submit" id="sbtn" value="상세검색" style="background-color:black; color:white; border:0px;" />
 				<a href="${path}/wish.do">
 					<img src="${path}/resource/img/common/icon_cart.png">
 				</a>
 			</div>
+			</form>
 			
 		</div>
 	</div>
