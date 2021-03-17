@@ -16,8 +16,8 @@
 	$(document).ready(function(){
 		
 		$("#upt").on("click",function(){
-			 // var notice_id = 
-	        location.href="${path}/notice_revise.do?notice_id="+notice_id;
+			 
+	        location.href="${path}/notice_revise.do?notice_id="+${notice.notice_id};
 
 	     });
 		

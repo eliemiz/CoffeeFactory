@@ -16,6 +16,7 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
+		/*
 		 $(".data").on("click",function(){
 	         // $(this): 클릭한 class data를 지정
 	         // .children(): 바로 밑 하위 td들을 지정
@@ -26,6 +27,12 @@
 	         location.href="${path}/notice_read.do?title="+title;
 	         //alert(question);
 	      });
+		*/
+		$(".data").on("click",function(){
+	           var notice_id = $(this).find("[name=notice_id]").text();
+	         location.href="${path}/notice_read.do?notice_id=" + notice_id;
+	      });
+
 	});
 		
 </script>
@@ -61,7 +68,7 @@
 		<tr class="data"><td class="td_center3" name="notice_id">${notice.notice_id}</td><td class="td_left3" name="title">${notice.title}</td><td class="td_center3"><img src="${path}/resource/img/notice/admin.png" class="admin" style="vertical-align:middle; margin-bottom:4px;"></td><td class="td_center3" name="views">${notice.views}</td><td class="td_center3" name="regist_date">${notice.regist_date}</td></tr>
 		</c:forEach>
 		<tr><td colspan="4" class="td_left4"><img src="${path}/resource/img/notice/leftarrow.png" class="arrow" style="vertical-align:middle; margin-bottom:4px;">&nbsp;&nbsp;&nbsp;
-			이전&nbsp;&nbsp;|&nbsp;&nbsp;1&nbsp;&nbsp;|&nbsp;&nbsp;2&nbsp;&nbsp;|&nbsp;&nbsp;3&nbsp;&nbsp;|&nbsp;&nbsp;4&nbsp;&nbsp;|&nbsp;&nbsp;5&nbsp;&nbsp;|&nbsp;&nbsp;다음
+			이전&nbsp;&nbsp;|&nbsp;&nbsp;1&nbsp;&nbsp;|&nbsp;&nbsp;다음
 			&nbsp;&nbsp;&nbsp;<img src="${path}/resource/img/notice/rightarrow.png" class="arrow" style="vertical-align:middle; margin-bottom:3px;">
 			</td>
 			<td class="td_right">

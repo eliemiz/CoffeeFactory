@@ -20,7 +20,7 @@
 		}
 	}
 	if(proc=="del"){
-		alert("삭제되었습니다.");
+		alert("삭제되었습니다.\n조회화면으로 이동하겠습니다");
 		location.href='${path}/notice.do';
 	}
 	
@@ -28,13 +28,13 @@
 		$("#rev_btn").on("click",function(){
 			if(confirm("수정하시겠습니까?")){
 				$("[name=proc]").val("upt");
-				$("form1").submit();
+				$("form").submit();
 			}
 		});
 		$("#del_btn").on("click",function(){
 			if(confirm("삭제하시겠습니까?")){
 				$("[name=proc]").val("del");
-				$("form1").submit();
+				$("form").submit();
 			}
 		});
 	});
@@ -55,13 +55,13 @@
 <img src="${path}/resource/img/notice/not_title.png" class="title"/><br>
 
 <div>
-	<form class="form1">
+	<form class="form1" method="post">
 		<input type="hidden" name="proc" value=""/>
 	<table align="center" style="margin:auto;" >
 		<col width="200"><col width="850">
 		<tr><td colspan="2" class="td_right4">
-			<input type="button" value="삭제하기" name="del" class="btn_btn1" id="del_btn" onclick="location.href='${path}/notice.do'"/>
-			<input type="button" value="수정하기" name="upt" class="btn_btn1" id="rev_btn" onclick="location.href='${path}/notice.do'"/>
+			<input type="button" value="삭제하기" class="btn_btn1" id="del_btn" onclick="location.href='${path}/notice.do'"/>
+			<input type="button" value="수정하기" class="btn_btn1" id="rev_btn" onclick="location.href='${path}/notice.do'"/>
 			<input type="button" value="목록보기" class="btn_btn1" onclick="location.href='${path}/notice.do'"/>
 			</td></tr>
 			<c:choose>
@@ -86,8 +86,8 @@
 		<tr>	  
 		<tr><th class="th_center2" name="content">CONTENT</th>
 			<td class="td_left7">
-				<textarea id="content" name="content" class="content2" value="${notice.content}">
-				</textarea>
+			<%--  <textarea id="content" name="content" class="content2" value="${notice.content}"></textarea> --%>	
+				<input type="text" name="content" class="content2" value="${notice.content}"/>
 			</td>
 		</tr> 
 		</c:when> 
