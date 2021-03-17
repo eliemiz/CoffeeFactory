@@ -49,7 +49,7 @@ public class DaoProduct extends Dao {
 		ArrayList<Product> plist = new ArrayList<Product>();
 		try {
 			connect();
-			String sql = "SELECT * FROM product WHERE NAME = ? ORDER BY product_id "; 
+			String sql = "SELECT * FROM product WHERE name LIKE '%'||?||'%' ORDER BY product_id "; 
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, name);
 			rs = pstmt.executeQuery();
