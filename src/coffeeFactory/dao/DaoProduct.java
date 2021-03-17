@@ -74,14 +74,14 @@ public class DaoProduct extends Dao {
 	}
 	
 	// 조회(단일조건 - ORIGIN) >> 카테고리에서 상세카테고리(origin)
-	public Product getProduct(int origin) {
+	public Product getProduct(String origin) {
 		Product prod = null;
 		try {
 			connect();
 
 			String sql = "SELECT * FROM PRODUCT WHERE origin = ? ORDER BY PRODUCT_ID";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, origin);
+			pstmt.setString(1, origin);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				prod = new Product(rs.getInt("PRODUCT_ID"),rs.getString("NAME"),
