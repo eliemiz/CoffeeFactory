@@ -6,17 +6,13 @@ import java.util.ArrayList;
 import coffeeFactory.vo.ProductOption;
 
 public class DaoProductOption extends Dao{
-		// 조회(조건, 단일) - product_id >> capacity (상세화면 용량표기)
-		// 질문: 여러 값을 가져오니 리스트를 써야 하나요? <select><option>사용할 예정이고, option 내에 value="${price}"만 사용할 예정이긴 합니다.
-		// value값을 가격에 표시하게 하려고 하는데,,, 밑에 거랑 중복되는 거 같기도 하네요,,
+		// 조회(조건, 전체) - product_id >> capacity (상세화면 용량표기)
 		public ArrayList<ProductOption> getCapaList(int product_id) {
 			ArrayList<ProductOption> list = new ArrayList<ProductOption>();
 			try {
 				connect();
 				
-				String sql = "SELECT min(price)\r\n"
-						+ "FROM PRODUCT p, PRODUCT_OPTION po\r\n"
-						+ "WHERE p.PRODUCT_ID = po.PRODUCT_ID AND p.PRODUCT_ID = ?";
+				String sql = "SELECT * FROM PRODUCT_OPTION WHERE PRODUCT_ID = ?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setInt(1, product_id);
 				rs = pstmt.executeQuery();
@@ -69,7 +65,9 @@ public class DaoProductOption extends Dao{
 			try {
 				connect();
 				
-				String sql = "SELECT min(price) FROM PRODUCT_OPTION WHERE product_id = ?";
+				String sql = "SELECT min(price)\r\n"
+						+ "FROM PRODUCT p, PRODUCT_OPTION po\r\n"
+						+ "WHERE p.PRODUCT_ID = po.PRODUCT_ID AND p.PRODUCT_ID = ?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setInt(1, product_id);
 				

@@ -43,7 +43,7 @@ public class ShopSearchController extends HttpServlet {
 		if (name!="") {
 			DaoProduct dao = new DaoProduct();
 			ArrayList<Product> plist = dao.getSchList(name);
-			request.setAttribute("prod", plist);
+			request.setAttribute("prodlist", plist);
 			page="views\\shop\\shop_search_result.jsp";
 		}
 		// String page = "views\\shop\\shop_search_result.jsp";
