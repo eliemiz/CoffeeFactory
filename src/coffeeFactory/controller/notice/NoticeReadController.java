@@ -45,6 +45,7 @@ public class NoticeReadController extends HttpServlet {
 				System.out.println(e.getMessage());
 			}
 			*/
+			request.setCharacterEncoding("utf-8");
 			
 			String title = request.getParameter("title");
 

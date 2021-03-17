@@ -33,6 +33,7 @@ public class NoticeReviseController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// request
+		request.setCharacterEncoding("utf-8");
 		String proc = request.getParameter("proc");
 		
 		String notice_idS = request.getParameter("notice_id");
@@ -46,14 +47,17 @@ public class NoticeReviseController extends HttpServlet {
 		
 		// model
 		Dao_Notice dao = new Dao_Notice();
+		
 		if(proc!=null) {
 			if(proc.equals("upt")) {
 				
+				String regist_date_s = request.getParameter("regist_date_s");
 				String title = request.getParameter("title");
 				String content = request.getParameter("content");
 				String image = request.getParameter("image");
+				String views = request.getParameter("views");
 								
-				Notice upt = new Notice(title, content, image, Integer.parseInt("notice_id"));
+				Notice upt = new Notice(notice_id, regist_date_s, title, content, image, Integer.parseInt(views));
 				
 				dao.updateNotice(upt);
 			}
@@ -62,6 +66,7 @@ public class NoticeReviseController extends HttpServlet {
 				dao.deleteNotice(notice_id);
 			}
 		}
+		request.setAttribute("notice", dao.getNotice(notice_id));
 		
 		// view
 		String page = "views\\notice\\notice_revise.jsp";
