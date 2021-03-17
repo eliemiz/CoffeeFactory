@@ -134,7 +134,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 						<tr style="color:666666; height:20">
 							<td> </td>
 							<td>&nbsp;
-								<span class="font-size2">•&nbsp;등록상품 : <font color="#333333"><b>12</b>개</font></span></td><!-- DB후 수정 -->
+								<span class="font-size2">•&nbsp;등록상품 : <font color="#333333"><b>${prodlist.size()}</b>개</font></span></td><!-- DB후 수정 -->
 							<td align="right"><!-- 생략 --></td>
 						</tr>
 						<tr>
@@ -159,13 +159,13 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 				<!-- 상품목록 -->
 				<table width="100%" cellspacing="0" cellpadding="0">
 					<tbody>
-						<tr>
-							<c:forEach var="prods" items="prodlist">
-							<td valign="top">
+						<tr>	
+							<c:forEach var="prods" items="${prodlist}">					
+							 <td valign="top">							 
 								<table class="" style="table-layout:fixed" align="center" width="187" cellspacing="0"
 								cellpadding="0" border="0" id="">
-									<tbody>
-										<tr align="center">
+									<tbody>									
+										<tr align="center">										
 											<td height="187">
 												<a href="${path}/shop_detail.do?product_id=${prods.product_id}">
 													<img src="${path}/resource/img/shop/${prods.thumbnail}" width="185" class="product_img_border">
@@ -184,18 +184,16 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 											<td class="product-price">
 												<!-- img(동전) -->
 												<span class="money_color2">
-													<c:if test="${prods.product_id != null }">
-													<b><b>${prod}</b>원</b><!-- Back 작업 시 수정 -->
-													</c:if>
+													<b><b>${prod.price}</b>원</b><!-- Back 작업 시 수정 -->
 												</span>
 											</td>
 										</tr>
 										<tr><td height="7"></td></tr>
 									</tbody>
 								</table>				
-							</td>
-							</c:forEach>						
-						</tr>						
+							</td>		
+							</c:forEach>				
+						</tr>	
 					</tbody>
 				</table>
 			</td>

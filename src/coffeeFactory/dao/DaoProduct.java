@@ -74,8 +74,9 @@ public class DaoProduct extends Dao {
 	}
 	
 	// 조회(단일조건 - ORIGIN) >> 카테고리에서 상세카테고리(origin)
-	public Product getProduct(String origin) {
-		Product prod = null;
+	// 여러 상품을 조회해 와야 해서 Product => ArrayList로 수정(0317)
+	public ArrayList<Product> getProduct(String origin) {
+		ArrayList<Product> plist = new ArrayList<Product>();
 		try {
 			connect();
 
@@ -84,10 +85,11 @@ public class DaoProduct extends Dao {
 			pstmt.setString(1, origin);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				prod = new Product(rs.getInt("PRODUCT_ID"),rs.getString("NAME"),
+				Product prod = new Product(rs.getInt("PRODUCT_ID"),rs.getString("NAME"),
 						rs.getString("CATEGORY"),rs.getString("origin"),rs.getString("COMPANY"),
 						rs.getString("DESCRIPTION"),
 						rs.getString("THUMBNAIL"));
+				plist.add(prod);
 			}
 			rs.close();
 			pstmt.close();
@@ -98,7 +100,7 @@ public class DaoProduct extends Dao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return prod;
+		return plist;
 	}
 	
 	

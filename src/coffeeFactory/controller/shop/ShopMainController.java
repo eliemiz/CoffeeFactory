@@ -35,7 +35,9 @@ public class ShopMainController extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Request
+		request.setCharacterEncoding("utf-8");
 		String category = request.getParameter("category");
+		if(category==null) category="";
 		String product_idS = request.getParameter("product_id");
 		if(product_idS==null) product_idS = "0";
 		int product_id = Integer.parseInt(product_idS);
@@ -44,8 +46,8 @@ public class ShopMainController extends HttpServlet {
 		DaoProductOption poDao = new DaoProductOption();
 		ArrayList<Product> plist = prodDao.getProdList(category);
 		ProductOption product = poDao.getProdList(product_id);
-		request.setAttribute("prod", product);
 		request.setAttribute("prodlist", plist);
+		request.setAttribute("prod", product);
 		// View
 		String page = "views\\shop\\shop_main.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);
