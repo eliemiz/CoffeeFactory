@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import coffeeFactory.dao.DaoFrequent_qna;
+import coffeeFactory.dao.Dao_Notice;
+
 /**
  * Servlet implementation class MypageModifyController
  */
@@ -29,9 +32,35 @@ public class NoticeReadController extends HttpServlet {
 		 */
 		protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			// TODO Auto-generated method stub
-			
+		
 			// request
+			/*
+			request.setCharacterEncoding("utf-8");
+			String notice_idS = request.getParameter("notice_id");
+			if(notice_idS==null) notice_idS="";
+			int notice_id = 0;
+			try {
+				notice_id = Integer.parseInt(notice_idS);
+			} catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
+			*/
+			
+			String title = request.getParameter("title");
+
+			if(title==null) title="";
+			
+			
 			// model
+			/*
+			
+			request.setAttribute("notice", dao.getNotice(notice_id));
+			
+			*/
+			Dao_Notice dao = new Dao_Notice();
+			request.setAttribute("notice", dao.getNoti(title));
+			
+			
 			// view
 			String page = "views\\notice\\notice_read.jsp";
 			RequestDispatcher rd = request.getRequestDispatcher(page);

@@ -9,24 +9,64 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import coffeeFactory.dao.Dao_Notice;
+import coffeeFactory.vo.Notice;
+
+/**
+ * Servlet implementation class NoticeReviseController
+ */
 @WebServlet(name = "notice_revise.do", urlPatterns = { "/notice_revise.do" })
 public class NoticeReviseController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public NoticeReviseController() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-		public NoticeReviseController() {
-			super();
-			// TODO Auto-generated constructor stub
-		}
-		protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			// TODO Auto-generated method stub
-			
-			// request
-			// model
-			// view
-			String page = "views\\notice\\notice_revise.jsp";
-			RequestDispatcher rd = request.getRequestDispatcher(page);
-			rd.forward(request, response);
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		// request
+		String proc = request.getParameter("proc");
 		
+		String notice_idS = request.getParameter("notice_id");
+		if(notice_idS==null) notice_idS="0";
+		int notice_id = 0;
+		try {
+			notice_id = Integer.parseInt(notice_idS);
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		// model
+		Dao_Notice dao = new Dao_Notice();
+		if(proc!=null) {
+			if(proc.equals("upt")) {
+				
+				String title = request.getParameter("title");
+				String content = request.getParameter("content");
+				String image = request.getParameter("image");
+								
+				Notice upt = new Notice(title, content, image, Integer.parseInt("notice_id"));
+				
+				dao.updateNotice(upt);
+			}
+			if(proc.equals("del")) {
+				System.out.println("삭제 준비 완료:"+notice_id);
+				dao.deleteNotice(notice_id);
+			}
+		}
+		
+		// view
+		String page = "views\\notice\\notice_revise.jsp";
+		RequestDispatcher rd = request.getRequestDispatcher(page);
+		rd.forward(request, response);
 	}
 
 }
