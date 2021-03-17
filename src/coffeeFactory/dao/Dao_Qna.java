@@ -71,6 +71,34 @@ public class Dao_Qna extends Dao_Notice{
 		return qlist;
 	}
 	
+	// 조회(조건, 단일) - account_id
+	public ArrayList<Qna> getQnasByAccount(int account_id) {
+		ArrayList<Qna> list = new ArrayList<Qna>();
+		
+		try {
+			connect();
+			
+			String sql = "SELECT * FROM qna WHERE account_id = ? ORDER BY qna_id DESC";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, account_id);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Qna qna = new Qna(rs.getInt("QNA_ID"),rs.getInt("PRODUCT_ID"),
+						rs.getInt("ACCOUNT_ID"),rs.getDate("REGIST_DATE"),rs.getString("TITLE"),
+						rs.getString("CONTENT"),rs.getString("REPLY_CONTENT"));
+				list.add(qna);
+			}
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 	
 	// 입력 (입력 확인)
 	// INSERT INTO qna values(qna_id_seq.nextval,20101,
