@@ -15,6 +15,12 @@
 	
 	$(document).ready(function(){
 		
+		$("#upt").on("click",function(){
+			 // var notice_id = 
+	        location.href="${path}/notice_revise.do?notice_id="+notice_id;
+
+	     });
+		
 	});
 		
 </script>
@@ -38,12 +44,13 @@
 	<form class="form1">
 	<table align="center" style="margin:auto;" >
 		<col width="670"><col width="380">
-		<tr><td class="td_left5" name="title">${notice.title}</td>
+		<tr class="data"><td class="td_left5" name="title">${notice.title}</td>
 			<td class="td_right2">
-			<input type="button" value="수정하기" class="btn_btn1" onclick="location.href='${path}/notice_revise.do'"/>
+			<input type="button" id="upt" value="수정하기" class="btn_btn1" onclick="location.href='${path}/notice_revise.do'"/>
 			<input type="button" value="목록보기" class="btn_btn1" onclick="location.href='${path}/notice.do'"/>
 			</td></tr>
 		<tr><td colspan="2" class="td_right3" name="content">
+			번호:${notice.notice_id}
 			<img src="${path}/resource/img/notice/admin.png" class="admin" style="vertical-align:middle; margin-bottom:4px;">&nbsp;
 			등록일:${notice.regist_date}&nbsp;&nbsp;&nbsp;조회:${notice.views}
 			</td></tr>

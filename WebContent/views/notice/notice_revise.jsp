@@ -27,7 +27,7 @@
 	$(document).ready(function(){
 		$("#rev_btn").on("click",function(){
 			if(confirm("수정하시겠습니까?")){
-				$("[name=proc]").val("upt"));
+				$("[name=proc]").val("upt");
 				$("form1").submit();
 			}
 		});
@@ -69,6 +69,9 @@
 		<tr><th class="th_center2" name="title">TITLE</th>
 			<td class="td_left7">
 				<input type="text" name="title" size="60" value="${notice.title}"/>
+				<input type="hidden" name="notice_id" value="${notice.notice_id}">
+				<input type="hidden" name="regist_date_s" value="${notice.regist_date_s}">
+				<input type="hidden" name="views" value="${notice.views}">
 				</td>
 			  <tr>
 		<tr><th class="th_center2" name="image">첨부파일</th>
