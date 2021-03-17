@@ -61,7 +61,7 @@
 	<form class="form1">
 	<table align="center" style="margin:auto;" id="noticelist">
 		<col width="96"><col width="640"><col width="98"><col width="70"><col width="150">
-		<tr><td colspan="5" class="td_left4">자료수 : 10개</td></tr> <%-- 자료수 --%>
+		
 		<tr><th class="th_center">번호</th><th class="th_center">제목</th><th class="th_center">등록인</th><th class="th_center">조회</th><th class="th_center">등록일</th></tr>
 <%-- <tr onclick="location.href='${path}/notice_read.do'"><td class="td_center3"><img src="${path}/resource/img/notice/notice.png" class="notice" style="vertical-align:middle; margin-bottom:4px;"></td><td class="td_left3">대표공지</td><td class="td_center3"><img src="${path}/resource/img/notice/admin.png" class="admin" style="vertical-align:middle; margin-bottom:4px;"></td><td class="td_center3">1004</td><td class="td_center3">2021-03-15</td></tr> --%>		
 		<c:forEach var="notice" items="${notice}">
