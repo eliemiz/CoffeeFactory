@@ -85,6 +85,30 @@ public class Dao_Notice {
 		} 
 		return notice;	
 	}
+	// 조회(조건-단일) 제목 
+		public Notice getNoti(String title) {
+			Notice notice = null;
+			try {
+				connect();
+				String sql = "SELECT * FROM notice where title = ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, title);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					notice = new Notice(rs.getInt("NOTICE_ID"), 
+							rs.getDate("REGIST_DATE"),rs.getString("TITLE"),rs.getString("CONTENT"),
+							rs.getString("IMAGE"),rs.getInt("VIEWS"));
+				}
+				rs.close();
+				pstmt.close();
+				con.close();
+			} catch(SQLException e) {
+				e.printStackTrace();
+			} catch(Exception e) {
+				e.printStackTrace();
+			} 
+			return notice;	
+		}
 	// 조회(title) 제목 (확인)
 	public ArrayList<Notice> getNoticeList1(String title){
 		ArrayList<Notice> list = new ArrayList<Notice>();
@@ -236,7 +260,7 @@ public class Dao_Notice {
 		Dao_Notice dao = new Dao_Notice();
 		ArrayList<Notice> nlist = dao.getNoticeList();
 //		Notice notice = dao.getNotice(100000);
-		ArrayList<Notice> list = dao.getNoticeList1("할부");
+		ArrayList<Notice> list = dao.getNoticeList1("감사");
 //		dao.insertNotice(new Notice("테스트타이틀","테스트내용","테스트이미지",30));
 		dao.updateNotice(new Notice(100002,"","수정타이틀","수정내용","수정이미지",0));
 //		dao.deleteNotice(100003); 
