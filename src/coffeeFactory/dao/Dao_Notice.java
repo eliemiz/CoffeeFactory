@@ -44,7 +44,7 @@ public class Dao_Notice {
 		ArrayList<Notice> nlist = new ArrayList<Notice>();
 		try {
 			connect();
-			String sql = "SELECT * FROM notice order by notice_id";
+			String sql = "SELECT * FROM notice ORDER BY notice_id DESC";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -66,7 +66,7 @@ public class Dao_Notice {
 		Notice notice = null;
 		try {
 			connect();
-			String sql = "SELECT * FROM notice where notice_id = ?";
+			String sql = "SELECT * FROM notice where notice_id = ? ORDER BY notice_id DESC";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, notice_id);
 			rs = pstmt.executeQuery();
@@ -90,7 +90,7 @@ public class Dao_Notice {
 			Notice notice = null;
 			try {
 				connect();
-				String sql = "SELECT * FROM notice where title = ?";
+				String sql = "SELECT * FROM notice where title = ? ORDER BY notice_id DESC";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, title);
 				rs = pstmt.executeQuery();
@@ -114,7 +114,7 @@ public class Dao_Notice {
 		ArrayList<Notice> list = new ArrayList<Notice>();
 		try {
 			connect();
-			String sql = "SELECT * FROM notice where title like '%'||?||'%'";
+			String sql = "SELECT * FROM notice where title like '%'||?||'%' ORDER BY notice_id DESC";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, title);
 			rs = pstmt.executeQuery();
@@ -140,7 +140,7 @@ public class Dao_Notice {
 		ArrayList<Notice> list = new ArrayList<Notice>();
 		try {
 			connect();
-			String sql = "SELECT * FROM notice where content like '%'||?||'%'";
+			String sql = "SELECT * FROM notice where content like '%'||?||'%' ORDER BY notice_id DESC";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
