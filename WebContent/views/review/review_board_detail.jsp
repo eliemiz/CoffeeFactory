@@ -39,9 +39,9 @@
 				<col width="*">
 			</colgroup>
 			<tr>
-				<td><a href=""><img src="${path}/resource/img/shop/shop_kenya.jpg" class="img"></a></td>
+				<td>${pro.thumbnail}</td>
 				<td><div class="td_left">
-						상 품 명:<a href="">원두</a><br> 상품가격:<strong>20000원</strong>
+						상 품 명:${pro.name}
 					</div></td>
 			</tr>
 		</table>
@@ -49,7 +49,7 @@
 			<table>
 				<thead>
 					<tr>
-						<th><div class="td_left">후기 제목</div></th>
+						<th><div class="td_left">${rev.title}</div></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -66,15 +66,15 @@
 						<td class="td_left">
 							<div class="cont-sub-des">
 								<div>
-									<span><em>작성일</em>2021-02-09</span> 
-									<span><em>평점</em>5</span>
+									<span><em>작성일</em>${rev.regist_date}</span> 
+									<span><em>평점</em>${rev.rating}</span>
 								</div>
 							</div>
 						</td>
 					</tr>
 					<tr>
 						<td class="td_left">
-							<div class="data-bd-cont">&nbsp;커피향이 아주 굿이네요</div>
+							<div class="data-bd-cont">&nbsp;${rev.content}${rev.image}</div>
 						</td>
 					</tr>
 				</tbody>

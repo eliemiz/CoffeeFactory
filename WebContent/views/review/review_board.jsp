@@ -13,9 +13,19 @@
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
+$(document).ready(function() {
 
-	});
+	 $(".data").on("click",function(){
+        // $(this): 클릭한 class data를 지정
+        // .children(): 바로 밑 하위 td들을 지정
+        // .eq(0): tr하위의  첫번째 td.
+        var review_id = $(this).children().eq(0).text();
+        //alert(review_id); // 요청값 넘길 시, 잘넘어가는지 반드시확인해보기
+        //${path}/컨트롤uri이름?요청key="+요청값";
+        location.href="${path}/review_detatil.do?review_id="+review_id;
+        //alert(title);
+     });
+}); 
 </script>
 </head>
 <body>
@@ -41,20 +51,23 @@
 			<col width="150">
 
 			<tr >
-				<th class="th_center">번호</th>
+				<th class="th_center">리뷰번호</th>
 				<th class="th_center">제목</th>
 				<th class="th_center">아이디</th>
 				<th class="th_center">등록일</th>
 				<th class="th_center">평점</th>
 			</tr>
 
-			<tr>
-				<td class="td_center3">번호</td>
-				<td class="td_left3" style="cursor:pointer;">제목</td>
+		
+			<c:forEach var="rev" items="${Rev}">
+			<tr class="data">
+				<td class="td_center3">${rev.review_id}</td>
+				<td class="td_left3" style="cursor:pointer;">${rev.title}</td>
 				<td class="td_center3">아이디</td>
-				<td class="td_center3">등록일</td>
-				<td class="td_center3">평점</td>
+				<td class="td_center3">${rev.regist_date}</td>
+				<td class="td_center3">${rev.rating}</td>
 			</tr>
+			</c:forEach>
 		
 		
 			<tr>
