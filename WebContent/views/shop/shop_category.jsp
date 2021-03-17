@@ -9,9 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${path}/resource/css/fonts.css">
 <link rel="stylesheet" href="${path}/resource/css/shop/search.css">
-<link rel="stylesheet" href="${path}/resource/css/shop/common.css">
+<link rel="stylesheet" href="${path}/resource/css/fonts.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
@@ -20,7 +19,7 @@
 	});
 		
 </script>
-<style>
+<style type="text/css">
 table.tab{
 	margin-inline-start: auto;
 	margin-inline-end: auto;
@@ -30,6 +29,22 @@ table.tab{
 td.att{
 	background-image: url(${path}/resource/img/shop/rou01_bot.gif);
 }
+.product-name{
+	display: table-cell;
+    vertical-align: inherit;
+}
+
+.tbl-product{
+	margin-inline-start: auto;
+    margin-inline-end: auto;
+    width: 187px;
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+}
 a:link{text-decoration: none; font-color:#000000;} /* 클릭하지 않았을 때 링크 상태 */
 a:visited{text-decoration: none; color: #000000;} /* 한 번 클릭했거나 들어가보았던 링크 상태 */
 a:active{text-decoration: none; color: #000000;} /* 링크 부분에서 마우스를 누르고 있는 상태 */
@@ -37,8 +52,8 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 </style>
 </head>
 <body>
-
-<div style="height:230px;"><jsp:include page="/views/common/header.jsp"/></div>
+<jsp:include page="../common/header.jsp"/>
+<div style="height:230px;"></div>
 <table class="content-wrap" width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
 	<tbody>
 		<tr>
@@ -49,9 +64,9 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 						<tr>
 							<!-- 상단 배너 -->
 							<td height="23">
-								<span class="font-size1">
+								<span class="font-size1" style="font-color:#ffffff">
 								&nbsp;<img src="${path}/resource/img/shop/dot_01.gif" align="absmiddle"/>
-								현재 위치: <%-- <a href="${path}/index.do">Home</a> > <a href="${path}/shop_main.do?category=${prodlist.category}">${prodlist.category}</a> --%>
+								현재 위치: <%-- <a href="${path}/index.do">Home</a> > <a href="${path}/shop_main.do?category=${prodlist.category}">${prodlist.category}</a> > <a href="${path}/category.do?origin=${prodlist.origin}">${prodlist.origin}</a> --%>
 								</span>
 							</td>
 						</tr>
@@ -82,23 +97,17 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 																		<td nowrap>
 																			&nbsp;
 																			<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle" vspace="2"/>
-																			<a href="${path}/shop_category.do?origin=아프리카">
-																				<font color="#000000" style="font-size:9pt">아프리카</font>
-																			</a>
+																			<a href="${path}/shop_category.do?origin=아프리카"><font color="#000000" style="font-size:9pt">아프리카</font></a>
 																		</td>
 																		<td nowrap>
 																			&nbsp;
 																			<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle" vspace="2"/>
-																			<a href="${path}/shop_category.do?origin=중남미">
-																				<font color="#000000" style="font-size:9pt">중남미</font>
-																			</a>
+																			<a href="${path}/shop_category.do?origin=중남미"><font color="#000000" style="font-size:9pt">중남미</font></a>
 																		</td>
 																		<td nowrap>
 																			&nbsp;
 																			<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle" vspace="2"/>
-																			<a href="${path}/shop_category.do?origin=아시아앤태평양">
-																				<font color="#000000" style="font-size:9pt">아시아&태평양</font>
-																			</a>
+																			<a href="${path}/shop_category.do?origin=아시아앤태평양"><font color="#000000" style="font-size:9pt">아시아&태평양</font></a>
 																		</td>
 																	</tr>
 																</tbody>
@@ -159,7 +168,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 				<!-- 상품목록 -->
 				<table width="100%" cellspacing="0" cellpadding="0">
 					<tbody>
-						<tr>	
+						<tr>							
 							<c:forEach var="prods" items="${prodlist}">					
 							 <td valign="top">							 
 								<table class="" style="table-layout:fixed" align="center" width="187" cellspacing="0"
@@ -192,14 +201,14 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 									</tbody>
 								</table>				
 							</td>		
-							</c:forEach>				
-						</tr>	
+							</c:forEach>	
+						</tr>
 					</tbody>
 				</table>
 			</td>
-			<td class="content-wrap-center-right"><img src="${path}/resource/img/shop/blank.gif" width="30" height="1"/></td>
-			<td class="content-wrap-right" valign="top">
-				<jsp:include page="../common/sidebar.jsp"/>
+			<td class="content-wrap-center-right"><img src="${path}/resource/img/shop/blank.gif"/></td>
+			<td class="content-wrap-right">
+				<jsp:include page="/views/common/sidebar.jsp"/>
 			</td>
 		</tr>
 	</tbody>
