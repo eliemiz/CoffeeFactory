@@ -14,10 +14,17 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-		
+		$(".data").on("dblclick", function(){
+	    	  var name = $(this).children().eq(1).text();
+	    	  location.href="${path}/shop_detail.do";
+	      });
 	});
-		
+	
 </script>
+<style type="text/css">	
+a:link{text-decoration: none; font-color:#000000;}
+a:hover{text-decoration: none; color: #EDA900;}
+</style>
 </head>
 <body>
 <jsp:include page="/views/common/header.jsp"/>
@@ -44,14 +51,18 @@
 		</tbody>
 	</table>
 	<table width="100%" cellspacing="1" cellpadding="3">
+	<c:forEach var="prod" items="${prod}">				
+		<tr class="data">
 		<tbody>
 			<tr>
 				<td>
 				<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle">
-				<a href="${path}/shop_main.do">싱글오리진 원두커피 <span class="font-size2">(1)</span></a>
+				<a href="${path}/shop_main.do">${prod.category}</a>
 				</td>
 			</tr>
 		</tbody>
+		</tr>
+		</c:forEach>
 	</table>							
 	<table width="100%" cellspacing="0" cellpadding="0">
 		<tbody>
@@ -65,7 +76,7 @@
 				<tr height="20" style="color:666666;">
 				<td> </td>
 				<td>
-				&nbsp;<span class="font-size2">•&nbsp;검색상품 : <font color="#333333"><b>1</b></font>개</span>							
+				&nbsp;<span class="font-size2">•&nbsp;검색상품 : <font color="#333333"><b>${prod.size()}</b></font>개</span>							
 				</td>
 				<td align="right">
 	<table cellspacing="0" cellpadding="0" border="0">
@@ -97,22 +108,15 @@
 			<tr>					
 				<td valign="top">
 	<table style="table-layout:fixed" width="187" cellspacing="0" cellpadding="0" border="0" id="" >
-		<tbody><tr><td height="12"></td></tr>					
-			<tr align="center">
+		<tbody><tr><td height="12"></td></tr>	
+		<c:forEach var="prod" items="${prod}">				
+			<tr class="data">
 				<td height="187">
-				<a href=""><img src="${path}/resource/img/shop/shop_papua.jpg" border="0" width="185" class="product_img_border"></a></td>
+				<img src="${img_path}/" border="0" width="185" class="product_img_border"></td>
+				<td valign="top" style="word-break:break-all;line-height:120%;padding-top:3px;">${prod.name}</td>
+				<td><span class="money_color2"><b><b>12000</b>원</b></span></td>
 			</tr>
-			<tr align="center">
-				<td valign="top" style="word-break:break-all;line-height:120%;padding-top:3px;">				 
-					<a href="${path}/shop_detail.do"><span class="product_name_color">파푸아뉴기니 블루마운틴 AA</span></a>
-					<br>&nbsp;<img src="" align="absmiddle">
-				</td>
-			</tr>
-			<tr align="center">
-				<td>
-					<span class="money_color2"><b><b>12,000</b>원</b></span>
-				</td>
-			</tr>
+			</c:forEach>
 			<tr><td height="7"></td></tr>
 		</tbody>
 	</table>
