@@ -14,9 +14,19 @@
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
+$(document).ready(function() {
 
-	});
+	 $("#mod").on("click",function(){
+      
+        location.href="${path}/review_modify.do?review_id="+review_id;
+        //alert(review_id);
+     });
+	 $("#rep").on("click",function(){
+      
+        location.href="${path}/review_reply.do?review_id="+review_id;
+        //alert(review_id);
+     });
+}); 
 </script>
 <style type="text/css">
 /* .product-tit {margin:20px 0 0;}
@@ -139,39 +149,14 @@ td {
 				<!-- 숨김 상태일 때 td가 남는 것을 방지.. td 자체의 display 조절 -->
 			<tr><td colspan="5" class="full" id="full-1">
 				<div align="right">
-					<input type="button" id="regbtn" value="답변하기" class="small1" 
+					<input type="button" id="rep" value="답변하기" class="small1" 
 					onclick="location.href='${path}/review_reply.do'" style="cursor:pointer;">
-					<input type="button" value="수정하기" class="small1" 
+					<input type="button" value="수정/삭제" class="small1" id="mod"
 					onclick="location.href='${path}/review_modify.do'" style="cursor:pointer;">
-					<input type="button" value="삭제하기" class="small1" style="cursor:pointer;">
 				</div><br>커피 향이 너무좋네요
 								<div align="left">(답변없을때는 공백처리)</div>
 			</td></tr>
 			
-				<tr>
-						<td><span id="rev-r=toggle">2</span></td>
-						<div class="rev-content">
-					<td class="title2" id="rev-2" style="text-align:left;"><!-- <div class="td_left"> -->
-							<span>첫구매 </span>
-						</td></div>
-					<td><div class="td_center">ijk230</div></td>
-					<td><div class="td_center">2021/03/12</div></td>
-					<td><div class="td_center">5</div></td>
-					
-				</tr>
-				<!-- 숨김 상태일 때 td가 남는 것을 방지.. td 자체의 display 조절 -->
-			<tr><td colspan="5" class="full" id="full-2">
-				<div align="right">
-					<input type="button" id="regbtn" value="답변하기" class="small1" 
-					onclick="location.href='${path}/review_reply.do'" style="cursor:pointer;">
-					<input type="button" value="수정하기" class="small1" 
-					onclick="location.href='${path}/review_modify.do'" style="cursor:pointer;">
-					<input type="button" value="삭제하기" class="small1" style="cursor:pointer;">
-				</div><br>좋아요
-								<div align="left">답변: 답변있으면 답변 출력</div>
-			</td></tr>
-				
-				
 			</tbody>
 		</table>
 		<br>

@@ -36,15 +36,16 @@
 		<div class="bbs-table-view">
 			<table>
 				<thead>
+				
 					<tr>
-						<th><div class="td_left">질문</div></th>
+						<th><div class="td_left">${fre.question}</div></th>
 					</tr>
 				</thead>
 				<tbody>
 						
 					<tr>
 						<td class="td_left">
-							<div class="data-bd-cont">&nbsp;답변</div>
+							<div class="data-bd-cont">${fre.answer}</div>
 						</td>
 					</tr>
 				</tbody>
