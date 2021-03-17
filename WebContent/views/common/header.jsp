@@ -63,7 +63,7 @@
 			</ul>
 			<form method="post" action="${path}/shop_search.do">
 			<div id="header-bottom-right">
-				<input type="text" name="name"/>
+				<input type="text" name="name" value="${param.name}"/>
 				<input type="submit" id="sbtn" value="상세검색" style="background-color:black; color:white; border:0px;" />
 				<a href="${path}/wish.do">
 					<img src="${path}/resource/img/common/icon_cart.png">
