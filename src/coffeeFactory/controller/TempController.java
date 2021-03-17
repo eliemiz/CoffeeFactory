@@ -31,6 +31,7 @@ public class TempController extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		// 요청
+		request.setCharacterEncoding("utf-8");
 		String temp = request.getParameter("temp");
 		if (temp == null) {
 			temp = "";

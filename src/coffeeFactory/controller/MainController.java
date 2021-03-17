@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class MainController
@@ -32,6 +33,20 @@ public class MainController extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		// request
+		request.setCharacterEncoding("utf-8");
+		String proc = request.getParameter("proc");
+		if (proc == null) {
+			proc = "";
+		}
+		
+		// model
+		if (proc.equals("logout")) {
+			HttpSession session = request.getSession();
+			session.setAttribute("account_id", null);
+		}
+		
+		// view
 		String page = "Index.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);
 		rd.forward(request, response);

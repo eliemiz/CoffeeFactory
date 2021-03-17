@@ -28,11 +28,22 @@ public class ShopDetailController extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Request
+		/* Request */
+		// shop
 		
-		// Model
+		// Q&A
 		
-		// View
+		// review
+		
+		
+		/* Model */
+		// shop
+		
+		// Q&A
+		
+		// review
+		
+		/* View */
 		String page = "views\\shop\\shop_front_detail.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);
 		rd.forward(request, response);

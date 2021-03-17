@@ -1,8 +1,6 @@
-package coffeeFactory.controller.fre_qna;
+package coffeeFactory.controller.shop;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class FreQnaAnswer
+ * Servlet implementation class Z02_shopQna
  */
-@WebServlet(name = "fre_qna_answer.do", urlPatterns = { "/fre_qna_answer.do" })
-public class FreQnaAnswer extends HttpServlet {
+@WebServlet(name = "shopqna.do", urlPatterns = { "/shopqna.do" })
+public class Z02_shopQna extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FreQnaAnswer() {
+    public Z02_shopQna() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,13 +27,6 @@ public class FreQnaAnswer extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		
-		
-		// 뷰
-				String page = "views\\review\\frequent_qna_answer.jsp";
-				RequestDispatcher rd = request.getRequestDispatcher(page);
-				rd.forward(request, response);
 	}
 
 }

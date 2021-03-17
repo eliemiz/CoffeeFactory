@@ -32,10 +32,16 @@
 	<div id="header-wrap">
 		<div id="header-top" class="clear-fix">
 			<ul id="header-top-menu">
+			<c:choose>
+				<c:when test="${empty account_id}">
 				<li><a href="${path}/login.do">로그인</a></li>
 				<li><a href="${path}/signin1.do">회원가입</a></li>
-				<%-- todo: 로그인 여부에 따라 바꾸기 --%>
+				</c:when>
+				<c:otherwise>
+				<li><a href="${path}?proc=logout">로그아웃</a></li>
 				<li><a href="${path}/mypage.do">마이페이지</a></li>
+				</c:otherwise>
+			</c:choose>
 				<li><a href="${path}/cart.do">장바구니</a></li>
 				<li><a href="${path}/wish.do">위시리스트</a></li>
 				<li><a href="${path}/order.do">주문배송조회</a></li>

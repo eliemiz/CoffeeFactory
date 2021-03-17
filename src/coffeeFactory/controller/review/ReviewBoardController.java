@@ -30,6 +30,14 @@ public class ReviewBoardController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		// 요청
+		
+		
+		
+		// 모델
+				
+		
+		
 		// 뷰
 				String page = "views\\review\\review_board.jsp";
 				RequestDispatcher rd = request.getRequestDispatcher(page);

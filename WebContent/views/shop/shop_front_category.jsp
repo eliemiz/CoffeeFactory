@@ -180,7 +180,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 										</tr>
 										<tr align="center">
 											<td class="product-name" valign="top" style="word-break:break-all; line-height:120%; padding-top:3px;">
-												<a href="shop_front_detail.jsp">
+												<a href="${path}/shop_detail.do">
 													<span class="product_name_color">파푸아뉴기니 블루마운틴 AA</span>
 												</a>
 												<br>

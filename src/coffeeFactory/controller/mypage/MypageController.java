@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import coffeeFactory.dao.DaoAccount;
+import coffeeFactory.vo.Account;
 
 /**
  * Servlet implementation class MypageController
@@ -31,7 +35,23 @@ public class MypageController extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		// request
+		request.setCharacterEncoding("utf-8");
+
+		int account_id = 0;
+		
+		HttpSession session = request.getSession();
+		Object account_id_obj = session.getAttribute("account_id");
+		if (account_id_obj != null) {
+			account_id = (int)account_id_obj;
+		}
+		
 		// model
+		DaoAccount daoAccount = new DaoAccount();
+		Account account = daoAccount.getAccount(account_id);
+		if (account != null) {
+			request.setAttribute("account", account);
+		}
+		
 		// view
 		String page = "views\\account_mypage\\mypage.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);

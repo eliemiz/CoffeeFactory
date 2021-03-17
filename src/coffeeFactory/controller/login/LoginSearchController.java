@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import coffeeFactory.dao.DaoAccount;
+import coffeeFactory.vo.Account;
+
 /**
  * Servlet implementation class LoginSearchController
  */
@@ -31,7 +34,25 @@ public class LoginSearchController extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		// request
+		request.setCharacterEncoding("utf-8");
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		if (name == null) {
+			name = "";
+		}
+		if (email == null) {
+			email = "";
+		}
+		
 		// model
+		if (name != "") {
+			DaoAccount daoAccount = new DaoAccount();
+			Account account = daoAccount.search(name, email);
+			if (account != null) {
+				request.setAttribute("account", account);
+			}
+		}
+		
 		// view
 		String page = "views\\account_login\\login_search.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);
