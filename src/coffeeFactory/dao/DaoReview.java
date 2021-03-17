@@ -176,14 +176,16 @@ public class DaoReview extends Dao{
 							+ "	SET RATING =?,\r\n"
 							+ "		TITLE = ?,\r\n"
 							+ "		CONTENT = ?,\r\n"
-							+ "		IMAGE = ?\r\n"
+							+ "		IMAGE = ?,\r\n"
+							+ "		REPLY_CONTENT = ?\r\n"
 							+ "WHERE REVIEW_ID = ? ";
 					pstmt = con.prepareStatement(sql);
 					pstmt.setInt(1, review.getRating());
 					pstmt.setString(2, review.getTitle());
 					pstmt.setString(3, review.getContent());
 					pstmt.setString(4, review.getImage());
-					pstmt.setInt(5, review.getReview_id());
+					pstmt.setString(5, review.getReply_content());
+					pstmt.setInt(6, review.getReview_id());
 					pstmt.executeUpdate();
 					con.commit();
 
@@ -259,7 +261,7 @@ public class DaoReview extends Dao{
 		
 	
 		 //dao.insertReview(new Review(1, 1, 5, "El","리뷰내용","asdf.png", "답변"));
-		   dao.updateReview(new Review( 100004,0,0,"",5, "El","리뷰수정","asdf.png",""));
+		   dao.updateReview(new Review( 100004,0,0,"",5, "El","리뷰수정2","asdf.png","답변"));
 		//dao.deleteReview(100000);
 		
 		 

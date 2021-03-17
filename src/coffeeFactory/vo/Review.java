@@ -27,6 +27,19 @@ public class Review {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Review(int product_id, int account_id, int rating, String title, String content, String image,
+			String reply_content) {
+		super();
+		this.product_id = product_id;
+		this.account_id = account_id;
+		this.rating = rating;
+		this.title = title;
+		this.content = content;
+		this.image = image;
+		this.reply_content = reply_content;
+	}
+
 	public Review(int review_id, int product_id, int account_id, Date regist_date, String regist_date_s, int rating,
 			String title, String content, String image, String reply_content) {
 		super();

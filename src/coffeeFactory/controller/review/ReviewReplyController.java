@@ -31,6 +31,14 @@ public class ReviewReplyController extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		
+		// 요청
+		
+		
+		
+		// 모델
+				
+		
+		
 		// 뷰
 				String page = "views\\review\\review_reply.jsp";
 				RequestDispatcher rd = request.getRequestDispatcher(page);

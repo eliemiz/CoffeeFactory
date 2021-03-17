@@ -30,6 +30,14 @@ public class ReviewDetailController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	
+		// 요청
+		
+		
+		
+		// 모델
+				
+		
+		
 		// 뷰 
 				String page = "views\\review\\review_board_detail.jsp";
 				RequestDispatcher rd = request.getRequestDispatcher(page);
