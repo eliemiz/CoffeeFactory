@@ -1,6 +1,7 @@
 package coffeeFactory.controller.shop;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import coffeeFactory.dao.DaoProduct;
+import coffeeFactory.vo.Product;
 
 /**
  * Servlet implementation class ShopCategoryController
@@ -29,13 +33,15 @@ public class ShopCategoryController extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Request
+		String origin = request.getParameter("origin");
 		
 		// Model
+		
 		
 		// View
 		String page = "views\\shop\\shop_front_category.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);
-		rd.forward(request, response);
+		rd.forward(request, response);		
 	}
 
 }
