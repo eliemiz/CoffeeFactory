@@ -3,6 +3,7 @@ package coffeeFactory.dao;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import coffeeFactory.vo.Product;
 import coffeeFactory.vo.Review;
 
 
@@ -243,7 +244,8 @@ public class DaoReview extends Dao{
 	
 	
 	
-	
+			
+		
 
 
 
@@ -261,7 +263,7 @@ public class DaoReview extends Dao{
 		
 	
 		 //dao.insertReview(new Review(1, 1, 5, "El","리뷰내용","asdf.png", "답변"));
-		   dao.updateReview(new Review( 100004,0,0,"",5, "El","리뷰수정2","asdf.png","답변"));
+		 //  dao.updateReview(new Review( 100004,0,0,"",5, "El","리뷰수정2","asdf.png","답변"));
 		//dao.deleteReview(100000);
 		
 		 

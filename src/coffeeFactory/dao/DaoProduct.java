@@ -100,4 +100,32 @@ public class DaoProduct extends Dao {
 		}
 		return prod;
 	}
+	
+	
+	public Product getProduct2(int product_id) {
+		Product prod = null;
+		try {
+			connect();
+			
+			String sql = "SELECT * FROM PRODUCT WHERE product_id = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, product_id);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				prod = new Product(rs.getInt("PRODUCT_ID"),rs.getString("NAME"),
+						rs.getString("CATEGORY"),rs.getString("origin"),rs.getString("COMPANY"),
+						rs.getString("DESCRIPTION"),
+						rs.getString("THUMBNAIL"));
+			}
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return prod;
+	}
 }

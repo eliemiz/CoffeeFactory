@@ -70,7 +70,7 @@ public class ReviewModifyController extends HttpServlet {
 		    	  String reply_content = request.getParameter("reply_content");
 		    	  Review upt = new Review(review_id, Integer.parseInt(product_id),
 		    			  Integer.parseInt(account_id), regist_date_s,Integer.parseInt(rating),
-		    			  title,content,image,reply_content  );
+		    			  title,content,image,reply_content );
 		                   
 		    	  	dao.updateReview(upt);
 	    	  }
