@@ -47,7 +47,7 @@ public class Notice {
 		this.image = image;
 		this.views = views;
 	}
-	
+	/*
 	public Notice(int notice_id, String title, String content, String image) {
 		super();
 		this.notice_id = notice_id;
@@ -63,7 +63,7 @@ public class Notice {
 		this.image = image;
 		this.views = views;
 	}
-
+*/
 	public int getNotice_id() {
 		return notice_id;
 	}
