@@ -41,11 +41,16 @@ public class Z03_shopReview extends HttpServlet {
 	      if(product_idS==null) product_idS="0";
 	      
 	      int product_id=0;
+	      try {
+	    	  product_id = Integer.parseInt(product_idS);
+	      }catch(Exception e) {
+	    	  System.out.println(e.getMessage());
+	      }
 
 		DaoProduct dao = new DaoProduct();
-		DaoReview daoq = new DaoReview();
+		DaoReview daor = new DaoReview();
 		
-		ArrayList<Review> list = daoq.getReviewList(product_id);
+		ArrayList<Review> list = daor.getReviewList(product_id);
 		
 		request.setAttribute("Rev",list);
 		

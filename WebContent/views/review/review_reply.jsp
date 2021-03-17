@@ -14,8 +14,23 @@
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
 
+var proc = "${param.proc}"; // proc="";
+if(proc=="upt"){
+	if(confirm("작성되었습니다. \n상품화면으로 이동하시겠습니까?")){
+		location.href='${path}/shop_detail.do';
+	}
+}
+
+	$(document).ready(function() {
+		$(document).ready(function(){
+			  $("#uptBtn").on("click",function(){
+				  if(confirm("답변하시겠습니까?")){
+					  //유효성 체크
+					  $("[name=proc]").val("upt");
+					  $("form").submit();
+				  }
+			  });
 	});
 </script>
 </head>
@@ -30,7 +45,8 @@
 			<td class="content-wrap-center">
 
 
-
+ <form id="review_update" method="post">
+       <input type="hidden" name="proc" value="" />
 	<div style="text-align:center;">
 	<br><br><br>
 	<p class="title">후기 답변</p>
@@ -86,11 +102,13 @@
                         </div>
                           <br>
 				     	<div style="text-align:right;">
-				     	<input type="button" value="답변하기" class="btn btn_normal" style="cursor:pointer;">
+				     	<input type="button" id="uptBtn" value="답변하기" class="btn btn_normal" style="cursor:pointer;">
 						<input type="button" value="돌아가기" class="btn btn_normal" 
 						onclick="location.href='${path}/shop_detail.do'" style="cursor:pointer;">
                     </div><!-- .page-body -->
                 </div><!-- #bbsData -->
+                </form>
+                </td>
 	<td class="content-wrap-center-right">
 			</td>
 			<td class="content-wrap-right">

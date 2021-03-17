@@ -16,14 +16,14 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
-	 $("#mod").on("click",function(){
+	 $("#modq").on("click",function(){
       
-        location.href="${path}/review_modify.do?review_id="+review_id;
+        location.href="${path}/review_modify.do?review_id="+${rev.review_id};
         //alert(review_id);
      });
-	 $("#rep").on("click",function(){
+	 $("#repq").on("click",function(){
       
-        location.href="${path}/review_reply.do?review_id="+review_id;
+        location.href="${path}/review_reply.do?review_id="+${rev.review_id};
         //alert(review_id);
      });
 }); 
@@ -127,7 +127,7 @@ td {
 			</colgroup>
 			<thead>
 				<tr>
-					<th scope="col"><div class="th_center">번호</div></th>
+					<th scope="col"><div class="th_center">리뷰번호</div></th>
 					<th scope="col"><div class="th_center">제목</div></th>
 					<th scope="col"><div class="th_center">작성자</div></th>
 					<th scope="col"><div class="th_center">작성일</div></th>
@@ -135,28 +135,29 @@ td {
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-						<td><span id="rev-r=toggle">1</span></td>
+				<c:forEach var="rev" items="${Rev}">
+					<tr>
+						<td><span id="rev-r=toggle">${rev.review_id}</span></td>
 						<div class="rev-content">
-					<td class="title2" id="rev-1" style="text-align:left;"><!-- <div class="td_left"> -->
-							<span>첫구매 원두 아주 만족합니다!</span>
+					<td class="title2" id="rev-1" style="text-align:left;">
+							<span>${rev.title}</span>
 						</td></div>
-					<td><div class="td_center">ijk230</div></td>
-					<td><div class="td_center">2021/03/12</div></td>
-					<td><div class="td_center">5</div></td>
+					<td><div class="td_center">아이디</div></td>
+					<td><div class="td_center">${rev.regist_date}</div></td>
+					<td><div class="td_center">${rev.rating}</div></td>
 					
 				</tr>
 				<!-- 숨김 상태일 때 td가 남는 것을 방지.. td 자체의 display 조절 -->
 			<tr><td colspan="5" class="full" id="full-1">
 				<div align="right">
-					<input type="button" id="rep" value="답변하기" class="small1" 
+					<input type="button" id="repq" value="답변하기" class="small1" 
 					onclick="location.href='${path}/review_reply.do'" style="cursor:pointer;">
-					<input type="button" value="수정/삭제" class="small1" id="mod"
+					<input type="button" value="수정/삭제" class="small1" id="modq"
 					onclick="location.href='${path}/review_modify.do'" style="cursor:pointer;">
 				</div><br>커피 향이 너무좋네요
-								<div align="left">(답변없을때는 공백처리)</div>
+								<div align="left">답변 :&nbsp;${rev.reply_content}</div>
 			</td></tr>
-			
+		</c:forEach>
 			</tbody>
 		</table>
 		<br>
