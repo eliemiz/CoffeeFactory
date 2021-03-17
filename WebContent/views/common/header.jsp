@@ -59,7 +59,7 @@
 			<ul id="header-bottom-menu">
 				<li><a href="${path}/shop_main.do?category=블랜드">블랜드</a></li>
 				<li><a href="${path}/shop_main.do?category=싱글오리진">싱글 오리진 원두</a></li>
-				<li><a href="${path}/shop_main.do?category=스페셜티">스페셜티 원두 외</a></li>
+				<li><a href="${path}/shop_main.do?category=스페셜">스페셜티 원두 외</a></li>
 				<li><a href="${path}/shop_main.do?category=선물세트">선물 세트</a></li>
 			</ul>
 			<form method="post" action="${path}/shop_search.do">
