@@ -58,8 +58,14 @@ public class NoticeReadController extends HttpServlet {
 			request.setAttribute("notice", dao.getNotice(notice_id));
 			
 			*/
-			Dao_Notice dao = new Dao_Notice();
-			request.setAttribute("notice", dao.getNoti(title));
+			request.setCharacterEncoding("utf-8");
+
+		      Dao_Notice dao = new Dao_Notice();
+		      String notice_id_s = request.getParameter("notice_id");
+		      if (notice_id_s != null) {
+		         request.setAttribute("notice", dao.getNotice(Integer.parseInt(notice_id_s)));
+		      }
+
 			
 			
 			// view

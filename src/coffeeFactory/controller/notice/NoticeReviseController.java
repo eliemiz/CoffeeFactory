@@ -26,6 +26,20 @@ public class NoticeReviseController extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    private int nInt(String s) {
+    	int ret=0;
+    	try {
+    		ret = Integer.parseInt(s);
+    	} catch(Exception e) {
+    		System.out.println(e.getMessage());
+    	}
+    	return ret;
+    }
+    private String nStr(String s) {
+    	String ret="";
+    	if(s != null) ret=s;
+    	return ret;
+    }
 
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
@@ -37,32 +51,26 @@ public class NoticeReviseController extends HttpServlet {
 		String proc = request.getParameter("proc");
 		
 		String notice_idS = request.getParameter("notice_id");
-		if(notice_idS==null) notice_idS="0";
-		int notice_id = 0;
-		try {
-			notice_id = Integer.parseInt(notice_idS);
-		} catch(Exception e) {
-			System.out.println(e.getMessage());
-		}
+		int notice_id=nInt(notice_idS);
 		
 		// model
 		Dao_Notice dao = new Dao_Notice();
 		
 		if(proc!=null) {
 			if(proc.equals("upt")) {
+				System.out.println("#수정 처리");
+				dao.updateNotice(
+				new Notice(notice_id, 
+					nStr(request.getParameter("regist_date_s")),
+					nStr(request.getParameter("title")),
+					nStr(request.getParameter("content")),
+					nStr(request.getParameter("image")),
+					nInt(request.getParameter("views")) )
+				);
+			}	
 				
-				String regist_date_s = request.getParameter("regist_date_s");
-				String title = request.getParameter("title");
-				String content = request.getParameter("content");
-				String image = request.getParameter("image");
-				String views = request.getParameter("views");
-								
-				Notice upt = new Notice(notice_id, regist_date_s, title, content, image, Integer.parseInt(views));
-				
-				dao.updateNotice(upt);
-			}
 			if(proc.equals("del")) {
-				System.out.println("삭제 준비 완료:"+notice_id);
+				System.out.println("삭제 처리:"+notice_id);
 				dao.deleteNotice(notice_id);
 			}
 		}
