@@ -17,10 +17,12 @@ import coffeeFactory.dao.DaoMypage;
 import coffeeFactory.dao.DaoProduct;
 import coffeeFactory.dao.DaoProductOption;
 import coffeeFactory.dao.DaoReview;
+import coffeeFactory.dao.Dao_Qna;
 import coffeeFactory.vo.Account;
 import coffeeFactory.vo.Product;
 import coffeeFactory.vo.ProductGrind;
 import coffeeFactory.vo.ProductOption;
+import coffeeFactory.vo.Qna;
 import coffeeFactory.vo.Review;
 
 /**
@@ -76,7 +78,17 @@ public class ShopDetailController extends HttpServlet {
 		request.setAttribute("prod", product);
 		request.setAttribute("grind", glist);
 		request.setAttribute("po", polist);
+		
 		// Q&A
+		
+		Dao_Qna daoq = new Dao_Qna();
+		DaoAccount daoa = new DaoAccount();
+		
+		ArrayList<Qna> qlist = daoq.getQnaList(product_id);
+		request.setAttribute("ac", daoa.getAccount(account_id));
+		
+		
+		request.setAttribute("Qna", qlist);
 		
 		// review
 			
