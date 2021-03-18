@@ -9,8 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import coffeeFactory.dao.DaoAccount;
 import coffeeFactory.dao.DaoReview;
+import coffeeFactory.vo.Account;
 import coffeeFactory.vo.Review;
 
 /**
@@ -36,9 +39,21 @@ public class ReviewBoardController extends HttpServlet {
 		
 		// 요청
 				request.setCharacterEncoding("utf-8");
+				int account_id = 0;
 				
+				HttpSession session = request.getSession();
+				Object account_id_obj = session.getAttribute("account_id");
+				if (account_id_obj != null) {
+					account_id = (int)account_id_obj;
+				}
 				
 		// 모델
+				DaoAccount daoAccount = new DaoAccount();
+				Account account = daoAccount.getAccount(account_id);
+				
+				if (account != null) {
+					request.setAttribute("account", account);
+				}
 				
 				DaoReview dao = new DaoReview();
 				ArrayList<Review> list = dao.getReviewList();
