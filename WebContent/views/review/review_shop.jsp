@@ -25,7 +25,7 @@ $(document).ready(function() {
      });
 	 $("#wr").on("click",function(){//입력
       
-		 location.href="${path}/shop_detail.do?product_id="+${rev.product_id};
+		 location.href="${path}/review_write.do?product_id="+"${rev.product_id}";
     
 	 });
 	 
@@ -191,7 +191,7 @@ td {
 
 		<input align="center" type="button" value="후기작성" id="wr"
 			class="btn btn_thatch"
-			 onclick="location.href='${path}/review_write.do'"  style="cursor: pointer;"><br>
+			   style="cursor: pointer;"><br>
 	</div>
 
 
