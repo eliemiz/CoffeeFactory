@@ -74,13 +74,13 @@
 											<th>거래상태</th>
 											<th>주문일시</th>
 										</tr>
-										<c:forEach var="i" begin="0" end="2">
+										<c:forEach var="order" items="${orderList}">
 										<tr>
-											<td class="td-center">100010</td>
-											<td class="td-center">23,000원</td>
-											<td class="td-center">신용카드</td>
-											<td class="td-center">결제 완료</td>
-											<td class="td-center">2021-05-01 15:11:10</td>
+											<td class="td-center">${order.order_id}</td>
+											<td class="td-center">${order.price}</td>
+											<td class="td-center">${order.pay}</td>
+											<td class="td-center">${order.state}</td>
+											<td class="td-center">${order.order_date}</td>
 										</tr>
 										</c:forEach>
 									</table>

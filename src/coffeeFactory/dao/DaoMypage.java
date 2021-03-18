@@ -2,8 +2,10 @@ package coffeeFactory.dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 
 import coffeeFactory.vo.QnaEx;
+import coffeeFactory.vo.ReviewEx;
 import coffeeFactory.vo.WishEx;
 
 public class DaoMypage extends Dao {
@@ -77,4 +79,38 @@ public class DaoMypage extends Dao {
 		return list;
 	}
 
+	public ArrayList<ReviewEx> getReviewList(int account_id) {
+		ArrayList<ReviewEx> list = new ArrayList<ReviewEx>();
+
+		try {
+			connect();
+
+			String sql = "SELECT r.*, p.* FROM review r, product p WHERE r.PRODUCT_ID = p.product_id AND ACCOUNT_ID = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, account_id);
+			System.out.println(sql);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+
+				ReviewEx review = new ReviewEx(rs.getInt("REVIEW_ID"), rs.getInt("PRODUCT_ID"), rs.getInt("ACCOUNT_ID"),
+						rs.getDate("REGIST_DATE"), rs.getInt("RATING"), rs.getString("TITLE"), rs.getString("CONTENT"),
+						rs.getString("IMAGE"), rs.getString("REPLY_CONTENT"), rs.getString("NAME"),
+						rs.getString("CATEGORY"), rs.getString("origin"), rs.getString("COMPANY"),
+						rs.getString("THUMBNAIL"));
+				list.add(review);
+			}
+
+			rs.close();
+			pstmt.close();
+			con.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return list;
+	}
 }
