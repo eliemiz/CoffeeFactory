@@ -104,7 +104,7 @@ public class ShopDetailController extends HttpServlet {
       }
       request.setAttribute("Rev",list);
       /* View */
-      String page = "views\\shop\\shop_front_detail.jsp";
+      String page = "views\\shop\\shop_detail.jsp";
       RequestDispatcher rd = request.getRequestDispatcher(page);
       rd.forward(request, response);
    }
