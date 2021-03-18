@@ -16,6 +16,12 @@ public class Product {
 	}
 
 
+	public Product(String origin) {
+		super();
+		this.origin = origin;
+	}
+
+
 	public Product(int product_id, String name, String category, String origin, String company, String description,
 			String thumbnail) {
 		super();

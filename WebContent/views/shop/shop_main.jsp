@@ -79,14 +79,16 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 															<table width="100%" cellspacing="2" cellpadding="1" bgcolor="white" border="0">
 																<tbody>
 																	<tr>
+																		<c:forEach var="p" items="${olist}">
 																		<td nowrap>
 																			&nbsp;
 																			<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle" vspace="2"/>
-																			<a href="${path}/shop_category.do?origin=아프리카">
-																				<font color="#000000" style="font-size:9pt">아프리카</font>
+																			<a href="${path}/shop_category.do?origin=${p.origin}">
+																				<font color="#000000" style="font-size:9pt">${p.origin}</font>
 																			</a>
 																		</td>
-																		<td nowrap>
+																		</c:forEach>
+																		<%-- <td nowrap>
 																			&nbsp;
 																			<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle" vspace="2"/>
 																			<a href="${path}/shop_category.do?origin=중남미">
@@ -99,7 +101,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 																			<a href="${path}/shop_category.do?origin=아시아앤태평양">
 																				<font color="#000000" style="font-size:9pt">아시아&태평양</font>
 																			</a>
-																		</td>
+																		</td> --%>
 																	</tr>
 																</tbody>
 															</table>
@@ -160,7 +162,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 				<table width="100%" cellspacing="0" cellpadding="0">
 					<tbody>	
 						<tr>			
-							 <td valign="top" align="center">							 
+							 <td valign="top" align="left">							 
 								<table class=""  align="center" width="187" cellspacing="0"
 								cellpadding="0" border="0" id="">
 									<tbody>									

@@ -106,7 +106,7 @@ a:hover{text-decoration: none; color: #EDA900;}
 	<table width="100%" cellspacing="30" cellpadding="30">
 		<tbody>
 			<tr>			
-				 <td valign="top" align="center">							 
+				 <td valign="top" align="left">							 
 					<table class="" align="center" cellspacing="30" cellpadding="30" border="0" id="">
 						<tbody>								
 							<c:forEach var="prod" items="${prodlist}" varStatus="sts">		

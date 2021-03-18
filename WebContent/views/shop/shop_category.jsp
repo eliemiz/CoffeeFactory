@@ -169,7 +169,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 				<table width="100%" cellspacing="0" cellpadding="0">
 					<tbody>	
 						<tr>			
-							 <td valign="top" align="center">							 
+							 <td valign="top" align="left">							 
 								<table class=""  align="center" width="187" cellspacing="0"
 								cellpadding="0" border="0" id="">
 									<tbody>									
