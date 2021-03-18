@@ -55,7 +55,6 @@ public class DaoMypage extends Dao {
 					+ "	GROUP BY (W.ACCOUNT_ID, W.PRODUCT_ID, P.NAME, P.CATEGORY, P.ORIGIN, P.COMPANY, P.THUMBNAIL)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, account_id);
-			System.out.println(sql);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -88,7 +87,6 @@ public class DaoMypage extends Dao {
 			String sql = "SELECT r.*, p.* FROM review r, product p WHERE r.PRODUCT_ID = p.product_id AND ACCOUNT_ID = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, account_id);
-			System.out.println(sql);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
