@@ -20,7 +20,6 @@
 </head>
 <body>
 	<jsp:include page="/views/common/header.jsp"/>
-	<div style="height:222px;"></div>
 	<table class="content-wrap">
 		<tr>
 			<td class="content-wrap-left">
@@ -36,8 +35,6 @@
 			</td>
 		</tr>
 	</table>
-	
 	<jsp:include page="/views/common/footer.jsp"/>
-	
 </body>
 </html>

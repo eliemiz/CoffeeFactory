@@ -12,12 +12,12 @@ public class DaoProductOption extends Dao{
 			try {
 				connect();
 				
-				String sql = "SELECT * FROM PRODUCT_OPTION WHERE PRODUCT_ID = ?";
+				String sql = "SELECT * FROM PRODUCT_OPTION WHERE PRODUCT_ID = ? ORDER BY PRICE";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setInt(1, product_id);
 				rs = pstmt.executeQuery();
 	
-				if (rs.next()) {
+				while (rs.next()) {
 					ProductOption po= new ProductOption(rs.getInt("product_id"), rs.getString("capacity"), rs.getInt("price"));
 					list.add(po);
 				}

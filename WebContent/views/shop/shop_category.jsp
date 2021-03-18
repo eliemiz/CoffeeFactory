@@ -59,19 +59,19 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 		<tr>
 			<td class="content-wrap-left"><img src="${path}/resource/img/shop/blank.gif" width="120" height="1"/></td>
 			<td class="content-wrap-center" valign="top" width="100%">
-				<table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
+<%-- 				<table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
 					<tbody>
 						<tr>
 							<!-- 상단 배너 -->
 							<td height="23">
 								<span class="font-size1" style="font-color:#ffffff">
 								&nbsp;<img src="${path}/resource/img/shop/dot_01.gif" align="absmiddle"/>
-								현재 위치: <%-- <a href="${path}/index.do">Home</a> > <a href="${path}/shop_main.do?category=${prodlist.category}">${prodlist.category}</a> > <a href="${path}/category.do?origin=${prodlist.origin}">${prodlist.origin}</a> --%>
+								현재 위치: <a href="${path}/index.do">Home</a> > <a href="${path}/shop_main.do?category=${prodlist.category}">${prodlist.category}</a> > <a href="${path}/category.do?origin=${prodlist.origin}">${prodlist.origin}</a>
 								</span>
 							</td>
 						</tr>
 					</tbody>
-				</table>
+				</table> --%>
 				<table width="100%"cellspacing="0" cellpadding="0" style="display:none;"><tbody><tr height="1" bgcolor="#DEE2E4"><td></td></tr></tbody></table>
 				<table width="100%" align="center" cellspacing="0" cellpadding="0" border="0" bgcolor="FFFFFF">
 					<tbody>
@@ -167,41 +167,37 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 				</table>
 				<!-- 상품목록 -->
 				<table width="100%" cellspacing="0" cellpadding="0">
-					<tbody>
-						<tr>							
-							<c:forEach var="prods" items="${prodlist}">					
-							 <td valign="top">							 
-								<table class="" style="table-layout:fixed" align="center" width="187" cellspacing="0"
+					<tbody>	
+						<tr>			
+							 <td valign="top" align="center">							 
+								<table class=""  align="center" width="187" cellspacing="0"
 								cellpadding="0" border="0" id="">
 									<tbody>									
-										<tr align="center">										
-											<td height="187">
-												<a href="${path}/shop_detail.do?product_id=${prods.product_id}">
-													<img src="${path}/resource/img/shop/${prods.thumbnail}" width="185" class="product_img_border">
-												</a>
-											</td>
-										</tr>
-										<tr align="center">
-											<td class="product-name" valign="top" style="word-break:break-all; line-height:120%; padding-top:3px;">
-												<a href="${path}/shop_detail.do?product_id=${prods.product_id}">${prods.name}</a>
-												<br>
-												&nbsp;
-												<!-- img(베스트상품) -->
-											</td>
-										</tr>
-										<tr align="center">
-											<td class="product-price">
-												<!-- img(동전) -->
-												<span class="money_color2">
-													<b><b>${prod.price}</b>원</b><!-- Back 작업 시 수정 -->
-												</span>
-											</td>
-										</tr>
-										<tr><td height="7"></td></tr>
+										<c:forEach var="prod" items="${prodlist}" varStatus="sts" >		
+											<c:if test="${sts.index%4==0 }">							
+												<tr align="center">		
+											</c:if>			
+													<td width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>		
+													<td height="187" align="center">
+														<a href="${path}/shop_detail.do?product_id=${prod.product_id}">
+														<img src="${path}/resource/img/shop/${prod.thumbnail}"  width="180" class="product_img_border">
+														</a>
+														<br>
+														<a href="${path}/shop_detail.do?product_id=${prod.product_id}">${prod.name}</a>
+														<br>
+														<span class="money_color2">
+														<b><b>${12000}</b>원</b>
+														</span>
+														<br><br>
+													</td>
+													<td width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+											<c:if test="${sts.index%4==3}">
+												</tr>
+											</c:if>			
+										</c:forEach>
 									</tbody>
 								</table>				
-							</td>		
-							</c:forEach>	
+							</td>
 						</tr>
 					</tbody>
 				</table>

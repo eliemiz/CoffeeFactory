@@ -13,11 +13,16 @@
 <link rel="stylesheet" href="${path}/resource/css/fonts.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
-	
 	$(document).ready(function(){
-		
-	});
-		
+		$(":radio").val($("input:checked").val());
+		$("input:radio").click(function(){
+				$("#main_price").val("");
+				if($(this).prop("checked")){
+					$(":span").val($(this).val());
+				}
+			});
+		});
+																						
 </script>
 <style type="text/css">
 .product-tit {margin:20px 0 0;}
@@ -53,8 +58,8 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 </style>
 </head>
 <body>
-<jsp:include page="../common/header.jsp"/>
-<div style="height:230px;"></div>
+
+<div style="height:230px;"><jsp:include page="../common/header.jsp"/></div>
 <table class="content-wrap">
 	<tbody>
 		<tr>
@@ -65,19 +70,19 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 						<tr>
 							<td valign="top">
 								<!-- 상단 배너 -->
-								<table width="100%" cellspacing="0" cellpadding="0" border="0">
+<%-- 								<table width="100%" cellspacing="0" cellpadding="0" border="0">
 									<tbody>
 										<tr>
 											<td height="23">
 												&nbsp;
 												<span class="font-size1">
 												<img src="${path}/resource/img/shop/dot_01.gif"/>
-												현재 위치: <%-- <a href="${path}/index.do">Home</a> > <a href="${path}/shop_main.do">싱글오리진 원두커피</a> > <a href="${path}/shop_category.do">아시아&태평양</a> --%>
+												현재 위치: <a href="${path}/index.do">Home</a> > <a href="${path}/shop_main.do">싱글오리진 원두커피</a> > <a href="${path}/shop_category.do">아시아&태평양</a>
 												</span>
 											</td>
 										</tr>
 									</tbody>
-								</table>
+								</table> --%>
 								<br style="line-height:0px;">
 								<table width="100%" align="center" cellspacing="0" cellpadding="0">
 									<tbody>
@@ -89,15 +94,16 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 													<tbody>
 														<tr>
 															<td width="300" style="padding-top:5px;" valign="top">
-																<table width="250" height="260" align="center" cellspacing="0" cellpadding="0" border="0">
+																<!-- <table width="250" height="260" align="center" cellspacing="0" cellpadding="0" border="0">
 																	<tbody>
 																		<tr>
-																			<td bgcolor="white" align="center" height="250">
+																			<td bgcolor="white" align="center" height="250"> -->
+																				<br><br>
 																				<img src="${path}/resource/img/shop/${prod.thumbnail}" width="250" height="250">
-																			</td>
+																			<!-- </td>
 																		</tr>
 																	</tbody>
-																</table>
+																</table> -->
 																<!-- table로 이미지 확대 넣을건지? -->
 															</td>
 															<td><img src="${path}/resource/img/shop/blank.gif" height="1"/></td>
@@ -109,10 +115,8 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 																		<tbody>
 																			<tr height="30">
 																				<td></td>
-																				<td colspan="2" style="font-weight:bold; font-size:12pt; font-family:돋움;">
+																				<td colspan="2" style="font-weight:bold; font-size:12pt; font-family:돋움;">																					
 																					${prod.name}
-																					<br>
-																					&nbsp;
 																					<!-- img 인기상품 -->
 																				</td>
 																			</tr>
@@ -133,7 +137,8 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 																				<td><span class="opt_title1">제품 선택</span></td>
 																				<td>		
 																				<c:forEach var="pos" items="${po}">																			
-																					<input type="radio" name="chadung_list" value="${pos.price}"> ${pos.capacity} (${pos.price}원)<br>																		
+																					<%-- 여기서 값을 받아오려면 id? name? 그냥? ? 죄송,,,,--%>
+																					<input type="radio" name="pricelist" value="${pos.price}"> ${pos.capacity} (${pos.price}원)<br>																		
 																				</c:forEach>
 																				</td>
 																			</tr>
@@ -141,7 +146,8 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 																				<td> </td>
 																				<td><span class="opt_title1">판매가격</span></td>
 																				<td>&nbsp;
-																					<span id="main_price" class="money_color">12,000</span>
+																					<span id="main_price" class="money_color"></span>
+
 																					<span id="main_price_type" class="money_color">원</span>
 																				</td>
 																			</tr>
@@ -183,9 +189,9 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 																			<tr id="zend_price_tr" height="25" style>
 																				
 																			</tr>			-->
-																			<tr height="10"><td colspan="3"></td></tr>
+																			<!-- <tr height="10"><td colspan="3"></td></tr>
 																			<tr height="1" bgcolor="#C8C8C8"><td colspan="3"></td></tr>
-																			<tr height="15"><td colspan="3"></td></tr>
+																			<tr height="15"><td colspan="3"></td></tr> -->
 																			<!-- 폼 클로즈 -->
 																		</tbody>
 																	</table>
@@ -206,10 +212,9 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 																	<table align="center">
 																		<tbody>
 																			<tr>
-																				<%-- href 수정하기 ~~.do로 --%>
-																				<td><img src="${path}/resource/img/shop/buyBtn.gif" style="cursor:pointer;" onclick="location.href='${path}/views/cart/pay.jsp'"></td>
-																				<td><img src="${path}/resource/img/shop/cartBtn.gif" style="cursor:pointer;" onclick="location.href='${path}/views/cart/cartlist.jsp'"></td>
-																				<td><a href="${path}/views/wishlist/wishlist.jsp" onclick=""><img src="${path}/resource/img/shop/wishBtn.gif" border="0"></a></td>
+																				<td><img src="${path}/resource/img/shop/buyBtn.gif" style="cursor:pointer;" onclick="location.href='${path}/pay.do'"></td>
+																				<td><img src="${path}/resource/img/shop/cartBtn.gif" style="cursor:pointer;" onclick="location.href='${path}/cart.do'"></td>
+																				<td><a href="${path}/wish.do" onclick=""><img src="${path}/resource/img/shop/wishBtn.gif" border="0"></a></td>
 																			</tr>																			
 																		</tbody>
 																	</table>
@@ -230,20 +235,20 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 				<!-- 상품상세 -->
 				<div class="mall-tab" id="tab1">
 					<ul>
-						<li class="on"><button type="button" data-to-tab="tab1">상품정보</button></li>
-						<li><button type="button" data-to-tab="tab2">배송안내</button></li>
-						<li><button type="button" data-to-tab="tab3">고객 상품평</button></li>
-						<li><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
-					</ul>
+						<li class="on"><button type="button"><a href="#tab1">상품정보</a></button></li>
+						<li><button type="button"><a href="#tab2">배송안내</a></button></li>                
+						<li><button type="button"><a href="#tab3">고객 상품평</a></button></li>
+						<li><button type="button"><a href="#tab4">상품 Q&A</a></button></li>
+					</ul>	
 				</div>
 				<table align="center" width="100%" cellspacing="0" background="${path}/resource/img/shop/tt_detail_bg.gif">
 					<tbody>
 						<tr><td><img src="${path}/resource/img/shop/tt_detail.gif" border="0"/></td></tr><!-- 원래는 이미지임! -->
 					</tbody>
 				</table>
-				<table width="98%" align="center" cellspacing="0" cellpadding="0">
+				<table id="pdetail" width="98%" align="center" cellspacing="0" cellpadding="0">
 					<tbody>
-						<tr><td align="center"></td></tr>
+						<tr><td align="center" ></td></tr>
 						<tr>
 							<td style="line-height:150%; padding-left:20px">
 								<p align="center" style="text-align:center;">
@@ -262,10 +267,10 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 				</table>
 				<div class="mall-tab" id="tab2">
 					<ul>
-						<li><button type="button" data-to-tab="tab1">상품정보</button></li>
-						<li class="on"><button type="button" data-to-tab="tab2">배송안내</button></li>
-						<li><button type="button" data-to-tab="tab3">고객 상품평</button></li>
-						<li><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
+						<li><button type="button"><a href="#tab1">상품정보</a></button></li>
+						<li class="on"><button type="button"><a href="#tab2">배송안내</a></button></li>                
+						<li><button type="button"><a href="#tab3">고객 상품평</a></button></li>
+						<li><button type="button"><a href="#tab4">상품 Q&A</a></button></li>
 					</ul>	
 				</div>
 				<!-- 배송안내 -->
@@ -409,20 +414,20 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 								<td>
 									<div class="mall-tab" id="tab3">
 										<ul>
-											<li><button type="button" data-to-tab="tab1">상품정보</button></li>
-											<li><button type="button" data-to-tab="tab2">배송안내</button></li>
-											<li class="on"><button type="button" data-to-tab="tab3">고객 상품평</button></li>
-											<li><button type="button" data-to-tab="tab4"><a href="#tab4">상품 Q&A</a></button></li>
-										</ul>	
+											<li><button type="button"><a href="#tab1">상품정보</a></button></li>
+											<li><button type="button"><a href="#tab2">배송안내</a></button></li>                
+											<li class="on"><button type="button"><a href="#tab3">고객 상품평</a></button></li>
+											<li><button type="button"><a href="#tab4">상품 Q&A</a></button></li>
+										</ul>
 									</div>
 									<jsp:include page="../review/review_shop.jsp"/>
 									<%-- Q&A (mall-tab 포함) --%>
 									<div class="mall-tab" id="tab4">
 										<ul>
-											<li><button type="button" data-to-tab="tab1">상품정보</button></li>
-											<li><button type="button" data-to-tab="tab2">배송안내</button></li>
-											<li><button type="button" data-to-tab="tab3">고객 상품평</button></li>
-											<li class="on"><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
+											<li><button type="button"><a href="#tab1">상품정보</a></button></li>
+											<li><button type="button"><a href="#tab2">배송안내</a></button></li>                
+											<li><button type="button"><a href="#tab3">고객 상품평</a></button></li>
+											<li class="on"><button type="button"><a href="#tab4">상품 Q&A</a></button></li>
 										</ul>	
 									</div>
 									<jsp:include page="../qna/qnalist.jsp"/>

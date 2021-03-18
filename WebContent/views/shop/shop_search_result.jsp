@@ -14,10 +14,10 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-		$(".data").on("dblclick", function(){
-	    	  var name = $(this).children().eq(1).text();
-	    	  location.href="${path}/shop_detail.do";
-	      });
+	//	$(".data").on("dblclick", function(){
+	//    	  var name = $(this).children().eq(1).text();
+	//    	  location.href="${path}/shop_detail.do";
+	//      });
 	});
 	
 </script>
@@ -76,7 +76,7 @@ a:hover{text-decoration: none; color: #EDA900;}
 				<tr height="20" style="color:666666;">
 				<td> </td>
 				<td>
-				&nbsp;<span class="font-size2">•&nbsp;검색상품 : <font color="#333333"><b>${prod.size()}</b></font>개</span>							
+				&nbsp;<span class="font-size2">•&nbsp;검색상품 : <font color="#333333"><b>${prodlist.size()}</b></font>개</span>							
 				</td>
 				<td align="right">
 	<table cellspacing="0" cellpadding="0" border="0">
@@ -103,30 +103,41 @@ a:hover{text-decoration: none; color: #EDA900;}
 			<tr><td height="10"></td></tr>
 		</tbody>
 	</table>					
-	<table width="100%" cellspacing="0" cellpadding="0">
+	<table width="100%" cellspacing="30" cellpadding="30">
 		<tbody>
-			<tr>					
-				<td valign="top">
-	<table style="table-layout:fixed" width="187" cellspacing="0" cellpadding="0" border="0" id="" >
-		<tbody><tr><td height="12"></td></tr>	
-		<c:forEach var="prod" items="${prod}">				
-			<tr class="data">
-				<td height="187">
-				<img src="${img_path}/" border="0" width="185" class="product_img_border"></td>
-				<td valign="top" style="word-break:break-all;line-height:120%;padding-top:3px;">${prod.name}</td>
-				<td><span class="money_color2"><b><b>12000</b>원</b></span></td>
+			<tr>			
+				 <td valign="top" align="center">							 
+					<table class="" align="center" cellspacing="30" cellpadding="30" border="0" id="">
+						<tbody>								
+							<c:forEach var="prod" items="${prodlist}" varStatus="sts">		
+								<c:if test="${sts.index%4==0 }">							
+									<tr align="center">		
+								</c:if>			
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>					
+										<td height="187" align="center">
+											<a href="${path}/shop_detail.do?product_id=${prod.product_id}">
+											<img src="${path}/resource/img/shop/${prod.thumbnail}"  width="180" class="product_img_border">
+											</a>
+											<br>
+											<a href="${path}/shop_detail.do?product_id=${prod.product_id}">${prod.name}</a>
+											<br>
+											<span class="money_color2">
+											<b><b>${12000}</b>원</b>
+											</span>
+											<br><br>
+										</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+								<c:if test="${sts.index%4==3}">
+									</tr>
+								</c:if>			
+							</c:forEach>	
+						</tbody>
+					</table>				
+				</td>		
 			</tr>
-			</c:forEach>
-			<tr><td height="7"></td></tr>
 		</tbody>
 	</table>
-				</td>
-				<td><img src="" width="185"></td>
-				<td><img src="" width="185"></td>
-			</tr>
-			<tr height="3" bgcolor="#F7F7F7"><td colspan="4"></td></tr>
-		</tbody>
-	</table>
+	<br><br><br>
 	<table width="100%">
 		<tbody>
 			<tr>
