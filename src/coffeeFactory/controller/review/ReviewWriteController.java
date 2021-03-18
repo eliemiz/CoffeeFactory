@@ -8,8 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import coffeeFactory.dao.DaoAccount;
 import coffeeFactory.dao.DaoReview;
+import coffeeFactory.vo.Account;
 import coffeeFactory.vo.Review;
 
 /**
@@ -37,14 +40,22 @@ public class ReviewWriteController extends HttpServlet {
 		
 		// 요청
 		request.setCharacterEncoding("utf-8");
+		int account_id = 0;
+		
+		HttpSession session = request.getSession();
+		Object account_id_obj = session.getAttribute("account_id");
+		if (account_id_obj != null) {
+			account_id = (int)account_id_obj;
+		}
+		
 		
 			String product_id = request.getParameter("product_id");
 		   if(product_id==null||product_id.trim().equals("")) product_id="0";
 		   log("#product_id: "+product_id);
 		   
-		   String account_id = request.getParameter("account_id");
-		   if(account_id==null||account_id.trim().equals("")) account_id="0";
-		   log("#rating: "+account_id);
+		   String account_ids = request.getParameter("account_id");
+		   if(account_ids==null||account_ids.trim().equals("")) account_ids="0";
+		   log("#rating: "+account_ids);
 		   
 		   String rating = request.getParameter("rating");
 		   if(rating==null||rating.trim().equals("")) rating="0";
@@ -67,11 +78,16 @@ public class ReviewWriteController extends HttpServlet {
 		   log("#reply_content: "+reply_content);
 		   
 		  
+		   DaoAccount daoAccount = new DaoAccount();
+			Account account = daoAccount.getAccount(account_id);
+			if (account != null) {
+				request.setAttribute("account", account);
+			}
 		   
 		   
 		   // 입력할 객체 완성.
 		   if(!product_id.equals("")){ // 초기 화면과 구분하기 위해서
-			   Review ins = new Review(Integer.parseInt(product_id), Integer.parseInt(account_id),
+			   Review ins = new Review(Integer.parseInt(product_id), Integer.parseInt(account_ids),
 					   Integer.parseInt(rating), title, 
 		            content, image, reply_content);
 		      log("#입력 내용 확인: "+ins.getTitle());
@@ -80,8 +96,7 @@ public class ReviewWriteController extends HttpServlet {
 		   }
 		
 		
-		// 모델
-				
+			
 		
 		
 		// 뷰

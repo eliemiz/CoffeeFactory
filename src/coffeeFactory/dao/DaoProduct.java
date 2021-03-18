@@ -43,6 +43,32 @@ public class DaoProduct extends Dao {
 		}
 		return plist;
 	}
+	
+	public ArrayList<Product> getOrigin(String category) {
+		ArrayList<Product> plist = new ArrayList<Product>();
+		try {
+			connect();
+
+			String sql = "SELECT DISTINCT origin, category FROM product p WHERE category= ? ";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, category);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				Product prod = new Product(rs.getString("origin"), rs.getString("CATEGORY"));
+				plist.add(prod);
+			}
+
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return plist;
+	}
 
 	// 검색(name)
 	public ArrayList<Product> getSchList(String name){

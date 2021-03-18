@@ -18,13 +18,14 @@
 var proc = "${param.proc}"; // proc="";
 if(proc=="upt"){
 	if(confirm("작성되었습니다. \n상품화면으로 이동하시겠습니까?")){
-		location.href='${path}/shop_detail.do';
+		location.href="${path}/shop_detail.do?product_id="+${param.product_id};
 	}
 }
 
 	$(document).ready(function() {
 		$(document).ready(function(){
 			  $("#uptBtn").on("click",function(){
+				  
 				  if(confirm("답변하시겠습니까?")){
 					  //유효성 체크
 					  $("[name=proc]").val("upt");
@@ -32,6 +33,7 @@ if(proc=="upt"){
 				  }
 			  });
 	});
+	});	
 </script>
 </head>
 
@@ -45,7 +47,7 @@ if(proc=="upt"){
 			<td class="content-wrap-center">
 
 
- <form id="review_update" method="post">
+ <form method="post">
        <input type="hidden" name="proc" value="" />
 	<div style="text-align:center;">
 	<br><br><br>
@@ -63,7 +65,7 @@ if(proc=="upt"){
                                 </thead>
                                 <input type="hidden" name="review_id" value="${rev.review_id}"/>
                                 <input type="hidden" name="product_id" value="${rev.product_id}"/>
-                                <input type="hidden" name="account_id" value="${rev.account_id}"/>
+                                <input type="hidden" name="account_ids" value="${rev.account_id}"/>
                                 <input type="hidden" name="regist_date_s" value="${rev.regist_date_s}"/>
                                 <input type="hidden" name="rating" value="${rev.rating}"/>
                                 <input type="hidden" name="title" value="${rev.title}"/>
@@ -110,7 +112,7 @@ if(proc=="upt"){
                         </div>
                           <br>
 				     	<div style="text-align:right;">
-				     	<input type="button" id="uptBtn" value="답변하기" class="btn btn_normal" style="cursor:pointer;">
+				     	<input type="button" id="uptBtn"  value="답변하기" class="btn btn_normal" style="cursor:pointer;">
 						<input type="button" value="돌아가기" class="btn btn_normal" 
 						onclick="location.href='${path}/shop_detail.do'" style="cursor:pointer;">
                     </div><!-- .page-body -->

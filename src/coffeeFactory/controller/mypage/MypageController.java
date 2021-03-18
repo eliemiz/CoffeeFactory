@@ -68,6 +68,13 @@ public class MypageController extends HttpServlet {
 			
 		}
 		
+		// 페이지 설정을 위한 query
+		String query = request.getParameter("query");
+		if (query == null) {
+			query = "";
+		}
+		request.setAttribute("query", query);
+		
 		// view
 		String page = "views\\account_mypage\\mypage.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);

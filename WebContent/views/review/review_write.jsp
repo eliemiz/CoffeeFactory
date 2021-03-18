@@ -24,7 +24,7 @@ if (!hasAccountId) {
 	var ckInsert = "${param.content}";
 	if(ckInsert != ""){
 		if(confirm("등록했습니다\n상품화면으로 이동하시겠습니까?")){
-			location.href='${path}/shop_detail.do';
+			location.href="${path}/shop_detail.do?product_id="+"${param.product_id}";
 		}
 	}
 	
@@ -82,7 +82,6 @@ if (!hasAccountId) {
                    <col width="100">
                    <col width="100">
                    <col width="500">
-                   <col width="100">
                </colgroup>
                <tbody>                 
                    <tr>
@@ -91,8 +90,8 @@ if (!hasAccountId) {
                        </th>
                        <td>
                            <div class="td_left">
-                           <input type="hidden" name="product_id" value=""/>
-                           <input type="hidden" name="account_id" value=""/>
+                           <input type="hidden" name="account_id" value="${account.account_id}"/>
+                           <input type="hidden" name="image" value=""/>
                               <input id="bw_input_subject" class="MS_input_txt input_style2" type="text" name="title" >
                            </div>
                        </td>
@@ -114,13 +113,7 @@ if (!hasAccountId) {
                        <input type="hidden" name="reply_content" value=""/></div>
                        </td>
                    </tr>
-                   <tr>
-                       <th><div>FILE</div></th>
-                       <td colspan="3">
-                           <div class="td_left"><input type="file" id="avatar" name="image" accept="image/png, image/jpeg"></div>
-                          
-                       </td>
-                   </tr>                
+                                
               </tbody>
            </table>
         <br>

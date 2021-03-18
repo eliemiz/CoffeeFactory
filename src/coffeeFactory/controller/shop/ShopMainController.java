@@ -45,9 +45,11 @@ public class ShopMainController extends HttpServlet {
 		DaoProduct prodDao = new DaoProduct();
 		DaoProductOption poDao = new DaoProductOption();
 		ArrayList<Product> plist = prodDao.getProdList(category);
+		ArrayList<Product> olist = prodDao.getOrigin(category);
 		ProductOption product = poDao.getProdList(product_id);
-		request.setAttribute("prodlist", plist);
-		request.setAttribute("prod", product);
+		request.setAttribute("prodlist", plist); // 전체 조회
+		request.setAttribute("origin", olist); // 상세카테고리
+		request.setAttribute("prod", product); // 가격
 		// View
 		String page = "views\\shop\\shop_main.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);

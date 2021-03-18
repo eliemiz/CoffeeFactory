@@ -32,11 +32,12 @@ public class ReviewReplyController extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
+	/*
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
 		 int account_id = 0;
 			
 			HttpSession session = request.getSession();
@@ -74,16 +75,18 @@ public class ReviewReplyController extends HttpServlet {
 	   
 	    	  if(proc.equals("upt")) {
 		    	  String product_id = request.getParameter("product_id");
-		    	  String account_ids = request.getParameter("account_id");
+		    	  String account_ids = request.getParameter("account_ids");
 		    	  String regist_date_s = request.getParameter("regist_date_s");
 		    	  String rating = request.getParameter("rating");
 		    	  String title = request.getParameter("title");
 		    	  String content = request.getParameter("content");
 		    	  String image = request.getParameter("image");
 		    	  String reply_content = request.getParameter("reply_content");
-		    	  Review upt = new Review(review_id, Integer.parseInt(product_id),
-		    			  Integer.parseInt(account_ids), regist_date_s,Integer.parseInt(rating),
-		    			  title,content,image,reply_content );
+				
+				  Review upt = new Review(review_id, Integer.parseInt(product_id),
+				  Integer.parseInt(account_ids), regist_date_s,Integer.parseInt(rating),
+				  title,content,image,reply_content );
+				 
 		                   
 		    	  	dao.updateReview(upt);
 	    	  }

@@ -16,19 +16,31 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
-	 $("#modr").on("click",function(){
+	 $("#modr").on("click",function(){//수정
       
-        location.href="${path}/review_modify.do?review_id="+"${rev.review_id}";
-        
-     });
-	 
- 	  $("#repr").on("click",function(){
-		  var auth = "${account.auth}";
-      if(auth=="운영자"){
-        location.href="${path}/review_reply.do?review_id="+"${rev.review_id}";
+       // location.href="${path}/review_modify.do?review_id="+"${rev.review_id}";
+        var review_id = $(this).attr("data-id");
+        location.href="${path}/review_modify.do?review_id="+review_id;
         //alert(review_id);
-      }else if{
-      alert("운영자만 답변할 수 있습니다.");
+     });
+	 $("#wr").on("click",function(){//입력
+      
+		 location.href="${path}/shop_detail.do?product_id="+${rev.product_id};
+    
+	 });
+	 
+ 	  $("#repr").on("click",function(){//답변
+		  
+		  var review_id = $(this).attr("data-id");
+		  //alert(review_id);
+		 var auth = "${account.auth}";
+		 //alert(auth);
+		
+      if(auth=="운영자"){
+        //location.href="${path}/review_reply.do?review_id="+"${rev.review_id}";
+    	  location.href="${path}/review_reply.do?review_id="+review_id;
+      }else{
+    	  alert("운영자만 답변할 수 있습니다.");
       }
      }); 
 }); 
@@ -145,7 +157,7 @@ td {
 							<span>${rev.title}</span>
 						</td>
 					</div>
-					<td><div class="td_center">아이디</div></td>
+					<td><div class="td_center">${account.nickname}</div></td>
 					<%-- <input type="hidden" value="${ac.auth}" id="authq">  --%>
 					<td><div class="td_center">${rev.regist_date}</div></td>
 					<td><div class="td_center">${rev.rating}</div></td>
@@ -155,10 +167,10 @@ td {
 				<tr>
 					<td colspan="5" class="full" id="full-${sts.count}">
 						<div align="right">
-							<input type="button" id="repr" value="답변하기" class="small1"
-								style="cursor: pointer;"> 
+							<input type="button" id="repr" value="답변하기" class="small1" 
+								data-id="${rev.review_id}" style="cursor: pointer;"> 
 							<input type="button"
-								value="수정/삭제" class="small1" id="modr" style="cursor: pointer;">
+								value="수정/삭제" data-id="${rev.review_id}" class="small1" id="modr" style="cursor: pointer;">
 						</div>
 						<br>${rev.content}
 						<div align="left">답변 :&nbsp;${rev.reply_content}</div>
@@ -169,15 +181,15 @@ td {
 	</table>
 	<br>
 	<div style="text-align: center;">
-		<input type="button" value="<<" class="btn_normal"> <input
-			type="button" value="&nbsp;<&nbsp;" class="btn_normal"> <input
-			type="button" value="&nbsp;1&nbsp;" class="btn_normal"> <input
-			type="button" value="&nbsp;>&nbsp;" class="btn_normal"> <input
-			type="button" value=">>" class="btn_normal">
+		    <input type="button" value="<<" class="btn_normal"> 
+			<input type="button" value="&nbsp;<&nbsp;" class="btn_normal"> 
+			<input type="button" value="&nbsp;1&nbsp;" class="btn_normal"> 
+			<input type="button" value="&nbsp;>&nbsp;" class="btn_normal"> 
+			<input type="button" value=">>" class="btn_normal">
 	</div>
 	<div style="text-align: right;">
 
-		<input align="center" type="button" value="후기작성"
+		<input align="center" type="button" value="후기작성" id="wr"
 			class="btn btn_thatch"
 			 onclick="location.href='${path}/review_write.do'"  style="cursor: pointer;"><br>
 	</div>

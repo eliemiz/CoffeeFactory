@@ -17,12 +17,12 @@
 var proc = "${param.proc}"; // proc="";
 if(proc=="upt"){
 	if(confirm("수정되었습니다. \n상품화면으로 이동하시겠습니까?")){
-		location.href='${path}/shop_detail.do';
+		location.href="${path}/shop_detail.do?product_id="+${rev.product_id};
 	}
 }
 if(proc=="del"){
 	  alert("삭제완료");
-	   location.href='${path}/shop_detail.do';
+	  location.href="${path}/shop_detail.do?product_id="+${rev.product_id};
    }
 $(document).ready(function(){
   $("#uptBtn").on("click",function(){
@@ -70,7 +70,6 @@ $(document).ready(function(){
                    <col width="100">
                    <col width="100">
                    <col width="500">
-                   <col width="100">
                </colgroup>
                <tbody>                 
                    <tr>
@@ -102,17 +101,11 @@ $(document).ready(function(){
                        <input type="hidden" name="regist_date_s" value="${rev.regist_date_s}">
                        <input type="hidden" name="review_id" value="${rev.review_id}">
                        <input type="hidden" name="reply_content" value="${rev.reply_content}">
+                       <input type="hidden" name="reply_content" value="${rev.image}">
                        
                        </div>
                        </td>
                    </tr>
-                   <tr>
-                       <th><div>FILE</div></th>
-                       <td colspan="3">
-                           <div class="td_left"><input type="file" id="avatar" value="${rev.image}" name="image" accept="image/png, image/jpeg"></div>
-                          
-                       </td>
-                   </tr>                
               </tbody>
            </table>
         <br>
