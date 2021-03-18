@@ -1,3 +1,5 @@
+<%@page import="coffeeFactory.vo.Notice"%>
+<%@page import="coffeeFactory.dao.Dao_Notice"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.*" import="java.net.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -66,6 +68,10 @@
 					</tr>
 				</table>
 			</div>
+			<%
+			Dao_Notice daoNotice = new Dao_Notice();
+			List<Notice> footer_notices = daoNotice.getNoticeList().subList(0, 5);
+			%>
 			<div id="footer-sub" class="clear-fix">
 				<ul>
 					<li>
@@ -74,10 +80,10 @@
 						</span>
 						<div class="footer-sub-content">
 							<table style="width:100%;">
-								<c:forEach var="i" begin="0" end="4">
-								<tr>
-									<td>3월 신용카드무이자할부안내</td>
-									<td style="text-align:right;">2021-03-03</td>
+								<c:forEach var="footer_notice" items="<%=footer_notices%>">
+								<tr onclick="location.href='notice_read.do?notice_id=${footer_notice.notice_id}'" style="cursor:pointer;">
+									<td>${footer_notice.title}</td>
+									<td style="text-align:right;">${footer_notice.regist_date}</td>
 								</tr>
 								</c:forEach>
 							</table>
