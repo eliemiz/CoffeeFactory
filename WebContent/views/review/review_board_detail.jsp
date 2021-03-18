@@ -39,7 +39,7 @@
 				<col width="*">
 			</colgroup>
 			<tr>
-				<td>${pro.thumbnail}</td>
+				<td><img src="${path}/resource/img/shop/${pro.thumbnail}"></td>
 				<td><div class="td_left">
 						상 품 명:${pro.name}
 					</div></td>
@@ -49,7 +49,8 @@
 			<table>
 				<thead>
 					<tr>
-						<th><div class="td_left">${rev.title}</div></th>
+						<th>
+						<div class="td_left">${rev.title}</div></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -57,7 +58,7 @@
 						<td class="td_left">
 							<div class="cont-sub-des">
 								<div>
-									<span><em>작성자</em>ijk230</span>
+									<span><em>작성자</em>${ac.nickname}</span>
 								</div>
 							</div>
 						</td>

@@ -58,15 +58,23 @@ if(proc=="upt"){
                             <table>
                                 <thead>
                                     <tr>
-                                        <th><div class="td_left">첫구매 아주 좋네요</div></th>
+                                        <th><div class="td_left" >${rev.title}</div></th>
                                     </tr>
                                 </thead>
+                                <input type="hidden" name="review_id" value="${rev.review_id}"/>
+                                <input type="hidden" name="product_id" value="${rev.product_id}"/>
+                                <input type="hidden" name="account_id" value="${rev.account_id}"/>
+                                <input type="hidden" name="regist_date_s" value="${rev.regist_date_s}"/>
+                                <input type="hidden" name="rating" value="${rev.rating}"/>
+                                <input type="hidden" name="title" value="${rev.title}"/>
+                                <input type="hidden" name="content" value="${rev.content}"/>
+                                <input type="hidden" name="image" value="${rev.image}"/>
                                 <tbody>
                                     <tr>
                                         <td class="td_left">
                                             <div class="cont-sub-des">
                                                 <div>
-                                                    <span><em>작성자</em>ijk230</span>
+                                                    <span><em>작성자</em>${ac.nickname}</span>
                                                 </div>
                                             </div>
                                         </td>
@@ -75,21 +83,21 @@ if(proc=="upt"){
                                         <td class="td_left">
                                             <div class="cont-sub-des">
                                                 <div>
-                                                     <span><em>작성일</em>2021-02-09</span>                                                                                                          
+                                                     <span><em>작성일</em>${rev.regist_date}</span>                                                                                                          
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="td_left">
-                                            <div class="data-bd-cont">&nbsp;커피향이 생각보다 더 좋았어요<br>
+                                            <div class="data-bd-cont">&nbsp;${rev.content}<br>
 																	
                                             </div>
                                         </td>
                                     </tr>
                                      <tr>
                                         <td class="td_left">
-                                            <textarea></textarea>
+                                            <textarea name="reply_content"></textarea>
                                         </td>
                                     </tr>
                                 </tbody>

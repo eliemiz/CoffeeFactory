@@ -13,7 +13,13 @@
 <link rel="stylesheet" href="${path}/resource/css/review/common.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
-	
+var hasAccountId = ${not empty account_id};
+if (!hasAccountId) {
+	alert("로그인이 필요한 페이지입니다.");
+	location.href = "${path}/login.do";
+}
+
+
 	
 	var ckInsert = "${param.content}";
 	if(ckInsert != ""){
@@ -24,15 +30,17 @@
 	
 	$(document).ready(function(){
 		$("#finish").on("click",function(){
+			if($("[name=title]").val()==""){
+				alert('제목을 입력해주세요');
+				return false;
+			}	
+			
 		if ($("[name=rating]").val()!=1 && $("[name=rating]").val()!=2 && $("[name=rating]").val()!=3
 				&& $("[name=rating]").val()!=4 && $("[name=rating]").val()!=5){
 			alert("평점은 1~5로 줄 수 있습니다.");
 			return false;
 		}
-		if($("[name=title]").val()==""){
-			alert('제목을 입력해주세요');
-			return false;
-		} else {
+		 else {
 		 if($("[name=content]").val()==""){
 			alert('후기를 입력해주세요');
 			return false;

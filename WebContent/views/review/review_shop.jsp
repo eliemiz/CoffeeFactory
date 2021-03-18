@@ -16,67 +16,67 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
-	 $("#modq").on("click",function(){
+	 $("#modr").on("click",function(){
       
-        location.href="${path}/review_modify.do?review_id="+${rev.review_id};
-        //alert(review_id);
+        location.href="${path}/review_modify.do?review_id="+"${rev.review_id}";
+        
      });
-	 $("#repq").on("click",function(){
-      
-        location.href="${path}/review_reply.do?review_id="+${rev.review_id};
+	 
+ 	  $("#repr").on("click",function(){
+		  var auth = "${account.auth}";
+      if(auth=="운영자"){
+        location.href="${path}/review_reply.do?review_id="+"${rev.review_id}";
         //alert(review_id);
-     });
+      }else{
+      alert("운영자만 답변할 수 있습니다.");
+      }
+     }); 
 }); 
 </script>
 <style type="text/css">
-/* .product-tit {margin:20px 0 0;}
-
-.mall-tab {margin:50px 0 0;}
-.mall-tab ul {margin:0; padding:0; list-style:none; *zoom:1;}
-.mall-tab ul:after {content:""; display:block; visibility:hidden; clear:both;}
-.mall-tab ul li {float:left; width:25%; border-bottom:1px solid #ddd;}
-.mall-tab ul button {position:relative; display:block; width:100%; margin:0; padding:15px 0px; color:#666; font-family:"notokr"; font-size:16px; font-weight:500; letter-spacing:-0.06em; cursor:pointer; outline:0 none; border:0; background:#fff;}
-.mall-tab ul .on button {color:#674f3e;}
-.mall-tab ul .on button:after {content:""; display:block; position:absolute; left:0; bottom:-1px; width:100%; height:3px; background:#674f3e;}
-.mall-tab#tab1 {margin-bottom:3px;}
-.mall-tab#tab2 {margin:30px 0 5px;} */
 .full {
-	display:none;
+	display: none;
 	padding-bottom: 30px;
 }
+
 .rev-content {
 	border-bottom: 1px solid #e0e0e0;
 }
-.title2{
+
+.title2 {
 	font-size: 12px;
 	padding: 10px 0;
-    cursor: pointer;
-    border-bottom: 1px solid #e0e0e0;
-    outline: none;
-    background: none;
-   
-    text-align: left;
-  }
-  .title:hover {
-    color: #2962ff;
-  }
-  [id$="-toggle"] {
-    margin-right: 15px;
-  }
-  .small1{
-    background-color: #674f3e;
+	cursor: pointer;
+	border-bottom: 1px solid #e0e0e0;
+	outline: none;
+	background: none;
+	text-align: left;
+}
+
+.title:hover {
+	color: #2962ff;
+}
+
+[id$="-toggle"] {
+	margin-right: 15px;
+}
+
+.small1 {
+	background-color: #674f3e;
 	color: white;
 	border: 1px solid #e7e7e7;
 	cursor: pointer;
 	height: 20px;
 	padding: 0px 15px;
 	font-weight: bolder;
-	font-size:10px;	
-	}
+	font-size: 10px;
+}
+
 .th_center {
 	text-align: center;
 	color: #a5a2a2;
 }
+
 table {
 	width: 100%;
 	border-collapse: collapse;
@@ -91,6 +91,7 @@ thead {
 thead td {
 	border: 0px;
 }
+
 th {
 	line-height: 20px;
 	padding: 10px 0px;
@@ -98,6 +99,7 @@ th {
 	border-bottom: 1px solid #e7e7e7;
 	background: #f9f9f9;
 }
+
 td {
 	line-height: 25px;
 	padding: 10px 0px;
@@ -105,76 +107,82 @@ td {
 	border-bottom: 1px solid #e7e7e7;
 	word-break: keep-all;
 }
+
 .td_center {
 	text-align: center;
 }
-
 </style>
 </head>
 <body>
-	
-			
-	
-	
-	
-		<table>
-			<colgroup>
-				<col width="60">
-				<col width="*">
-				<col width="150">
-				<col width="150">
-				<col width="150">
-			</colgroup>
-			<thead>
+
+
+
+	<!-- 상품상세 qua와 함수이름 겹치지 않게 조심 ! 겹치면 에러남-->
+
+	<table>
+		<colgroup>
+			<col width="60">
+			<col width="*">
+			<col width="150">
+			<col width="150">
+			<col width="150">
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col"><div class="th_center">리뷰번호</div></th>
+				<th scope="col"><div class="th_center">제목</div></th>
+				<th scope="col"><div class="th_center">작성자</div></th>
+				<th scope="col"><div class="th_center">작성일</div></th>
+				<th scope="col"><div class="th_center">평점</div></th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="rev" varStatus="sts" items="${Rev}">
 				<tr>
-					<th scope="col"><div class="th_center">리뷰번호</div></th>
-					<th scope="col"><div class="th_center">제목</div></th>
-					<th scope="col"><div class="th_center">작성자</div></th>
-					<th scope="col"><div class="th_center">작성일</div></th>
-					<th scope="col"><div class="th_center">평점</div></th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="rev" items="${Rev}">
-					<tr>
-						<td><span id="rev-r=toggle">${rev.review_id}</span></td>
-						<div class="rev-content">
-					<td class="title2" id="rev-1" style="text-align:left;">
+					<td><span id="rev-r=toggle">${rev.review_id}</span></td>
+					<div class="rev-content">
+						<td class="title2" id="rev-${sts.count}" style="text-align: left;">
 							<span>${rev.title}</span>
-						</td></div>
+						</td>
+					</div>
 					<td><div class="td_center">아이디</div></td>
+					<%-- <input type="hidden" value="${ac.auth}" id="authq">  --%>
 					<td><div class="td_center">${rev.regist_date}</div></td>
 					<td><div class="td_center">${rev.rating}</div></td>
-					
+
 				</tr>
 				<!-- 숨김 상태일 때 td가 남는 것을 방지.. td 자체의 display 조절 -->
-			<tr><td colspan="5" class="full" id="full-1">
-				<div align="right">
-					<input type="button" id="repq" value="답변하기" class="small1" 
-					onclick="location.href='${path}/review_reply.do'" style="cursor:pointer;">
-					<input type="button" value="수정/삭제" class="small1" id="modq"
-					onclick="location.href='${path}/review_modify.do'" style="cursor:pointer;">
-				</div><br>커피 향이 너무좋네요
-								<div align="left">답변 :&nbsp;${rev.reply_content}</div>
-			</td></tr>
-		</c:forEach>
-			</tbody>
-		</table>
-		<br>
-		<div style="text-align: center;">
-			<input type="button" value="<<" class="btn_normal">
-			<input type="button" value="&nbsp;<&nbsp;" class="btn_normal">
-			<input type="button" value="&nbsp;1&nbsp;" class="btn_normal">
-			<input type="button" value="&nbsp;>&nbsp;" class="btn_normal">
-			<input type="button" value=">>" class="btn_normal">
-		</div>
-		<div style="text-align:right;">
-	
-	<input align="center" type="button" value="후기작성" 
-	       class="btn btn_thatch" onclick="location.href='${path}/review_write.do'" style="cursor:pointer;"><br>
+				<tr>
+					<td colspan="5" class="full" id="full-${sts.count}">
+						<div align="right">
+							<input type="button" id="repr" value="답변하기" class="small1"
+								style="cursor: pointer;"> 
+							<input type="button"
+								value="수정/삭제" class="small1" id="modr" style="cursor: pointer;">
+						</div>
+						<br>${rev.content}
+						<div align="left">답변 :&nbsp;${rev.reply_content}</div>
+					</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	<br>
+	<div style="text-align: center;">
+		<input type="button" value="<<" class="btn_normal"> <input
+			type="button" value="&nbsp;<&nbsp;" class="btn_normal"> <input
+			type="button" value="&nbsp;1&nbsp;" class="btn_normal"> <input
+			type="button" value="&nbsp;>&nbsp;" class="btn_normal"> <input
+			type="button" value=">>" class="btn_normal">
+	</div>
+	<div style="text-align: right;">
+
+		<input align="center" type="button" value="후기작성"
+			class="btn btn_thatch"
+			 onclick="location.href='${path}/review_write.do'"  style="cursor: pointer;"><br>
 	</div>
 
-	
+
 </body>
 <script>
   const items2 = document.querySelectorAll('.title2');
