@@ -46,7 +46,6 @@ public class ReviewReplyController extends HttpServlet {
 			}
 			
 		String proc= request.getParameter("proc");
-		 
 	      String review_idS = request.getParameter("review_id");
 	      
 	      
