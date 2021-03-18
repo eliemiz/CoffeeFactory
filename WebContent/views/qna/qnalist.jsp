@@ -15,7 +15,16 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-		
+
+		$("#repq").on("click",function(){
+		   var auth = "${account.auth}";
+		   if(auth=="운영자"){
+		       	location.href="${path}/qna_reply.do?qna_id="+${qna.qna_id};
+		   		alert(qna_id);
+		   	} else{
+		      	alert("운영자만 답변할 수 있습니다.");
+		      }
+		});
 	});
 		
 </script>
@@ -125,56 +134,25 @@ td {
 				</tr>
 			</thead>
 			<tbody>
+				<c:forEach var="qna" varStatus="sts" items="${Qna}">
 				<tr>
-					<td><span id="qna-q=toggle">1</span></td>
+					<td><span id="qna-q=toggle">${qna.qna_id}</span></td>
 					<div class="qna-content">
-					<td class="title" id="qsub-1">
+					<td class="title" id="qsub-${sts.count}" style="text-align:left;">
 						<span>
-							해당 상품 원두 언제 입고되나요?</span>
+							${qna.title}</span>
 						</td></div>
-					<td><div class="td_center">ijk230</div></td>
-					<td><div class="td_center">2021/03/12</div></td>
+					<td><div class="td_center">${qna.account_id}</div></td>
+					<td><div class="td_center">${qna.regist_date}</div></td>
 				<!-- 숨김 상태일 때 td가 남는 것을 방지.. td 자체의 display 조절 -->
-				<tr><td colspan="4" class="full" id="qfull-1">
+				<tr><td colspan="4" class="full" id="qfull-${sts.count}">
 					<div align="right">
-								<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='${path}/qna_reply.do'">
-								<input type="button" value="삭제하기" class="small1"></div><br>
-								해당 상품 원두 언제 입고되는지 궁금합니다.
-								<div align="left">(답변없을때는 공백처리)</div>
+								<input type="button" id="regbtn" value="답변하기" class="small1" style="cursor: pointer;">
+								<input type="button" id="qdel" value="삭제하기" class="small1" style="cursor: pointer;"></div><br>
+								<br>${qna.content}
+								<div align="left">답변:&nbsp;%{qna.reply}</div>
 					</td></tr>
-					<td><span id="qna-q=toggle">2</span></td>
-					<div class="qna-content">
-					<td class="title" id="qsub-2">
-						<span>
-							주문 후 배송까지 얼마나 시간이 걸릴까요?</span>
-						</td></div>
-					<td><div class="td_center">sldfk55</div></td>
-					<td><div class="td_center">2021/03/11</div></td>
-				</tr>
-				<tr><td colspan="4" class="full" id="qfull-2">
-						<div align="right">
-								<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='${path}/qna_reply.do'">
-								<input type="button" value="삭제하기" class="small1"></div><br>
-								급하게 원두가 필요해서 가능한 3일 내에 배송받고 싶습니다.
-								<div align="left">주문일 기준으로 2~3일 내에 전달 예정입니다.</div>
-							</td></tr>
-				<tr>
-					<td><span id="qna-q=toggle">3</span></td>
-					<div class="qna-content">
-					<td class="title" id="qsub-3">
-						<span>로스팅 정도 선택 가능한가요?</span>
-						</td></div>
-					<td><div class="td_center">lee1324</div></td>
-					<td><div class="td_center">2021/03/11</div></td>
-				</tr>
-				<tr><td colspan="4" class="full" id="qfull-3">
-							<div align="right">
-								<input type="button" id="regbtn" value="답변하기" class="small1" onclick="location.href='${path}/qna_reply.do'">
-								<input type="button" value="삭제하기" class="small1"></div><br>
-								안녕하세요 재구매 의향 있는데 로스팅 정도 선택 가능한가요?
-								<div align="left">대량 구매 했을 경우 로스팅 정도 선택 가능합니다.</div>
-							</td>
-					</tr>
+					</c:forEach>
 			</tbody>
 		</table>
 		<br>
@@ -188,7 +166,7 @@ td {
 		<div style="text-align:right;">
 	
 	<input align="center" type="button" value="질문하기" 
-	       class="btn btn_thatch" onclick="location.href='${path}/qna_write.do'">
+	       class="btn btn_thatch" onclick="location.href='${path}/qna_write.do'" style="cursor: pointer;">
 	</div>
 	
 	
