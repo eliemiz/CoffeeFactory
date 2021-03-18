@@ -27,7 +27,7 @@ $(document).ready(function() {
       if(auth=="운영자"){
         location.href="${path}/review_reply.do?review_id="+"${rev.review_id}";
         //alert(review_id);
-      }else{
+      }else if{
       alert("운영자만 답변할 수 있습니다.");
       }
      }); 
