@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import coffeeFactory.dao.DaoAccount;
 import coffeeFactory.dao.DaoProduct;
 import coffeeFactory.dao.DaoReview;
+import coffeeFactory.vo.Review;
 
 /**
  * Servlet implementation class ReviewDetailController
@@ -50,27 +51,9 @@ public class ReviewDetailController extends HttpServlet {
 	    	  System.out.println(e.getMessage());
 	      }
 	      
-	      String product_idS = request.getParameter("product_id");
-	      //숫자형 데이터에 대한 처리(에러 및 예외 처리)
-	      if(product_idS==null) product_idS="0";
 	      
-	      int product_id=0;
-	      try {
-	    	  product_id = Integer.parseInt(product_idS);
-	      }catch(Exception e) {
-	    	  System.out.println(e.getMessage());
-	      }
 		
-	      String account_idS = request.getParameter("account_id");
-	      //숫자형 데이터에 대한 처리(에러 및 예외 처리)
-	      if(account_idS==null) account_idS="0";
 	      
-	      int account_id=0;
-	      try {
-	    	  account_id = Integer.parseInt(account_idS);
-	      }catch(Exception e) {
-	    	  System.out.println(e.getMessage());
-	      }
 	    
 		
 		// 모델
@@ -78,9 +61,10 @@ public class ReviewDetailController extends HttpServlet {
 	      DaoProduct daop = new DaoProduct();
 	      DaoAccount daoa = new DaoAccount();
 	      
-		request.setAttribute("rev", dao.getReview(review_id));
-		request.setAttribute("pro", daop.getProduct2(product_id));
-		request.setAttribute("ac", daoa.getAccount(account_id));
+	      Review review = dao.getReview(review_id);
+	      request.setAttribute("rev", review);
+		request.setAttribute("pro", daop.getProduct2(review.getProduct_id()));
+		request.setAttribute("ac", daoa.getAccount(review.getAccount_id()));
 		
 		
 		// 뷰 

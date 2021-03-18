@@ -8,8 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import coffeeFactory.dao.DaoAccount;
+import coffeeFactory.dao.DaoMypage;
+import coffeeFactory.dao.DaoProduct;
 import coffeeFactory.dao.DaoReview;
+import coffeeFactory.vo.Account;
 import coffeeFactory.vo.Review;
 
 /**
@@ -32,28 +37,45 @@ public class ReviewReplyController extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		 int account_id = 0;
+			
+			HttpSession session = request.getSession();
+			Object account_id_obj = session.getAttribute("account_id");
+			if (account_id_obj != null) {
+				account_id = (int)account_id_obj;
+			}
+			
 		String proc= request.getParameter("proc");
 		 
 	      String review_idS = request.getParameter("review_id");
-	      //숫자형 데이터에 대한 처리(에러 및 예외 처리)
+	      
+	      
 	      if(review_idS==null) review_idS="0";
 	      int review_id=0;
-	      //숫자형 입력하지 않더라도 에러로 수행을 정지시키는것을 막을 수 있다.
-	      //문자열형으로 입력하면 review_id를 0으로 처리
 	      try {
 	    	  review_id = Integer.parseInt(review_idS);
 	      }catch(Exception e) {
 	    	  System.out.println(e.getMessage());
 	      }
-	      // 모델 
-	      DaoReview dao = new DaoReview();
 	      
+	      
+	      // 모델 
+	     
+			DaoAccount daoAccount = new DaoAccount();
+			Account account = daoAccount.getAccount(account_id);
+			if (account != null) {
+				request.setAttribute("account", account);
+				
+			}
+	      DaoReview dao = new DaoReview();
+	      Review review = dao.getReview(review_id);
+	      request.setAttribute("rev", review);
+		request.setAttribute("ac", daoAccount.getAccount(review.getAccount_id()));
 	      if(proc!=null) {
 	   
 	    	  if(proc.equals("upt")) {
 		    	  String product_id = request.getParameter("product_id");
-		    	  String account_id = request.getParameter("account_id");
+		    	  String account_ids = request.getParameter("account_id");
 		    	  String regist_date_s = request.getParameter("regist_date_s");
 		    	  String rating = request.getParameter("rating");
 		    	  String title = request.getParameter("title");
@@ -61,7 +83,7 @@ public class ReviewReplyController extends HttpServlet {
 		    	  String image = request.getParameter("image");
 		    	  String reply_content = request.getParameter("reply_content");
 		    	  Review upt = new Review(review_id, Integer.parseInt(product_id),
-		    			  Integer.parseInt(account_id), regist_date_s,Integer.parseInt(rating),
+		    			  Integer.parseInt(account_ids), regist_date_s,Integer.parseInt(rating),
 		    			  title,content,image,reply_content );
 		                   
 		    	  	dao.updateReview(upt);
@@ -69,7 +91,6 @@ public class ReviewReplyController extends HttpServlet {
 	    	
 	    	  
 	      }
-	      request.setAttribute("rev", dao.getReview(review_id));
 		
 		
 		// 뷰
