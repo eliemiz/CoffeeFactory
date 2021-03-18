@@ -16,9 +16,10 @@ public class Product {
 	}
 
 
-	public Product(String origin) {
+	public Product(String origin, String category) {
 		super();
 		this.origin = origin;
+		this.category = category;
 	}
 
 

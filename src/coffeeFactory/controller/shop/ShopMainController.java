@@ -48,7 +48,7 @@ public class ShopMainController extends HttpServlet {
 		ArrayList<Product> olist = prodDao.getOrigin(category);
 		ProductOption product = poDao.getProdList(product_id);
 		request.setAttribute("prodlist", plist); // 전체 조회
-		request.setAttribute("origin", olist);
+		request.setAttribute("origin", olist); // 상세카테고리
 		request.setAttribute("prod", product); // 가격
 		// View
 		String page = "views\\shop\\shop_main.jsp";

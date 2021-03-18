@@ -49,13 +49,13 @@ public class DaoProduct extends Dao {
 		try {
 			connect();
 
-			String sql = "SELECT DISTINCT origin FROM product WHERE category= ? ";
+			String sql = "SELECT DISTINCT origin, category FROM product p WHERE category= ? ";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, category);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-				Product prod = new Product(rs.getString("origin"));
+				Product prod = new Product(rs.getString("origin"), rs.getString("CATEGORY"));
 				plist.add(prod);
 			}
 
