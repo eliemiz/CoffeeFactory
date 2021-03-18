@@ -94,21 +94,15 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 															<table width="100%" cellspacing="2" cellpadding="1" bgcolor="white" border="0">
 																<tbody>
 																	<tr>
+																		<c:forEach var="origin2" items="${origin2}">
 																		<td nowrap>
 																			&nbsp;
 																			<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle" vspace="2"/>
-																			<a href="${path}/shop_category.do?origin=아프리카"><font color="#000000" style="font-size:9pt">아프리카</font></a>
+																			<a href="${path}/shop_category.do?category=${origin2.category}&origin=${origin2.origin}">
+																				<font color="#000000" style="font-size:9pt">${origin2.origin}</font>
+																			</a>
 																		</td>
-																		<td nowrap>
-																			&nbsp;
-																			<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle" vspace="2"/>
-																			<a href="${path}/shop_category.do?origin=중남미"><font color="#000000" style="font-size:9pt">중남미</font></a>
-																		</td>
-																		<td nowrap>
-																			&nbsp;
-																			<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle" vspace="2"/>
-																			<a href="${path}/shop_category.do?origin=아시아앤태평양"><font color="#000000" style="font-size:9pt">아시아&태평양</font></a>
-																		</td>
+																		</c:forEach>
 																	</tr>
 																</tbody>
 															</table>

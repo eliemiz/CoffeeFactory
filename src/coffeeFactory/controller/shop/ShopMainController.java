@@ -38,6 +38,8 @@ public class ShopMainController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		String category = request.getParameter("category");
 		if(category==null) category="";
+		String origin = request.getParameter("origin");
+		if(origin==null) origin="";
 		String product_idS = request.getParameter("product_id");
 		if(product_idS==null) product_idS = "0";
 		int product_id = Integer.parseInt(product_idS);

@@ -83,7 +83,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 																		<td nowrap>
 																			&nbsp;
 																			<img src="${path}/resource/img/shop/dot_04.gif" align="absmiddle" vspace="2"/>
-																			<a href="${path}/shop_category.do?origin=${origin.origin}">
+																			<a href="${path}/shop_category.do?category=${origin.category}&origin=${origin.origin}">
 																				<font color="#000000" style="font-size:9pt">${origin.origin}</font>
 																			</a>
 																		</td>

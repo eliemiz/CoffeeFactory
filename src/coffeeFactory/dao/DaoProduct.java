@@ -49,7 +49,7 @@ public class DaoProduct extends Dao {
 		try {
 			connect();
 
-			String sql = "SELECT DISTINCT origin, category FROM product p WHERE category= ? ";
+			String sql = "SELECT DISTINCT origin, category FROM product WHERE category= ? ";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, category);
 			rs = pstmt.executeQuery();
@@ -68,7 +68,7 @@ public class DaoProduct extends Dao {
 			e.printStackTrace();
 		}
 		return plist;
-	}
+	}	
 
 	// 검색(name)
 	public ArrayList<Product> getSchList(String name){

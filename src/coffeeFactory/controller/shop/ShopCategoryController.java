@@ -36,6 +36,8 @@ public class ShopCategoryController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Request
 		request.setCharacterEncoding("utf-8");
+		String category = request.getParameter("category");
+		if(category==null) category="";
 		String origin = request.getParameter("origin");
 		if(origin==null) origin="";
 		String product_idS = request.getParameter("product_id");
@@ -46,8 +48,10 @@ public class ShopCategoryController extends HttpServlet {
 		DaoProduct prodDao = new DaoProduct();
 		DaoProductOption poDao = new DaoProductOption();
 		ArrayList<Product> plist = prodDao.getProduct(origin);
+		ArrayList<Product> olist2 = prodDao.getOrigin(category);
 		ProductOption product = poDao.getProdList(product_id);
 		request.setAttribute("prodlist", plist);
+		request.setAttribute("origin2", olist2); // 상세카테고리 내 상세카테고리
 		request.setAttribute("prod", product);
 		
 		// View
