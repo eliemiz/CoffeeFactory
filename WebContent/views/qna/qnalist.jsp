@@ -13,13 +13,16 @@
 <link rel="stylesheet" href="${path}/resource/css/review/common.css"> --%>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
-	
+	/*
 	var proc = "${param.proc}"
 	if(proc=="del"){
-		var product_id = "${qna.product_id}";
+		product_id = "${prod.product_id}";
 		alert("삭제되었습니다\n상품상세화면으로 이동합니다.");
 		location.href="${path}/shop_detail.do?product_id="+product_id;
 	}
+	*/
+	// $("[name=product_id]")
+	
 	
 	$(document).ready(function(){
 		$("#qdel").on("click",function(){
@@ -136,7 +139,8 @@ td {
 
 <br>
 <form id="qlist" type = "method">
-<input type="hidden" name="proc" value=""/>
+<%--<input type="hidden" name="proc" value=""/> --%>
+<input type="hidden" name="prod" value="${prod.product_id}"/>
 	<table id="qnalist">
 			<colgroup>
 				<col width="50">

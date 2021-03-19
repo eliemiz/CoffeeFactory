@@ -16,8 +16,8 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#rep_btn").on("click",function(){
-			if(confirm("답변 등록하시겠습니까?")){
-				$("form1").attr("action","${path}/shop_detail.do#tab4");
+			if(confirm("답변 등록하시겠습니까?"))
+				$("form1").attr("action","${path}/shop_detail.do?product_id="+"${param.product_id)";
 				$("form1").submit();
 			}
 		});

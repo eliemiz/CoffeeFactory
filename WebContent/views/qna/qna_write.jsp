@@ -16,7 +16,7 @@
 	var ckInsert = "${param.title}";
 	if(ckInsert!=""){
 		if(confirm("등록했습니다\상품화면으로 이동하시겠습니까?")){
-			location.href='${path}/shop_detail.do';
+			location.href="${path}/shop_detail.do?product_id="+"${prod.product_id}"
 		}
 	}
 
