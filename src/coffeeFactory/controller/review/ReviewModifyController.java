@@ -9,7 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import coffeeFactory.dao.DaoProduct;
 import coffeeFactory.dao.DaoReview;
 import coffeeFactory.vo.Review;
 
@@ -39,6 +41,13 @@ public class ReviewModifyController extends HttpServlet {
 		
 		request.setCharacterEncoding("utf-8");
 		// 요청
+		int account_id = 0;
+		
+		HttpSession session = request.getSession();
+		Object account_id_obj = session.getAttribute("account_id");
+		if (account_id_obj != null) {
+			account_id = (int)account_id_obj;
+		}
 	      //   1) 기본 조회
 		 // # 상세화면에서 수정/삭제 프로세스를 구분하기 위하여 처리..
 		 String proc= request.getParameter("proc");
@@ -56,12 +65,16 @@ public class ReviewModifyController extends HttpServlet {
 	      }
 	      // 모델 
 	      DaoReview dao = new DaoReview();
+	      Review review = dao.getReview(review_id);
+	      request.setAttribute("rev", review);
+	      DaoProduct daop = new DaoProduct();
+	      request.setAttribute("pro", daop.getProduct2(review.getProduct_id()));
 	      
 	      if(proc!=null) {
 	   
 	    	  if(proc.equals("upt")) {
 		    	  String product_id = request.getParameter("product_id");
-		    	  String account_id = request.getParameter("account_id");
+		    	  String account_ids = request.getParameter("account_ids");
 		    	  String regist_date_s = request.getParameter("regist_date_s");
 		    	  String rating = request.getParameter("rating");
 		    	  String title = request.getParameter("title");
@@ -69,7 +82,7 @@ public class ReviewModifyController extends HttpServlet {
 		    	  String image = request.getParameter("image");
 		    	  String reply_content = request.getParameter("reply_content");
 		    	  Review upt = new Review(review_id, Integer.parseInt(product_id),
-		    			  Integer.parseInt(account_id), regist_date_s,Integer.parseInt(rating),
+		    			  Integer.parseInt(account_ids), regist_date_s,Integer.parseInt(rating),
 		    			  title,content,image,reply_content );
 		                   
 		    	  	dao.updateReview(upt);
@@ -81,7 +94,6 @@ public class ReviewModifyController extends HttpServlet {
 	    	  }
 	    	  
 	      }
-	      request.setAttribute("rev", dao.getReview(review_id));
 		
 		
 		// 뷰
