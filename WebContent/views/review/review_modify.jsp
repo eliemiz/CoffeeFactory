@@ -22,13 +22,17 @@ if (!hasAccountId) {
 var proc = "${param.proc}"; // proc="";
 if(proc=="upt"){
 	if(confirm("수정되었습니다. \n상품화면으로 이동하시겠습니까?")){
-		location.href="${path}/shop_detail.do?product_id="+${rev.product_id};
+		location.href="${path}/shop_detail.do?product_id="+"${rev.product_id}";
 	}
 }
+
+var product_id = $("#delBtn").attr("data-id");
 if(proc=="del"){
-	  alert("삭제완료");
-	  location.href="${path}/shop_detail.do?product_id="+${rev.product_id};
-   }
+	if(confirm("삭제되었습니다. \n상품화면으로 이동하시겠습니까?")){
+		location.href="${path}/review_write.do?product_id="+product_id;
+	}
+}
+
 $(document).ready(function(){
   $("#uptBtn").on("click",function(){
 	  if(confirm("수정하시겠습니까?")){
@@ -102,7 +106,7 @@ $(document).ready(function(){
                        <td colspan="3"><div class="td_left"><textarea id="MS_text_content" value="${rev.content}" name="content" style="font-family: 굴림체; width: 100%; height: 380px;" 
                         ></textarea>
                        <input type="hidden" name="product_id" value="${rev.product_id}">
-                       <input type="hidden" name="account_id" value="${rev.account_id}">
+                       <input type="hidden" name="account_ids" value="${rev.account_id}">
                        <input type="hidden" name="regist_date_s" value="${rev.regist_date_s}">
                        <input type="hidden" name="review_id" value="${rev.review_id}">
                        <input type="hidden" name="reply_content" value="${rev.reply_content}">
@@ -116,7 +120,7 @@ $(document).ready(function(){
         <br>
         <div style="text-align:right;">
 		<input type="button"  id="uptBtn" value="수정하기" class="btn btn_thatch"  style="cursor:pointer;">
-		<input type="button" id="delBtn" value="삭제하기"  class="btn btn_thatch" style="cursor:pointer;">
+		<input type="button" id="delBtn" value="삭제하기" data-id="${rev.product_id}"  class="btn btn_thatch" style="cursor:pointer;">
 		<input type="button" value="돌아가기" class="btn btn_normal" 
 		onclick="location.href='${path}/shop_detail.do'" style="cursor:pointer;">
 		</div>

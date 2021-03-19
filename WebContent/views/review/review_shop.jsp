@@ -196,7 +196,7 @@ td {
 	</div>
 
 
-</body>s
+</body>
 <script>
   const items2 = document.querySelectorAll('.title2');
 

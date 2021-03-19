@@ -18,7 +18,7 @@
 var proc = "${param.proc}"; // proc="";
 if(proc=="upt"){
 	if(confirm("작성되었습니다. \n상품화면으로 이동하시겠습니까?")){
-		location.href="${path}/shop_detail.do?product_id="+${param.product_id};
+		location.href="${path}/shop_detail.do?product_id="+"${rev.product_id}";
 	}
 }
 
