@@ -24,6 +24,11 @@ public class ProductOption {
 		this.price = price;
 	}
 
+	public ProductOption(int price) {
+		super();
+		this.price = price;
+	}
+
 	public int getProduct_id() {
 		return product_id;
 	}

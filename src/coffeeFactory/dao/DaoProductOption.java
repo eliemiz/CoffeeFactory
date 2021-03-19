@@ -3,6 +3,7 @@ package coffeeFactory.dao;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import coffeeFactory.vo.ProductEx;
 import coffeeFactory.vo.ProductOption;
 
 public class DaoProductOption extends Dao{
@@ -46,7 +47,7 @@ public class DaoProductOption extends Dao{
 				rs = pstmt.executeQuery();
 
 				if (rs.next()) {
-					product = new ProductOption(rs.getInt("product_id"), rs.getString("capacity"), rs.getInt("price"));
+					product = new ProductOption(rs.getInt("price"));
 				}
 				rs.close();
 				pstmt.close();
@@ -60,21 +61,27 @@ public class DaoProductOption extends Dao{
 		}
 		
 		// 조회(조건, 단일) - product_id, capacity >> price (메인화면 가격표시용)
-		public ProductOption getProdList(int product_id) {
-			ProductOption product = null;
+		public ProductEx getProdList(int product_id) {
+			ProductEx prod = null;
 			try {
 				connect();
 				
 				String sql = "SELECT min(price)\r\n"
+						+ "FROM PRODUCT_OPTION\r\n"
+						+ "WHERE price IN \r\n"
+						+ "(SELECT price\r\n"
 						+ "FROM PRODUCT p, PRODUCT_OPTION po\r\n"
-						+ "WHERE p.PRODUCT_ID = po.PRODUCT_ID AND p.PRODUCT_ID = ?";
+						+ "WHERE p.PRODUCT_ID = ? AND p.PRODUCT_ID = po.PRODUCT_ID)";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setInt(1, product_id);
 				
 				rs = pstmt.executeQuery();
 
-				if (rs.next()) {
-					product = new ProductOption(rs.getInt("product_id"), rs.getString("capacity"), rs.getInt("price"));
+				while (rs.next()) {
+					prod = new ProductEx(rs.getInt("PRODUCT_ID"),rs.getString("NAME"),
+							rs.getString("CATEGORY"),rs.getString("origin"),rs.getString("COMPANY"),
+							rs.getString("DESCRIPTION"),
+							rs.getString("THUMBNAIL"), rs.getInt("price"));
 				}
 				rs.close();
 				pstmt.close();
@@ -84,7 +91,7 @@ public class DaoProductOption extends Dao{
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			return product;
+			return prod;
 		}		
 
 }

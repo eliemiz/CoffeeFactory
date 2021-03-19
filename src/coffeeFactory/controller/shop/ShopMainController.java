@@ -10,10 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import coffeeFactory.dao.DaoProduct;
-import coffeeFactory.dao.DaoProductOption;
+import coffeeFactory.dao.DaoShop;
 import coffeeFactory.vo.Product;
-import coffeeFactory.vo.ProductOption;
+import coffeeFactory.vo.ProductEx;
 
 /**
  * Servlet implementation class ShopMainController
@@ -40,18 +39,14 @@ public class ShopMainController extends HttpServlet {
 		if(category==null) category="";
 		String origin = request.getParameter("origin");
 		if(origin==null) origin="";
-		String product_idS = request.getParameter("product_id");
-		if(product_idS==null) product_idS = "0";
-		int product_id = Integer.parseInt(product_idS);
+		
 		// Model
-		DaoProduct prodDao = new DaoProduct();
-		DaoProductOption poDao = new DaoProductOption();
-		ArrayList<Product> plist = prodDao.getProdList(category);
-		ArrayList<Product> olist = prodDao.getOrigin(category);
-		ProductOption product = poDao.getProdList(product_id);
+		DaoShop dao = new DaoShop();
+		ArrayList<ProductEx> plist = dao.getProdList(category);
+		ArrayList<Product> olist = dao.getOrigin(category);
 		request.setAttribute("prodlist", plist); // 전체 조회
 		request.setAttribute("origin", olist); // 상세카테고리
-		request.setAttribute("prod", product); // 가격
+		
 		// View
 		String page = "views\\shop\\shop_main.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);

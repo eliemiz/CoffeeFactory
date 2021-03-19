@@ -165,7 +165,8 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 														<a href="${path}/shop_detail.do?product_id=${prod.product_id}">${prod.name}</a>
 														<br>
 														<span class="money_color2">
-														<b><b>${12000}</b>원</b>
+														
+														<b><b>${prod.price}</b>원</b>													
 														</span>
 														<br><br>
 													</td>

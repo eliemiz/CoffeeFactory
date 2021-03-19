@@ -12,8 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import coffeeFactory.dao.DaoProduct;
 import coffeeFactory.dao.DaoProductOption;
+import coffeeFactory.dao.DaoShop;
 import coffeeFactory.vo.Product;
-import coffeeFactory.vo.ProductOption;
+import coffeeFactory.vo.ProductEx;
 
 /**
  * Servlet implementation class ShopCategoryController
@@ -40,19 +41,25 @@ public class ShopCategoryController extends HttpServlet {
 		if(category==null) category="";
 		String origin = request.getParameter("origin");
 		if(origin==null) origin="";
-		String product_idS = request.getParameter("product_id");
-		if(product_idS==null) product_idS = "0";
-		int product_id = Integer.parseInt(product_idS);
 		
 		// Model
-		DaoProduct prodDao = new DaoProduct();
-		DaoProductOption poDao = new DaoProductOption();
-		ArrayList<Product> plist = prodDao.getProduct(origin);
-		ArrayList<Product> olist2 = prodDao.getOrigin(category);
-		ProductOption product = poDao.getProdList(product_id);
-		request.setAttribute("prodlist", plist);
+//		DaoProduct prodDao = new DaoProduct();
+//		DaoProductOption poDao = new DaoProductOption();
+//		ArrayList<Product> plist = prodDao.getProduct(origin);
+//		ArrayList<Product> olist2 = prodDao.getOrigin(category);
+//		request.setAttribute("prodlist", plist);
+//		ProductOption productpo = poDao.getProdList(product_id);
+		
+//		request.setAttribute("origin2", olist2); // 상세카테고리 내 상세카테고리
+//		request.setAttribute("prodpo", productpo);
+		
+		DaoShop dao = new DaoShop();
+		ArrayList<ProductEx> plist = dao.getProduct(origin);
+		ArrayList<Product> olist2 = dao.getOrigin(category);
+		request.setAttribute("prodlist", plist); // 리스트+가격
 		request.setAttribute("origin2", olist2); // 상세카테고리 내 상세카테고리
-		request.setAttribute("prod", product);
+		
+		
 		
 		// View
 		String page = "views\\shop\\shop_category.jsp";
