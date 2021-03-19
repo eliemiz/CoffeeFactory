@@ -26,10 +26,9 @@ if(proc=="upt"){
 	}
 }
 
-var product_id = $("#delBtn").attr("data-id");
 if(proc=="del"){
 	if(confirm("삭제되었습니다. \n상품화면으로 이동하시겠습니까?")){
-		location.href="${path}/review_write.do?product_id="+product_id;
+		location.href="${path}/shop_detail.do?product_id="+"${pro.product_id}";
 	}
 }
 
@@ -120,7 +119,7 @@ $(document).ready(function(){
         <br>
         <div style="text-align:right;">
 		<input type="button"  id="uptBtn" value="수정하기" class="btn btn_thatch"  style="cursor:pointer;">
-		<input type="button" id="delBtn" value="삭제하기" data-id="${rev.product_id}"  class="btn btn_thatch" style="cursor:pointer;">
+		<input type="button" id="delBtn" value="삭제하기"  class="btn btn_thatch" style="cursor:pointer;">
 		<input type="button" value="돌아가기" class="btn btn_normal" 
 		onclick="location.href='${path}/shop_detail.do'" style="cursor:pointer;">
 		</div>
