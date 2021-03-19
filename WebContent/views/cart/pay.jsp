@@ -217,12 +217,15 @@
 			<td width=100 nowrap style='padding-top:5px;'><img src='${path}/resource/img/cart/dot_012.gif'> 결제수단 선택</td>
 			<td width=5></td>
 			<td width=80%> 
-			
+		<form id="pay-inner" method="post">
 			<table cellspacing=0 cellpadding=0 border=0>
 			<tr>
 			<td>
 			
+			<span style='display:;'>
 			<input type=radio name='pay_type' value='1'><b>무통장 입금</b>
+			</span>
+			
 			<span style='display:;'>
 			<input type=radio name='pay_type' value='2'><b>신용카드</b>
 			</span>
@@ -232,11 +235,9 @@
 			</span>
 			
 			<span style='display:;'>
-			<input type=radio name='pay_type' value='4' onclick="paySelect(this)"><b>휴대폰</b>
+			<input type=radio name='pay_type' value='4'><b>휴대폰</b>
 			</span>
 			
-			<input type=hidden name='pay_type' value='5'>
-			<input type=hidden name='pay_type' value='6'>
 			
 			</td>
 			</tr>

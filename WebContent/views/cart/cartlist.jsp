@@ -61,6 +61,7 @@
 			<tr height='1' bgcolor='#CCCCCC'><td colspan=8></td></tr>
 			<tr height='4' bgcolor='#E9E9E9'><td colspan=8></td></tr>
 			
+			<c:forEach var="cart" items="${cartList}">
 			<tr align=center style='color:#5B5B5B;'>
 				<td width=50><img src='${path}/resource/img/cart/shop1.jpg' border=0 width='50' height='50' hspace=5 vspace=5></td>
 				<td align=left colspan=2>
@@ -70,7 +71,7 @@
 				<td><img src='${path}/resource/img/cart/btn_option.gif' style='cursor:pointer;'/></td>
 			<td align=right style='color:#682E14;'>
 			
-			40,000원
+			${cart.capacity} 원
 			</td>
 			
 			
@@ -86,6 +87,7 @@
 				</table>
 				</td>
 			</tr>
+			
 			</table>
 			
 			</td>
@@ -94,41 +96,9 @@
 			</tr>
 			
 			<tr height='1' bgcolor='#e7e7e7'><td colspan=8></td></tr>
-			
+			</c:forEach>
 
-			<tr align=center style='color:#5B5B5B;'>
-				<td width=100><img src='${path}/resource/img/cart/shop2.jpg' border=0 width='50' height='50' hspace=5 vspace=5></td>
-				<td align=left colspan=2>
-				<a href=''>
-				[소량입고 스페셜티] 브라질 비날 웰치스 그레이프<br>일산커피공장 일산커피공장 브라질
-				</font></a>
-				<br><font color='#037CC1'>(선택상품 : <b>100g</b>)</font></td>
-				<td><img src='${path}/resource/img/cart/btn_option.gif' style='cursor:pointer;'/></td>
-			<td align=right style='color:#682E14;'>
 			
-			11,000원
-			</td>
-			
-			
-			<td>
-			<table cellspacing=0 cellpadding=0>
-			<tr>
-			<td><input type=text size=4 value='1' maxlength=5 style='border:1 solid #B0B0B0; text-align:center;' readonly ></td>
-				<td>
-				<table cellspacing=0 cellpadding=1>
-					<tr><td><img src='${path}/resource/img/cart/num_plus.gif' style='cursor:pointer;'></td></tr>
-					<tr><td><img src='${path}/resource/img/cart/num_minus.gif' style='cursor:pointer;'></td></tr>
-				</table>
-				</td>
-			</tr>
-			</table>
-			
-			</td>
-			<td align=right style='color:#9F196E;font-weight:bold;'>11,000원</td>
-			<td>&nbsp;<img src='${path}/resource/img/cart/btn_delete.gif' style='cursor:pointer;'></td>
-			</tr>
-			
-			<tr height='1' bgcolor='#e7e7e7'><td colspan=8></td></tr>
 			
 			
 			<tr align=right height=30 bgcolor='#FAFAFA'>
