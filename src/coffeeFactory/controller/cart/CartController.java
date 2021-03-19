@@ -54,12 +54,12 @@ public class CartController extends HttpServlet {
 		if (proc == null) {
 			proc = "";
 		}
-		if (proc.equals("insert")) {
-			DaoCart daoCart = new DaoCart();
-			Cart cart = new Cart(
+		
+		DaoCart daoCart = new DaoCart();
+		Cart cart = new Cart(
 					0, 0, capacity, Integer.parseInt(grind_id), Integer.parseInt(count));
-			daoCart.insertCart(cart);
-		}
+		daoCart.insertCart(cart);
+	
 		
 		
 		DaoAccount daoAccount = new DaoAccount();
