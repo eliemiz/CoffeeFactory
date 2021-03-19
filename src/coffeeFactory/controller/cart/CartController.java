@@ -55,10 +55,10 @@ public class CartController extends HttpServlet {
 			proc = "";
 		}
 		
-		DaoCart daoCart = new DaoCart();
+		DaoCart daoCartins = new DaoCart();
 		Cart cart = new Cart(
 					0, 0, capacity, Integer.parseInt(grind_id), Integer.parseInt(count));
-		daoCart.insertCart(cart);
+		daoCartins.insertCart(cart);
 	
 		
 		
