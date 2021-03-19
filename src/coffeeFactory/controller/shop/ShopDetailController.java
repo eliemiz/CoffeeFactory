@@ -53,17 +53,13 @@ public class ShopDetailController extends HttpServlet {
 
       
       // Q&A
-      /*
+      
       String proc = request.getParameter("proc");
       String qna_idS = request.getParameter("qna_id");
       if(qna_idS==null) qna_idS="0";
       int qna_id=0;
-      try {
-    	  qna_id = Integer.parseInt(qna_idS);
-      } catch(Exception e) {
-    	  System.out.println(e.getMessage());
-      }
-      */
+      qna_id = Integer.parseInt(qna_idS);
+      
       
       // review
       
@@ -97,18 +93,18 @@ public class ShopDetailController extends HttpServlet {
       
       ArrayList<Qna> qlist = daoq.getQnaList(product_id);
       request.setAttribute("ac", daoa.getAccount(account_id));
-     /*
-      ArrayList<Qna> qlist2 = daoq.getQna(qna_id);
+     
+//      ArrayList<Qna> qlist2 = daoq.getQna(qna_id);
       
       if(proc!=null) {
     	  if(proc.equals("del")) {
         	  System.out.println("삭제준비완료: "+qna_id);
-        	  dao.deleteQna(qna_id);
+        	  daoq.deleteQna(qna_id);
           }
       }
-      request.setAttribute("Qna", qlist2);
-      */
-      request.setAttribute("Qna", qlist);
+      request.setAttribute("Qna", qlist); // shop_detail.jsp QNA부분
+//      request.setAttribute("Qna2", qlist2);
+     
       
       // review
          

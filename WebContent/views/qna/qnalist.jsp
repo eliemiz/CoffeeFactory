@@ -16,8 +16,9 @@
 	
 	var proc = "${param.proc}"
 	if(proc=="del"){
+		var product_id = "${qna.product_id}";
 		alert("삭제되었습니다\n상품상세화면으로 이동합니다.");
-		location.href="${path}/shop_detail.do?product_id="+${rev.product_id};
+		location.href="${path}/shop_detail.do?product_id="+product_id;
 	}
 	
 	$(document).ready(function(){
@@ -135,6 +136,7 @@ td {
 
 <br>
 <form id="qlist" type = "method">
+<input type="hidden" name="proc" value=""/>
 	<table id="qnalist">
 			<colgroup>
 				<col width="50">
@@ -167,8 +169,8 @@ td {
 								<input type="button" id="repq" data-id="${qna.qna_id}" value="답변하기" class="small1" style="cursor: pointer;">
 								<input type="button" id="qdel" data-id="${qna.qna_id}" value="삭제하기" class="small1" style="cursor: pointer;"></div><br>
 								<br>${qna.content}
-								<div align="left">답변 :&nbsp;%{qna.reply}</div>
-						<%--	 <div align="left">답변 :&nbsp;${qna.reply}</div>	 --%>
+								<!-- <div align="left">답변 :&nbsp;%{qna.reply}</div> -->
+								<div align="left">답변 :&nbsp;${qna.reply_content}</div>
 					</td></tr>
 					</c:forEach>
 			</tbody>
@@ -176,11 +178,11 @@ td {
 </form>
 		<br>
 		<div style="text-align: center;">
-			<input type="button" value="<<" class="btn_normal">
-			<input type="button" value="&nbsp;<&nbsp;" class="btn_normal">
+			<input type="button" value="&#60;&#60;" class="btn_normal">
+			<input type="button" value="&nbsp;&#60;&nbsp;" class="btn_normal">
 			<input type="button" value="&nbsp;1&nbsp;" class="btn_normal">
-			<input type="button" value="&nbsp;>&nbsp;" class="btn_normal">
-			<input type="button" value=">>" class="btn_normal">
+			<input type="button" value="&nbsp;&#62;&nbsp;" class="btn_normal">
+			<input type="button" value="&#62;&#62;" class="btn_normal">
 		</div>
 		<div style="text-align:right;">
 	
