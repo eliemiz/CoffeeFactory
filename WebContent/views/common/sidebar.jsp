@@ -88,7 +88,7 @@
 				</tr>
 				<tr>
 					<td style="font-size: 13.5px">
-						<a href="${path}/frq_qna.do">자주하는 질문</a>
+						<a href="${path}/fre_qna.do">자주하는 질문</a>
 					</td>
 				</tr>
 				<tr>
@@ -108,7 +108,7 @@
 				</tr>
 				<tr>
 					<td style="font-size: 13.5px">
-						<a href="${path}/review.do">상품 후기</td>
+						<a href="${path}/review_board.do">상품 후기</td>
 					</td>
 				</tr>
 				<tr>

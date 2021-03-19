@@ -39,7 +39,7 @@
 				<col width="*">
 			</colgroup>
 			<tr>
-				<td><img src="${path}/resource/img/shop/${pro.thumbnail}"></td>
+				<td><a href="${path}/shop_detail.do?product_id=${pro.product_id}"><img src="${path}/resource/img/shop/${pro.thumbnail}"></a></td>
 				<td><div class="td_left">
 						상 품 명:${pro.name}
 					</div></td>

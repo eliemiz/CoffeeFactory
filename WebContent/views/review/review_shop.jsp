@@ -25,7 +25,8 @@ $(document).ready(function() {
      });
 	 $("#wr").on("click",function(){//입력
       
-		 location.href="${path}/review_write.do?product_id="+"${rev.product_id}";
+		 var product_id = $(this).attr("data-id");
+		 location.href="${path}/review_write.do?product_id="+product_id;
     
 	 });
 	 
@@ -190,12 +191,12 @@ td {
 	<div style="text-align: right;">
 
 		<input align="center" type="button" value="후기작성" id="wr"
-			class="btn btn_thatch"
+			class="btn btn_thatch" data-id="${prod.product_id}"
 			   style="cursor: pointer;"><br>
 	</div>
 
 
-</body>
+</body>s
 <script>
   const items2 = document.querySelectorAll('.title2');
 
