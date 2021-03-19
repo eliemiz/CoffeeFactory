@@ -50,17 +50,24 @@ public class CartController extends HttpServlet {
 		if (account_id_obj != null) {
 			account_id = (int)account_id_obj;
 		}
+		
+		
+		
+		
 		String proc = request.getParameter("proc");
 		if (proc == null) {
 			proc = "";
 		}
 		
-		DaoCart daoCartins = new DaoCart();
-		Cart cart = new Cart(
-					0, 0, capacity, Integer.parseInt(grind_id), Integer.parseInt(count));
-		daoCartins.insertCart(cart);
-	
-		
+		if (proc.equals("insert")) {
+			DaoCart daoCartins = new DaoCart(); 
+			Cart cart = new Cart( 0, 0, capacity,
+				Integer.parseInt(grind_id), Integer.parseInt(count));
+			daoCartins.insertCart(cart);
+		} else if (proc.equals("delete")) {
+			DaoCart daoCartdel = new DaoCart();  
+		    daoCartdel.deleteCart(account_id);
+		}
 		
 		DaoAccount daoAccount = new DaoAccount();
 		Account account = daoAccount.getAccount(account_id);
