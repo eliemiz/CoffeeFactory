@@ -24,7 +24,7 @@ if (!hasAccountId) {
 	var ckInsert = "${param.content}";
 	if(ckInsert != ""){
 		if(confirm("등록했습니다\n상품화면으로 이동하시겠습니까?")){
-			location.href="${path}/shop_detail.do?product_id="+"${param.product_id}";
+			location.href="${path}/shop_detail.do?product_id="+"${prod.product_id}";
 		}
 	}
 	
@@ -90,7 +90,8 @@ if (!hasAccountId) {
                        </th>
                        <td>
                            <div class="td_left">
-                           <input type="hidden" name="account_id" value="${account.account_id}"/>
+                           <input type="hidden" name="account_ids" value="${account.account_id}"/>
+                           <input type="hidden" name="product_ids" value="${prod.product_id}"/>
                            <input type="hidden" name="image" value=""/>
                               <input id="bw_input_subject" class="MS_input_txt input_style2" type="text" name="title" >
                            </div>

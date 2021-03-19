@@ -13,6 +13,11 @@
 <link rel="stylesheet" href="${path}/resource/css/review/common.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
+var hasAccountId = ${not empty account_id};
+if (!hasAccountId) {
+	alert("로그인이 필요한 페이지입니다.");
+	location.href = "${path}/login.do";
+}
 
 var proc = "${param.proc}"; // proc="";
 if(proc=="upt"){
