@@ -175,7 +175,7 @@
 										<input type="hidden" name="post">
 										<input type="text" id="post_1" size="4" maxlength="4">
 										- <input type="text" id="post_2" size="4" maxlength="4">
-										<img src="${img_path}/regis_zip_bt.gif" style="vertical-align: middle;"><br>
+										<img src="${img_path}/regis_zip_bt.gif" style="vertical-align: middle;" onclick="goPopup()"><br>
 										<input type="text" name="address1" style="margin-top: 5px; width: 300px;">
 										<input type="text" name="address2" style="margin-top: 5px; width: 300px;">
 									</td>
@@ -200,6 +200,7 @@
 			</td>
 		</tr>
 	</table>
+	<iframe id="temp"></iframe>
 	
 	<jsp:include page="/views/common/footer.jsp"/>
 	
@@ -315,6 +316,19 @@
 		var post_1 = $("#post_1").val();
 		var post_2 = $("#post_2").val();
 		$("[name=post]").val(post_1 + post_2);
+	}
+	
+	
+	function goPopup(){
+		var pop = window.open("${path}/views/common/jusoPopup.jsp", "pop", "width=570,height=420, scrollbars=yes, resizable=yes");
+	}
+	function jusoCallBack(roadAddrPart1, addrDetail, zipNo){
+		var zipNo1 = zipNo.substr(0, 3);
+		var zipNo2 = zipNo.substr(3, 3);
+		document.querySelector("#post_1").value = zipNo1;
+		document.querySelector("#post_2").value = zipNo2;
+		document.querySelector("[name=address1]").value = roadAddrPart1;
+		document.querySelector("[name=address2]").value = addrDetail;
 	}
 </script>
 </html>

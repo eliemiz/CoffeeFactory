@@ -35,6 +35,8 @@
 	background-image: url('${img_path}/pi5.jpg');
 }
 
+
+
 </style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
@@ -103,82 +105,42 @@
 							<span style="font-size: 35px; margin: 0px 20px;"> 베스트 상품 </span>
 							<span style="width:200px; height: 1px; border: 1px solid black; display: inline-block;"></span>
 						</div>
-						<style>
-						#main-best-product-table {
-							width: 100%;
-						}
-						
-						#main-best-product-element {
-							width: 255px;
-							margin: 50px auto 0px;						
-						}
-						
-						#main-best-product-element thead img {
-							width: 100%;						
-						}
-						
-						#main-best-product-element thead td{
-							padding: 0px;
-						}
-						
-						#main-best-product-element tbody td {
-							padding: 10px;
-						}
-						
-						</style>
 						<table id="main-best-product-table" class="clear-fix">
-						<c:forEach var="i" begin="0" end="3">
+						<c:forEach var="product" items="${productList}" varStatus="sts">
+							<c:if test="${sts.count % 4 == 1}">
 							<tr>
-							<c:forEach var="j" begin="0" end="3">
+							</c:if>
 								<td>
 									<table id="main-best-product-element" style="border: 1px solid #dddddd;">
 										<thead>
 											<tr>
-												<td><img src="${img_path}/shop_temp.jpg"></td>
+												<td>
+													<a href="${path}/shop_detail.do?product_id=${product.product_id}">
+														<img src="${path}/resource/img/shop/${product.thumbnail}">
+													</a>
+												</td>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
 												<td>
-													에스프레소(여왕)<br>
+													${product.name}<br>
 													<img src="${img_path}/ico_02.gif"><br>
-													15,000원<br>
+													${product.price}<br>
 												</td>
 											</tr>
 										</tbody>
 									</table>
 								</td>
-							</c:forEach>
+							<c:if test="${sts.count % 4 == 0}">
 							</tr>
+							</c:if>
 						</c:forEach>
 						</table>
 					</div>
 					<div id="main-best-review-wrap" class="clear-fix">
 						<%-- <img src="${path}/resource/img/main/add_bann_04.jpg"> --%>
-						<style>
-						#main-best-review-table {
-							width: 100%;
-							margin-top: 50px;
-							border-spacing: 0px;
-							border: 0px;
-						}
 						
-						#main-best-review-table tr:first-child td {
-							border-top: 3px solid #222222;
-						}
-						
-						#main-best-review-table td {
-							padding: 10px;
-							border-bottom: 1px solid #dddddd;
-						}
-						
-						#main-best-review-table tr:last-child  td {
-							border-bottom: 1px solid #222222;
-						}
-						
-						
-						
-						</style>
 						<table id="main-best-review-table">
 							<colgroup>
 								<col width="100px">
@@ -186,7 +148,26 @@
 								<col width="100px">
 								<col width="150px">
 							</colgroup>
-							<c:forEach var="i" begin="0" end="4">
+							<c:forEach var="review" items="${reviewList}">
+							<tr>
+								<td class="td-center"><img src="${path}/resource/img/shop/${review.thumbnail}" style="width:80px;"></td>
+								<td>
+									<span>
+										<a href="${path}/review_detatil.do?review_id=${review.review_id}" style="text-decoration:none; color:#212529;">
+										${review.title}
+										</a>
+									</span><br>
+									<span style="font-size: 14px; color:gray;">${review.name}</span>
+								</td>
+								<td class="td-center" style="color: #ffbbaa;">
+									<c:forEach var="i" begin="1" end="${review.rating}">★</c:forEach>
+								</td>
+								<td class="td-center">
+									${review.nickname}
+								</td>
+							</tr>
+							</c:forEach>
+							<%-- <c:forEach var="i" begin="0" end="4">
 							<tr>
 								<td class="td-center"><img src="${path}/resource/img/main/shop_temp.jpg" style="width:80px;"></td>
 								<td>
@@ -200,7 +181,7 @@
 									커피마니아
 								</td>
 							</tr>
-							</c:forEach>
+							</c:forEach> --%>
 						</table>
 					</div>
 					<div id="main-sns-wrap" class="clear-fix" style="text-align: center; margin-top: 50px;">

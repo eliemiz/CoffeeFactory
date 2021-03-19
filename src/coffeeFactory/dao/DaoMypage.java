@@ -111,4 +111,45 @@ public class DaoMypage extends Dao {
 
 		return list;
 	}
+
+	
+//	this.review_id = review_id;
+//	this.rating = rating;
+//	this.title = title;
+//	this.name = name;
+//	this.thumbnail = thumbnail;
+//	this.nickname = nickname;
+	public ArrayList<ReviewEx> getReviewListByCount(int count) {
+		ArrayList<ReviewEx> list = new ArrayList<ReviewEx>();
+
+		try {
+			connect();
+
+			String sql = "SELECT r.review_id, r.rating, r.title, p.name, p.thumbnail, a.nickname \r\n"
+					+ "	FROM review r, product p, account a \r\n"
+					+ "	WHERE r.product_id = p.product_id AND r.account_id = a.account_id AND rownum <= ? \r\n"
+					+ "	ORDER BY r.review_id DESC";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, count);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+
+				ReviewEx review = new ReviewEx(rs.getInt("REVIEW_ID"), rs.getInt("RATING"), rs.getString("TITLE"), 
+						rs.getString("NAME"), rs.getString("THUMBNAIL"), rs.getString("nickname"));
+				list.add(review);
+			}
+
+			rs.close();
+			pstmt.close();
+			con.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return list;
+	}
 }

@@ -40,3 +40,44 @@
 .td-center {
 	text-align: center;	
 }
+
+#main-best-product-table {
+	width: 100%;
+}
+
+#main-best-product-element {
+	width: 255px;
+	margin: 50px auto 0px;						
+}
+
+#main-best-product-element thead img {
+	width: 100%;						
+}
+
+#main-best-product-element thead td{
+	padding: 0px;
+}
+
+#main-best-product-element tbody td {
+	padding: 10px;
+}
+
+#main-best-review-table {
+	width: 100%;
+	margin-top: 50px;
+	border-spacing: 0px;
+	border: 0px;
+}
+
+#main-best-review-table tr:first-child td {
+	border-top: 3px solid #222222;
+}
+
+#main-best-review-table td {
+	padding: 10px;
+	border-bottom: 1px solid #dddddd;
+}
+
+#main-best-review-table tr:last-child  td {
+	border-bottom: 1px solid #222222;
+}

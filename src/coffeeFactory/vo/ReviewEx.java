@@ -29,6 +29,8 @@ public class ReviewEx {
 	private String company;
 	private String thumbnail;
 
+	private String nickname;
+
 	public ReviewEx() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -52,6 +54,16 @@ public class ReviewEx {
 		this.origin = origin;
 		this.company = company;
 		this.thumbnail = thumbnail;
+	}
+	
+	 public ReviewEx(int review_id, int rating, String title, String name, String thumbnail, String nickname) {
+		super();
+		this.review_id = review_id;
+		this.rating = rating;
+		this.title = title;
+		this.name = name;
+		this.thumbnail = thumbnail;
+		this.nickname = nickname;
 	}
 
 	public int getReview_id() {
@@ -164,6 +176,14 @@ public class ReviewEx {
 
 	public void setThumbnail(String thumbnail) {
 		this.thumbnail = thumbnail;
+	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
 	@Override

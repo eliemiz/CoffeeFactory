@@ -145,6 +145,62 @@ public class DaoAccount extends Dao {
 		return account;
 	}
 
+	public boolean hasId(String id) {
+		
+		boolean hasId = false;
+		try {
+			connect();
+
+			String sql = "SELECT * FROM ACCOUNT WHERE ID = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				hasId = true;
+			}
+
+			rs.close();
+			pstmt.close();
+			con.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return hasId;
+	}
+	
+	public boolean hasNickname(String nickname) {
+		
+		boolean hasNickname = false;
+		try {
+			connect();
+
+			String sql = "SELECT * FROM ACCOUNT WHERE NICKNAME = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, nickname);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				hasNickname = true;
+			}
+
+			rs.close();
+			pstmt.close();
+			con.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return hasNickname;
+	}
+	
 	// 입력
 	public void insertAccount(Account account) {
 
