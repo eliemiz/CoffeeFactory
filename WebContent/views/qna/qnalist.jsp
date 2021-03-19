@@ -194,7 +194,7 @@ td {
 		<div style="text-align:right;">
 	
 	<input align="center" type="button" value="질문하기" id="qin"
-	       class="btn btn_thatch" style="cursor: pointer;">
+	       class="btn btn_thatch" data-id="${prod.product_id}" style="cursor: pointer;">
 	</div>
 	
 	

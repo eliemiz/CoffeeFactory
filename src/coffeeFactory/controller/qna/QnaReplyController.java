@@ -49,7 +49,7 @@ public class QnaReplyController extends HttpServlet {
 			}
 			
 		String proc= request.getParameter("proc");
-	      String qna_idS = request.getParameter("qna_idS");
+	      String qna_idS = request.getParameter("qna_id");
 	      
 		if(qna_idS==null) qna_idS="0";
 		int qna_id=0;
