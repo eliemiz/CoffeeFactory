@@ -26,16 +26,20 @@
 	
 	$(document).ready(function(){
 		$("#qdel").on("click",function(){
-			if(confirm("삭제하시겠습니까?")){
+			/*if(confirm("삭제하시겠습니까?")){
 				$("[name=proc]").val("del");
 				$("form").submit();
-			}
+			}*/
+			var qna_id = $(this).attr("data-id");
+			location.href="${path}/qnadelete.do?qna_id="+qna_id;
 		});
 		
-		$("#qin").on("click",function(){
-			location.href="${path}/qna_write.do?product_id="+"${qna.product_id}";
+		$("#qin").on("click",function(){ // 입력
+			var product_id = $(this).attr("data-id");
+			location.href="${path}/qna_write.do?product_id="+product_id;
+			// location.href="${path}/qna_write.do?product_id="+"${qna.product_id}";
 		});
-		$("#repq").on("click",function(){
+		$("#repq").on("click",function(){ // 답변
 			var qna_id = $(this).attr("data-id");
 		    var auth = "${account.auth}";
 		    if(auth=="운영자"){
@@ -173,7 +177,6 @@ td {
 								<input type="button" id="repq" data-id="${qna.qna_id}" value="답변하기" class="small1" style="cursor: pointer;">
 								<input type="button" id="qdel" data-id="${qna.qna_id}" value="삭제하기" class="small1" style="cursor: pointer;"></div><br>
 								<br>${qna.content}
-								<!-- <div align="left">답변 :&nbsp;%{qna.reply}</div> -->
 								<div align="left">답변 :&nbsp;${qna.reply_content}</div>
 					</td></tr>
 					</c:forEach>

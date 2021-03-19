@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import coffeeFactory.vo.Qna;
+import coffeeFactory.vo.Review;
 
 /*
 	QNA_ID NUMBER,
@@ -97,6 +98,39 @@ public class Dao_Qna extends Dao_Notice{
 		}
 		return qlist;
 	}
+	//조회, 조건(단일)
+		public Qna getQnal(int qna_id) {
+
+			Qna qna = null;
+			
+			try {
+				connect();
+				
+				String sql = "SELECT * FROM QNA WHERE QNA_ID = ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, qna_id);
+
+				rs = pstmt.executeQuery();	
+				
+				if(rs.next()) {
+					qna = new Qna(rs.getInt("QNA_ID"),rs.getInt("PRODUCT_ID"),
+							rs.getInt("ACCOUNT_ID"),rs.getDate("REGIST_DATE"),rs.getString("TITLE"),
+							rs.getString("CONTENT"),rs.getString("REPLY_CONTENT"));
+					
+				}
+				rs.close();
+				pstmt.close();
+				con.close();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			return qna;
+			
+		}
 	
 	// 조회(조건, 단일) - account_id
 	public ArrayList<Qna> getQnasByAccount(int account_id) {

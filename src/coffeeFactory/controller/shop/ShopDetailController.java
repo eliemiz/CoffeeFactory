@@ -53,13 +53,14 @@ public class ShopDetailController extends HttpServlet {
 
       
       // Q&A
-      
+      /*
       String proc = request.getParameter("proc");
       String qna_idS = request.getParameter("qna_id");
       if(qna_idS==null) qna_idS="0";
       int qna_id=0;
       qna_id = Integer.parseInt(qna_idS);
-      
+      */
+      // review와 account_id 동일하게 사용 > 중복되므로 작성x
       
       // review
       
@@ -89,22 +90,30 @@ public class ShopDetailController extends HttpServlet {
       // Q&A
       
       Dao_Qna daoq = new Dao_Qna();
-      DaoAccount daoa = new DaoAccount();
-      
       ArrayList<Qna> qlist = daoq.getQnaList(product_id);
-      request.setAttribute("ac", daoa.getAccount(account_id));
+      
+      
+      DaoAccount daoa = new DaoAccount();
+      Account accountq = daoa.getAccount(account_id);
+     
+      if(accountq != null) {
+    	  request.setAttribute("account", accountq);
+      }
+      request.setAttribute("Qna", qlist); // shop_detail.jsp QNA부분
+      
+      // request.setAttribute("ac", daoa.getAccount(account_id));
      
 //      ArrayList<Qna> qlist2 = daoq.getQna(qna_id);
-      
+      /*
       if(proc!=null) {
     	  if(proc.equals("del")) {
         	  System.out.println("삭제준비완료: "+qna_id);
         	  daoq.deleteQna(qna_id);
           }
-      }
-      request.setAttribute("Qna", qlist); // shop_detail.jsp QNA부분
-//      request.setAttribute("Qna2", qlist2);
+      } */
      
+//      request.setAttribute("Qna2", qlist2);
+    
       
       // review
          
