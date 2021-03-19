@@ -72,7 +72,7 @@ public class QnaReplyController extends HttpServlet {
 		request.setAttribute("ac", daoAccount.getAccount(qna.getAccount_id()));
 		if(proc!=null) {
 			
-			if(proc.equals("uptq")) {
+			if(proc.equals("upt")) {
 				  String product_id = request.getParameter("product_id");
 		    	  String account_ids = request.getParameter("account_ids");
 		    	  String regist_date_s = request.getParameter("regist_date_s");

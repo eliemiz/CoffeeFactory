@@ -16,7 +16,7 @@
 <script type="text/javascript">
 
 var proc = "${param.proc}"; // proc="";
-if(proc=="uptq"){
+if(proc=="upt"){
 	if(confirm("작성되었습니다. \n상품화면으로 이동하시겠습니까?")){
 		location.href="${path}/shop_detail.do?product_id="+"${rev.product_id}";
 	}
@@ -24,7 +24,7 @@ if(proc=="uptq"){
 
 	$(document).ready(function() {
 		$(document).ready(function(){
-			  $("#qupt").on("click",function(){
+			  $("#repbtn").on("click",function(){
 				  
 				  if(confirm("답변하시겠습니까?")){
 					  //유효성 체크
@@ -111,9 +111,9 @@ if(proc=="uptq"){
                         </div>
                           <br>
 				     	<div style="text-align:right;">
-				     	<input type="button" id="qupt"  value="답변하기" class="btn btn_normal" style="cursor:pointer;">
+				     	<input type="button" id="repbtn"  value="답변하기" class="btn btn_normal" style="cursor:pointer;">
 						<input type="button" value="돌아가기" class="btn btn_normal" 
-						onclick="location.href='${path}/shop_detail.do'" style="cursor:pointer;">
+						onclick="location.href='${path}/shop_detail.do'" style="cursor:pointer;"> <!-- 링크 이동 수정 요망 -->
                     </div><!-- .page-body -->
                 </div><!-- #bbsData -->
                 </form>
