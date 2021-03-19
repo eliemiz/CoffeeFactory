@@ -34,6 +34,18 @@ public class Qna {
 		this.reply_content = reply_content;
 	}
 	
+	public Qna(int qna_id, int product_id, int account_id, String regist_date_s, String title, String content,
+			String reply_content) {
+		super();
+		this.qna_id = qna_id;
+		this.product_id = product_id;
+		this.account_id = account_id;
+		this.regist_date_s = regist_date_s;
+		this.title = title;
+		this.content = content;
+		this.reply_content = reply_content;
+	}
+
 	public Qna(String reply_content, int qna_id) {
 		super();
 		this.reply_content = reply_content;

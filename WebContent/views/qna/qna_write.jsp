@@ -13,18 +13,35 @@
 <link rel="stylesheet" href="${path}/resource/css/review/common.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
-	var ckInsert = "${param.title}";
+	var hasAccountId = ${not empty account_id};
+	if(!hasAccountId){
+		alert("로그인이 필요한 페이지입니다.");
+		loacation.href = "${path}/login.do";
+	}
+	
+	var ckInsert = "${param.content}";
 	if(ckInsert!=""){
 		if(confirm("등록했습니다\상품화면으로 이동하시겠습니까?")){
-			location.href="${path}/shop_detail.do?product_id="+"${prod.product_id}"
+			location.href="${path}/shop_detail.do?product_id="+"${prod.product_id}";
 		}
 	}
 
 	$(document).ready(function(){
 		$("#ins_btn").on("click",function(){
-			
-				$("form").submit();
-			}
+			if($("[name=title]").val()==""){
+				alert('제목을 입력해주세요');
+				return false;
+			}	
+		
+		 else {
+		 if($("[name=content]").val()==""){
+			alert('내용을 입력해주세요');
+			return false;
+			} 
+		}
+		
+			$("#qna_write").submit();
+		 
 		});
 	});
 		
@@ -32,19 +49,8 @@
 <style type="text/css">
 .product-tit {margin:20px 0 0;}
 
-.mall-tab {margin:50px 0 0;}
-.mall-tab ul {margin:0; padding:0; list-style:none; *zoom:1;}
-.mall-tab ul:after {content:""; display:block; visibility:hidden; clear:both;}
-.mall-tab ul li {float:left; width:25%; border-bottom:1px solid #ddd;}
-.mall-tab ul button {position:relative; display:block; width:100%; margin:0; padding:15px 0px; color:#666; font-family:"notokr"; font-size:16px; font-weight:500; letter-spacing:-0.06em; cursor:pointer; outline:0 none; border:0; background:#fff;}
-.mall-tab ul .on button {color:#674f3e;}
-.mall-tab ul .on button:after {content:""; display:block; position:absolute; left:0; bottom:-1px; width:100%; height:3px; background:#674f3e;}
-.mall-tab#tab1 {margin-bottom:3px;}
-.mall-tab#tab2 {margin:30px 0 5px;}
 .regbtn {width:70px; height:30px;}
 .canbtn {width:70px; height:30px;}
-
-
 </style>
 </head>
 
@@ -56,16 +62,8 @@
 			<td class="content-wrap-left">
 			</td>
 			<td class="content-wrap-center">
-		<div class="mall-tab" id="tab2">
-	<ul>
-		<li><button type="button" data-to-tab="tab1">상품정보</button></li>
-		<li><button type="button" data-to-tab="tab2">배송안내</button></li>
-		<li><button type="button" data-to-tab="tab3">고객 상품평</button></li>
-		<li class="on"><button type="button" data-to-tab="tab4">상품 Q&A</button></li>
-	</ul>	
-</div>
-<br>
-       <form class="form1" method="post">
+<br><br><br>
+       <form id="qna_write" method="post">
             <table summary>
                <colgroup>
                    <col width="100">
@@ -79,9 +77,9 @@
                        </th>
                        <td>
                            <div class="td_left">
-                              <input class="MS_input_txt input_style2" type="text" id="title" name="title" placeholder="제목을 입력하세요">
-                           		<input type="hidden" name="product_id" value="${qna.product_id}">
-                           		<input type="hidden" name="account_id" value="${qna.account_id}">
+                              <input class="MS_input_txt input_style2" type="text" id="bw_input_subject" name="title" placeholder="제목을 입력하세요">
+                           		<input type="hidden" name="product_ids" value="${prod.product_id}">
+                           		<input type="hidden" name="account_ids" value="${account.account_id}">
                            </div>
                        </td>
                    </tr>
@@ -89,7 +87,7 @@
                        <th><div>내용</div></th>
                        <td colspan="3"><div class="td_left"><textarea id="content" name="content" style="font-family: 굴림체; width: 100%; height: 380px;" 
                         placeholder="상품에 대한 궁금한 내용을 적어주시면 담당자가 상담해 드립니다."></textarea>
-                       <input type="hidden" name="mobile_content_type" value=""></div>
+                       <input type="hidden" name="reply_content" value=""></div>
                        </td>
                    </tr>                
               </tbody>
