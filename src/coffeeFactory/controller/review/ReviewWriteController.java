@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import coffeeFactory.dao.DaoAccount;
+import coffeeFactory.dao.DaoProduct;
 import coffeeFactory.dao.DaoReview;
 import coffeeFactory.vo.Account;
+import coffeeFactory.vo.Product;
 import coffeeFactory.vo.Review;
 
 /**
@@ -48,14 +50,18 @@ public class ReviewWriteController extends HttpServlet {
 			account_id = (int)account_id_obj;
 		}
 		
+		String product_idS = request.getParameter("product_id");
+	      if(product_idS==null) product_idS="0";
+	      int product_id = Integer.parseInt(product_idS);
 		
-			String product_id = request.getParameter("product_id");
-		   if(product_id==null||product_id.trim().equals("")) product_id="0";
-		   log("#product_id: "+product_id);
+		
 		   
-		   String account_ids = request.getParameter("account_id");
+		   String account_ids = request.getParameter("account_ids");
 		   if(account_ids==null||account_ids.trim().equals("")) account_ids="0";
-		   log("#rating: "+account_ids);
+		   log("#account_id: "+account_ids);
+		   String product_ids = request.getParameter("product_ids");
+		   if(product_ids==null||product_ids.trim().equals("")) product_ids="0";
+		   log("#product_ids: "+product_ids);
 		   
 		   String rating = request.getParameter("rating");
 		   if(rating==null||rating.trim().equals("")) rating="0";
@@ -83,15 +89,18 @@ public class ReviewWriteController extends HttpServlet {
 			if (account != null) {
 				request.setAttribute("account", account);
 			}
+			 DaoProduct daop = new DaoProduct();
+			 Product product = daop.getProduct2(product_id);
+			 request.setAttribute("prod", product);
 		   
-		   
+			 DaoReview dao = new DaoReview();
 		   // 입력할 객체 완성.
-		   if(!product_id.equals("")){ // 초기 화면과 구분하기 위해서
-			   Review ins = new Review(Integer.parseInt(product_id), Integer.parseInt(account_ids),
+		   if(!title.equals("")){ // 초기 화면과 구분하기 위해서
+			   Review ins = new Review(Integer.parseInt(product_ids), Integer.parseInt(account_ids),
 					   Integer.parseInt(rating), title, 
 		            content, image, reply_content);
 		      log("#입력 내용 확인: "+ins.getTitle());
-		      DaoReview dao = new DaoReview();
+		     
 		      dao.insertReview(ins);
 		   }
 		
