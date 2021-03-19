@@ -14,6 +14,33 @@ import coffeeFactory.vo.Product;
 
 public class DaoProduct extends Dao {
 	
+	public ArrayList<Product> prodList() {
+		ArrayList<Product> plist = new ArrayList<Product>();
+		try {
+			connect();
+
+			String sql = "SELECT * FROM PRODUCT ORDER BY product_id";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Product prod = new Product(rs.getInt("PRODUCT_ID"),rs.getString("NAME"),
+						rs.getString("CATEGORY"),rs.getString("origin"),rs.getString("COMPANY"),
+						rs.getString("DESCRIPTION"),
+						rs.getString("THUMBNAIL"));
+				plist.add(prod);
+			}
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return plist;
+	}
+	
 	// 조회(조건, 리스트) - category >> 메인에서 카테고리 클릭 시
 	public ArrayList<Product> getProdList(String category) {
 		ArrayList<Product> plist = new ArrayList<Product>();
