@@ -188,13 +188,46 @@ public class DaoCart extends Dao{
 			}
 		}
 	}
+	// 삭제
+	public void deleteCart(int account_id) {
+		try {
+			connect();
+			con.setAutoCommit(false);
+	
+			String sql = "DELETE FROM CART WHERE ACCOUNT_ID = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, account_id);
+			pstmt.executeQuery();
+			con.commit();
+	
+			pstmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+	}
 	public static void main(String[] args) {
 		DaoCart dao = new DaoCart();
-		ArrayList<Cart> list = dao.getCartList(3);
+		ArrayList<Cart> list = dao.getCartList(10);
 		
-		//dao.insertCart(new Cart(3, 10003, "200g, 20000원", 1, 2));
+		//dao.insertCart(new Cart(10, 10010, "1000g, 10000원", 3, 3));
 		//dao.deleteCart(3, 10003, "200g, 20000원", 1);
 		//dao.updateCart(new Cart(3, 10003, "200g, 20000원", 1, 50));
+		//dao.deleteCart(10);
 		System.out.println(list);
 	}
 }
