@@ -45,14 +45,17 @@
 				
 				</tr>
 			</table>	
-	
+			
+<form id="cartForm" method="post">
+	<input type="hidden" name="proc" value="">
 	<table align="center" style="margin:auto; width:900px;" >
+		
 		<tr height='1' bgcolor='#CCCCCC'><td colspan=8></td></tr>
 			<tr height=25 align=center bgcolor='#FAFAFA'>
 				<td></td>
 				<td class="content-wrap-left" colspan=2>주문상품</td>
 				<td class="content-wrap-right">옵션</td>
-				<td align=right>가격</td>
+				<td>가격</td>
 				<td>수량</td>
 				<td class="content-wrap-right">소계</td>
 				<td width=35></td>
@@ -61,8 +64,7 @@
 			<tr height='1' bgcolor='#CCCCCC'><td colspan=8></td></tr>
 			<tr height='4' bgcolor='#E9E9E9'><td colspan=8></td></tr>
 			
-			<form id="cart-inner" method="post">
-			<input type="hidden" name="proc">
+			
 			<c:forEach var="cart" items="${cartList}">
 			<tr align=center style='color:#5B5B5B;'>
 				<td width=50><img src='${path}/resource/img/cart/shop1.jpg' border=0 width='50' height='50' hspace=5 vspace=5></td>
@@ -94,12 +96,14 @@
 			
 			</td>
 			<td align=right style='color:#9F196E;font-weight:bold;'>000원</td>
-			<td>&nbsp;<img src='${path}/resource/img/cart/btn_delete.gif' style='cursor:pointer;'></td>
+			<td>
+			<input type="image" value="삭제" id="deleteButton" 
+				src='${path}/resource/img/cart/btn_delete.gif' style='cursor:pointer;'></td>
+			
 			</tr>
 			
 			<tr height='1' bgcolor='#e7e7e7'><td colspan=8></td></tr>
 			</c:forEach>
-			</form>
 			
 			
 			
@@ -139,6 +143,7 @@
 			<td bgcolor='#ffffff'><font color='red'><b><span>000</span>원</b></font></td>
 			</tr>
 			</table>
+
 			
 			<br>
 			<p align=center>
@@ -146,14 +151,25 @@
 				onclick="location.href='${path}/views/cart/pay.jsp'"></a>&nbsp;&nbsp;
 			<a href='#.'><img src='${path}/resource/img/cart/btn_order_04.gif' align=absmiddle border=0></a>&nbsp;&nbsp;
 			<a href='/coffeeFactory/Index.jsp'><img src='${path}/resource/img/cart/btn_order_03.gif' align=absmiddle border=0></a>&nbsp;&nbsp;
-			<a href='#.'><img src='${path}/resource/img/cart/btn_order_02.gif' align=absmiddle border=0></a>
+			
 			
 			<td class="content-wrap-right">
 				<jsp:include page="/views/common/sidebar.jsp"/>
 			</td>
-	</table>
+	</table>		
+</form>
 </td></tr></table>
 <jsp:include page="/views/common/footer.jsp" />	
 
 </body>
+<script type="text/javascript">
+var proc = document.querySelector('[name=proc]'); 
+var deleteButton = document.querySelector('#deleteButton');
+	deleteButton.onclick = function(){
+		proc.value = 'delete';
+		if(confirm('삭제하시겠습니까?')){
+			cartForm.submit();
+		}
+	}
+</script>
 </html>
