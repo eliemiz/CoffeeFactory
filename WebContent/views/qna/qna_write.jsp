@@ -13,12 +13,17 @@
 <link rel="stylesheet" href="${path}/resource/css/review/common.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
-	
+	var ckInsert = "${param.title}";
+	if(ckInsert!=""){
+		if(confirm("등록했습니다\상품화면으로 이동하시겠습니까?")){
+			location.href='${path}/shop_detail.do';
+		}
+	}
+
 	$(document).ready(function(){
 		$("#ins_btn").on("click",function(){
-			if(confirm("Q&A 등록하시겠습니까?")){
-				$("form1").attr("action","${path}/shop_detail.do#tab4");
-				$("form1").submit();
+			
+				$("form").submit();
 			}
 		});
 	});
@@ -61,9 +66,7 @@
 </div>
 <br>
        <form class="form1" method="post">
-       
-      
-           <table summary>
+            <table summary>
                <colgroup>
                    <col width="100">
                    <col width="100">
@@ -76,13 +79,15 @@
                        </th>
                        <td>
                            <div class="td_left">
-                              <input id="bw_input_subject" class="MS_input_txt input_style2" type="text" name="subject" value="">
+                              <input class="MS_input_txt input_style2" type="text" id="title" name="title" placeholder="제목을 입력하세요">
+                           		<input type="hidden" name="product_id" value="${qna.product_id}">
+                           		<input type="hidden" name="account_id" value="${qna.account_id}">
                            </div>
                        </td>
                    </tr>
                    <tr>
                        <th><div>내용</div></th>
-                       <td colspan="3"><div class="td_left"><textarea id="MS_text_content" name="content" style="font-family: 굴림체; width: 100%; height: 380px;" 
+                       <td colspan="3"><div class="td_left"><textarea id="content" name="content" style="font-family: 굴림체; width: 100%; height: 380px;" 
                         placeholder="상품에 대한 궁금한 내용을 적어주시면 담당자가 상담해 드립니다."></textarea>
                        <input type="hidden" name="mobile_content_type" value=""></div>
                        </td>
@@ -91,7 +96,7 @@
            </table>
         <br>
         <div style="text-align:right;">
-		<input type="button" value="완료" id="ins_btn" class="btn btn_thatch" onclick="location.href='${path}/shop_detail.do#tab4'">
+		<input type="button" value="완료" id="ins_btn" class="btn btn_thatch">
 		<input type="button" value="목록" class="btn btn_normal" onclick="location.href='${path}/shop_detail.do#tab4'" >
 		</div>
  </form>

@@ -14,13 +14,29 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	
+	var proc = "${param.proc}"
+	if(proc=="del"){
+		alert("삭제되었습니다\n상품상세화면으로 이동합니다.");
+		location.href="${path}/shop_detail.do?product_id="+${rev.product_id};
+	}
+	
 	$(document).ready(function(){
-
+		$("#qdel").on("click",function(){
+			if(confirm("삭제하시겠습니까?")){
+				$("[name=proc]").val("del");
+				$("form").submit();
+			}
+		});
+		
+		$("#qin").on("click",function(){
+			location.href="${path}/qna_write.do?product_id="+"${qna.product_id}";
+		});
 		$("#repq").on("click",function(){
-		   var auth = "${account.auth}";
-		   if(auth=="운영자"){
-		       	location.href="${path}/qna_reply.do?qna_id="+${qna.qna_id};
-		   		alert(qna_id);
+			var qna_id = $(this).attr("data-id");
+		    var auth = "${account.auth}";
+		    if(auth=="운영자"){
+		       	location.href="${path}/qna_reply.do?qna_id="+qna_id;
+		   		// alert(qna_id);
 		   	} else{
 		      	alert("운영자만 답변할 수 있습니다.");
 		      }
@@ -118,6 +134,7 @@ td {
 <body>
 
 <br>
+<form id="qlist" type = "method">
 	<table id="qnalist">
 			<colgroup>
 				<col width="50">
@@ -147,14 +164,16 @@ td {
 				<!-- 숨김 상태일 때 td가 남는 것을 방지.. td 자체의 display 조절 -->
 				<tr><td colspan="4" class="full" id="qfull-${sts.count}">
 					<div align="right">
-								<input type="button" id="regbtn" value="답변하기" class="small1" style="cursor: pointer;">
-								<input type="button" id="qdel" value="삭제하기" class="small1" style="cursor: pointer;"></div><br>
+								<input type="button" id="repq" data-id="${qna.qna_id}" value="답변하기" class="small1" style="cursor: pointer;">
+								<input type="button" id="qdel" data-id="${qna.qna_id}" value="삭제하기" class="small1" style="cursor: pointer;"></div><br>
 								<br>${qna.content}
-								<div align="left">답변:&nbsp;%{qna.reply}</div>
+								<div align="left">답변 :&nbsp;%{qna.reply}</div>
+						<%--	 <div align="left">답변 :&nbsp;${qna.reply}</div>	 --%>
 					</td></tr>
 					</c:forEach>
 			</tbody>
 		</table>
+</form>
 		<br>
 		<div style="text-align: center;">
 			<input type="button" value="<<" class="btn_normal">
@@ -165,8 +184,8 @@ td {
 		</div>
 		<div style="text-align:right;">
 	
-	<input align="center" type="button" value="질문하기" 
-	       class="btn btn_thatch" onclick="location.href='${path}/qna_write.do'" style="cursor: pointer;">
+	<input align="center" type="button" value="질문하기" id="qin"
+	       class="btn btn_thatch" style="cursor: pointer;">
 	</div>
 	
 	
