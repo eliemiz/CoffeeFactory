@@ -21,7 +21,7 @@
 	
 	var ckInsert = "${param.content}";
 	if(ckInsert!=""){
-		if(confirm("등록했습니다\상품화면으로 이동하시겠습니까?")){
+		if(confirm("등록했습니다\n상품화면으로 이동하시겠습니까?")){
 			location.href="${path}/shop_detail.do?product_id="+"${prod.product_id}";
 		}
 	}
@@ -95,7 +95,7 @@
         <br>
         <div style="text-align:right;">
 		<input type="button" value="완료" id="ins_btn" class="btn btn_thatch">
-		<input type="button" value="목록" class="btn btn_normal" onclick="location.href='${path}/shop_detail.do#tab4'" >
+		<input type="button" value="목록" class="btn btn_normal" onclick="location.href='${path}/shop_detail.do?product_id=${prod.product_id}'" >
 		</div>
  </form>
 </td>

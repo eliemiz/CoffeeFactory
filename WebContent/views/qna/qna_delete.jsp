@@ -102,7 +102,7 @@ $(document).ready(function(){
         <div style="text-align:right;">
 		<input type="button" id="delBtn" value="삭제하기"  class="btn btn_thatch" style="cursor:pointer;">
 		<input type="button" value="돌아가기" class="btn btn_normal" 
-		onclick="location.href='${path}/shop_detail.do'" style="cursor:pointer;">
+		onclick="location.href='${path}/shop_detail.do?product_id=${qna.product_id}'" style="cursor:pointer;">
 		</div>
  </form>
 </td>

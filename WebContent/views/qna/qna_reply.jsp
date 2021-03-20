@@ -113,7 +113,7 @@ if(proc=="upt"){
 				     	<div style="text-align:right;">
 				     	<input type="button" id="repbtn"  value="답변하기" class="btn btn_normal" style="cursor:pointer;">
 						<input type="button" value="돌아가기" class="btn btn_normal" 
-						onclick="location.href='${path}/shop_detail.do'" style="cursor:pointer;"> <!-- 링크 이동 수정 요망 -->
+						onclick="location.href='${path}/shop_detail.do?product_id=${qna.product_id}'" style="cursor:pointer;"> <!-- 링크 이동 수정 요망 -->
                     </div><!-- .page-body -->
                 </div><!-- #bbsData -->
                 </form>
