@@ -172,9 +172,11 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                              <td><img src="${path}/resource/img/shop/blank.gif" height="1"/></td>
                                              <td valign="top">
                                                 <form name="form1" method="post" id="form1" action="${path}/cart.do">
-                                                <input type="hidden" name="proc">
-                                                <input type="hidden" name="product_ids" value="${prod.product_id}">
-                                                <input type="hidden" name="account_ids" value="${account.account_id}">
+                                                   <input type="hidden" name="proc" value="addP">
+                                                   <input type="hidden" name="proc" value="addC">
+                                                   <input type="hidden" name="proc" value="addW">
+                                               	   <input type="hidden" name="product_ids" value="${prod.product_id}">
+                                                   <input type="hidden" name="account_ids" value="${account.account_id}">
                                                  <%--
 												<input type="hidden" name="grind_id" value="${grind.grind_id}">
 												<input type="hidden" name="price" value="${po.price}">--%>
@@ -280,6 +282,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                                    </table>
                                                    <br style="line-height:10px">
                                                    <!-- 구매하기/장바구니/위시리스트 -->
+
                                                    <table align="center">
                                                       <tbody>
                                                          <tr>
