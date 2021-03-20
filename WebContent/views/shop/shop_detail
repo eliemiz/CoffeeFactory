@@ -1,0 +1,166 @@
+<td id="addP"><img src="${path}/resource/img/shop/buyBtn.gif" style="cursor:pointer;"></td>
+<td id="addC"><img src="${path}/resource/img/shop/cartBtn.gif" style="cursor:pointer;"></td>
+<td id="addW"><img src="${path}/resource/img/shop/wishBtn.gif" border="0"></td>
+
+
+
+		String product_idS = request.getParameter("product_id");
+		if(product_idS==null) product_idS="0";
+		int product_id = Integer.parseInt(product_idS);
+		
+		String grind_idS = request.getParameter("grind_id");
+		if(grind_idS==null) grind_idS="0";
+		int grind_id = Integer.parseInt(grind_idS);
+		
+		String capacityS = request.getParameter("capacity");
+		if(capacityS==null) capacityS="0";
+		int capacity = Integer.parseInt(capacityS);
+		
+		String priceS = request.getParameter("price");
+		if(priceS==null) priceS="0";
+		int price = Integer.parseInt(priceS);
+
+
+
+		request.setAttribute("cart", daoc.getCartList(cart.getAccount_id()));
+
+   $(document).ready(function(){
+		$("[type=checkbox]").click(function(){
+			 var priceArry = $("input:checked + span + span");
+			 var cntArry = $( 'select#cnt' ).val();
+	         var tot = 0;
+	         $(priceArry).each(function(idx, obj){
+	            var price = $(obj).text();
+	            var cnt = $(cntArry).eq(idx).text();
+	            tot += price*cnt;
+	         });
+	         $("#tot").text(tot+"원");
+		});
+      });
+<fmt:formatNumber pattern="###,###,###"/>
+	<tr height="25">
+		<td> </td>
+		<td><span class="opt_title1">제조사</span></td>
+		<td>&nbsp;${prod.company}</td>
+	</tr>
+	<tr height="25">
+		<td> </td>
+		<td><span class="opt_title1">구매수량</span></td>
+		<td>
+			<select name="cnt" >
+				<c:forEach begin="1" end="10" var="i">
+					<option value="${i}">${i}</option>
+				</c:forEach>
+			</select>
+		</td>
+	</tr>
+	
+	
+		$(document).ready(function(){
+		/*
+		pay.do?product_id="+"${yyy.product_id}"+"&capacity="+"${xxx.capacity}"+"&price="+"${xxx.price}";
+		*/
+		$("#addP").click(function(){
+			location.href="${path}/pay.do?product_id="+"${prod.product_id}"+"&capacity="+"${po.capacity}"+"&price="+"${po.price}";
+		});
+		$("#addC").click(function(){
+			location.href="${path}/pay.do?product_id="+"${prod.product_id}"+"&capacity="+"${po.capacity}"+"&price="+"${po.price}";
+		});
+		$("#addW").click(function(){
+			location.href="${path}/pay.do?product_id="+"${prod.product_id}"+"&capacity="+"${po.capacity}"+"&price="+"${po.price}";
+		});
+	});
+	
+	
+	
+	                                                            </td>
+                                                         </tr>
+                                                         <tr height="1" bgcolor="#bababa">
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td width="70%"></td>
+                                                         </tr>
+                                                         <tr height="1" bgcolor="#e7e7e7"><td></td><td></td><td></td></tr>
+                                                         <tr height="1" bgcolor="#f4f4f4"><td></td><td></td><td></td></tr>
+                                                         <tr height="10" bgcolor="#bababa">
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td width="70%"></td>
+                                                         </tr>
+                                                         <c:set var="sum" value="0" />
+                                                         <c:forEach items="${prodList}" var="prodList">
+                                                         <tr height="25">
+                                                            <td> </td>
+                                                            <td><span class="opt_title1">제품 선택</span></td>
+                                                            <td>      
+                                                            <c:forEach var="pos" items="${po}">                                                         
+                                                               
+                                                               <input type="radio" name="pricelist" value="${pos.price}"> ${pos.capacity} (${pos.price}원)<br>                                                      
+                                                            </c:forEach>
+                                                            </td>
+                                                         </tr>
+                                                         <tr height="25">
+                                                            <td> </td>
+                                                            <td><span class="opt_title1">판매가격</span></td>
+                                                            <td>&nbsp;
+                                                            <c:forEach var="pr" items="${po}">   
+                                                               <span id="main_price" class="money_color"></span>
+
+                                                               <span id="main_price_type" class="money_color">${pr.price}원</span>
+                                                            </c:forEach>
+                                                            </td>
+                                                         </tr>
+                                                         <tr height="25">
+                                                            <td> </td>
+                                                            <td nowrap><span class="opt_title1">분쇄여부</span></td>
+                                                            <td>&nbsp;
+                                                               
+                                                               <select name="option_0" onchange="price_cal()" class="select1">
+                                                                  <option value="">선택하세요</option>
+                                                                  <c:forEach var="grind" items="${grind}">
+                                                                  <option value="${grind.grind_type}">${grind.grind_type}</option>
+                                                                  </c:forEach>
+                                                               </select>                                                               
+                                                            </td>
+                                                         </tr>
+                                                         <tr height="25">
+                                                            <td> </td>
+                                                            <td><span class="opt_title1">제조사</span></td>
+                                                            <td>&nbsp;${prod.company}</td>
+                                                         </tr>
+                                                         <tr height="25">
+                                                            <td> </td>
+                                                            <td><span class="opt_title1">구매수량</span></td>
+                                                            <td>
+                                                               <table cellspacing="0" cellpadding="0">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <td>
+                                                                           <input type="text" name="buynum" size="5" maxlength="5" value="1" style="border:1 solid gray; font-size:9pt;"><!-- Back 함수&+/- -->
+                                                                        </td>
+                                                                        <!-- td style="display:none;" class="font-size1", 재고량표기 -->
+                                                                     </tr>
+                                                                  </tbody>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                      <c:set var="sum" value="${sum + (prodList.price * prodList.count)}" />
+                                                   </c:forEach>
+                                                   <div class="Result">
+													 <div class="sum">
+													  총 합계 : <fmt:formatNumber pattern="###,###,###" value="${sum}" />원
+													 </div>
+                                                   <br style="line-height:10px">
+                                                   <!-- 구매하기/장바구니/위시리스트 -->
+                                                   <table align="center">
+                                                      <tbody>
+                                                         <tr>
+                                                           <td id="addP"><img src="${path}/resource/img/shop/buyBtn.gif" style="cursor:pointer;"></td>
+															<td id="addC"><img src="${path}/resource/img/shop/cartBtn.gif" style="cursor:pointer;"></td>
+															<td id="addW"><img src="${path}/resource/img/shop/wishBtn.gif" border="0"></td>
+                                                         </tr>                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <!-- div style="display:none;" 으로 form값 처리 -->
+                    
