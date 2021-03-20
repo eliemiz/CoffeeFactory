@@ -22,6 +22,12 @@
 		location.href = "${path}/login.do";
 	}
 	
+	var proc = "${param.proc}";
+	if (proc == "update") {
+		alert("업데이트 되었습니다.");
+		location.href = "${path}/mypage.do?query=modify";
+	}
+	
 	$(document).ready(function(){
 		
 	});

@@ -16,6 +16,7 @@ import coffeeFactory.dao.DaoOrderByDetail;
 import coffeeFactory.dao.DaoReview;
 import coffeeFactory.dao.Dao_Qna;
 import coffeeFactory.vo.Account;
+import coffeeFactory.vo.Selection;
 
 /**
  * Servlet implementation class MypageController
@@ -59,13 +60,16 @@ public class MypageController extends HttpServlet {
 			DaoOrderByDetail daoOrder = new DaoOrderByDetail();
 			request.setAttribute("orderList", daoOrder.getOrderByDetailList(account_id));
 			
+			// qna, wish, review
 			DaoMypage daoMypage = new DaoMypage();
 			request.setAttribute("qnaList", daoMypage.getQnaList(account_id));		// qna
 			request.setAttribute("wishList", daoMypage.getWishList(account_id));	// wish
-			
-			// review
 			request.setAttribute("reviewList", daoMypage.getReviewList(account_id));
 			
+			// for modify
+			request.setAttribute("domains", Selection.domains);
+			request.setAttribute("area_code", Selection.areaCode);
+			request.setAttribute("area_code_ex", Selection.areaCodeEx);
 		}
 		
 		// 페이지 설정을 위한 query

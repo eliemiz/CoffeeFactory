@@ -102,7 +102,7 @@
 									<th>회원 ID</th>
 									<td>
 										<input type="text" name="id" size="15">
-										<img src="${img_path}/regis_exists_bt.gif" style="vertical-align: middle;"><br>
+										<img src="${img_path}/regis_exists_bt.gif" style="vertical-align: middle; cursor:pointer;" onclick="hasId()"><br>
 										<span>
 											회원ID는 가입 후 변경이 불가능합니다.<br>
 											회원ID와 비밀번호는 영문자로 시작하는 4~12자의 영문,숫자를 조합하셔서<br>
@@ -123,7 +123,7 @@
 									<th>닉네임(별명)</th>
 									<td>
 										<input type="text" name="nickname" size="15">
-										<img src="${img_path}/regis_exists_bt2.gif" style="vertical-align: middle;"><br>
+										<img src="${img_path}/regis_exists_bt2.gif" style="vertical-align: middle; cursor:pointer;" onclick="hasNickname()"><br>
 										<span>회원닉네임(별명)은 20자 이내로 한글, 영문, 숫자 모두 입력하실 수 있습니다.</span>
 									</td>
 								</tr>
@@ -175,7 +175,7 @@
 										<input type="hidden" name="post">
 										<input type="text" id="post_1" size="4" maxlength="4">
 										- <input type="text" id="post_2" size="4" maxlength="4">
-										<img src="${img_path}/regis_zip_bt.gif" style="vertical-align: middle;" onclick="goPopup()"><br>
+										<img src="${img_path}/regis_zip_bt.gif" style="vertical-align: middle; cursor:pointer;" onclick="goPopup()"><br>
 										<input type="text" name="address1" style="margin-top: 5px; width: 300px;">
 										<input type="text" name="address2" style="margin-top: 5px; width: 300px;">
 									</td>
@@ -184,8 +184,8 @@
 							<tfoot>
 								<tr>
 									<td colspan="2" style="text-align: center;">
-										<input type="image" id="signin_submit_btn" src="${img_path}/regis_submit_bt.gif">
-										<input type="image" id="signin_cancel_btn" src="${img_path}/regis_cancel_bt.gif">
+										<input type="image" id="signin_submit_btn" src="${img_path}/regis_submit_bt.gif" style="cursor:pointer;">
+										<input type="image" id="signin_cancel_btn" src="${img_path}/regis_cancel_bt.gif" style="cursor:pointer;">
 									</td>
 								</tr>
 							</tfoot>
@@ -329,6 +329,46 @@
 		document.querySelector("#post_2").value = zipNo2;
 		document.querySelector("[name=address1]").value = roadAddrPart1;
 		document.querySelector("[name=address2]").value = addrDetail;
+	}
+	
+	function hasId() {
+		$.ajax({
+			type:"post",
+			url:"${path}/hasId.do",
+			data:{id:$("[name=id]").val()},
+			dataType:"json",
+			success:function(data){
+				if(data.hasId){
+					alert("중복된 ID입니다.");
+				} else {
+					alert("사용 가능한 ID입니다.");
+				}
+			},
+			error:function(err){
+				alert("error occurred");
+				console.log(err);
+			}
+		});
+	}
+	
+	function hasNickname() {
+		$.ajax({
+			type:"post",
+			url:"${path}/hasNickname.do",
+			data:{nickname:$("[name=nickname]").val()},
+			dataType:"json",
+			success:function(data){
+				if(data.hasId){
+					alert("중복된 닉네임입니다.");
+				} else {
+					alert("사용 가능한 닉네임입니다.");
+				}
+			},
+			error:function(err){
+				alert("error occurred");
+				console.log(err);
+			}
+		});
 	}
 </script>
 </html>
