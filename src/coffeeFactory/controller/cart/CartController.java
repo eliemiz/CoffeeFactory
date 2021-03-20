@@ -17,7 +17,6 @@ import coffeeFactory.dao.DaoGrind;
 import coffeeFactory.dao.DaoProduct;
 import coffeeFactory.dao.DaoProductOption;
 import coffeeFactory.vo.Account;
-import coffeeFactory.vo.Product;
 import coffeeFactory.vo.ProductGrind;
 import coffeeFactory.vo.ProductOption;
 
@@ -70,7 +69,15 @@ public class CartController extends HttpServlet {
 		if (account_id_obj != null) {
 			account_id = (int)account_id_obj;
 		}
-
+		
+		String proc = request.getParameter("proc");
+		if (proc == null) {
+			proc = "";
+		}
+		if (proc.equals("delete")) {
+			DaoCart daoCartdel = new DaoCart();  
+		    daoCartdel.deleteCart(account_id);
+		}
 		/*
 		String proc = request.getParameter("proc");
 		if (proc == null) {
