@@ -121,7 +121,7 @@ if (!hasAccountId) {
         <div style="text-align:right;">
 		<input type="button"  id="finish" value="완료" class="btn btn_thatch"  style="cursor:pointer;">
 		<input type="button" value="돌아가기" class="btn btn_normal" 
-		onclick="location.href='${path}/shop_detail.do'"  style="cursor:pointer;">
+		onclick="location.href='${path}/shop_detail.do?product_id=${prod.product_id}'"  style="cursor:pointer;">
 		</div>
  </form>
 </td>

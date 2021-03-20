@@ -121,10 +121,10 @@ $(document).ready(function(){
 		<input type="button"  id="uptBtn" value="수정하기" class="btn btn_thatch"  style="cursor:pointer;">
 		<input type="button" id="delBtn" value="삭제하기"  class="btn btn_thatch" style="cursor:pointer;">
 		<input type="button" value="돌아가기" class="btn btn_normal" 
-		onclick="location.href='${path}/shop_detail.do'" style="cursor:pointer;">
+		onclick="location.href='${path}/shop_detail.do?product_id=${rev.product_id}'" style="cursor:pointer;">
 		</div>
  </form>
-</td>
+</td>s
 			<td class="content-wrap-center-right">
 			</td>
 			<td class="content-wrap-right">

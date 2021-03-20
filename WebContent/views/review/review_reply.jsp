@@ -114,7 +114,7 @@ if(proc=="upt"){
 				     	<div style="text-align:right;">
 				     	<input type="button" id="uptBtn"  value="답변하기" class="btn btn_normal" style="cursor:pointer;">
 						<input type="button" value="돌아가기" class="btn btn_normal" 
-						onclick="location.href='${path}/shop_detail.do'" style="cursor:pointer;">
+						onclick="location.href='${path}/shop_detail.do?product_id=${rev.product_id}'" style="cursor:pointer;">
                     </div><!-- .page-body -->
                 </div><!-- #bbsData -->
                 </form>
