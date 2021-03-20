@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import coffeeFactory.dao.DaoProduct;
-import coffeeFactory.vo.Product;
+import coffeeFactory.dao.DaoShop;
+import coffeeFactory.vo.ProductEx;
 
 /**
  * Servlet implementation class ShopSearchController
@@ -35,14 +35,15 @@ public class ShopSearchController extends HttpServlet {
 		// TODO Auto-generated method stub
 	
 		request.setCharacterEncoding("utf-8");
-		String name = request.getParameter("name");
+		String search_name = request.getParameter("search_name");
 		String page="";
-		if(name==""){
+		if(search_name==""){
 			   page="views\\shop\\shop_search_fail.jsp";
 			}
-		if (name!="") {
-			DaoProduct dao = new DaoProduct();
-			ArrayList<Product> plist = dao.getSchList(name);
+		if (search_name!="") {
+//			DaoProduct dao = new DaoProduct();
+			DaoShop dao = new DaoShop();
+			ArrayList<ProductEx> plist = dao.getSchList(search_name);
 			request.setAttribute("prodlist", plist);
 			page="views\\shop\\shop_search_result.jsp";
 		}

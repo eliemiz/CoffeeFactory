@@ -13,9 +13,12 @@
 <link rel="stylesheet" href="${path}/resource/css/fonts.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
+var hasAccountId = ${not empty account_id};
 $(document).ready(function(){
-	$("#addP").click(function(){
-		location.href="${path}/pay.do?account_id="+"${account.account_id}";
+
+    /*
+   	$("#addP").click(function(){
+	location.href="${path}/pay.do?account_id="+"${account.account_id}";
 	});
 	$("#addC").click(function(){
 		location.href="${path}/cart.do?account_id="+"${account.account_id}";
@@ -24,7 +27,6 @@ $(document).ready(function(){
 		location.href="${path}/wish.do?account_id="+"${account.account_id}";
 	});
     
-    /*
     $(":radio").val($("input:checked").val());
     $("input:radio").click(function(){
        $("#main_price").val("");
@@ -66,26 +68,49 @@ $(document).ready(function(){
         var tot = price * count;
         $("#tot").text(tot + "원");
      });
-    function submitCartForm(proc){
-		var form = document.querySelector("#form1");
-		if(proc=='addC'){
-			if(!confirm('장바구니에 담겼습니다. 장바구니로 이동하시겠습니까?')){
-				return false;
-			}
-		} else if (proc == 'addP'){
-			if(!confirm('장바구니의 상품과 함께 구매됩니다.\n구매하시겠습니까?')){
-				return false;
-			} 
-		} else if (proc == 'addW'){
-			if(!confirm('관심상품에 담았습니다.\n위시리스트로 이동하시겠습니까?')){
-				return false;
-			}
-		}
-		form.proc.value = proc;
-		
-		form.submit();
-    }
+ 
 });
+function submitCartForm(go){
+	var form = document.querySelector("#form1");
+	var product_id = ${prod.product_id};
+	var capacity = $("[name=pricelist]:checked").attr("data-id");
+	//var capacity = $("[name=pricelist]:checked").text();
+	var grind_id = $("[name=grind_id]").val();
+	var count = $("[name=count]").val();
+	var price = $("[name=pricelist]:checked").val();
+	alert("product_id="+product_id);
+	//alert("capacity="+capacity);
+	alert(capacity);
+	alert("grind_id="+grind_id);
+	alert("count="+count);
+	alert("price="+price);
+	if(go=='addC'){
+		proc = addC;
+		if(!confirm('장바구니에 담겼습니다. 장바구니로 이동하시겠습니까?')){
+			return false;
+		} else {			
+			form.action="${path}/cart.do";
+		}
+	} else if (go == 'addP'){
+		proc = addP;
+		if(!confirm('장바구니의 상품과 함께 구매됩니다.\n구매하시겠습니까?')){
+			return false;
+		} else {
+			form.action="${path}/pay.do";
+		}
+		
+	} else if (go == 'addW'){
+		proc = addW;
+		if(!confirm('관심상품에 담았습니다.\n위시리스트로 이동하시겠습니까?')){
+			return false;
+		} else {
+			form.action="${path}/wish.do";
+		}
+	}
+	form.proc.value = proc;
+	
+	form.submit();
+}
 </script>
 <style type="text/css">
 .product-tit {margin:20px 0 0;}
@@ -171,17 +196,8 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                              </td>
                                              <td><img src="${path}/resource/img/shop/blank.gif" height="1"/></td>
                                              <td valign="top">
-                                                <form name="form1" method="post" id="form1" action="${path}/cart.do">
-                                                   <input type="hidden" name="proc" value="addP">
-                                                   <input type="hidden" name="proc" value="addC">
-                                                   <input type="hidden" name="proc" value="addW">
-                                               	   <input type="hidden" name="product_ids" value="${prod.product_id}">
-                                                   <input type="hidden" name="account_ids" value="${account.account_id}">
-                                                 <%--
-												<input type="hidden" name="grind_id" value="${grind.grind_id}">
-												<input type="hidden" name="price" value="${po.price}">--%>
-                                                
-												
+                                                <form name="form1" method="post" id="form1">
+                                                	<input type="hidden" name="proc" value=""/> 
                                                    <!-- 폼 오픈, Back때 input hidden으로 처리 -->
                                                    <!-- <div style="display:none;"></div> 가격 iframe, script,, -->
                                                    <table width="100%" cellspacing="0" cellpadding="0" style="color:#5B5B5B;" border="0">
@@ -210,7 +226,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                                             <td><span class="opt_title1">제품 선택</span></td>
                                                             <td>      
                                                             <c:forEach var="pos" items="${po}">                     
-                                                               <input type="radio" name="pricelist" value="${pos.price}"><span>${pos.capacity}</span><span>(${pos.price}원)</span><br>                                                      
+                                                               <input type="radio" id ="pricelist" name="pricelist" value="${pos.price}" data-id="${pos.capacity}">${pos.capacity}<span>(${pos.price}원)</span><br>                                                                                                             
                                                             </c:forEach>
                                                             </td>
                                                          </tr>
@@ -228,10 +244,10 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                                             <td> </td>
                                                             <td nowrap><span class="opt_title1">분쇄여부</span></td>
                                                             <td>&nbsp;                                                               
-                                                               <select name="option_0" class="select1">
+                                                               <select name="grind_id" class="select1">
                                                                   <option value="">선택하세요</option>
                                                                   <c:forEach var="grind" items="${grind}">
-                                                                  <option value="${grind.grind_type}">${grind.grind_type}</option>
+                                                                  <option value="${grind.grind_id}">${grind.grind_type}</option>
                                                                   </c:forEach>
                                                                </select>                                                               
                                                             </td>
@@ -245,7 +261,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 															<td> </td>
 															<td><span class="opt_title1">구매수량</span></td>
 															<td>															
-																<select id="cnt">
+																<select id="cnt" name="count">
 																	<c:forEach begin="1" end="10" var="i">
 																		<option value="${i}">${i}</option>
 																	</c:forEach>

@@ -12,18 +12,22 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import coffeeFactory.dao.DaoAccount;
+import coffeeFactory.dao.DaoCart;
 import coffeeFactory.dao.DaoGrind;
-import coffeeFactory.dao.DaoMypage;
-import coffeeFactory.dao.DaoProduct;
-import coffeeFactory.dao.DaoProductOption;
+import coffeeFactory.dao.DaoOrderByProduct;
 import coffeeFactory.dao.DaoReview;
+import coffeeFactory.dao.DaoShop;
+import coffeeFactory.dao.DaoWish;
 import coffeeFactory.dao.Dao_Qna;
 import coffeeFactory.vo.Account;
+import coffeeFactory.vo.Cart;
+import coffeeFactory.vo.OrderByProduct;
 import coffeeFactory.vo.Product;
 import coffeeFactory.vo.ProductGrind;
 import coffeeFactory.vo.ProductOption;
 import coffeeFactory.vo.Qna;
 import coffeeFactory.vo.Review;
+import coffeeFactory.vo.Wish;
 
 /**
  * Servlet implementation class ShopDetailController
@@ -77,15 +81,56 @@ public class ShopDetailController extends HttpServlet {
       
       /* Model */
       // shop
-      DaoProduct dao = new DaoProduct();
+      DaoShop dao = new DaoShop();
+//      DaoProduct dao = new DaoProduct();
       DaoGrind daog = new DaoGrind();
-      DaoProductOption daopo = new DaoProductOption();
+//      DaoProductOption daopo = new DaoProductOption();
       Product product = dao.getProduct2(product_id);
       ArrayList<ProductGrind> glist = daog.grindList();
-      ArrayList<ProductOption> polist = daopo.getCapaList(product_id);
+      ArrayList<ProductOption> polist = dao.getCapaList(product_id);
       request.setAttribute("prod", product);
       request.setAttribute("grind", glist);
       request.setAttribute("po", polist);
+      
+      String proc= request.getParameter("proc");
+      DaoCart daoc = new DaoCart();
+      DaoOrderByProduct daoo = new DaoOrderByProduct();
+      DaoWish daow = new DaoWish();
+		
+      if(proc!=null) {
+	   	   
+	   	  if(proc.equals("addC")) {
+	   		  String account_ids = request.getParameter("account_ids");
+		   	  String product_ids = request.getParameter("product_ids");
+		   	  String capacity = request.getParameter("capacity");
+		   	  String grind_id = request.getParameter("grind_id");
+		   	  String count = request.getParameter("count");
+		   	  String price = request.getParameter("price");
+		   	  Cart addC = new Cart(Integer.parseInt(account_ids), Integer.parseInt(product_ids), capacity,
+		   			 Integer.parseInt(grind_id), Integer.parseInt(count), Integer.parseInt(price));
+		                  
+//		   	  daoc.insertCart(addC);
+	      }
+	      if(proc.equals("addP")) {
+	    	  String account_ids = request.getParameter("account_ids");
+		   	  String product_ids = request.getParameter("product_id");
+		   	  String capacity = request.getParameter("capacity");
+		   	  String grind_id = request.getParameter("grind_id");
+		   	  String count = request.getParameter("count");
+		   	  String price = request.getParameter("price");
+		   	  OrderByProduct addP = new OrderByProduct(Integer.parseInt(account_ids), Integer.parseInt(product_ids), capacity,
+		   			 Integer.parseInt(grind_id), Integer.parseInt(count), Integer.parseInt(price));
+		                  
+//		   	  daoo.insertOrderByProduct(addP);
+	      }
+	      if(proc.equals("addW")) {
+	    	  String account_ids = request.getParameter("account_ids");
+		   	  String product_ids = request.getParameter("product_ids");
+		   	  Wish addW = new Wish(Integer.parseInt(account_ids), Integer.parseInt(product_ids));
+	                  
+//		   	  daow.insertWish(addW);
+	      }
+	  }      
       
       // Q&A
       

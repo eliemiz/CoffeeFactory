@@ -88,7 +88,7 @@ public class DaoShop extends Dao {
 	}
 
 	// 검색(name)
-	public ArrayList<Product> getSchList(String name) {
+/*	public ArrayList<Product> getSchList(String name) {
 		ArrayList<Product> plist = new ArrayList<Product>();
 		try {
 			connect();
@@ -113,7 +113,39 @@ public class DaoShop extends Dao {
 			e.printStackTrace();
 		}
 		return plist;
-	}
+	} */
+	public ArrayList<ProductEx> getSchList(String name) {
+		ArrayList<ProductEx> plist = new ArrayList<ProductEx>();
+		try {
+			connect();
+			
+			String sql = "SELECT DISTINCT p.*, min(po.price) price\r\n"
+					+ "FROM product p, product_option po\r\n"
+					+ "WHERE p.PRODUCT_ID =po.PRODUCT_ID AND name LIKE '%'|| ? ||'%'\r\n"
+					+ "GROUP BY (p.PRODUCT_ID, p.NAME, p.origin, p.COMPANY, p.DESCRIPTION, p.THUMBNAIL, p.CATEGORY)\r\n"
+					+ "ORDER BY p.PRODUCT_ID";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, name);
+			
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				ProductEx prod = new ProductEx(rs.getInt("PRODUCT_ID"),rs.getString("NAME"),
+						rs.getString("CATEGORY"),rs.getString("origin"),rs.getString("COMPANY"),
+						rs.getString("DESCRIPTION"),
+						rs.getString("THUMBNAIL"), rs.getInt("price"));
+				plist.add(prod);
+			}
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return plist;
+	}		
 
 	// 조회(단일조건 - ORIGIN) >> 카테고리에서 상세카테고리(origin)
 	// 여러 상품을 조회해 와야 해서 Product => ArrayList로 수정(0317)
