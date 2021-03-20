@@ -32,6 +32,7 @@ $(document).ready(function(){
           $(":span").val($(this).val());
        }
     }); */  
+   
     $("input:radio").change(function(){
        // 1. alert 확인
        //alert("changed");
@@ -43,11 +44,28 @@ $(document).ready(function(){
        // 3. value 값 치환
        $("#main_price_type").text(price + "원");
 
-	   var cnt = $("#cnt option:selected").val();	   
+/* 	   var cnt = $("#cnt option:selected").val();	   
 	   var tot = 0;
 	   tot += price*cnt;
-	   $("#tot").text(tot+"원");
+	   $("#tot").text(tot+"원"); */
     });  
+    
+    $("#cnt").change(function(){
+        // 1. 수량 변경 시 alert 확인
+        // alert("count changed");
+        
+        // 2. 변경된 수량 value 값 확인
+        var count = $(this).val();
+//        alert(count);
+        
+        // 3. 현재 price 값 확인
+        var price = $("[name=pricelist]:checked").val();
+ //       alert(price);
+        
+        // 4. 총계 갱신
+        var tot = price * count;
+        $("#tot").text(tot + "원");
+     });
 
 });
 </script>
@@ -181,9 +199,8 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                                          <tr height="25">
                                                             <td> </td>
                                                             <td nowrap><span class="opt_title1">분쇄여부</span></td>
-                                                            <td>&nbsp;
-                                                               
-                                                               <select name="option_0" onchange="price_cal()" class="select1">
+                                                            <td>&nbsp;                                                               
+                                                               <select name="option_0" class="select1">
                                                                   <option value="">선택하세요</option>
                                                                   <c:forEach var="grind" items="${grind}">
                                                                   <option value="${grind.grind_type}">${grind.grind_type}</option>
