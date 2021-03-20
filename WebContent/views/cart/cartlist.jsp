@@ -67,14 +67,13 @@
 <%-- <% pageContext.setAttribute("test", "테스트1, 테스트2, 테스트3, 테스트4, 테스트5]"); %>
 <% pageContext.setAttribute("test2", "test1, test2, test3, Test4, test5"); %> --%>
 			<c:forEach var="cart" items="${cartList}">
-				<c:forEach var="prod" items="${prodList}">
-					<c:forEach var="po" items="${poList}">
+			  <c:forEach var="po" items="${poList}">
 			<tr align=center style='color:#5B5B5B;'>
-				<td width=50><img src='${path}/resource/img/shop/${prod.thumbnail}' border=0 width='50' height='50' hspace=5 vspace=5></td>
+				<td width=50><img src='${path}/resource/img/shop/${prodList.thumbnail}' border=0 width='50' height='50' hspace=5 vspace=5></td>
 				<td align=left colspan=2>
 				<a href=''>
-				${prod.name}</a>
-				<br><font color='#037CC1'>(선택상품 : <b>${po.capacity}</b>)</font></td>
+				${prodList.name}</a>
+				<br><font color='#037CC1'>(선택상품 : <b>${cart.capacity}</b>)</font></td>
 				<td>${prod.category}</td>
 			<td align=right style='color:#682E14;'>
 			
@@ -108,7 +107,7 @@
 			<tr height='1' bgcolor='#e7e7e7'><td colspan=8></td></tr>
 			</c:forEach>
 			</c:forEach>
-			</c:forEach>
+	
 			
 			
 			
