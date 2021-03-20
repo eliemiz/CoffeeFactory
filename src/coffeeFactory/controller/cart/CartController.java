@@ -43,7 +43,8 @@ public class CartController extends HttpServlet {
 		String capacity = request.getParameter("capacity");
 		String grind_id = request.getParameter("grind_id");
 		String count = request.getParameter("count");
-
+		String price = request.getParameter("price");
+		
 		int account_id = 0;
 		HttpSession session = request.getSession();
 		Object account_id_obj = session.getAttribute("account_id");
@@ -62,7 +63,7 @@ public class CartController extends HttpServlet {
 		if (proc.equals("insert")) {
 			DaoCart daoCartins = new DaoCart(); 
 			Cart cart = new Cart( 0, 0, capacity,
-				Integer.parseInt(grind_id), Integer.parseInt(count));
+				Integer.parseInt(grind_id), Integer.parseInt(count), Integer.parseInt(price));
 			daoCartins.insertCart(cart);
 		} else if (proc.equals("delete")) {
 			DaoCart daoCartdel = new DaoCart();  
