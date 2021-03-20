@@ -174,7 +174,7 @@ td {
 								value="수정/삭제" data-id="${rev.review_id}" class="small1" id="modr" style="cursor: pointer;">
 						</div>
 						<br>${rev.content}
-						<div align="left">답변 :&nbsp;${rev.reply_content}</div>
+						<div align="left"><img src="${path}/resource/img/review/reply_icon.gif">&nbsp;${rev.reply_content}</div>
 					</td>
 				</tr>
 			</c:forEach>
