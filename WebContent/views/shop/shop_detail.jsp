@@ -15,13 +15,14 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#addP").click(function(){
-		location.href="${path}/pay.do?product_id="+"${prod.product_id}";
+		location.href="${path}/pay.do?product_id="+"${prod.product_id}"+"grind_id"
+				+"${grind.grind_id}"+"capacity"+"${po.capacity}"+"price"+"${po.price}";
 	});
 	$("#addC").click(function(){
-		location.href="${path}/pay.do?product_id="+"${prod.product_id}";
+		location.href="${path}/cart.do?product_id="+"${prod.product_id}";
 	});
 	$("#addW").click(function(){
-		location.href="${path}/pay.do?product_id="+"${prod.product_id}";
+		location.href="${path}/wish.do?product_id="+"${prod.product_id}";
 	});
     
     /*
@@ -153,7 +154,12 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                              </td>
                                              <td><img src="${path}/resource/img/shop/blank.gif" height="1"/></td>
                                              <td valign="top">
-                                                <form method="post">
+                                                <form name="form1" method="post" id="form1" action="${path}/cart.do">
+                                                    <input type="hidden" name="product_id" value="${prod.product_id}">
+													<input type="hidden" name="grind_id" value="${grind.grind_id}">
+													<input type="hidden" name="capacity" value="${po.capacity}">
+													<input type="hidden" name="price" value="${po.price}">
+													<input type="hidden" name="proc">
                                                    <!-- 폼 오픈, Back때 input hidden으로 처리 -->
                                                    <!-- <div style="display:none;"></div> 가격 iframe, script,, -->
                                                    <table width="100%" cellspacing="0" cellpadding="0" style="color:#5B5B5B;" border="0">
@@ -257,7 +263,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                                    <table align="center">
                                                       <tbody>
                                                          <tr>
-                                                           <td id="addP"><img src="${path}/resource/img/shop/buyBtn.gif" style="cursor:pointer;"></td>
+                                                            <td id="addP"><img src="${path}/resource/img/shop/buyBtn.gif" style="cursor:pointer;"></td>
 															<td id="addC"><img src="${path}/resource/img/shop/cartBtn.gif" style="cursor:pointer;"></td>
 															<td id="addW"><img src="${path}/resource/img/shop/wishBtn.gif" border="0"></td>
                                                          </tr>                                                         
