@@ -27,7 +27,8 @@ public class DaoCart extends Dao{
 
 			while (rs.next()) {
 				Cart cart = new Cart(rs.getInt("ACCOUNT_ID"), rs.getInt("PRODUCT_ID"),
-						rs.getString("CAPACITY"), rs.getInt("GRIND_ID"), rs.getInt("COUNT"));
+						rs.getString("CAPACITY"), rs.getInt("GRIND_ID"), rs.getInt("COUNT"),
+						rs.getInt("PRICE"));
 				
 				list.add(cart);
 			}
@@ -60,7 +61,8 @@ public class DaoCart extends Dao{
 
 			while (rs.next()) {
 				Cart cart = new Cart(rs.getInt("ACCOUNT_ID"), rs.getInt("PRODUCT_ID"),
-						rs.getString("CAPACITY"), rs.getInt("GRIND_ID"), rs.getInt("COUNT"));
+						rs.getString("CAPACITY"), rs.getInt("GRIND_ID"), rs.getInt("COUNT"),
+						rs.getInt("PRICE"));
 				list.add(cart);
 			}
 
@@ -83,13 +85,14 @@ public class DaoCart extends Dao{
 			connect();
 			con.setAutoCommit(false);
 
-			String sql = "INSERT INTO CART VALUES (?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO CART VALUES (?, ?, ?, ?, ?, ?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, cart.getAccount_id());
 			pstmt.setInt(2, cart.getProduct_id());
 			pstmt.setString(3, cart.getCapacity());
 			pstmt.setInt(4, cart.getGrind_id());
 			pstmt.setInt(5, cart.getCount());
+			pstmt.setInt(6, cart.getPrice());
 			pstmt.executeQuery();
 			con.commit();
 
@@ -122,13 +125,14 @@ public class DaoCart extends Dao{
 			con.setAutoCommit(false);
 
 			String sql = "UPDATE CART SET COUNT = ? WHERE ACCOUNT_ID = ? AND PRODUCT_ID = ? "
-							+ "	AND CAPACITY = ? AND GRIND_ID = ?";
+							+ "	AND CAPACITY = ? AND GRIND_ID = ? AND PRICE = ? ";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, cart.getCount());
 			pstmt.setInt(2, cart.getAccount_id());
 			pstmt.setInt(3, cart.getProduct_id());
 			pstmt.setString(4, cart.getCapacity());
 			pstmt.setInt(5, cart.getGrind_id());
+			pstmt.setInt(6, cart.getPrice());
 			pstmt.executeQuery();
 			con.commit();
 
