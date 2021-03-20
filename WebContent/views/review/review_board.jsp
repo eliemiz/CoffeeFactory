@@ -53,7 +53,7 @@ $(document).ready(function() {
 			<tr >
 				<th class="th_center">리뷰번호</th>
 				<th class="th_center">제목</th>
-				<th class="th_center">아이디</th>
+				<th class="th_center"></th>
 				<th class="th_center">등록일</th>
 				<th class="th_center">평점</th>
 			</tr>
@@ -63,7 +63,7 @@ $(document).ready(function() {
 			<tr class="data">
 				<td class="td_center3">${rev.review_id}</td>
 				<td class="td_left3" style="cursor:pointer;">${rev.title}</td>
-				<td class="td_center3">아이디</td>
+				<td class="td_center3"></td>
 				<td class="td_center3">${rev.regist_date}</td>
 				<td class="td_center3">${rev.rating}</td>
 			</tr>
