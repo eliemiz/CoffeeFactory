@@ -42,7 +42,7 @@
 </head>
 <body>
 	<jsp:include page="views/common/header.jsp"/>
-	<div id="main_slide_wrap">
+	<div id="main-slide-wrap">
 		<jsp:include page="views/common/main_slider.jsp"/>
 	</div>
 	<table class="content-wrap">

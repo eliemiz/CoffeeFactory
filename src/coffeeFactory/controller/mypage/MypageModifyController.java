@@ -38,6 +38,7 @@ public class MypageModifyController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		String proc = request.getParameter("proc");
 		
+		String page = "mypage.do?query=modify";
 		if (proc != null) {
 			if (proc.equals("update")) {
 				HttpSession session = request.getSession();
@@ -56,12 +57,17 @@ public class MypageModifyController extends HttpServlet {
 				DaoAccount daoAccount = new DaoAccount();
 				daoAccount.updateAccount(new Account(Integer.parseInt(account_id), "", "", "", nickname, birthday,
 						gender, Integer.parseInt(post), address, address2, email, phone, phone2, mail_recv, ""));
+			} else if (proc.equals("delete")) {
+				DaoAccount daoAccount = new DaoAccount();
+				HttpSession session = request.getSession();
+				String account_id = session.getAttribute("account_id").toString();
+				daoAccount.deleteAccount(Integer.parseInt(account_id));
+				session.setAttribute("account_id", null);
+				page = "";
 			}
 		}
 		
-		
 		// view
-		String page = "mypage.do?query=modify";
 		RequestDispatcher rd = request.getRequestDispatcher(page);
 		rd.forward(request, response);
 	}

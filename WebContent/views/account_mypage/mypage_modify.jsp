@@ -27,7 +27,7 @@
 </script> 
 <div id="mypage-wrap">
 	<img src="${img_path}/tt_info.gif">
-	<form id="mypage-modify-inner" action="mypage_modify.do">
+	<form id="mypage-modify-inner" action="mypage_modify.do" method="post">
 		<input type="hidden" name="proc">
 		<table id="mypage-modify-form">
 			<colgroup>
@@ -143,15 +143,15 @@
 				</tr>
 				<tr>
 					<td colspan="2" style="padding:0px; text-align: right;">
-						<input type="image" id="withdrawal_btn" src="${img_path}/logout.gif" style="padding: 0px;">
+						<img id="withdrawal_btn" src="${img_path}/logout.gif" style="padding: 0px; cursor:pointer;">
 					</td>
 				</tr>
 			</tbody>
 			<tfoot>
 				<tr>
 					<td colspan="2" style="text-align: center; border-top: 0px;">
-						<input type="image" id="mypage-modify-submit-btn" src="${img_path}/info_modify.gif">
-						<input type="image" id="mypage-modify-cancel-btn" src="${img_path}/cancel_prev.gif">
+						<img id="mypage-modify-submit-btn" src="${img_path}/info_modify.gif" style="cursor:pointer;">
+						<img id="mypage-modify-cancel-btn" src="${img_path}/cancel_prev.gif" style="cursor:pointer;">
 					</td>
 				</tr>
 			</tfoot>
@@ -171,6 +171,17 @@
 		$("[name=proc]").val("update");
 		
 		$("#mypage-modify-inner").submit();
+	});
+	
+	$("#mypage-modify-cancel-btn").on("click", function(){
+		location.href="${path}";
+	});
+	
+	$("#withdrawal_btn").on("click", function(){
+		if (confirm("정말로 탈퇴하시겠습니까?")) {
+			$("[name=proc]").val("delete");
+			$("#mypage-modify-inner").submit();
+		}
 	});
 
 	$("#email_domain").on("change", function(){
