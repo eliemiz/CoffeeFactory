@@ -64,20 +64,17 @@
 			<tr height='1' bgcolor='#CCCCCC'><td colspan=8></td></tr>
 			<tr height='4' bgcolor='#E9E9E9'><td colspan=8></td></tr>
 			
-<%-- <% pageContext.setAttribute("test", "테스트1, 테스트2, 테스트3, 테스트4, 테스트5]"); %>
-<% pageContext.setAttribute("test2", "test1, test2, test3, Test4, test5"); %> --%>
 			<c:forEach var="cart" items="${cartList}">
-			  <c:forEach var="po" items="${poList}">
 			<tr align=center style='color:#5B5B5B;'>
-				<td width=50><img src='${path}/resource/img/shop/${prodList.thumbnail}' border=0 width='50' height='50' hspace=5 vspace=5></td>
+				<td width=50><img src='${path}/resource/img/shop/' border=0 width='50' height='50' hspace=5 vspace=5></td>
 				<td align=left colspan=2>
 				<a href=''>
-				${prodList.name}</a>
+				</a>
 				<br><font color='#037CC1'>(선택상품 : <b>${cart.capacity}</b>)</font></td>
-				<td>${prod.category}</td>
+				<td>product_id : ${cart.product_id}</td>
 			<td align=right style='color:#682E14;'>
-			
-			${po.price} 원
+			grind_id : ${cart.grind_id}
+			${cart.price} 원
 			</td>
 			
 			
@@ -97,7 +94,7 @@
 			</table>
 			
 			</td>
-			<td align=right style='color:#9F196E;font-weight:bold;'>${po.price}원</td>
+			<td align=right style='color:#9F196E;font-weight:bold;'>${cart.price}원</td>
 			<td>
 			</td>
 			
@@ -105,7 +102,7 @@
 			
 			<tr height='1' bgcolor='#e7e7e7'><td colspan=8></td></tr>
 			</c:forEach>
-			</c:forEach>
+			
 	
 			
 			
@@ -159,7 +156,7 @@
 			
 			<td class="content-wrap-right">
 				<jsp:include page="/views/common/sidebar.jsp"/>
-			</td>
+			</td>	
 	</table>		
 </form>
 </td></tr></table>

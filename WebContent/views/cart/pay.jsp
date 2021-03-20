@@ -45,71 +45,6 @@
 				</tr>
 			</table>	
 				
-	<table align="center" style="margin:auto; width:900px;" >
-		<tr height='1' bgcolor='#CCCCCC'><td colspan=8></td></tr>
-			<tr height=25 align=center bgcolor='#FAFAFA'>
-				<td></td>
-				<td class="content-wrap-left" colspan=2>주문상품</td>
-				<td class="content-wrap-right">옵션</td>
-				<td align=right>가격</td>
-				<td>수량</td>
-				<td class="content-wrap-right">소계</td>
-				<td width=35></td>
-			</tr>		
-			
-			<tr height='1' bgcolor='#CCCCCC'><td colspan=8></td></tr>
-			<tr height='4' bgcolor='#E9E9E9'><td colspan=8></td></tr>
-			
-			<c:forEach var="cart" items="${cartList}">
-			<tr align=center style='color:#5B5B5B;'>
-				<td width=50><img src='${path}/resource/img/cart/shop1.jpg' border=0 width='50' height='50' hspace=5 vspace=5></td>
-				<td align=left colspan=2>
-				<a href=''>
-				[스페셜티 커피] 파나마 에스메랄다 게이샤<br>일산커피공장 일산커피공장 파나마</a>
-				<br><font color='#037CC1'>(선택상품 : <b>100g</b>)</font></td>
-				<td><img src='${path}/resource/img/cart/btn_option.gif' style='cursor:pointer;'/></td>
-			<td align=right style='color:#682E14;'>
-			
-			${cart.capacity} 
-			</td>
-			
-			
-			<td>
-			
-			<table cellspacing=0 cellpadding=0>
-			<tr>
-			<td><input type=text size=4 value='1' maxlength=5 style='border:1 solid #B0B0B0; text-align:center;' readonly></td>
-				<td>
-				<table cellspacing=0 cellpadding=1>
-					<tr><td><img src='${path}/resource/img/cart/num_plus.gif' style='cursor:pointer;'></td></tr>
-					<tr><td><img src='${path}/resource/img/cart/num_minus.gif' style='cursor:pointer;'></td></tr>
-				</table>
-				</td>
-			</tr>
-			
-			</table>
-			
-			</td>
-			<td align=right style='color:#9F196E;font-weight:bold;'>000원</td>
-			<td>
-			<input type="image" value="삭제" id="deleteButton" 
-				src='${path}/resource/img/cart/btn_delete.gif' style='cursor:pointer;'></td>
-			
-			</tr>
-			
-			<tr height='1' bgcolor='#e7e7e7'><td colspan=8></td></tr>
-			</c:forEach>
-			
-			
-			<tr align=right height=30 bgcolor='#FAFAFA'>
-				<td colspan=3 align=right></td>
-				<td><font color='#CA6A40'></font></td>
-				<td align=center>합계</td>
-				<td align=center><font color='#FE4520'><b>51,000원</b></font></td>
-				<td></td>
-			</tr>
-			<tr height=1><td colspan=8></td></tr>
-			</table>
 			
 			<style>
 				.order
@@ -138,7 +73,7 @@
 			<tr height=35 bgcolor='#FAFAFA' align=center>
 			<td>상품가격</td>
 			<td bgcolor='#ffffff'>
-			<font color='#FE4520'>51,000원</font>
+			<font color='#FE4520'>000 원</font>
 			</td>
 			
 			
@@ -163,8 +98,11 @@
 			
 			
 			<table width=100% cellspacing=0 cellpadding=0 style='border:1 dotted cccccc;background:f7f7f7;padding:5pt;'> 
-			<tr><td align=center><font style='font-size:11pt;line-height:11pt;'>결제금액 &nbsp; : &nbsp;&nbsp; <font style='font-size:14pt;line-height:14pt;font-family:arial,돋움;'><b><span id='Lay_price_str'>51,000</span></font> 원</b></font> <span id='coupon_check'></span> </td></tr>
+			<tr><td align=center><font style='font-size:11pt;line-height:11pt;'>결제금액 &nbsp; : &nbsp;&nbsp; 
+			<font style='font-size:14pt;line-height:14pt;font-family:arial,돋움;'><b><span id='Lay_price_str'>
+			000</span></font> 원</b></font> <span id='coupon_check'></span> </td></tr>
 			</table> 
+			
 			
 			
 			
@@ -181,38 +119,41 @@
 			<tr height='1' bgcolor='#CCCCCC'><td></td></tr>
 			<tr height='4' bgcolor='#E9E9E9'><td></td></tr>
 			</table>
-			
-			<table align="center" style="margin:auto; width:900px;">
+		
+	<form id="pay-inner" method="post">	
+		<input type="hidden" name="proc">
+		<table align="center" style="margin:auto; width:900px;">
 			<tr height=25>
 			<td width=5></td>
 			<td width=100 nowrap style='padding-top:5px;'><img src='${path}/resource/img/cart/dot_012.gif'> 결제수단 선택</td>
 			<td width=5></td>
 			<td width=80%> 
-		<form id="pay-inner" method="post">
 			<table cellspacing=0 cellpadding=0 border=0>
+			
 			<tr>
 			<td>
 			
-			<span style='display:;'>
-			<input type=radio name='pay_type' value='1'><b>무통장 입금</b>
+			<span>
+			<input type=radio name="pay" value="무통장 입금"><b>무통장 입금</b>
 			</span>
 			
-			<span style='display:;'>
-			<input type=radio name='pay_type' value='2'><b>신용카드</b>
+			<span>
+			<input type=radio name="pay" value="신용카드"><b>신용카드</b>
 			</span>
 			
-			<span style='display:;'>
-			<input type=radio name='pay_type' value='3'><b>계좌이체</b>
+			<span>
+			<input type=radio name="pay" value="계좌이체"><b>계좌이체</b>
 			</span>
 			
-			<span style='display:;'>
-			<input type=radio name='pay_type' value='4'><b>휴대폰</b>
+			<span>
+			<input type=radio name="pay" value="휴대폰"><b>휴대폰</b>
 			</span>
 			
 			
 			</td>
 			</tr>
 			</table>
+		
 			
 			</td>
 			</tr>
@@ -229,7 +170,7 @@
 			<td width=5></td>
 			<td width=100 nowrap><img src='${path}/resource/img/cart/dot_012.gif'> 주문 고객성명</td>
 			<td width=5></td>
-			<td width=80%><input type=text name='' value="홍길동" class='order'></td>
+			<td width=80%><input type="text" name="send_name"></td>
 			</tr>
 			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
 			
@@ -237,19 +178,19 @@
 			<td></td>
 			<td><img src='${path}/resource/img/cart/dot_012.gif'> 이메일</td>
 			<td></td>
-			<td><input type=text name='' size=40 value="Test@test.com" class='order'></td>
+			<td><input type="text" name="send_email" size="40" placeholder="email@email.com"></td>
 			</tr>
 			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
 			
 			<tr height=30>
 			<td></td>
-			<td><img src='${path}/resource/img/cart/dot_012.gif'> 전화번호</td>
+			<td><img src='${path}/resource/img/cart/dot_012.gif'> 주문자 전화번호</td>
 			<td></td>
 			<td>
 			
-			<input type=text name='' size=4 value="" class='order' maxlength=4> -
-			<input type=text name='' size=4 value="" class='order' maxlength=4> -
-			<input type=text name='' size=4 value="" class='order' maxlength=4>
+			<input type="text" id="phone1_1" size="4" maxlength="4"> -
+			<input type="text" id="phone1_2" size="4" maxlength="4"> -
+			<input type="text" id="phone1_3" size="4" maxlength="4">
 			
 			</td>
 			</tr>
@@ -257,12 +198,12 @@
 			
 			<tr height=30>
 			<td></td>
-			<td><img src='${path}/resource/img/cart/dot_012.gif'> 휴대전화</td>
+			<td><img src='${path}/resource/img/cart/dot_012.gif'> 주문자 휴대전화</td>
 			<td></td>
 			<td>
-			<input type=text name='' size=4 value="" class='order' maxlength=4> -
-			<input type=text name='' size=4 value="" class='order' maxlength=4> -
-			<input type=text name='' size=4 value="" class='order' maxlength=4>
+			<input type="text" id="phone2_1" size="4" maxlength="4"> -
+			<input type="text" id="phone2_2" size="4" maxlength="4"> -
+			<input type="text" id="phone2_3" size="4" maxlength="4">
 			
 			</td>
 			</tr>
@@ -276,12 +217,11 @@
 			
 			<table width=100% cellspacing=0 cellpadding=0 border=0><tr><td>
 			
-			<input type=text> -
-			<input type=text>
-			<img src='${path}/resource/img/cart/btn_zip.gif' align=absmiddle style='cursor:pointer;' onclick="">
+			<input type=text id="address1_1"> -
+			<input type=text id="address1_2">
 			<br>
-			<input type=text name='' id='' size=40 value="" class='order'><br>
-			<input type=text name='' id='' size=40 value="" class='order'>
+			<input type=text id="address1_3" size="40"><br>
+			<input type=text id="address1_4" size="40">
 			
 			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
 			</td>
@@ -296,33 +236,239 @@
 			<td><img src='${path}/resource/img/cart/dot_012.gif'> 배송시 요청사항</td>
 			<td></td>
 			<td>
-			<textarea name='OD_TB_MSG' rows=5 cols=50 class=order></textarea>
+			<textarea name="comment" rows="5" cols="50"></textarea>
+			</td>
+			</tr>
+			
+			<tr height=30><td colspan=4>
+			<table width=100% cellspacing=0 cellpadding=0>
+			<tr height='1' bgcolor='#CCCCCC'><td></td></tr>
+			<tr height='4' bgcolor='#E9E9E9'><td></td></tr>
+			</table>
+			</td></tr>
+			
+			<tr height=30>
+			<td width=5></td>
+			<td width=100 nowrap><img src='${path}/resource/img/cart/dot_012.gif'> 배송 고객 성명</td>
+			<td width=5></td>
+			<td width=80%><input type="text" name="recv_name"></td>
+			</tr>
+			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
+			
+			<tr height=30>
+			<td></td>
+			<td><img src='${path}/resource/img/cart/dot_012.gif'> 배송 고객 전화번호</td>
+			<td></td>
+			<td>
+			
+			<input type="text" id="phone3_1" size="4" maxlength="4"> -
+			<input type="text" id="phone3_2" size="4" maxlength="4"> -
+			<input type="text" id="phone3_3" size="4" maxlength="4">
 			
 			</td>
 			</tr>
 			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
 			
+			<tr height=30>
+			<td></td>
+			<td><img src='${path}/resource/img/cart/dot_012.gif'> 배송 고객 휴대전화</td>
+			<td></td>
+			<td>
+			<input type="text" id="phone4_1" size="4" maxlength="4"> -
+			<input type="text" id="phone5_2" size="4" maxlength="4"> -
+			<input type="text" id="phone6_3" size="4" maxlength="4">
+			
+			</td>
+			</tr>
+			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
+			
+			<tr height=75>
+			<td></td>
+			<td><img src='${path}/resource/img/cart/dot_012.gif'> 배송 고객 주소</td>
+			<td></td>
+			<td>
+			
+			<table width=100% cellspacing=0 cellpadding=0 border=0><tr><td>
+			
+			<input type=text id="address2_1"> -
+			<input type=text id="address2_2">
+			<br>
+			<input type=text id="address2_3" size="40"><br>
+			<input type=text id="address2_4" size="40">
+			
+			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
+			
+			</td>
+			<td valign='top' align='right'>
+			</td>
+			</tr>
+			</table>
+			
+			
 			<tr height=20>
 			<td></td>
 			<td><img src='${path}/resource/img/cart/dot_012.gif'> 구매내용 확인</td>
 			<td></td>
-			<td style='color:#999999;'><input type='checkbox' name='zagree3'> 주문 제품의 제품명, 제품가격, 배송정보를 확인하였으며, 구매에 동의합니다. (전자상거래법 제8조 제2항)
+			<td style='color:#999999;'><input type="checkbox" name="agree" id="agreeCk"> 주문 제품의 제품명, 제품가격, 배송정보를 확인하였으며, 구매에 동의합니다. (전자상거래법 제8조 제2항)
 			</td>
-			</tr>
-			
+			</tr>	
+
 			<tr height=85>
 			<td></td>
 			<td></td>
 			<td></td>
-			<td><span ><input type='image' src='${path}/resource/img/cart/cart_buy.gif' onclick="location.href='${path}/views/cart/orderfin.jsp'"></span></td>
+			<td>
+			<span ><input type="image" src="${path}/resource/img/cart/cart_buy.gif" id="orderButton">
+			</span>
+			</td>
 			</tr>
 			</table>
-		
+		</form>
+			
 			
 			<td class="content-wrap-right">
 				<jsp:include page="/views/common/sidebar.jsp"/>
 			</td>
 			</table>
+		
 	<jsp:include page="/views/common/footer.jsp" />	
 </body>
+<script type="text/javascript">
+	$("#orderButton").on("click", function(){
+		if (!validCheck()) {
+			return false;
+		}
+		setValue();
+		
+		$("[name=proc]").val("order");
+		
+		$("#pay-inner").submit();
+		location.href="${path}/orderfin.jsp";
+	});
+function validCheck() {
+	if ($("[name=send_name]").val() == "") {
+		alert("주문 고객 이름이 입력되지 않았습니다.");
+		return false;
+	}
+	if ($("#phone1_1").val() == "") {
+		alert("주문 고객 전화번호를 입력해주세요.");
+		return false;
+	}
+	if ($("#phone1_2").val() == "") {
+		alert("주문 고객 전화번호를 입력해주세요.");
+		return false;
+	}
+	if ($("#phone1_3").val() == "") {
+		alert("주문 고객 전화번호를 입력해주세요.");
+		return false;
+	}
+	if ($("#phone2_1").val() == "") {
+		alert("주문 고객 휴대폰 번호를 입력해주세요.");
+		return false;
+	}
+	if ($("#phone2_2").val() == "") {
+		alert("주문 고객 휴대폰 번호를 입력해주세요.");
+		return false;
+	}
+	if ($("#phone2_3").val() == "") {
+		alert("주문 고객 휴대폰 번호를 입력해주세요.");
+		return false;
+	}
+	if ($("#address1_1").val() == "") {
+		alert("주문 고객 주소를 입력해주세요.");
+		return false;
+	}
+	if ($("#address1_2").val() == "") {
+		alert("주문 고객 주소를 입력해주세요.");
+		return false;
+	}
+	if ($("#address1_3").val() == "") {
+		alert("주문 고객 주소를 입력해주세요.");
+		return false;
+	}
+	if ($("#address1_4").val() == "") {
+		alert("주문 고객 주소를 입력해주세요.");
+		return false;
+	}
+	if ($("[name=recv_name]").val() == "") {
+		alert("배송 고객 이름이 입력되지 않았습니다.");
+		return false;
+	}
+	if ($("#phone3_1").val() == "") {
+		alert("배송 고객 전화번호를 입력해주세요.");
+		return false;
+	}
+	if ($("#phone3_2").val() == "") {
+		alert("배송 고객 전화번호를 입력해주세요.");
+		return false;
+	}
+	if ($("#phone3_3").val() == "") {
+		alert("배송 고객 전화번호를 입력해주세요.");
+		return false;
+	}
+	if ($("#phone4_1").val() == "") {
+		alert("배송 고객 전화번호를 입력해주세요.");
+		return false;
+	}
+	if ($("#phone4_2").val() == "") {
+		alert("배송 고객 전화번호를 입력해주세요.");
+		return false;
+	}
+	if ($("#phone4_3").val() == "") {
+		alert("배송 고객 전화번호를 입력해주세요.");
+		return false;
+	}
+	if ($("#address2_1").val() == "") {
+		alert("배송 고객 주소를 입력해주세요.");
+		return false;
+	}
+	if ($("#address2_2").val() == "") {
+		alert("배송 고객 주소를 입력해주세요.");
+		return false;
+	}
+	if ($("#address2_3").val() == "") {
+		alert("배송 고객 주소를 입력해주세요.");
+		return false;
+	}
+	if ($("#address2_4").val() == "") {
+		alert("배송 고객 주소를 입력해주세요.");
+		return false;
+	}
+	if (!$("#agreeCk").prop("checked")) {
+		alert("이용약관에 동의하셔야 가입하실 수 있습니다.");
+		return false;
+	} 
+	return true;
+}
+
+function setValue() {
+	var phone1_1 = $("#phone1_1").val();
+	var phone1_2 = $("#phone1_2").val();
+	var phone1_3 = $("#phone1_3").val();
+	var phone2_1 = $("#phone2_1").val();
+	var phone2_2 = $("#phone2_2").val();
+	var phone2_3 = $("#phone2_3").val();
+	var phone3_1 = $("#phone3_1").val();
+	var phone3_2 = $("#phone3_2").val();
+	var phone3_3 = $("#phone3_3").val();
+	var phone4_1 = $("#phone4_1").val();
+	var phone4_2 = $("#phone4_2").val();
+	var phone4_3 = $("#phone4_3").val();
+	$("[name=send_phone]").val(phone1_1 + "-" + phone1_2 + "-" + phone1_3);
+	$("[name=send_phone2]").val(phone2_1 + "-" + phone2_2 + "-" + phone2_3);
+	$("[name=recv_phone]").val(phone3_1 + "-" + phone3_2 + "-" + phone3_3);
+	$("[name=recv_phone2]").val(phone4_1 + "-" + phone4_2 + "-" + phone4_3);
+	
+	var address1_1 = $("#address1_1").val();
+	var address1_2 = $("#address1_2").val();
+	var address1_3 = $("#address1_3").val();
+	var address1_4 = $("#address1_4").val();
+	var address2_1 = $("#address2_1").val();
+	var address2_2 = $("#address2_2").val();
+	var address2_3 = $("#address2_3").val();
+	var address2_4 = $("#address2_4").val();
+	$("[name=send_address]").val(address1_1 + address1_2 + address1_3 + address1_4);
+	$("[name=recv_address]").val(address2_1 + address2_2 + address2_3 + address2_4);
+}
+</script>
 </html>
