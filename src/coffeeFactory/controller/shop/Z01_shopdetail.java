@@ -115,6 +115,7 @@ public class Z01_shopdetail extends HttpServlet {
 		request.setAttribute("cart", clist);
 		request.setAttribute("grind", glist);
 		request.setAttribute("po", polist);
+		request.setAttribute("prod", product);
 	    String page = "views\\shop\\shop_detail.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);
 		rd.forward(request, response);

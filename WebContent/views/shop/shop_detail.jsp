@@ -15,8 +15,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#addP").click(function(){
-		location.href="${path}/pay.do?product_id="+"${prod.product_id}"+"grind_id"
-				+"${grind.grind_id}"+"capacity"+"${po.capacity}"+"price"+"${po.price}";
+		location.href="${path}/pay.do?product_id="+"${prod.product_id}";
 	});
 	$("#addC").click(function(){
 		location.href="${path}/cart.do?product_id="+"${prod.product_id}";
@@ -67,7 +66,25 @@ $(document).ready(function(){
         var tot = price * count;
         $("#tot").text(tot + "원");
      });
-
+    function submitCartForm(proc){
+		var form = document.querySelector("#form1");
+		if(proc=='addC'){
+			if(!confirm('장바구니에 담겼습니다. 장바구니로 이동하시겠습니까?')){
+				return false;
+			}
+		} else if (proc == 'addP'){
+			if(!confirm('장바구니의 상품과 함께 구매됩니다.\n구매하시겠습니까?')){
+				return false;
+			} 
+		} else if (proc == 'addW'){
+			if(!confirm('관심상품에 담았습니다.\n위시리스트로 이동하시겠습니까?')){
+				return false;
+			}
+		}
+		form.proc.value = proc;
+		
+		form.submit();
+    }
 });
 </script>
 <style type="text/css">
@@ -155,11 +172,13 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                              <td><img src="${path}/resource/img/shop/blank.gif" height="1"/></td>
                                              <td valign="top">
                                                 <form name="form1" method="post" id="form1" action="${path}/cart.do">
-                                                    <input type="hidden" name="product_id" value="${prod.product_id}">
-													<input type="hidden" name="grind_id" value="${grind.grind_id}">
-													<input type="hidden" name="capacity" value="${po.capacity}">
-													<input type="hidden" name="price" value="${po.price}">
-													<input type="hidden" name="proc">
+                                                <input type="hidden" name="proc">
+                                                <input type="hidden" name="product_id" value="${prod.product_id}">
+                                                <%-- <input type="hidden" name="capacity" value="${po.capacity}">
+												<input type="hidden" name="grind_id" value="${grind.grind_id}">
+												<input type="hidden" name="price" value="${po.price}">--%>
+                                                
+												
                                                    <!-- 폼 오픈, Back때 input hidden으로 처리 -->
                                                    <!-- <div style="display:none;"></div> 가격 iframe, script,, -->
                                                    <table width="100%" cellspacing="0" cellpadding="0" style="color:#5B5B5B;" border="0">
@@ -263,9 +282,9 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                                    <table align="center">
                                                       <tbody>
                                                          <tr>
-                                                            <td id="addP"><img src="${path}/resource/img/shop/buyBtn.gif" style="cursor:pointer;"></td>
-															<td id="addC"><img src="${path}/resource/img/shop/cartBtn.gif" style="cursor:pointer;"></td>
-															<td id="addW"><img src="${path}/resource/img/shop/wishBtn.gif" border="0"></td>
+                                                            <td id="addP" onclick="submitCartForm('addP')"><img src="${path}/resource/img/shop/buyBtn.gif" style="cursor:pointer;"></td>
+															<td id="addC" onclick="submitCartForm('addC')"><img src="${path}/resource/img/shop/cartBtn.gif" style="cursor:pointer;"></td>
+															<td id="addW" onclick="submitCartForm('addW')"><img src="${path}/resource/img/shop/wishBtn.gif" border="0"></td>
                                                          </tr>                                                         
                                                       </tbody>
                                                    </table>
