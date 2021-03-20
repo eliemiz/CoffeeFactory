@@ -15,13 +15,13 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#addP").click(function(){
-		location.href="${path}/pay.do?product_id="+"${prod.product_id}";
+		location.href="${path}/pay.do?account_id="+"${account.account_id}";
 	});
 	$("#addC").click(function(){
-		location.href="${path}/cart.do?product_id="+"${prod.product_id}";
+		location.href="${path}/cart.do?account_id="+"${account.account_id}";
 	});
 	$("#addW").click(function(){
-		location.href="${path}/wish.do?product_id="+"${prod.product_id}";
+		location.href="${path}/wish.do?account_id="+"${account.account_id}";
 	});
     
     /*
@@ -173,8 +173,9 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                              <td valign="top">
                                                 <form name="form1" method="post" id="form1" action="${path}/cart.do">
                                                 <input type="hidden" name="proc">
-                                                <input type="hidden" name="product_id" value="${prod.product_id}">
-                                                <%-- <input type="hidden" name="capacity" value="${po.capacity}">
+                                                <input type="hidden" name="product_ids" value="${prod.product_id}">
+                                                <input type="hidden" name="account_ids" value="${account.account_id}">
+                                                 <%--
 												<input type="hidden" name="grind_id" value="${grind.grind_id}">
 												<input type="hidden" name="price" value="${po.price}">--%>
                                                 

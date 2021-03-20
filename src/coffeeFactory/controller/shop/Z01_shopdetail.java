@@ -62,6 +62,12 @@ public class Z01_shopdetail extends HttpServlet {
 		if(product_idS==null) product_idS="0";
 		int product_id = Integer.parseInt(product_idS);
 		
+		DaoAccount daoAccount = new DaoAccount();
+		Account account = daoAccount.getAccount(account_id);
+		if (account != null) {
+			request.setAttribute("account", account);
+		}
+		
 		String proc= request.getParameter("proc");
 		DaoCart daoc = new DaoCart();
 		DaoOrderByProduct daoo = new DaoOrderByProduct();
@@ -101,6 +107,8 @@ public class Z01_shopdetail extends HttpServlet {
 		    	  daow.insertWish(addW);
 	    	  }
 	      }
+
+			
 		DaoProduct dao = new DaoProduct();
 		DaoGrind daog = new DaoGrind();
 		DaoProductOption daopo = new DaoProductOption();
