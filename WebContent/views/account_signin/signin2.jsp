@@ -200,10 +200,7 @@
 			</td>
 		</tr>
 	</table>
-	<iframe id="temp"></iframe>
-	
 	<jsp:include page="/views/common/footer.jsp"/>
-	
 </body>
 <script type="text/javascript">
 	$("#signin_submit_btn").on("click", function(){
