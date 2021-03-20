@@ -26,7 +26,7 @@ public class DaoOrderByProduct extends Dao{
 
 			while (rs.next()) {
 				OrderByProduct order = new OrderByProduct(rs.getInt("ORDER_ID"), rs.getInt("PRODUCT_ID"),
-						rs.getString("CAPACITY"), rs.getInt("GRIND_ID"), rs.getInt("COUNT"));
+						rs.getString("CAPACITY"), rs.getInt("GRIND_ID"), rs.getInt("COUNT"), rs.getInt("PRICE"));
 				list.add(order);
 			}
 			
@@ -56,7 +56,7 @@ public class DaoOrderByProduct extends Dao{
 
 			while (rs.next()) {
 				OrderByProduct order = new OrderByProduct(rs.getInt("ORDER_ID"), rs.getInt("PRODUCT_ID"),
-						rs.getString("CAPACITY"), rs.getInt("GRIND_ID"), rs.getInt("COUNT"));
+						rs.getString("CAPACITY"), rs.getInt("GRIND_ID"), rs.getInt("COUNT"), rs.getInt("PRICE"));
 				list.add(order);
 			}
 			rs.close();
@@ -74,13 +74,14 @@ public class DaoOrderByProduct extends Dao{
 		try {
 			connect();
 			con.setAutoCommit(false);
-			String sql = "INSERT INTO ORDER_BY_PRODUCT VALUES (?,?,?,?,?)";
+			String sql = "INSERT INTO ORDER_BY_PRODUCT VALUES (?,?,?,?,?,?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, order.getOrder_id());
 			pstmt.setInt(2, order.getProduct_id());
 			pstmt.setString(3, order.getCapacity());
 			pstmt.setInt(4, order.getGrind_id());
 			pstmt.setInt(5, order.getCount());
+			pstmt.setInt(6, order.getPrice());
 			
 			pstmt.executeQuery();
 			con.commit();			
