@@ -343,7 +343,7 @@
 		$("[name=proc]").val("order");
 		
 		$("#pay-inner").submit();
-		location.href="${path}/orderfin.jsp";
+		location.href="${path}/views/cart/orderfin.jsp";
 	});
 function validCheck() {
 	if ($("[name=send_name]").val() == "") {
