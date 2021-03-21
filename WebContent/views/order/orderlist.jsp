@@ -62,7 +62,7 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;
 			</td>
 			<td>
-			<font color=138CE1>전체<b>2</b>건</font>
+			<font color=138CE1>전체<b>1</b>건</font>
 			</td>
 			</tr>
  		</table>
@@ -85,7 +85,7 @@
 	<tr height=26 align=center style='font-family:돋움;'>
 	<td width=100><img src='${path}/resource/img/cart/dot_02.gif' align=absmiddle>
 	<a href='#.'><b>10000000001</b></a></td>
-	<td align=right><b style='color:#B31515;'>51,000원</b></td>
+	<td align=right><b style='color:#B31515;'>000원</b></td>
 	
 	<td><b><u style='cursor:pointer;' onclick="alert('@@은행|203-105030-050505|커피공장  ::  입금 : 홍길동     ');">카드</u></b></td>
 	<td><font color=orange>입금대기</font></td>
@@ -99,7 +99,7 @@
 	<tr height=26 align=center style='font-family:돋움;'>
 	<td width=100><img src='${path}/resource/img/cart/dot_02.gif' align=absmiddle>
 	<a href='#.'><b>10000000002</b></a></td>
-	<td align=right><b style='color:#B31515;'>11,000원</b></td>
+	<td align=right><b style='color:#B31515;'>000원</b></td>
 	
 	<td><b><u style='cursor:pointer;' onclick="alert('@@은행|203-105030-050505|커피공장  ::  입금 : 홍길동     ');">계좌이체</u></b></td>
 	<td><font color=orange>입금대기</font></td>
