@@ -24,13 +24,14 @@
  
 --%>
 //
+   window.location.href = '${path}';
    $(document).ready(function(){
       
    });
 </script>
 </head>
 <body>
-<jsp:include page="/views/common/header.jsp"/>
+<%-- <jsp:include page="/views/common/header.jsp"/>
 	<div style="height:250px;"></div>
 	<table class="content-wrap">
 	<tr>
@@ -116,7 +117,7 @@
 			<a><input type="image" value="삭제" id="deleteButton" 
 				src='${path}/resource/img/cart/btn_order_02.gif' style='cursor:pointer;' align=absmiddle border=0></a>&nbsp;&nbsp;
 			
-<jsp:include page="/views/common/footer.jsp" />		
+<jsp:include page="/views/common/footer.jsp" />	 --%>	
 </body>
 <script type="text/javascript">
 var proc = document.querySelector('[name=proc]'); 
