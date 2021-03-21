@@ -64,14 +64,15 @@
 			<tr height='1' bgcolor='#CCCCCC'><td colspan=8></td></tr>
 			<tr height='4' bgcolor='#E9E9E9'><td colspan=8></td></tr>
 			
+			<c:set var="sum" value="${0}"/>
 			<c:forEach var="cart" items="${cartList}">
 			<tr align=center style='color:#5B5B5B;'>
-				<td width=50><img src='${path}/resource/img/shop/' border=0 width='50' height='50' hspace=5 vspace=5></td>
-				<td align=left colspan=2>
+				<td width=50><img src='${path}/resource/img/shop/${prod.thumbnail}' border=0 width='50' height='50' hspace=5 vspace=5></td>
+				<td align=left colspan=2>${prod.name}
 				<a href=''>
 				</a>
 				<br><font color='#037CC1'>(선택상품 : <b>${cart.capacity}</b>)</font></td>
-				<td>product_id : ${cart.product_id}</td>
+				<td>${cart.capacity}</td>
 			<td align=right style='color:#682E14;'>
 			
 			${cart.price} 원
@@ -82,12 +83,9 @@
 			
 			<table cellspacing=0 cellpadding=0>
 			<tr>
-			<td><input type=text size=4 value='1' maxlength=5 style='border:1 solid #B0B0B0; text-align:center;' readonly></td>
+			<td></td>
 				<td>
-				<table cellspacing=0 cellpadding=1>
-					<tr><td><img src='${path}/resource/img/cart/num_plus.gif' style='cursor:pointer;'></td></tr>
-					<tr><td><img src='${path}/resource/img/cart/num_minus.gif' style='cursor:pointer;'></td></tr>
-				</table>
+				${cart.count} 개
 				</td>
 			</tr>
 			
@@ -101,6 +99,7 @@
 			</tr>
 			
 			<tr height='1' bgcolor='#e7e7e7'><td colspan=8></td></tr>
+			<c:set var="sum" value="${sum+cart.price}"/>
 			</c:forEach>
 			
 	
@@ -111,7 +110,8 @@
 				<td colspan=3 align=right></td>
 				<td><font color='#CA6A40'></font></td>
 				<td align=center>합계</td>
-				<td align=center><font color='#FE4520'><b>${cart.price}원</b></font></td>
+				<td align=center><font color='#FE4520'><b>
+				<c:out value="${sum}"/>원</b></font></td>
 				<td></td>
 			</tr>
 			<tr height=1><td colspan=8></td></tr>
@@ -132,7 +132,7 @@
 			<tr height=35 bgcolor='#FAFAFA' align=center>
 			<td>상품가격</td>
 			<td bgcolor='#ffffff'>
-			<font color='#FE4520'>${cartList.price}원</font>
+			<font color='#FE4520'><b><c:out value="${sum}"/>원</b></font>
 			</td>
 			
 			
@@ -140,7 +140,7 @@
 			<td>배송비</td>
 			<td bgcolor='#ffffff'><font color='green'><span>무료배송</span></font></td>
 			<td>결제금액 </td>
-			<td bgcolor='#ffffff'><font color='red'><b><span>${cartList.price}</span>원</b></font></td>
+			<td bgcolor='#ffffff'><font color='red'><b><c:out value="${sum}"/>원</b></font></td>
 			</tr>
 			</table>
 
