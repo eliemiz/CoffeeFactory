@@ -88,7 +88,7 @@
 		<tr height=26 align=center style='font-family:돋움;'>
 		<td width=100><img src='${path}/resource/img/cart/dot_02.gif' align=absmiddle>
 		<a href='#.'><b>${order.order_id }</b></a></td>
-		<td align=right><b style='color:#B31515;'>${poList.prcie}</b></td>
+		<td align=right><b style='color:#B31515;'>${poList.price}</b></td>
 		
 		<td><b>${order.pay}</b></td>
 		<td>${order.state}</td>
