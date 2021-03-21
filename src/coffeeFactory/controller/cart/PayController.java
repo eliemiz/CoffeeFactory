@@ -64,7 +64,7 @@ public class PayController extends HttpServlet {
 		
 		String proc = request.getParameter("proc");
 		if (proc != null) {	
-			if (proc.equals("order")) {
+			if (proc.equals("addP")) {
 				OrderByDetail orderBydetail = new OrderByDetail(0, 0, 0, send_name, send_email, send_phone2, send_phone2, send_address,
 						recv_name, recv_phone, recv_phone2, recv_address, comment, pay, state, "");	
 				daoOrderByDetail.insertOrderByDetail(orderBydetail);
