@@ -73,7 +73,7 @@
 				<input type="hidden" name="regist_date_s" value="${notice.regist_date_s}">
 				<input type="hidden" name="views" value="${notice.views}">
 				</td>
-			  <tr>
+			  <tr><%--
 		<tr><th class="th_center2" name="image">첨부파일</th>
 			<td class="td_left7">
 				<div class="file_input">
@@ -83,7 +83,7 @@
 					</label>
 				</div>
 			</td>
-		<tr>	  
+		</tr>	   --%>
 		<tr><th class="th_center2" name="content">CONTENT</th>
 			<td class="td_left7">
 			<%--  <textarea id="content" name="content" class="content2" value="${notice.content}"></textarea> --%>	
