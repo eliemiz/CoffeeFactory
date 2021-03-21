@@ -16,8 +16,10 @@ import coffeeFactory.dao.DaoCart;
 import coffeeFactory.dao.DaoGrind;
 import coffeeFactory.dao.DaoProduct;
 import coffeeFactory.dao.DaoProductOption;
+import coffeeFactory.dao.DaoShop;
 import coffeeFactory.vo.Account;
 import coffeeFactory.vo.Cart;
+import coffeeFactory.vo.Product;
 import coffeeFactory.vo.ProductGrind;
 import coffeeFactory.vo.ProductOption;
 
@@ -77,6 +79,7 @@ public class CartController extends HttpServlet {
         // 장바구니 버튼을 누를 경우 proc값이 addC로 넘어오므로 해당 proc일때를 처리해준다.
         // proc값 여부에 따라 DaoCart를 쓸 수도 있으므로 위로 옮겨서 선언해준다.
         DaoCart daoCart = new DaoCart();
+        DaoShop daoShop = new DaoShop();
         DaoProduct daoProduct = new DaoProduct();
         
         String proc = request.getParameter("proc");
@@ -97,7 +100,16 @@ public class CartController extends HttpServlet {
         if (account != null) {
            request.setAttribute("account", account);
         }
-        
+        /*
+        Product product = dao.getProduct2(product_id);
+        ArrayList<ProductGrind> glist = daog.grindList();
+        ArrayList<ProductOption> polist = dao.getCapaList(product_id);
+        request.setAttribute("prod", product);
+        request.setAttribute("grind", glist);
+        request.setAttribute("po", polist);
+        */
+        Product product = daoShop.getProduct2(product_id);
+        request.setAttribute("prod", product);
         // Cart
         request.setAttribute("cartList", daoCart.getCartList(account_id));
         // Prod
