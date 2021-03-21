@@ -81,3 +81,18 @@
 #main-best-review-table tr:last-child  td {
 	border-bottom: 1px solid #222222;
 }
+
+#main-best-product-title {
+	text-align: center;
+	margin-top: 50px;
+}
+#main-best-product-title span {
+	vertical-align: middle;
+}
+#main-best-review-title {
+	text-align: center;
+	margin-top: 50px;
+}
+#main-best-review-title span {
+	vertical-align: middle;
+}

@@ -90,15 +90,6 @@
 							</li>
 						</ul>
 					</div>
-					<style>
-					#main-best-product-title {
-						text-align: center;
-						margin-top: 50px;
-					}
-					#main-best-product-title span {
-						vertical-align: middle;
-					}
-					</style>
 					<div id="main-best-product-wrap" class="clear-fix">
 						<div id="main-best-product-title" class="clear-fix">
 							<span style="width:200px; height: 1px; border: 1px solid black; display: inline-block;"></span>
@@ -140,7 +131,11 @@
 					</div>
 					<div id="main-best-review-wrap" class="clear-fix">
 						<%-- <img src="${path}/resource/img/main/add_bann_04.jpg"> --%>
-						
+						<div id="main-best-review-title" class="clear-fix">
+							<span style="width:200px; height: 1px; border: 1px solid black; display: inline-block;"></span>
+							<span style="font-size: 35px; margin: 0px 20px;"> 베스트 리뷰 </span>
+							<span style="width:200px; height: 1px; border: 1px solid black; display: inline-block;"></span>
+						</div>
 						<table id="main-best-review-table">
 							<colgroup>
 								<col width="100px">
