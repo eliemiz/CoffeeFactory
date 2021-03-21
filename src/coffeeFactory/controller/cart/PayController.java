@@ -1,7 +1,6 @@
 package coffeeFactory.controller.cart;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import coffeeFactory.dao.DaoAccount;
 import coffeeFactory.dao.DaoOrderByDetail;
 import coffeeFactory.vo.OrderByDetail;
 
@@ -62,14 +60,14 @@ public class PayController extends HttpServlet {
 		if (account_id_obj != null) {
 			account_id = (int)account_id_obj;
 		}
-		
+		DaoOrderByDetail daoOrderByDetail = new DaoOrderByDetail();
 		
 		String proc = request.getParameter("proc");
 		if (proc != null) {	
 			if (proc.equals("order")) {
-				DaoOrderByDetail daoOrderByDetail = new DaoOrderByDetail();
-				OrderByDetail orderByDetail = new OrderByDetail(0, 0, 0, send_name, send_email, send_phone2, send_phone2, send_address,
+				OrderByDetail orderBydetail = new OrderByDetail(0, 0, 0, send_name, send_email, send_phone2, send_phone2, send_address,
 						recv_name, recv_phone, recv_phone2, recv_address, comment, pay, state, "");	
+				daoOrderByDetail.insertOrderByDetail(orderBydetail);
 	
 			} 
 		}

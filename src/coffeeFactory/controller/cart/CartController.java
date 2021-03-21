@@ -77,6 +77,7 @@ public class CartController extends HttpServlet {
         // 장바구니 버튼을 누를 경우 proc값이 addC로 넘어오므로 해당 proc일때를 처리해준다.
         // proc값 여부에 따라 DaoCart를 쓸 수도 있으므로 위로 옮겨서 선언해준다.
         DaoCart daoCart = new DaoCart();
+        DaoProduct daoProduct = new DaoProduct();
         
         String proc = request.getParameter("proc");
         if (proc != null) {
@@ -84,6 +85,7 @@ public class CartController extends HttpServlet {
               // # public Cart(int account_id, int product_id, String capacity, int grind_id, int count, int price) {...}
               Cart cart = new Cart(account_id, product_id, capacity, grind_id, count, price);
               daoCart.insertCart(cart);
+              
            } else if (proc.equals("delete")) {
         	  DaoCart daoCartdel = new DaoCart(); 
         	  daoCartdel.deleteCart(account_id);
@@ -104,7 +106,7 @@ public class CartController extends HttpServlet {
         // ProdOption
         DaoProductOption daoProdOption = new DaoProductOption();
         ArrayList<ProductOption> poList = daoProdOption.getCapaList(product_id);
-        request.setAttribute("OptionList", poList);
+        request.setAttribute("poList", poList);
         // Grind
         DaoGrind daoGrind = new DaoGrind();
         ArrayList<ProductGrind> gList = daoGrind.grindList();
