@@ -44,7 +44,8 @@
 		<tr><td height=3 bgcolor=eeeeee></td></tr>
 		<tr><td height=7></td></tr>
 	</table>
-<form method=get>
+<form id="wishForm" method=get>
+<input type="hidden" name="proc" value="">
 <table align="center" style="margin:auto; width:900px;" cellspacing=0 cellpadding=3>
   
 	<tr>
@@ -55,7 +56,7 @@
 				<b>위시리스트</b> &nbsp; 
 			</td>
 			<td align=right>
-			<font color=138CE1>전체 <b>2</b>건</font>
+			<font color=138CE1>전체 <b>1</b>건</font>
 		</td>
 		</tr>
  		</table>
@@ -75,35 +76,23 @@
 		<td></td>
 	</tr>
 	
+	<c:forEach var="wish" items="${wishList}">
 	<tr height=26 align=center style='font-family:돋움;'>
 	<td><input type=checkbox value='1881:860'></td>
 	<td><img src='${path}/resource/img/cart/shop1.jpg' border=0 width='65' hspace=5 vspace=5 style='cursor:pointer;'></td>
 	<td align=center>
 		<a href=''>
-		[스페셜티 커피] 파나마 에스메랄다 게이샤<br>
-		일산커피공장 일산커피공장 파나마</a>
+		상품명</a>
 		<br><font color=gray><a href='' target='_blank'><font color=gray>스페셜티커피 외</font></a> > <a href='' target='_blank'><font color=gray>스페셜티</font></a></font>
 		</td>
 	<td></td>
-	<td align=center><b style='color:#B31515;'>51,000원</b></td>
+	<td align=center><b style='color:#B31515;'>가격 원</b></td>
 	</tr>
 	
 	<tr height=1 bgcolor=dddddd><td colspan='7'></td></tr>
+	</c:forEach>
 	
-	<tr height=26 align=center style='font-family:돋움;'>
-	<td><input type=checkbox value='1881:860'></td>
-	<td><img src='${path}/resource/img/cart/shop2.jpg' border=0 width='65' hspace=5 vspace=5 style='cursor:pointer;'></td>
-	<td align=center>
-		<a href=''>
-		[소량입고 스페셜티] 브라질 비날 웰치스 그레이프<br>
-		일산커피공장 일산커피공장 브라질</a>
-		<br><font color=gray><a href='' target='_blank'><font color=gray>스페셜티커피 외</font></a> > <a href='' target='_blank'><font color=gray>스페셜티</font></a></font>
-		</td>
-	<td></td>
-	<td align=center><b style='color:#B31515;'>11,000원</b></td>
-	</tr>
 	
-	<tr height=1 bgcolor=dddddd><td colspan='7'></td></tr>
 	
 	
 	
@@ -122,10 +111,20 @@
 	</table>
 	<br>
 			<p align=center>
-			<a href='#.'><img src='${path}/resource/img/cart/btn_order_01.gif' align=absmiddle border=0 
-				onclick="location.href='${path}/views/cart/pay.jsp'"></a>&nbsp;&nbsp;
 			<a href='/coffeeFactory/Index.jsp'><img src='${path}/resource/img/cart/btn_order_03.gif' align=absmiddle border=0></a>&nbsp;&nbsp;
-			<a href='#.'><img src='${path}/resource/img/cart/btn_order_02.gif' align=absmiddle border=0></a>
+			<a><input type="image" value="삭제" id="deleteButton" 
+				src='${path}/resource/img/cart/btn_order_02.gif' style='cursor:pointer;' align=absmiddle border=0></a>&nbsp;&nbsp;
+			
 <jsp:include page="/views/common/footer.jsp" />		
 </body>
+<script type="text/javascript">
+var proc = document.querySelector('[name=proc]'); 
+var deleteButton = document.querySelector('#deleteButton');
+	deleteButton.onclick = function(){
+		proc.value = 'delete';
+		if(confirm('삭제하시겠습니까?')){
+			wishForm.submit();
+		}
+	}
+</script>
 </html>
