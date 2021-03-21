@@ -24,6 +24,7 @@
  
 --%>
 //
+   window.location.href = '${path}';
    $(document).ready(function(){
       
    });
