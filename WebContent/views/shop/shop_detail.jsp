@@ -61,7 +61,7 @@ $(document).ready(function(){
 //        alert(count);
         
         // 3. 현재 price 값 확인
-        var price = $("[name=pricelist]:checked").val();
+        var price = $("[name=capacity]").val();
  //       alert(price);
         
         // 4. 총계 갱신
@@ -73,11 +73,24 @@ $(document).ready(function(){
 function submitCartForm(go){
 	var form = document.querySelector("#form1");
 	var product_id = ${prod.product_id};
-	var capacity = $("[name=pricelist]:checked").attr("data-id");
+	var capacity = $("[name=capacity]:checked").attr("data-id");
 	//var capacity = $("[name=pricelist]:checked").text();
 	var grind_id = $("[name=grind_id]").val();
 	var count = $("[name=count]").val();
-	var price = $("[name=pricelist]:checked").val();
+	var price = $("[name=price]").val();
+	// var price = $("[name=pricelist]:checked").val();
+	
+	$("#addC").click(function(){
+		var proc = $("[name=proc]").val("addC");
+	});
+	$("#addP").click(function(){
+		var proc = $("[name=proc]").val("addP");
+	});
+	$("#addW").click(function(){
+		var proc = $("[name=proc]").val("addW");
+	});
+	
+	
 	alert("product_id="+product_id);
 	//alert("capacity="+capacity);
 	alert(capacity);
@@ -197,7 +210,8 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                              <td><img src="${path}/resource/img/shop/blank.gif" height="1"/></td>
                                              <td valign="top">
                                                 <form name="form1" method="post" id="form1">
-                                                	<input type="hidden" name="proc" value=""/> 
+                                                	<input type="hidden" name="product_id" value="${prod.product_id}"/> 
+                                                	<input type="hidden" name="proc" value=""/>
                                                    <!-- 폼 오픈, Back때 input hidden으로 처리 -->
                                                    <!-- <div style="display:none;"></div> 가격 iframe, script,, -->
                                                    <table width="100%" cellspacing="0" cellpadding="0" style="color:#5B5B5B;" border="0">
@@ -226,7 +240,8 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                                             <td><span class="opt_title1">제품 선택</span></td>
                                                             <td>      
                                                             <c:forEach var="pos" items="${po}">                     
-                                                               <input type="radio" id ="pricelist" name="pricelist" value="${pos.price}" data-id="${pos.capacity}">${pos.capacity}<span>(${pos.price}원)</span><br>                                                                                                             
+                                                               <input type="radio" id ="pricelist" name="capacity" value="${pos.price}" data-id="${pos.capacity}">${pos.capacity}
+                                                               <input type="hidden" name="price" value="${pos.price}"><span>(${pos.price}원)</span><br>                                                                                                             
                                                             </c:forEach>
                                                             </td>
                                                          </tr>
@@ -236,7 +251,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                                             <td>&nbsp;
                                                             <c:forEach var="pr" items="${po}" begin="1" end="1">   
                                                                <span id="main_price" class="money_color"></span>
-                                                               <span id="main_price_type" class="money_color" value="${pr.price}">${pr.price}원</span>
+                                                               <span id="main_price_type" class="money_color" name="capacity" value="${pr.price}">${pr.price}원</span>
                                                             </c:forEach>
                                                             </td>
                                                          </tr>
@@ -271,6 +286,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
 														<tr height="25">
                                                             <td> </td>
                                                             <td><span>총계 </span></td>
+                                                            <!-- <td><input type="hidden" name="price" value=""><span id="tot"></span></td> -->
                                                             <td><span id="tot"></span></td>
                                                          </tr>
 														 
@@ -302,9 +318,9 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                                    <table align="center">
                                                       <tbody>
                                                          <tr>
-                                                            <td id="addP" onclick="submitCartForm('addP')"><img src="${path}/resource/img/shop/buyBtn.gif" style="cursor:pointer;"></td>
-															<td id="addC" onclick="submitCartForm('addC')"><img src="${path}/resource/img/shop/cartBtn.gif" style="cursor:pointer;"></td>
-															<td id="addW" onclick="submitCartForm('addW')"><img src="${path}/resource/img/shop/wishBtn.gif" border="0"></td>
+                                                            <td id="addP" onclick="submitCartForm('addP')" name="addP"><img src="${path}/resource/img/shop/buyBtn.gif" style="cursor:pointer;"></td>
+															<td id="addC" onclick="submitCartForm('addC')" name="addC"><img src="${path}/resource/img/shop/cartBtn.gif" style="cursor:pointer;"></td>
+															<td id="addW" onclick="submitCartForm('addW')" name="addW"><img src="${path}/resource/img/shop/wishBtn.gif" border="0"></td>
                                                          </tr>                                                         
                                                       </tbody>
                                                    </table>
