@@ -120,7 +120,7 @@
 			<tr height='4' bgcolor='#E9E9E9'><td></td></tr>
 			</table>
 		
-	<form id="pay-inner" method="post">	
+	<form name="pay-inner" id="pay-inner" method="post">	
 		<input type="hidden" name="proc">
 		<table align="center" style="margin:auto; width:900px;">
 			<tr height=25>
@@ -134,7 +134,7 @@
 			<td>
 			
 			<span>
-			<input type=radio name="pay" value="무통장 입금"><b>무통장 입금</b>
+			<input type=radio name="pay" value="무통장 입금" checked><b>무통장 입금</b>
 			</span>
 			
 			<span>
@@ -341,9 +341,8 @@
 		setValue();
 		
 		$("[name=proc]").val("order");
-		
 		$("#pay-inner").submit();
-		location.href="${path}/views/cart/orderfin.jsp";
+		location.href="/views/cart/orderfin.jsp";
 	});
 function validCheck() {
 	if ($("[name=send_name]").val() == "") {
