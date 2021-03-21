@@ -340,7 +340,7 @@
 		}
 		setValue();
 		
-		$("[name=proc]").val("order");
+		$("[name=proc]").val("addP");
 		$("#pay-inner").submit();
 		location.href="/views/cart/orderfin.jsp";
 	});

@@ -73,7 +73,7 @@
 				<br><font color='#037CC1'>(선택상품 : <b>${cart.capacity}</b>)</font></td>
 				<td>product_id : ${cart.product_id}</td>
 			<td align=right style='color:#682E14;'>
-			grind_id : ${cart.grind_id}
+			
 			${cart.price} 원
 			</td>
 			
@@ -132,7 +132,7 @@
 			<tr height=35 bgcolor='#FAFAFA' align=center>
 			<td>상품가격</td>
 			<td bgcolor='#ffffff'>
-			<font color='#FE4520'>${cart.price}원</font>
+			<font color='#FE4520'>${cartList.price}원</font>
 			</td>
 			
 			
@@ -140,7 +140,7 @@
 			<td>배송비</td>
 			<td bgcolor='#ffffff'><font color='green'><span>무료배송</span></font></td>
 			<td>결제금액 </td>
-			<td bgcolor='#ffffff'><font color='red'><b><span>${cart.price}</span>원</b></font></td>
+			<td bgcolor='#ffffff'><font color='red'><b><span>${cartList.price}</span>원</b></font></td>
 			</tr>
 			</table>
 
