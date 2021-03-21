@@ -1,6 +1,7 @@
 package coffeeFactory.controller.order;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,9 +13,11 @@ import javax.servlet.http.HttpSession;
 
 import coffeeFactory.dao.DaoOrderByDetail;
 import coffeeFactory.dao.DaoOrderByProduct;
+import coffeeFactory.dao.DaoProductOption;
 import coffeeFactory.vo.Cart;
 import coffeeFactory.vo.OrderByDetail;
 import coffeeFactory.vo.OrderByProduct;
+import coffeeFactory.vo.ProductOption;
 
 /**
  * Servlet implementation class OrderlistController
@@ -37,37 +40,18 @@ public class OrderlistController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		String price = request.getParameter("price"); 
-		String send_name = request.getParameter("send_name"); 
-		String send_email = request.getParameter("send_email");
-		String send_phone = request.getParameter("send_phone"); 
-		String send_phone2 = request.getParameter("send_phone2"); 
-		String send_address = request.getParameter("send_address");
-		String recv_name = request.getParameter("recv_name");
-		String recv_phone = request.getParameter("recv_phone");
-		String recv_phone2 = request.getParameter("recv_phone2");
-		String recv_address = request.getParameter("recv_address");
-		String comment = request.getParameter("comment");
-		String pay = request.getParameter("pay");
-		String state = request.getParameter("state");
+		String product_idS = request.getParameter("product_id");
+        if(product_idS==null) product_idS="0";
+        int product_id = Integer.parseInt(product_idS);
 		
 		int account_id = 0;
 	    HttpSession session = request.getSession();
 	    Object account_id_obj = session.getAttribute("account_id");
-	        if (account_id_obj != null) {
-	           account_id = (int)account_id_obj;
-	        }
+	    if (account_id_obj != null) {
+	       account_id = (int)account_id_obj;
+	    }
 		
-		DaoOrderByDetail daoOrderByDetail = new DaoOrderByDetail();
-		
-		String proc = request.getParameter("proc");
-		if (proc != null) {	
-			if (proc.equals("order")) {
-				OrderByDetail orderByDetail = new OrderByDetail(0, 0, 0, send_name, send_email, send_phone2, send_phone2, send_address,
-						recv_name, recv_phone, recv_phone2, recv_address, comment, pay, state, "");	
-	
-			} 
-		}
+
 		
 		/*if (proc.equals("insert")) {
 			DaoOrderByProduct daoOrderins = new DaoOrderByProduct(); 
@@ -75,7 +59,11 @@ public class OrderlistController extends HttpServlet {
 				Integer.parseInt(grind_id), Integer.parseInt(count), Integer.parseInt(price));
 			daoOrderins.getOrderByProductList(order_id);*/
 		
-		
+	    DaoOrderByDetail daoOB = new DaoOrderByDetail();
+	    request.setAttribute("orderList", daoOB.getOrderByDetailList(account_id));
+	    DaoProductOption daoProdOption = new DaoProductOption();
+        ArrayList<ProductOption> poList = daoProdOption.getCapaList(product_id);
+        request.setAttribute("poList", poList);
 		
 		String page = "views\\order\\orderlist.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);
