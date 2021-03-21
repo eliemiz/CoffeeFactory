@@ -57,7 +57,7 @@
 			<td class="td_left7">
 				<input type="text" id="title" name="title" size="60" placeholder="제목을 입력하세요"/>
 				</td>
-			  <tr>
+			  </tr><%--
 		<tr><th class="th_center2" name="image">첨부파일</th>
 			<td class="td_left7">
 				<div class="file_input">
@@ -66,12 +66,12 @@
 					</label>
 				</div>
 			</td>
-		<tr>	  
+		<tr>	   --%>
 		<tr><th class="th_center2">CONTENT</th>
 			<td class="td_left7">
 				<textarea id="content" name="content" class="content2" placeholder="내용을 입력하세요"></textarea>
 			</td>
-		<tr>           
+		</tr>           
 	</table>
 	</form>
 </div>
