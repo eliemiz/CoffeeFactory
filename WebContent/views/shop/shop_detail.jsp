@@ -266,8 +266,7 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                                    </c:forEach>
                                                 </select>                                                 
                                              </td>
-                                          </tr>                                          
-                                           
+                                          </tr>
                                                          <!-- 
                                                          <tr id="zend_price_tr" height="25" >
                                                             
@@ -297,8 +296,8 @@ a:hover{text-decoration: none; color: #EDA900;} /* 링크를 클릭하려고 마
                                                       <tbody>
                                                          <tr>
                                                             <td id="addP" onclick="submitCartForm('addP')" name="addP"><img src="${path}/resource/img/shop/buyBtn.gif" style="cursor:pointer;"></td>
-                                             <td id="addC" onclick="submitCartForm('addC')" name="addC"><img src="${path}/resource/img/shop/cartBtn.gif" style="cursor:pointer;"></td>
-                                             <td id="addW" onclick="submitCartForm('addW')" name="addW"><img src="${path}/resource/img/shop/wishBtn.gif" border="0"></td>
+                                             				<td id="addC" onclick="submitCartForm('addC')" name="addC"><img src="${path}/resource/img/shop/cartBtn.gif" style="cursor:pointer;"></td>
+                                             				<td id="addW" onclick="submitCartForm('addW')" name="addW"><img src="${path}/resource/img/shop/wishBtn.gif" border="0"></td>
                                                          </tr>                                                         
                                                       </tbody>
                                                    </table>
