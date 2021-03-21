@@ -1,6 +1,7 @@
 package coffeeFactory.controller.wishlist;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import coffeeFactory.dao.DaoCart;
+import coffeeFactory.dao.DaoProduct;
+import coffeeFactory.dao.DaoProductOption;
 import coffeeFactory.dao.DaoWish;
+import coffeeFactory.vo.ProductOption;
 import coffeeFactory.vo.Wish;
 
 /**
@@ -52,14 +56,20 @@ public class WishlistController extends HttpServlet {
         String proc = request.getParameter("proc");
         if (proc != null) {
             if (proc.equals("addW")) {       
-               Wish wish = new Wish(0, 0);
+               Wish wish = new Wish(account_id, product_id);
                daoWish.insertWish(wish);
              } else if (proc.equals("delete")) {
          	  DaoWish daoWishdel = new DaoWish(); 
          	  daoWishdel.deleteWish(account_id, product_id);
             }
          } 
-		
+        // Prod
+        DaoProduct daoProd = new DaoProduct();
+        request.setAttribute("prodList", daoProd.getProduct2(product_id));
+        // ProdOption
+        DaoProductOption daoProdOption = new DaoProductOption();
+        ArrayList<ProductOption> poList = daoProdOption.getCapaList(product_id);
+        request.setAttribute("poList", poList);
 		
 		String page = "views\\wishlist\\wishlist.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(page);
