@@ -110,10 +110,9 @@ public class ShopDetailController extends HttpServlet {
 		   			 Integer.parseInt(grind_id), Integer.parseInt(count), Integer.parseInt(price));
 		                  
 //		   	  daoc.insertCart(addC);
-	      }
-	      if(proc.equals("addP")) {
+	      } else if(proc.equals("addP")) {
 	    	  String account_ids = request.getParameter("account_ids");
-		   	  String product_ids = request.getParameter("product_id");
+		   	  String product_ids = request.getParameter("product_ids");
 		   	  String capacity = request.getParameter("capacity");
 		   	  String grind_id = request.getParameter("grind_id");
 		   	  String count = request.getParameter("count");
@@ -122,8 +121,7 @@ public class ShopDetailController extends HttpServlet {
 		   			 Integer.parseInt(grind_id), Integer.parseInt(count), Integer.parseInt(price));
 		                  
 //		   	  daoo.insertOrderByProduct(addP);
-	      }
-	      if(proc.equals("addW")) {
+	      }else if(proc.equals("addW")) {
 	    	  String account_ids = request.getParameter("account_ids");
 		   	  String product_ids = request.getParameter("product_ids");
 		   	  Wish addW = new Wish(Integer.parseInt(account_ids), Integer.parseInt(product_ids));

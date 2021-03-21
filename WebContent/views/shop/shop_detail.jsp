@@ -88,6 +88,7 @@ function submitCartForm(go){
 			form.action="${path}/cart.do";
 		}
 	} else if (go == 'addP'){
+		$("[name=proc]").val("addP");
 		proc = addP;
 		if(!confirm('장바구니의 상품과 함께 구매됩니다.\n구매하시겠습니까?')){
 			return false;
@@ -96,6 +97,7 @@ function submitCartForm(go){
 		}
 		
 	} else if (go == 'addW'){
+		$("[name=proc]").val("addW");
 		proc = addW;
 		if(!confirm('관심상품에 담았습니다.\n위시리스트로 이동하시겠습니까?')){
 			return false;
