@@ -45,7 +45,8 @@
 		<tr><td height=3 bgcolor=eeeeee></td></tr>
 		<tr><td height=7></td></tr>
 	</table>
-<form method=get>
+<form method="post">
+	<input type="hidden" name="proc" value="">
 <table align="center" style="margin:auto; width:900px;" cellspacing=0 cellpadding=3>
 	<tr>
 		<td>
@@ -82,33 +83,23 @@
 		<td>주문일시</td>
 	</tr>
 	
-	<tr height=26 align=center style='font-family:돋움;'>
-	<td width=100><img src='${path}/resource/img/cart/dot_02.gif' align=absmiddle>
-	<a href='#.'><b>10000000001</b></a></td>
-	<td align=right><b style='color:#B31515;'>000원</b></td>
+	<c:forEach var="order" items="${orderList}">
+		<tr height=26 align=center style='font-family:돋움;'>
+		<td width=100><img src='${path}/resource/img/cart/dot_02.gif' align=absmiddle>
+		<a href='#.'><b>${order.order_id }</b></a></td>
+		<td align=right><b style='color:#B31515;'>${poList.prcie}</b></td>
+		
+		<td><b>${order.pay}</b></td>
+		<td>${order.state}</td>
+		<td>
+		</td>
+		<td>${order.order_date}</td>
+		</tr>
+	</c:forEach> 
+		
+		<tr height=1 bgcolor=dddddd><td colspan='7'></td></tr>
 	
-	<td><b><u style='cursor:pointer;' onclick="alert('@@은행|203-105030-050505|커피공장  ::  입금 : 홍길동     ');">카드</u></b></td>
-	<td><font color=orange>입금대기</font></td>
-	<td>
-	</td>
-	<td>2021-03-01</script></td>
-	</tr>
 	
-	<tr height=1 bgcolor=dddddd><td colspan='7'></td></tr>
-	
-	<tr height=26 align=center style='font-family:돋움;'>
-	<td width=100><img src='${path}/resource/img/cart/dot_02.gif' align=absmiddle>
-	<a href='#.'><b>10000000002</b></a></td>
-	<td align=right><b style='color:#B31515;'>000원</b></td>
-	
-	<td><b><u style='cursor:pointer;' onclick="alert('@@은행|203-105030-050505|커피공장  ::  입금 : 홍길동     ');">계좌이체</u></b></td>
-	<td><font color=orange>입금대기</font></td>
-	<td>
-	</td>
-	<td>2021-03-01</script></td>
-	</tr>
-	
-	<tr height=1 bgcolor=dddddd><td colspan='7'></td></tr>
 	
 	
 	
