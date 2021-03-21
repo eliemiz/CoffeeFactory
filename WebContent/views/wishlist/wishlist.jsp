@@ -79,14 +79,15 @@
 	<c:forEach var="wish" items="${wishList}">
 	<tr height=26 align=center style='font-family:돋움;'>
 	<td><input type=checkbox value='1881:860'></td>
-	<td><img src='${path}/resource/img/cart/shop1.jpg' border=0 width='65' hspace=5 vspace=5 style='cursor:pointer;'></td>
+	<td><img src='${path}/resource/img/${prodList.thumbnail}' border=0 width='65' hspace=5 vspace=5 style='cursor:pointer;'></td>
 	<td align=center>
 		<a href=''>
-		상품명</a>
-		<br><font color=gray><a href='' target='_blank'><font color=gray>스페셜티커피 외</font></a> > <a href='' target='_blank'><font color=gray>스페셜티</font></a></font>
+		${prodList.name}</a>
+		<br><font color=gray><a href='' target='_blank'><font color=gray>스페셜티커피 외</font></a> > 
+		<a href='' target='_blank'><font color=gray>스페셜티</font></a></font>
 		</td>
 	<td></td>
-	<td align=center><b style='color:#B31515;'>가격 원</b></td>
+	<td align=center><b style='color:#B31515;'>${poList.price} 원</b></td>
 	</tr>
 	
 	<tr height=1 bgcolor=dddddd><td colspan='7'></td></tr>
