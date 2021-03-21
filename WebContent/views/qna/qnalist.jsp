@@ -177,7 +177,7 @@ td {
 								<input type="button" id="repq" data-id="${qna.qna_id}" value="답변하기" class="small1" style="cursor: pointer;">
 								<input type="button" id="qdel" data-id="${qna.qna_id}" value="삭제하기" class="small1" style="cursor: pointer;"></div><br>
 								<br>${qna.content}
-								<div align="left">답변 :&nbsp;${qna.reply_content}</div>
+								<div align="left"><img src="${path}/resource/img/review/reply_icon.gif">&nbsp;${qna.reply_content}</div>
 					</td></tr>
 					</c:forEach>
 			</tbody>
