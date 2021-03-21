@@ -98,88 +98,6 @@
 			</td>
 			</tr>
 			
-			
-			<tr height=30><td colspan=4>
-			<table width=100% cellspacing=0 cellpadding=0>
-			<tr height='1' bgcolor='#CCCCCC'><td></td></tr>
-			<tr height='4' bgcolor='#E9E9E9'><td></td></tr>
-			</table>
-			</td></tr>
-			
-			<tr height=30>
-			<td width=5></td>
-			<td width=100 nowrap><img src='${path}/resource/img/cart/dot_012.gif'> 주문 고객성명</td>
-			<td width=5></td>
-			<td width=80%><input type="text" name="send_name"></td>
-			</tr>
-			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
-			
-			<tr height=30>
-			<td></td>
-			<td><img src='${path}/resource/img/cart/dot_012.gif'> 이메일</td>
-			<td></td>
-			<td><input type="text" name="send_email" size="40" placeholder="email@email.com"></td>
-			</tr>
-			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
-			
-			<tr height=30>
-			<td></td>
-			<td><img src='${path}/resource/img/cart/dot_012.gif'> 주문자 전화번호</td>
-			<td></td>
-			<td>
-			
-			<input type="text" id="phone1_1" size="4" maxlength="4"> -
-			<input type="text" id="phone1_2" size="4" maxlength="4"> -
-			<input type="text" id="phone1_3" size="4" maxlength="4">
-			
-			</td>
-			</tr>
-			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
-			
-			<tr height=30>
-			<td></td>
-			<td><img src='${path}/resource/img/cart/dot_012.gif'> 주문자 휴대전화</td>
-			<td></td>
-			<td>
-			<input type="text" id="phone2_1" size="4" maxlength="4"> -
-			<input type="text" id="phone2_2" size="4" maxlength="4"> -
-			<input type="text" id="phone2_3" size="4" maxlength="4">
-			
-			</td>
-			</tr>
-			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
-			
-			<tr height=75>
-			<td></td>
-			<td><img src='${path}/resource/img/cart/dot_012.gif'> 주문자 주소</td>
-			<td></td>
-			<td>
-			
-			<table width=100% cellspacing=0 cellpadding=0 border=0><tr><td>
-			
-			<input type=text id="address1_1"> -
-			<input type=text id="address1_2">
-			<br>
-			<input type=text id="address1_3" size="40"><br>
-			<input type=text id="address1_4" size="40">
-			
-			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
-			</td>
-			<td valign='top' align='right'>
-			</td>
-			</tr>
-	
-			</table>
-			
-			<tr height=85>
-			<td></td>
-			<td><img src='${path}/resource/img/cart/dot_012.gif'> 배송시 요청사항</td>
-			<td></td>
-			<td>
-			<textarea name="comment" rows="5" cols="50"></textarea>
-			</td>
-			</tr>
-			
 			<tr height=30><td colspan=4>
 			<table width=100% cellspacing=0 cellpadding=0>
 			<tr height='1' bgcolor='#CCCCCC'><td></td></tr>
@@ -192,6 +110,14 @@
 			<td width=100 nowrap><img src='${path}/resource/img/cart/dot_012.gif'> 배송 고객 성명</td>
 			<td width=5></td>
 			<td width=80%><input type="text" name="recv_name"></td>
+			</tr>
+			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
+			
+			<tr height=30>
+			<td></td>
+			<td><img src='${path}/resource/img/cart/dot_012.gif'> 이메일</td>
+			<td></td>
+			<td><input type="text" name="send_email" size="40" placeholder="email@email.com"></td>
 			</tr>
 			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
 			
@@ -221,6 +147,15 @@
 			</td>
 			</tr>
 			<tr height=1><td colspan=4 background='${path}/resource/img/cart/line_01.gif'></td></tr>
+			
+			<tr height=85>
+			<td></td>
+			<td><img src='${path}/resource/img/cart/dot_012.gif'> 배송시 요청사항</td>
+			<td></td>
+			<td>
+			<textarea name="comment" rows="5" cols="50"></textarea>
+			</td>
+			</tr>
 			
 			<tr height=75>
 			<td></td>
@@ -283,50 +218,7 @@
 		location.href="${path}/views/cart/orderfin.jsp";
 	});
 function validCheck() {
-	if ($("[name=send_name]").val() == "") {
-		alert("주문 고객 이름이 입력되지 않았습니다.");
-		return false;
-	}
-	if ($("#phone1_1").val() == "") {
-		alert("주문 고객 전화번호를 입력해주세요.");
-		return false;
-	}
-	if ($("#phone1_2").val() == "") {
-		alert("주문 고객 전화번호를 입력해주세요.");
-		return false;
-	}
-	if ($("#phone1_3").val() == "") {
-		alert("주문 고객 전화번호를 입력해주세요.");
-		return false;
-	}
-	if ($("#phone2_1").val() == "") {
-		alert("주문 고객 휴대폰 번호를 입력해주세요.");
-		return false;
-	}
-	if ($("#phone2_2").val() == "") {
-		alert("주문 고객 휴대폰 번호를 입력해주세요.");
-		return false;
-	}
-	if ($("#phone2_3").val() == "") {
-		alert("주문 고객 휴대폰 번호를 입력해주세요.");
-		return false;
-	}
-	if ($("#address1_1").val() == "") {
-		alert("주문 고객 주소를 입력해주세요.");
-		return false;
-	}
-	if ($("#address1_2").val() == "") {
-		alert("주문 고객 주소를 입력해주세요.");
-		return false;
-	}
-	if ($("#address1_3").val() == "") {
-		alert("주문 고객 주소를 입력해주세요.");
-		return false;
-	}
-	if ($("#address1_4").val() == "") {
-		alert("주문 고객 주소를 입력해주세요.");
-		return false;
-	}
+	
 	if ($("[name=recv_name]").val() == "") {
 		alert("배송 고객 이름이 입력되지 않았습니다.");
 		return false;
