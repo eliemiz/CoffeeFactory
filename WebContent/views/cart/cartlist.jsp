@@ -101,9 +101,8 @@
 			</tr>
 			
 			<tr height='1' bgcolor='#e7e7e7'><td colspan=8></td></tr>
-			<c:set var="sum2" value="${sum2+sum}"/>
 			</c:forEach>
-			
+			<c:set var="sum2" value="${sum2+sum}"/>
 	
 			
 			

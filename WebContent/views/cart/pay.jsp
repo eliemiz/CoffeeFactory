@@ -58,69 +58,9 @@
 				}
 			</style>
 			<br>
-			<table style="width:700px;">
-				<tr>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='${path}/resource/img/cart/dot_02.gif'><b>고객님께서 결제하실 내역입니다.</b></td>
-				</tr>
-			</table>
 			
-			<table height=5><tr><td></td></tr></table>
-
-			<table align="center" style="margin:auto; width:900px;"  cellspacing=1 cellpadding=2 bgcolor=dfdfdf>
-			<tr height=35 bgcolor='#FAFAFA' align=center>
-			<td>상품가격</td>
-			<td bgcolor='#ffffff'>
-			<font color='#FE4520'>000 원</font>
-			</td>
-			
-			
-			
-			<td>배송비</td>
-			<td bgcolor='#ffffff'><font color='green'><span>무료배송</span></font></td>
-			
-			</tr>
-			</table>
-			
-			
-			
-			
-			<table height=5><tr><td></td></tr></table>
-
-
-	
-			
-			<table><tr><td height=5></td></tr></table>
-			
-			
-			
-			
-			<table width=100% cellspacing=0 cellpadding=0 style='border:1 dotted cccccc;background:f7f7f7;padding:5pt;'> 
-			<tr><td align=center><font style='font-size:11pt;line-height:11pt;'>결제금액 &nbsp; : &nbsp;&nbsp; 
-			<font style='font-size:14pt;line-height:14pt;font-family:arial,돋움;'><b><span id='Lay_price_str'>
-			000</span></font> 원</b></font> <span id='coupon_check'></span> </td></tr>
-			</table> 
-			
-			
-			
-			
-			<table align="center" style="margin:auto; width:900px;">
-			<tr>
-			<td><img src='${path}/resource/img/cart/tt_order_01.gif'></td>
-			<td align=right>
-			<img src='${path}/resource/img/cart/btn_order_05.gif' style='cursor:pointer;' onclick="location.href='${path}/views/cart/cartlist.jsp'">
-			</td>
-			</tr>
-			</table>
-			
-			<table align="center" style="margin:auto; width:900px;" width=100% cellspacing=0 cellpadding=0>
-			<tr height='1' bgcolor='#CCCCCC'><td></td></tr>
-			<tr height='4' bgcolor='#E9E9E9'><td></td></tr>
-			</table>
 		
-	<form name="pay-inner" id="pay-inner" method="post">	
+	<%-- <form name="pay-inner" id="pay-inner" method="post" action="">	 --%>
 		<input type="hidden" name="proc">
 		<table align="center" style="margin:auto; width:900px;">
 			<tr height=25>
@@ -323,7 +263,7 @@
 			</td>
 			</tr>
 			</table>
-		</form>
+		<%--</form> --%>
 			
 			
 			<td class="content-wrap-right">
@@ -338,11 +278,9 @@
 		if (!validCheck()) {
 			return false;
 		}
-		setValue();
+		/* setValue(); */
 		
-		$("[name=proc]").val("addP");
-		$("#pay-inner").submit();
-		location.href="/views/cart/orderfin.jsp";
+		location.href="${path}/views/cart/orderfin.jsp";
 	});
 function validCheck() {
 	if ($("[name=send_name]").val() == "") {

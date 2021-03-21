@@ -58,7 +58,7 @@
 		</table>
 		
 		<table class="content-wrap" style="width:1100px;" align ="center" cellspacing=0 cellpadding=0 style="margin-top: 10px; margin-bottom: 10px">
-			<tr><td style="text-align:center"><a href="/coffeeFactory/Index.jsp"><img src='${path}/resource/img/cart/btn_confirm.gif'></a></td></tr>
+			<tr><td style="text-align:center"><a href="${path}"><img src='${path}/resource/img/cart/btn_confirm.gif'></a></td></tr>
 		</table>
 		
 		
